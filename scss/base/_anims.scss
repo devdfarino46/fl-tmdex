@@ -1,0 +1,37 @@
+@keyframes scale {
+  from {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes jump {
+  from {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 20px;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes jump10px {
+  from {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 10px;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}

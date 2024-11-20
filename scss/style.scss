@@ -1,0 +1,22 @@
+@import 'base/*';
+
+* {
+  
+}
+
+body {
+  
+}
+
+[class *= "__container"], .container {
+  max-width: 1362px;
+  padding: 0 18px;
+  min-width: 360px;
+  margin: 0 auto;
+}
+
+.section {
+  
+}
+
+@import 'blocks/*';
