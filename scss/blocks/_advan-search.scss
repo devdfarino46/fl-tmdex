@@ -1,0 +1,78 @@
+.advan-search {
+  margin-top: clamp(60px, 3.054rem + 2.53vw, 80px);
+
+		&__container {
+      display: flex;
+      flex-direction: column;
+		}
+
+		&__title {
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 126%;
+      color: #19191D;
+
+      span {
+        color: #B4B4BB;
+      }
+
+      @media (max-width: 740px) {
+        font-size: 24px;
+      }
+		}
+
+		&__decor {
+      margin-top: -9px;
+      align-self: center;
+
+      @media (max-width: 1230px) {
+        display: none;
+      }
+		}
+
+		&__items {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-top: 20px;
+
+      @media (max-width: 1230px) {
+        margin-top: 40px;
+      }
+
+      @media (max-width: 940px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (max-width: 740px) {
+        margin-top: 20px;
+      }
+		}
+
+		&__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px 30px 40px;
+      gap: 10px;
+      background: #F9F9FA;
+      border: 1px solid #D2D2D6;
+      border-radius: 20px;
+
+      @media (max-width: 740px) {
+        padding: 20px 20px 30px;
+      }
+		}
+
+		&__item-num {
+      font-size: 48px;
+      line-height: 125%;
+      letter-spacing: -0.02em;
+      color: #DFF71C;
+		}
+
+		&__item-text {
+      font-size: 16px;
+      line-height: 130%;
+      color: #19191D;
+		}
+}
