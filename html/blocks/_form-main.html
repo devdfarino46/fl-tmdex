@@ -20,12 +20,12 @@
         </a>
       </div>
 
-      <form action="#" class="form-main__form">
+      <form action="#" class="form-main__form" disabled>
         <div class="form-main__inputs-wrap">
           <label class="input" data-status="">
             <p class="input__label">Какое название проверяем?</p>
             <div class="input__wrapper">
-              <input type="text" placeholder="Например, ТМДЕКС">
+              <input type="text" placeholder="Например, ТМДЕКС" required>
               <button type="button"></button>
             </div>
             <p class="input__helper">Status</p>
@@ -33,7 +33,7 @@
           <label class="input" data-status="">
             <p class="input__label">Телефон для связи</p>
             <div class="input__wrapper">
-              <input type="number" placeholder="Номер телефона">
+              <input type="number" placeholder="Номер телефона" required>
               <button type="button"></button>
             </div>
             <p class="input__helper">Status</p>
@@ -44,9 +44,9 @@
           </button>
         </div>
 
-        <label class="checkbox">
+        <label class="form-main__policy-input checkbox">
           <div class="checkbox__input">
-            <input type="checkbox" name="GG">
+            <input type="checkbox" name="policy" checked>
             <i></i>
           </div>
           <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>

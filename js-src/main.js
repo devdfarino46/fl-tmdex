@@ -1,6 +1,8 @@
 const menuBtn = document.querySelector('.btn--menu');
 const inputs = document.querySelectorAll('.input');
 
+const formMain = document.querySelector('.form-main');
+
 if (menuBtn) {
   menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('--opened');
