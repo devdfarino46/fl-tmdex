@@ -1,0 +1,85 @@
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &__input {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: #F9F9FA;
+    border: 1px solid #D2D2D6;
+    border-radius: 4px;
+    transition: .2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:has(:checked) &__input {
+    border-color: #D2D2D6;
+    background: #5A5B6A;
+  }
+
+  &__input input {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+  }
+
+  &__input i {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transform: scale(0);
+    transition: .2s ease;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/icons/check.svg);
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 20px;
+    color: #19191D;
+  }
+
+  // Indetmin
+  &.--indetmin i {
+    background-image: url(../img/icons/square.svg);
+  }
+
+  // State chacked
+  &:has(input:checked) i {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  // State hover
+  @media (any-hover: hover) {
+    &:hover &__input {
+      border-color: #4A4B57;
+    }
+
+    &:has(input:checked):hover &__input {
+      border-color: #D2D2D6;
+      background: #4A4B57;
+    }
+  }
+
+  // State focus
+  &:has(input:focus) &__input {
+    box-shadow: 0 0 0px 2px #C4DAFF;
+    border-color: #5A5B6A;
+  }
+
+  &:has(input:checked):has(input:focus) &__input {
+    background: #5A5B6A;
+    box-shadow: 0 0 0px 2px #C4DAFF;
+    border-color: transparent;
+  }
+}

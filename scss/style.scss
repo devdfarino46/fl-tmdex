@@ -1,7 +1,8 @@
 @import 'base/*';
 
 * {
-  
+  font-family: 'Wix Madefor Display', sans-serif;
+  font-weight: 400;
 }
 
 body {
@@ -9,14 +10,26 @@ body {
 }
 
 [class *= "__container"], .container {
-  max-width: 1362px;
-  padding: 0 18px;
+  max-width: 1230px;
+  padding: 0 30px;
   min-width: 360px;
   margin: 0 auto;
+
+  @media (max-width: 740px) {
+    padding: 0 20px;
+  }
 }
 
 .section {
   
+}
+
+.design-author {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+  color: #B4B4BB;
 }
 
 @import 'blocks/*';

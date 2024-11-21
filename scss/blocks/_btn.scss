@@ -1,0 +1,113 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 30px;
+  gap: 10px;
+  background: #5A5B6A;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #E7FA52;
+  transition: .2s ease;
+  border: 1px solid transparent;
+
+  i {
+    height: 1.3em;
+    aspect-ratio: 1 / 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:not(:has(span)) {
+    padding: 14px;
+  }
+
+  &[disabled] {
+    cursor: no-drop;
+    opacity: .3;
+    box-shadow: 0px 4px 8px transparent;
+  }
+
+  // Large
+  &--large {
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+  &--large:not(:has(span)) {
+    padding: 20px;
+  }
+
+  // Outline
+  &--outline {
+    color: #19191D;
+    background: #FFFFFF;
+    border-color: #D2D2D6;
+  }
+  &--outline svg:not(._colored) path {
+    stroke: #19191D;
+  }
+
+
+  // Secondary
+  &--secondary {
+    background: #F9F9FA;
+    border-color: transparent;
+    color: #19191D;
+  }
+
+  // Menu
+  &--menu {
+    position: relative;
+  }
+  &--menu i {
+    transition: .2s ease;
+  }
+  &--menu i:nth-child(2) {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+  }
+  &--menu.--opened i:nth-child(1) {
+    opacity: 0;
+    transform: scale(0);
+  }
+  &--menu.--opened i:nth-child(2) {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+
+  // State hover
+  @media (any-hover: hover) {
+    &:hover:not(&.--disabled) {
+      background: #4A4B57;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    &--secondary:hover:not(&.--disabled) {
+      background: #F0F0F1;
+    }
+    &--outline:hover:not(&.--disabled) {
+      border-color: #4A4B57;
+      background: #FFFFFF;
+    }
+  }
+
+  // State active
+  &:active:not(&.--disabled) {
+    background: #292A31;
+    box-shadow: 0px 4px 8px transparent;
+  }
+  &--secondary:active:not(&.--disabled) {
+    background: #E1E1E3;
+  }
+  &--outline:active:not(&.--disabled) {
+    background: #D2D2D6;
+    border-color: transparent;
+  }
+}

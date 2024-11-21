@@ -102,6 +102,7 @@ function _webp() {
 }
 
 exports.default = gulp.series(
+    _html,
     _sass,
     _js,
     gulp.parallel(

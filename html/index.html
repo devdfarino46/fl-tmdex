@@ -5,24 +5,19 @@
 </head>
 <body>
   <div class="wrapper">
+    @@include('blocks/_header.html')
+    <nav class="nav">
+      <ul class="nav__container">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Поиск</a></li>
+      </ul>
+    </nav>
 
     <main class="page">
-      @@include('blocks/_header.html')
-      
-      
-
-      @@include('blocks/_feedback.html')
+      @@include('blocks/_form-main.html')
     </main>
 
     @@include('blocks/_footer.html')
-  </div>
-
-  @@include('blocks/_img-loop.html')
-
-  @@include('blocks/_player-video.html');
-
-  <div class="case-popup-wrap">
-    @@include('blocks/_case-popup.html')
   </div>
 </body>
 </html>
