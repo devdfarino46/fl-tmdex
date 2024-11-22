@@ -14,57 +14,58 @@ const webpack = require('webpack-stream'); // webpack
 const babel = require('gulp-babel'); // babel
 const sassGlob = require('gulp-sass-glob'); // globbing for sass]
 const fileInclude = require('gulp-file-include'); // file include
+const fontello = require('gulp-fontello'); // fontello
 
 
 // Browsersync init
 function _bs() {
-    browserSync.init({
-        // proxy: 'localhost/',
-        // port: 80,
-        server: './',
-        open: false
-    });
+  browserSync.init({
+    // proxy: 'localhost/',
+    // port: 80,
+    server: './',
+    open: false
+  });
 }
 
 // Whatching
 function _whatching() {
-    gulp.watch(['html/**/*.html'], _html);
-    gulp.watch('scss/**/*.scss', _sass);
-    gulp.watch(['js-src/**/*.js'], _js);
+  gulp.watch(['html/**/*.html'], _html);
+  gulp.watch('scss/**/*.scss', _sass);
+  gulp.watch(['js-src/**/*.js'], _js);
 }
 
 function _html() {
-    return gulp.src(['html/*.html'])
-      .pipe(fileInclude({
-        prefix: '@@',
-        basepath: '@file'
-      }))
-      .pipe(gulp.dest('./'))
-      .pipe(browserSync.stream());
+  return gulp.src(['html/*.html'])
+    .pipe(fileInclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream());
 }
 
 // SCSS to CSS
 function _sass() {
-    return gulp.src(["scss/**/*.scss"])
-      .pipe(plumber({
-        errorHandler: notify.onError({
-          title: "SCSS Error",
-          message: "Error: <%= error.message %>"
-        })
-      }))
-      .pipe(sourceMaps.init())
-      .pipe(sassGlob())
-      .pipe(sass({
-        
-      }))
-      .pipe(autoprefixer())
-      .pipe(cleanCSS({
-          compatibility: 'ie9'
-      }))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(sourceMaps.write('.'))
-      .pipe(gulp.dest("css"))
-      .pipe(browserSync.stream());
+  return gulp.src(["scss/**/*.scss"])
+    .pipe(plumber({
+      errorHandler: notify.onError({
+        title: "SCSS Error",
+        message: "Error: <%= error.message %>"
+      })
+    }))
+    .pipe(sourceMaps.init())
+    .pipe(sassGlob())
+    .pipe(sass({
+
+    }))
+    .pipe(autoprefixer())
+    .pipe(cleanCSS({
+      compatibility: 'ie9'
+    }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourceMaps.write('.'))
+    .pipe(gulp.dest("css"))
+    .pipe(browserSync.stream());
 }
 
 function _js() {
@@ -84,31 +85,37 @@ function _js() {
 }
 
 function _ttfToWoff2() {
-    return gulp.src('fonts/**/*.ttf')
-        .pipe(ttfToWoff2())
-        .pipe(gulp.dest('fonts'));
+  return gulp.src('fonts/**/*.ttf')
+    .pipe(ttfToWoff2())
+    .pipe(gulp.dest('fonts'));
 }
 
 function _imageMin() {
-    return gulp.src('img/**/*.+(png|jpeg|jpg|gif|svg)')
-        .pipe(imageMin({verbose: true}))
-        .pipe(gulp.dest('img'));
+  return gulp.src('img/**/*.+(png|jpeg|jpg|gif|svg)')
+    .pipe(imageMin({ verbose: true }))
+    .pipe(gulp.dest('img'));
 }
 
 function _webp() {
-    return gulp.src('img/**/*.+(png|jpeg|jpg)')
-        .pipe(webp())
-        .pipe(gulp.dest('img'));
+  return gulp.src('img/**/*.+(png|jpeg|jpg)')
+    .pipe(webp())
+    .pipe(gulp.dest('img'));
+}
+
+function _fontello() {
+  return gulp.src('fontello/config.json')
+    .pipe(fontello())
+    .pipe(gulp.dest('fontello'));
 }
 
 exports.default = gulp.series(
-    _html,
-    _sass,
-    _js,
-    gulp.parallel(
-      _bs,
-      _whatching
-    )
+  _html,
+  _sass,
+  _js,
+  gulp.parallel(
+    _bs,
+    _whatching
+  )
 );
 
 exports.ttfToWoff2 = _ttfToWoff2;
@@ -117,3 +124,4 @@ exports.webp = _webp;
 exports.css = _sass;
 exports.js = _js;
 exports.html = _html;
+exports.fontello = _fontello;

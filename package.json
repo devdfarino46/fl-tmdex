@@ -20,6 +20,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-fontello": "^0.5.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-notify": "^5.0.0",
     "gulp-plumber": "^1.2.1",

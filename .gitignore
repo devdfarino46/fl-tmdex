@@ -7,3 +7,5 @@ js/*.bundle.js.map
 *.html
 !html/**/*.html
 *.rar
+fontello/*
+!fontello/config.json

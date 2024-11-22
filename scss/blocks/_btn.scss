@@ -22,6 +22,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transition: .2s ease;
+  }
+
+  i:not(._colored) {
+    filter: $fLimeColor;
   }
 
   &:not(:has(span)) {
@@ -29,9 +34,8 @@
   }
 
   &[disabled] {
-    cursor: no-drop;
+    pointer-events: none;
     opacity: .3;
-    box-shadow: 0px 4px 8px transparent;
   }
 
   // Large
@@ -43,22 +47,43 @@
     padding: 20px;
   }
 
+  // Lime
+  &--lime {
+    background: #E7FA52;
+    color: #19191D;
+  }
+  &--lime i:not(._colored) {
+    filter: $fGrayColor;
+  }
+
   // Outline
   &--outline {
     color: #19191D;
     background: #FFFFFF;
     border-color: #D2D2D6;
   }
-  &--outline svg:not(._colored) path {
-    stroke: #19191D;
+  &--outline i:not(._colored) {
+    filter: $fGrayColor;
   }
-
 
   // Secondary
   &--secondary {
     background: #F9F9FA;
     border-color: transparent;
     color: #19191D;
+  }
+  &--secondary i:not(._colored) {
+    filter: $fLimeColor;
+  }
+
+  // Text
+  &--text {
+    background: transparent;
+    color: #19191D;
+    box-shadow: none;
+  }
+  &--text i:not(._colored) {
+    filter: $fGrayColor;
   }
 
   // Menu
@@ -85,29 +110,47 @@
 
   // State hover
   @media (any-hover: hover) {
-    &:hover:not(&.--disabled) {
+    &:hover {
       background: #4A4B57;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-    &--secondary:hover:not(&.--disabled) {
+    &--lime:hover {
+      background: #C3DC04;
+    }
+    &--secondary:hover {
       background: #F0F0F1;
     }
-    &--outline:hover:not(&.--disabled) {
+    &--outline:hover {
       border-color: #4A4B57;
+      background: #FFFFFF;
+    }
+    &--text:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       background: #FFFFFF;
     }
   }
 
   // State active
-  &:active:not(&.--disabled) {
+  &:active {
     background: #292A31;
     box-shadow: 0px 4px 8px transparent;
   }
-  &--secondary:active:not(&.--disabled) {
+  &--lime:active {
+    background: #626E02;
+    color: #E7FA52;
+  }
+  &--lime:active i:not(._colored) {
+    filter: $fLimeColor;
+  }
+  &--secondary:active {
     background: #E1E1E3;
   }
-  &--outline:active:not(&.--disabled) {
+  &--outline:active {
     background: #D2D2D6;
     border-color: transparent;
+  }
+  &--text:active {
+    box-shadow: none;
+    background: #E1E1E3;
   }
 }

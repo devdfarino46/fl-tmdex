@@ -1,0 +1,20 @@
+1. Search
+  input
+  btn
+  Switch
+  Report
+    Card заявка
+      Status
+      Label data
+      MKTU
+    Notice
+
+2. Result
+  Tabs
+    tab
+  Filter
+    Checkbox
+  Accordeons
+   Accordeon
+    Card заявка
+    Card компания 
