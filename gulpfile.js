@@ -32,6 +32,7 @@ function _whatching() {
   gulp.watch(['html/**/*.html'], _html);
   gulp.watch('scss/**/*.scss', _sass);
   gulp.watch(['js-src/**/*.js'], _js);
+  gulp.watch(['fontello/config.json'], _fontello);
 }
 
 function _html() {
@@ -105,13 +106,15 @@ function _webp() {
 function _fontello() {
   return gulp.src('fontello/config.json')
     .pipe(fontello())
-    .pipe(gulp.dest('fontello'));
+    .pipe(gulp.dest('fontello'))
+    .pipe(browserSync.stream());
 }
 
 exports.default = gulp.series(
   _html,
   _sass,
   _js,
+  _fontello,
   gulp.parallel(
     _bs,
     _whatching

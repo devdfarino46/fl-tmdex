@@ -1,12 +1,12 @@
 @import 'base/*';
 
-$fGrayColor: brightness(0) invert(4%) sepia(2%) saturate(6324%) hue-rotate(202deg) brightness(91%) contrast(87%);
-$fLimeColor: brightness(0) invert(77%) sepia(4%) saturate(7174%) hue-rotate(20deg) brightness(123%) contrast(92%);
-
 * {
   font-family: 'Wix Madefor Display', sans-serif;
   font-weight: 400;
 }
+
+.icon-tg { color: #2BA2DB !important; }
+.icon-whatsapp { color: #25D366 !important; }
 
 body {
   

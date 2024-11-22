@@ -17,16 +17,11 @@
   border: 1px solid transparent;
 
   i {
-    height: 1.3em;
-    aspect-ratio: 1 / 1;
+    font-size: 1.3em;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     transition: .2s ease;
-  }
-
-  i:not(._colored) {
-    filter: $fLimeColor;
   }
 
   &:not(:has(span)) {
@@ -52,18 +47,12 @@
     background: #E7FA52;
     color: #19191D;
   }
-  &--lime i:not(._colored) {
-    filter: $fGrayColor;
-  }
 
   // Outline
   &--outline {
     color: #19191D;
     background: #FFFFFF;
     border-color: #D2D2D6;
-  }
-  &--outline i:not(._colored) {
-    filter: $fGrayColor;
   }
 
   // Secondary
@@ -72,18 +61,12 @@
     border-color: transparent;
     color: #19191D;
   }
-  &--secondary i:not(._colored) {
-    filter: $fLimeColor;
-  }
 
   // Text
   &--text {
     background: transparent;
     color: #19191D;
     box-shadow: none;
-  }
-  &--text i:not(._colored) {
-    filter: $fGrayColor;
   }
 
   // Menu
@@ -138,9 +121,6 @@
   &--lime:active {
     background: #626E02;
     color: #E7FA52;
-  }
-  &--lime:active i:not(._colored) {
-    filter: $fLimeColor;
   }
   &--secondary:active {
     background: #E1E1E3;

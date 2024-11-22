@@ -31,15 +31,13 @@
 
   &__input i {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    font-size: 19px;
     opacity: 0;
     transform: scale(0);
     transition: .2s ease;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../img/icons/check.svg);
+    color: #DFF71C;
+
+    &::before { content: '\e809'; }
   }
 
   &__label {
@@ -50,7 +48,9 @@
 
   // Indetmin
   &.--indetmin i {
-    background-image: url(../img/icons/square.svg);
+    color: white;
+
+    &::before { content: '\e804'; }
   }
 
   // State chacked
