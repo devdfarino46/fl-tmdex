@@ -1,8 +1,9 @@
 const $ = require('jquery');
-const mask = require('jquery-mask-plugin');
+require('jquery-mask-plugin');
 
 const menuBtn = document.querySelector('.btn--menu');
 const inputs = document.querySelectorAll('.input');
+const inputsText = document.querySelectorAll('.input-text');
 
 const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
@@ -15,14 +16,26 @@ tooltipLinks.forEach( link => {
 
   const show = () => {
     const rect = link.getBoundingClientRect();
-    tooltip.classList.add('--visibled');
 
-    tooltip.style.top = `${
-      rect.bottom
-    }px`;
-    tooltip.style.left = `${
-      rect.left
-    }px`
+    tooltip.classList.add('--visibled');
+    document.body.classList.add('no-scroll');
+
+    tooltip.style.top = `${ rect.bottom }px`;
+
+    if (window.innerWidth > 740) {
+      if (rect.left < window.innerWidth / 2) {
+        tooltip.style.right = 'auto';
+        tooltip.style.left = `${ rect.left }px`;
+      } else {
+        tooltip.style.left = 'auto';
+        tooltip.style.right = `${ window.innerWidth - rect.right }px`;
+      }
+    }
+  }
+
+  const hide = () => {
+    tooltip.classList.remove('--visibled');
+    document.body.classList.remove('no-scroll');
   }
 
   document.addEventListener('click', (ev) => {
@@ -30,12 +43,11 @@ tooltipLinks.forEach( link => {
 
     if (ev.composedPath().includes(tooltip) || ev.composedPath().includes(link)) {
       show();
-
       if (ev.composedPath().includes(btnOk)) {
-        tooltip.classList.remove('--visibled');
+        hide();
       }
     } else {
-      tooltip.classList.remove('--visibled');
+      hide();
     }
   });
 
@@ -43,7 +55,7 @@ tooltipLinks.forEach( link => {
     if (ev.composedPath().includes(tooltip) || ev.composedPath().includes(link)) {
       show();
     } else {
-      tooltip.classList.remove('--visibled');
+      hide();
     }
   });
 });
@@ -101,16 +113,65 @@ inputs.forEach((input) => {
   });
 })
 
+inputsText.forEach(input => {
+  const inputElem = input.querySelector('input');
+  const btn = input.querySelector('.btn');
+
+  inputElem.addEventListener('input', ev => {
+    if (inputElem.value.length > 0) {
+      input.classList.add('--clear-on');
+    } else {
+      input.classList.remove('--clear-on');
+    }
+  });
+
+  btn.addEventListener('click', ev => {
+    inputElem.value = '';
+    input.classList.remove('--clear-on');
+  });
+});
+
 if (search) {
   const form = search.querySelector('.search__form');
 
   if (form) {
     const inputs = form.querySelectorAll('.input');
+    const switchElem = form.querySelector('.switch input');
+    const switchLabel = form.querySelector('.switch__label');
 
-    inputs.forEach((input) => {
+    inputs.forEach((input, index) => {
       const inputElem = input.querySelector('.input__wrapper input');
+      const btn = input.querySelector('.input__wrapper button');
       
+      // Set mask inputs
       $(inputElem).mask(inputElem.dataset.mask);
+
+      const disableInputs = () => {
+        inputs.forEach((input1, index1) => {
+          const inputElem1 = input1.querySelector('.input__wrapper input');
+
+          if (inputElem.value.length > 0) {
+
+            
+            if (index !== index1) inputElem1.disabled = true;
+          } else {
+            inputElem1.disabled = false;
+          }
+        });
+      }
+
+      inputElem.addEventListener('input', disableInputs);
+      btn.addEventListener('click', disableInputs);
+    });
+
+    switchElem.addEventListener('input', ev => {
+      if (switchElem.checked) {
+        search.classList.add('--search-name');
+        switchLabel.textContent = 'Переключить на поиск по названию';
+      } else {
+        search.classList.remove('--search-name');
+        switchLabel.textContent = 'Поиск по заявке, свидетельству, ИНН';
+      }
     });
 
     form.addEventListener('submit', (e) => {

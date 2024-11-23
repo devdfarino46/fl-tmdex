@@ -1,0 +1,45 @@
+.input-text {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 256px;
+  border-bottom: 1px solid #B4B4BB;
+  padding-bottom: 17px;
+  transition: .2s ease;
+  
+  input {
+    flex: 1 0 auto;
+    min-width: 0;
+    width: 0;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+    caret-color: #F44336;
+    transition: .2s ease;
+
+    &::placeholder {
+      color: #B4B4BB;
+      transition: .2s ease;
+    }
+  }
+
+  .btn {
+    pointer-events: none;
+    opacity: 0;
+    transition: .2s ease;
+  }
+
+  &.--clear-on .btn {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: #5A5B6A;
+    }
+    &:hover input::placeholder {
+      color: #D2D2D6;
+    }
+  }
+}

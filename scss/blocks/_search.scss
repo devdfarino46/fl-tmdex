@@ -47,21 +47,27 @@
 
     &__form-inputs {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+      align-items: flex-start;
       gap: 20px;
 
       @media (max-width: 1140px) {
         row-gap: 15px;
       }
+    }
 
-      @media (max-width: 940px) {
-        grid-template-columns: 1fr;
-        gap: 10px;
+    &__form-inputs>.input {
+      display: none;
+    }
+
+    &__form-inputs>.input-text input {
+      @media (max-width: 740px) {
+        font-size: 24px;
       }
     }
 
-    &__form .btn {
-      margin-top: 28px;
+    &__form>.btn {
+      // margin-top: 28px;
 
       @media (max-width: 1140px) {
         margin-top: 0;
@@ -70,14 +76,6 @@
       @media (max-width: 740px) {
         font-size: 14px;
         padding: 16px 32px;
-      }
-    }
-
-    &__form .switch {
-      grid-column: 1 / 4;
-
-      @media (max-width: 940px) {
-        grid-column: auto;
       }
     }
 
@@ -93,4 +91,30 @@
         font-size: 20px;
       }
 		}
+
+    // State allow name
+    &.--search-name &__form-inputs {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      @media (max-width: 940px) {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+    &.--search-name &__form-inputs>.input-text {
+      display: none;
+    }
+    &.--search-name &__form-inputs>.input {
+      display: flex;
+    }
+    &.--search-name &__form-inputs>.switch {
+      grid-column: 1 / 4;
+
+      @media (max-width: 940px) {
+        grid-column: auto;
+      }
+    }
+    &.--search-name &__form>.btn {
+      margin-top: 28px;
+    }
 }
