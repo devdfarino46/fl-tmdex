@@ -35,4 +35,17 @@ body {
   color: #B4B4BB;
 }
 
+.label-data {
+  font-size: 14px;
+  line-height: 143%;
+  color: #19191D;
+  padding: 1px 5px 2px;
+  background: #F0F0F1;
+  border-radius: 4px;
+}
+
+.tooltip-link {
+  cursor: pointer;
+}
+
 @import 'blocks/*';

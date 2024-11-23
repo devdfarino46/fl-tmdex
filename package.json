@@ -13,6 +13,8 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+    "@types/jquery": "^3.5.32",
+    "@types/jquery-mask-plugin": "^1.14.6",
     "browser-sync": "^2.29.1",
     "css-loader": "^7.1.2",
     "gulp": "^4.0.2",
@@ -39,5 +41,9 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "jquery-mask-plugin": "^1.14.16"
   }
 }

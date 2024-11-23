@@ -14,11 +14,192 @@
     </nav>
 
     <main class="page">
+      <section class="section search">
+        <div class="search__container">
+          <h1 class="search__title">Поиск товарного знака по номеру документа</h1>
+          <p class="search__date">
+            Обновление базы:
+            <span class="label-data tooltip-link" data-tooltip-id="base">сегодня</span>
+          </p>
+      
+          <form action="#" class="search__form">
+            <div class="search__form-inputs">
+              <label class="input">
+                <p class="input__label">Заявка ФИПС</p>
+                <div class="input__wrapper">
+                  <input type="text" placeholder="№ 0000 0 00000" required data-mask="№ 0000 0 000000">
+                  <button type="button"><i class="icon-close"></i></button>
+                </div>
+                <p class="input__helper">Status</p>
+              </label>
+              <label class="input">
+                <p class="input__label">Свидетельство ФИПС</p>
+                <div class="input__wrapper">
+                  <input type="text" placeholder="№ 00000000" required data-mask="№ 00000000">
+                  <button type="button"><i class="icon-close"></i></button>
+                </div>
+                <p class="input__helper">Status</p>
+              </label>
+              <label class="input">
+                <p class="input__label">ИНН компании</p>
+                <div class="input__wrapper">
+                  <input type="text" placeholder="00 00 00000 0" required data-mask="00 00 00000 0">
+                  <button type="button"><i class="icon-close"></i></button>
+                </div>
+                <p class="input__helper">Status</p>
+              </label>
+              <label class="switch">
+                <div class="switch__wrapper">
+                  <input type="checkbox" name="title-allow" >
+                </div>
+                <p class="switch__label">Переключить на поиск по названию</p>
+              </label>
+            </div>
+      
+            <button type="submit" class="btn btn--lime btn--large">
+              <span>Найти</span>
+              <i class="icon-search"></i>
+            </button>
+          </form>
+      
+          <p class="search__subtitle">
+            Проверьте вероятность регистрации товарного знака в 
+            Роспатенте по актуальным базам и реестрам ФИПС
+          </p>
+        </div>
+      </section>
+
+      <!-- Card -->
+      <div class="container">
+        <div class="card">
+          <div class="card__image-wrap">
+            <img src="" alt="" data-src="img/ufimka.webp" class="lazyload">
+            <p>
+              <span>Заявка RU</span>
+              <i>№0000000000</i>
+            </p>
+          </div>
+
+          <div class="card__content">
+            <div class="card__specifs">
+              <p class="status">Регистрация</p>
+              <div class="card__specifs-icons">
+                <i class="icon-shield"></i>
+                <i class="icon-shield"></i>
+                <i class="icon-file-text"></i>
+                <i class="icon-file-text"></i>
+                <i class="icon-alert-triangle"></i>
+                <i class="icon-alert-triangle"></i>
+              </div>
+              <p class="card__date">
+                Приоритет: 
+                <b>18.11.2024</b>
+                <span class="label-data">1 день</span>
+              </p>
+            </div>
+            <div class="card__mktu-wrapper">
+              <div class="mktu-group">
+                <p class="mktu-group__label">
+                  <span>МКТУ товаров</span>
+                  <i class="icon-alert-question"></i>
+                </p>
+                <ul class="mktu-group__list">
+                  <div>
+                    <li class="mktu mktu">00 <span>Торговля розн21434654363645</span></li>
+                    <li class="mktu">00</li>
+                    <li class="mktu">00</li>
+                  </div>
+                  <button type="button" class="btn btn--secondary btn--small">
+                    <span>+25</span>
+                    <i class="icon-close"></i>
+                  </button>
+                </ul>
+              </div>
+              <div class="mktu-group">
+                <p class="mktu-group__label">
+                  <span>МКТУ товаров</span>
+                  <i class="icon-alert-question"></i>
+                </p>
+                <ul class="mktu-group__list">
+                  <div>
+                    <li class="mktu">00</li>
+                    <li class="mktu">00</li>
+                    <li class="mktu">00</li>
+                  </div>
+                  <button type="button" class="btn btn--secondary btn--small">
+                    <span>+25</span>
+                    <i class="icon-close"></i>
+                  </button>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card__company">
+              <p class="card__company-top">
+                Правообладатель: 
+                <span class="card__company-status">действует</span>
+                <span class="card__company-icons">
+                  <i class="icon-alert-triangle"></i>
+                  <i class="icon-alert-triangle"></i>
+                  <i class="icon-alert-triangle"></i>
+                </span>
+              </p>
+              <p class="card__company-info">
+                Общество с ограниченной ответственностью "НОВОВОРОНЕЖСКАЯ 
+                ПИВОВАРЕННАЯ КОМПАНИЯ "КАНЦЛЕРЪ", 394002, Воронежская 
+                область, г. Воронеж, ул. Урывского, 4А (RU)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notice -->
+      <div class="container">
+        <div class="notice">
+          <p class="notice__info">
+            <i class="icon-alert-circle"></i>
+            <span>
+              Мы нашли похожие товарные знаки, посмотрите их ниже. 
+              Вы так же можете отслеживать изменения по заявке, 
+              свидетельству и ИНН в нашем телеграм-боте — это удобно!
+            </span>
+          </p>
+          <a href="#" class="btn btn--lime btn--large">
+            <span>Telegram-bot tmdex</span>
+            <i class="icon-tg"></i>
+          </a>
+        </div>
+      </div>
+
       @@include('blocks/_advan-search.html')
       @@include('blocks/_form-main.html')
     </main>
 
     @@include('blocks/_footer.html')
+  </div>
+  
+  <div class="tooltip" id="tooltip-base">
+    <div class="tooltip__wrapper">
+      <p class="tooltip__title">
+        Обновление базы
+      </p>
+      <p class="tooltip__text">
+        Ежедневное обновление баз данных позволяет нашим клиентам 
+        быстро реагировать на любые изменения.
+      </p>
+      <ul class="tooltip__list-round">
+        <li>Товарные знаки РФ <span class="label-data">сегодня</span></li>
+        <li>Заявки РФ <span class="label-data">сегодня</span></li>
+        <li>Документооборот по заявкам РФ <span class="label-data">сегодня</span></li>
+        <li>Международные регистрации <span class="label-data">10.11.2024</span></li>
+        <li>ОТЗ РФ  <span class="label-data">1 день назад</span></li>
+        <li>НМПТ РФ <span class="label-data">1 день назад</span></li>
+      </ul>
+      <button type="button" class="tooltip__btn-ok btn">
+        <span>OK</span>
+      </button> 
+    </div>
   </div>
 </body>
 </html>

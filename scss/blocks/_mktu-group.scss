@@ -1,0 +1,50 @@
+.mktu-group {
+
+  &__label {
+    font-size: 14px;
+    line-height: 143%;
+    color: #787885;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__list {
+    gap: 5px;
+    display: flex;
+    align-items: flex-start;
+
+    &>div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 5px;
+    }
+
+
+    .btn {
+      position: relative;
+      font-size: 12px;
+      padding: 9px 10px;
+
+      span {
+        transition: .2s ease;
+      }
+
+      i {
+        position: absolute;
+        opacity: 0;
+        transform: scale(0);
+        transition: .2s ease;
+      }
+
+      &.--opened span {
+        opacity: 0;
+        transform: scale(0);
+      }
+      &.--opened i {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}

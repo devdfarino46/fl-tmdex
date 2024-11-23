@@ -18,10 +18,7 @@
 
   i {
     font-size: 1.3em;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: .2s ease;
+    color: inherit;
   }
 
   &:not(:has(span)) {
@@ -31,6 +28,15 @@
   &[disabled] {
     pointer-events: none;
     opacity: .3;
+  }
+
+  // Small
+  &--small {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  &--small:not(:has(span)) {
+    padding: 10px;
   }
 
   // Large

@@ -47,12 +47,11 @@
   
   &__wrapper button {
     cursor: inherit;
-    background-image: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 20px;
-    height: 20px;
+    font-size: 20px;
+
+    i::before {
+      content: '';
+    }
   }
 
   &__helper {
@@ -84,10 +83,16 @@
   // Type passwd
   &--passwd button {
     cursor: pointer;
-    background-image: url(../img/icons/eye-of.svg) !important;
+
+    i::before {
+      content: '\e80b';
+    }
   }
   &--passwd:has(input[type="password"]) button {
-    background-image: url(../img/icons/eye.svg) !important;
+    
+    i::before {
+      content: '\e800';
+    }
   }
 
   // State hover
@@ -117,9 +122,12 @@
   }
 
   // State clear-on
-  &.--clear-on button {
+  &.--clear-on:not(&--passwd) button {
     cursor: pointer;
-    background-image: url(../img/icons/close.svg);
+    
+    i::before {
+      content: '\e80c';
+    }
   }
 
   // State normal 
@@ -132,7 +140,11 @@
     border-color: #43A047;
   }
   &[data-status="success"] button {
-    background-image: url(../img/icons/check-circle.svg);
+    color: #43A047;
+    
+    i::before {
+      content: '\e80a';
+    }
   }
   &[data-status="success"] &__helper {
     display: block;
@@ -144,7 +156,11 @@
     border-color: #F44336;
   }
   &[data-status="error"] button {
-    background-image: url(../img/icons/alert-triangle.svg);
+    color: #F44336;
+
+    i::before {
+      content: '\e808';
+    }
   }
   &[data-status="error"] &__helper {
     display: block;
