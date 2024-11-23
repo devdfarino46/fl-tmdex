@@ -19,7 +19,7 @@
           <h1 class="search__title">Поиск товарного знака по номеру документа</h1>
           <p class="search__date">
             Обновление базы:
-            <span class="label-data tooltip-link" data-tooltip-id="base">сегодня</span>
+            <a href="#popup-base" class="label-data popup-link">сегодня</a>
           </p>
       
           <form action="#" class="search__form">
@@ -185,16 +185,16 @@
     @@include('blocks/_footer.html')
   </div>
   
-  <div class="tooltip" id="tooltip-base">
-    <div class="tooltip__wrapper">
-      <p class="tooltip__title">
+  <div class="popup" id="popup-base">
+    <div class="popup__wrapper">
+      <p class="popup__title">
         Обновление базы
       </p>
-      <p class="tooltip__text">
+      <p class="popup__text">
         Ежедневное обновление баз данных позволяет нашим клиентам 
         быстро реагировать на любые изменения.
       </p>
-      <ul class="tooltip__list-round">
+      <ul class="popup__list-round">
         <li>Товарные знаки РФ <span class="label-data">сегодня</span></li>
         <li>Заявки РФ <span class="label-data">сегодня</span></li>
         <li>Документооборот по заявкам РФ <span class="label-data">сегодня</span></li>
@@ -202,7 +202,7 @@
         <li>ОТЗ РФ  <span class="label-data">1 день назад</span></li>
         <li>НМПТ РФ <span class="label-data">1 день назад</span></li>
       </ul>
-      <button type="button" class="tooltip__btn-ok btn">
+      <button type="button" class="popup__btn-ok btn">
         <span>OK</span>
       </button> 
     </div>

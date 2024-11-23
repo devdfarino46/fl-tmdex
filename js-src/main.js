@@ -8,56 +8,19 @@ const inputsText = document.querySelectorAll('.input-text');
 const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
 
-const tooltipLinks = document.querySelectorAll('.tooltip-link');
+const popupLinks = document.querySelectorAll('.popup-link');
 
-tooltipLinks.forEach( link => {
-  const id = link.dataset.tooltipId;
-  const tooltip = document.querySelector('#tooltip-'+id);
+popupLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const popup = document.querySelector(link.getAttribute('href'));
+    const btnOk = popup.querySelector('.popup__btn-ok');
 
-  const show = () => {
-    const rect = link.getBoundingClientRect();
+    popup.classList.add('--visibled');
 
-    tooltip.classList.add('--visibled');
-    document.body.classList.add('no-scroll');
-
-    tooltip.style.top = `${ rect.bottom }px`;
-
-    if (window.innerWidth > 740) {
-      if (rect.left < window.innerWidth / 2) {
-        tooltip.style.right = 'auto';
-        tooltip.style.left = `${ rect.left }px`;
-      } else {
-        tooltip.style.left = 'auto';
-        tooltip.style.right = `${ window.innerWidth - rect.right }px`;
-      }
-    }
-  }
-
-  const hide = () => {
-    tooltip.classList.remove('--visibled');
-    document.body.classList.remove('no-scroll');
-  }
-
-  document.addEventListener('click', (ev) => {
-    const btnOk = tooltip.querySelector('.tooltip__btn-ok');
-
-    if (ev.composedPath().includes(tooltip) || ev.composedPath().includes(link)) {
-      show();
-      if (ev.composedPath().includes(btnOk)) {
-        hide();
-      }
-    } else {
-      hide();
-    }
-  });
-
-  document.addEventListener('mousemove', (ev) => {
-    if (ev.composedPath().includes(tooltip) || ev.composedPath().includes(link)) {
-      show();
-    } else {
-      hide();
-    }
-  });
+    btnOk.addEventListener('click', () => {
+      popup.classList.remove('--visibled');
+    })
+  })
 });
 
 if (menuBtn) {
@@ -146,20 +109,18 @@ if (search) {
       // Set mask inputs
       $(inputElem).mask(inputElem.dataset.mask);
 
+      // Disable inputs
       const disableInputs = () => {
         inputs.forEach((input1, index1) => {
           const inputElem1 = input1.querySelector('.input__wrapper input');
 
           if (inputElem.value.length > 0) {
-
-            
             if (index !== index1) inputElem1.disabled = true;
           } else {
             inputElem1.disabled = false;
           }
         });
       }
-
       inputElem.addEventListener('input', disableInputs);
       btn.addEventListener('click', disableInputs);
     });
