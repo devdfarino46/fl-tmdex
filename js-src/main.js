@@ -9,6 +9,8 @@ const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
 
 const popupLinks = document.querySelectorAll('.popup-link');
+const tooltipLinks = document.querySelectorAll('.tooltip-link');
+const mktuGroups = document.querySelectorAll('.mktu-group');
 
 popupLinks.forEach(link => {
   link.addEventListener('click', (e) => {
@@ -16,11 +18,68 @@ popupLinks.forEach(link => {
     const btnOk = popup.querySelector('.popup__btn-ok');
 
     popup.classList.add('--visibled');
+    document.body.classList.add('no-scroll');
 
     btnOk.addEventListener('click', () => {
       popup.classList.remove('--visibled');
+      document.body.classList.remove('no-scroll');
     })
   })
+});
+
+tooltipLinks.forEach(link => {
+  const tooltip = document.querySelector(link.getAttribute('data-href'));
+
+  link.addEventListener('mouseenter', (e) => {
+    const rect = tooltip.getBoundingClientRect();
+    tooltip.style.top = `${e.clientY - 5}px`;
+
+    if (window.innerWidth >= 700) {
+      if (e.clientX < 450) {
+        tooltip.style.left = `${e.clientX - 20}px`;
+      } else {
+        tooltip.style.left = `${e.clientX - rect.width + 20}px`;
+      }
+    } else {
+      tooltip.style.left = `0`;
+      tooltip.style.right = `0`;
+    }
+
+    tooltip.classList.add('--visibled');
+  });
+  tooltip.addEventListener('mouseleave', (e) => {
+      document.querySelectorAll('.tooltip').forEach(t => t.classList.remove('--visibled'));
+  });
+});
+
+mktuGroups.forEach(group => {
+  const btn = group.querySelector('.mktu-group .btn');
+  const list = group.querySelector('.mktu-group__list div');
+  const mktus = group.querySelectorAll('.mktu');
+
+  const hide = () => {
+    let count = 0;
+    mktus.forEach((mktu, index) => {
+      let listRight = list.getBoundingClientRect().right;
+      let mktuRight = mktu.getBoundingClientRect().right;
+  
+      if (mktuRight > listRight - 40) {
+        btn.classList.remove('--hidden');
+        mktu.classList.add('--hidden');
+        count += 1;
+        btn.querySelector('span').textContent = `+${count}`;
+        return;
+      } else {
+        btn.classList.add('--hidden');
+      }
+    });
+  };
+
+  btn.addEventListener('click', ev => {
+    group.classList.toggle('--opened');
+  });
+
+  window.addEventListener('load', hide);
 });
 
 if (menuBtn) {
@@ -74,7 +133,7 @@ inputs.forEach((input) => {
       inputElem.value = '';
     }
   });
-})
+});
 
 inputsText.forEach(input => {
   const inputElem = input.querySelector('input');
@@ -127,10 +186,8 @@ if (search) {
 
     switchElem.addEventListener('input', ev => {
       if (switchElem.checked) {
-        search.classList.add('--search-name');
         switchLabel.textContent = 'Переключить на поиск по названию';
       } else {
-        search.classList.remove('--search-name');
         switchLabel.textContent = 'Поиск по заявке, свидетельству, ИНН';
       }
     });

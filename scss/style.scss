@@ -55,6 +55,7 @@ body {
 
 .label-data {
   font-size: 14px;
+  font-weight: 400;
   line-height: 143%;
   color: #19191D;
   padding: 1px 5px 2px;
@@ -62,8 +63,7 @@ body {
   border-radius: 4px;
 }
 
-.tooltip-link {
-  cursor: pointer;
-}
+.popup-link { cursor: pointer; }
+.tooltip-link { cursor: pointer; }
 
 @import 'blocks/*';

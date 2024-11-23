@@ -93,28 +93,35 @@
 		}
 
     // State allow name
-    &.--search-name &__form-inputs {
+    &:has(.search__switch-input:checked) &__form-inputs {
       grid-template-columns: 1fr 1fr 1fr;
 
       @media (max-width: 940px) {
         grid-template-columns: 1fr;
         gap: 10px;
       }
-    }
-    &.--search-name &__form-inputs>.input-text {
-      display: none;
-    }
-    &.--search-name &__form-inputs>.input {
-      display: flex;
-    }
-    &.--search-name &__form-inputs>.switch {
-      grid-column: 1 / 4;
 
-      @media (max-width: 940px) {
-        grid-column: auto;
+      .input-text {
+        display: none;
+      }
+
+      .input {
+        display: flex;
+      }
+
+      .switch {
+        grid-column: 1 / 4;
+  
+        @media (max-width: 940px) {
+          grid-column: auto;
+        }
       }
     }
-    &.--search-name &__form>.btn {
+    &:has(.search__switch-input:checked) &__form>.btn {
       margin-top: 28px;
+
+      @media (max-width: 1140px) {
+        margin-top: 0;
+      }
     }
 }
