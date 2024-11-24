@@ -16,7 +16,7 @@
     <main class="page">
       <section class="section search">
         <div class="search__container">
-          <h1 class="search__title">Результат проверки <br>по заявке</h1>
+          <h1 class="search__title">Результат проверки <br>по ИНН</h1>
           <p class="search__date">
             Обновление базы:
             <a href="#popup-base" class="label-data popup-link">сегодня</a>
@@ -27,7 +27,42 @@
           <div class="report">
             <p class="report__title">Что удалось найти:</p>
 
-            @@include('blocks/cards/_app.html')
+            <div class="report__accordeons">
+              @@include('blocks/cards/_company.html')
+
+              <div type="button" class="accordeon" data-count="14">
+                <p>Заявки компании <b>14</b></p>
+                <button type="button" class="btn btn--secondary btn--small">
+                  <i class="icon-plus"></i>
+                  <i class="icon-close"></i>
+                </button>
+              </div>
+              <div class="report__cards">
+                @@include('blocks/cards/_app.html')
+                @@include('blocks/cards/_app.html')
+                @@include('blocks/cards/_app.html')
+                @@include('blocks/cards/_app.html')
+                @@include('blocks/cards/_app.html')
+                @@include('blocks/cards/_app.html')
+
+                <button type="button" class="report__load-btn btn btn--secondary btn--small">
+                  <span>Загрузить ещё</span>
+                  <i class="icon-plus"></i>
+                </button>
+              </div>
+              <div type="button" class="accordeon" data-count="14">
+                <p>Свидетельства компании <b>3</b></p>
+                <button type="button" class="btn btn--secondary btn--small">
+                  <i class="icon-plus"></i>
+                  <i class="icon-close"></i>
+                </button>
+              </div>
+              <div class="report__cards">
+                @@include('blocks/cards/_certif.html')
+                @@include('blocks/cards/_certif.html')
+                @@include('blocks/cards/_certif.html')
+              </div>
+            </div>
 
             <div class="notice">
               <p class="notice__info">
@@ -57,11 +92,11 @@
               <span>Свидетельства</span>
               <b>32</b>
             </button>
-            <button type="button" class="tab-btn --active" data-tab="apps" data-count="32">
+            <button type="button" class="tab-btn" data-tab="apps" data-count="32">
               <span>Заявки</span>
               <b>32</b>
             </button>
-            <button type="button" class="tab-btn" data-tab="companies" data-count="7">
+            <button type="button" class="tab-btn --active" data-tab="companies" data-count="7">
               <span>Компании</span>
               <b>7</b>
             </button>
@@ -73,8 +108,8 @@
 
           <!-- Tab -->
           @@include('blocks/result/tabs/_certifs.html', {class: ''})
-          @@include('blocks/result/tabs/_apps.html', {class: '--active'})
-          @@include('blocks/result/tabs/_companies.html', {class: ''})
+          @@include('blocks/result/tabs/_apps.html', {class: ''})
+          @@include('blocks/result/tabs/_companies.html', {class: '--active'})
           <div class="result__tab" data-tab="domens"></div> <!-- Tab Domens no design -->
 
           <div class="notice">

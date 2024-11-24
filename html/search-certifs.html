@@ -16,7 +16,7 @@
     <main class="page">
       <section class="section search">
         <div class="search__container">
-          <h1 class="search__title">Результат проверки <br>по заявке</h1>
+          <h1 class="search__title">Результат проверки <br>по свидетельству</h1>
           <p class="search__date">
             Обновление базы:
             <a href="#popup-base" class="label-data popup-link">сегодня</a>
@@ -27,7 +27,7 @@
           <div class="report">
             <p class="report__title">Что удалось найти:</p>
 
-            @@include('blocks/cards/_app.html')
+            @@include('blocks/cards/_certif.html')
 
             <div class="notice">
               <p class="notice__info">
@@ -53,11 +53,11 @@
 
           <!-- Tabs -->
           <div class="result__tabs">
-            <button type="button" class="tab-btn" data-tab="certifs" data-count="32">
+            <button type="button" class="tab-btn --active" data-tab="certifs" data-count="32">
               <span>Свидетельства</span>
               <b>32</b>
             </button>
-            <button type="button" class="tab-btn --active" data-tab="apps" data-count="32">
+            <button type="button" class="tab-btn" data-tab="apps" data-count="32">
               <span>Заявки</span>
               <b>32</b>
             </button>
@@ -72,8 +72,8 @@
           </div>
 
           <!-- Tab -->
-          @@include('blocks/result/tabs/_certifs.html', {class: ''})
-          @@include('blocks/result/tabs/_apps.html', {class: '--active'})
+          @@include('blocks/result/tabs/_certifs.html', {class: '--active'})
+          @@include('blocks/result/tabs/_apps.html', {class: ''})
           @@include('blocks/result/tabs/_companies.html', {class: ''})
           <div class="result__tab" data-tab="domens"></div> <!-- Tab Domens no design -->
 

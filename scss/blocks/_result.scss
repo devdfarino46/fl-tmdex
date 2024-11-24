@@ -1,6 +1,12 @@
 .result {
 
-  &__container {}
+  &__container {
+
+  }
+
+  .notice {
+    margin-bottom: 15px;
+  }
 
   &__title {
     font-size: 34px;
@@ -55,6 +61,7 @@
 
     @media (max-width: 740px) {
       grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
 
       .card {
         grid-template-columns: 1fr;
@@ -78,5 +85,13 @@
     align-self: center;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  // State disabled
+  &[disabled], &[data-count="0"] {
+    
+  }
+  &__tab[data-count="0"] &__filters {
+    display: none;
   }
 }

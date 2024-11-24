@@ -1,10 +1,9 @@
-<div class="result__tab @@class" data-tab="companies" data-count="100">
-  @@include('../filters/_companies.html')
+<div class="result__tab --active" data-tab="no-cards" data-count="0">
 
   <hr>
 
   <!-- Accordeon Точно такие же -->
-  <div type="button" class="accordeon --active" data-count="4">
+  <div type="button" class="accordeon" data-count="0">
     <p>Точно такие же <b>4</b></p>
     <button type="button" class="btn btn--secondary btn--small">
       <i class="icon-plus"></i>
@@ -12,21 +11,11 @@
     </button>
   </div>
   <div class="result__cards">
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-
-    <button type="button" class="result__load-btn btn btn--secondary btn--small">
-      <span>Загрузить ещё</span>
-      <i class="icon-plus"></i>
-    </button>
+    
   </div>
 
   <!-- Accordeon Совпадающие -->
-  <div type="button" class="accordeon" data-count="53">
+  <div type="button" class="accordeon" data-count="0">
     <p>Совпадающие <b>53</b></p>
     <button type="button" class="btn btn--secondary btn--small">
       <i class="icon-plus"></i>
@@ -34,13 +23,10 @@
     </button>
   </div>
   <div class="result__cards">
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
   </div>
 
   <!-- Accordeon Фонетически совпадающие -->
-  <div type="button" class="accordeon" data-count="32">
+  <div type="button" class="accordeon" data-count="0">
     <p>Фонетически совпадающие <b>32</b></p>
     <button type="button" class="btn btn--secondary btn--small">
       <i class="icon-plus"></i>
@@ -48,13 +34,10 @@
     </button>
   </div>
   <div class="result__cards">
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
   </div>
 
   <!-- Accordeon Сходные по леммам -->
-  <div type="button" class="accordeon" data-count="65">
+  <div type="button" class="accordeon" data-count="0">
     <p>Сходные по леммам <b>12</b></p>
     <button type="button" class="btn btn--secondary btn--small">
       <i class="icon-plus"></i>
@@ -62,8 +45,5 @@
     </button>
   </div>
   <div class="result__cards">
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
-    @@include('../../cards/_company.html')
   </div>
 </div>

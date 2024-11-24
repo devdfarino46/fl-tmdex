@@ -47,35 +47,35 @@
         </div>
       </section>
 
-      <section class="section result" data-count="100">
+      <section class="section result" data-count="0">
         <div class="result__container">
           <h2 class="result__title">Потенциальные угрозы</h2>
 
           <!-- Tabs -->
           <div class="result__tabs">
-            <button type="button" class="tab-btn" data-tab="certifs" data-count="32">
+            <button type="button" class="tab-btn" data-tab="no-cards" data-count="0">
               <span>Свидетельства</span>
               <b>32</b>
             </button>
-            <button type="button" class="tab-btn --active" data-tab="apps" data-count="32">
+            <button type="button" class="tab-btn" data-tab="no-cards2" data-count="0">
               <span>Заявки</span>
               <b>32</b>
             </button>
-            <button type="button" class="tab-btn" data-tab="companies" data-count="7">
+            <button type="button" class="tab-btn" data-tab="no-cards3" data-count="0">
               <span>Компании</span>
               <b>7</b>
             </button>
-            <button type="button" class="tab-btn" data-tab="domens" data-count="0">
+            <button type="button" class="tab-btn" data-tab="no-cards4" data-count="0">
               <span>Домены</span>
               <b>0</b>
             </button>
           </div>
 
           <!-- Tab -->
-          @@include('blocks/result/tabs/_certifs.html', {class: ''})
-          @@include('blocks/result/tabs/_apps.html', {class: '--active'})
-          @@include('blocks/result/tabs/_companies.html', {class: ''})
-          <div class="result__tab" data-tab="domens"></div> <!-- Tab Domens no design -->
+          @@include('blocks/result/tabs/_no-cards.html')
+          <div class="result__tab" data-tab="no-cards2" data-count="0"></div>
+          <div class="result__tab" data-tab="no-cards3" data-count="0"></div>
+          <div class="result__tab" data-tab="no-cards4" data-count="0"></div>
 
           <div class="notice">
             <p class="notice__info">
