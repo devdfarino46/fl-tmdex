@@ -51,11 +51,27 @@
 
   &__tab &__cards {
     display: none;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+
+    @media (max-width: 740px) {
+      grid-template-columns: 1fr 1fr;
+
+      .card {
+        grid-template-columns: 1fr;
+
+        &__company-coll:not(.--main) {
+          display: none;
+        }
+
+        &__mktu-wrapper.--okved {
+          display: none !important;
+        }
+      }
+    }
   }
 
   &__tab .accordeon.--active + &__cards {
-    display: flex;
+    display: grid;
   }
 
   &__load-btn {

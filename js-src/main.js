@@ -108,13 +108,15 @@ accordeons.forEach((accordeon, index) => {
   const parent = accordeon.parentElement;
 
   btn.addEventListener('click', ev => {
-    accordeons.forEach((accordeon1, index1) => {
-      if (index !== index1) {
-        if (parent === accordeon1.parentElement) accordeon1.classList.remove('--active');
-      } else {
-        accordeon1.classList.toggle('--active');
-      }
-    })
+    accordeon.classList.toggle('--active');
+
+    // accordeons.forEach((accordeon1, index1) => {
+    //   if (index !== index1) {
+    //     if (parent === accordeon1.parentElement) accordeon1.classList.remove('--active');
+    //   } else {
+    //     accordeon1.classList.toggle('--active');
+    //   }
+    // })
   });
 })
 

@@ -69,6 +69,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media (max-width: 740px) {
+      gap: 10px;
+    }
   }
 
   &__specifs {
@@ -145,6 +149,15 @@
     }
   }
 
+  &__mktu-wrapper.--okved {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (max-width: 740px) {
+      display: grid;
+    }
+  }
+
   &__company {
     display: flex;
     flex-direction: column;
@@ -188,6 +201,51 @@
     color: #19191D;
   }
 
+  &__company-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto auto;
+    gap: 10px 30px;
+
+    @media (max-width: 940px) {
+      column-gap: 20px;
+    }
+
+    @media (max-width: 740px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__company-coll {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__company-label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #787885;
+  }
+
+  &__company-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #19191D;
+  }
+
+  // Certif
+  &--certif &__specifs &__date:not(.--main) {
+    display: none;
+  }
+
+  // Company
+  &--company {
+    gap: 0;
+  }
+
+  // State hover
   @media (any-hover: hover) {
     &:hover {
       background: #F0F0F1;

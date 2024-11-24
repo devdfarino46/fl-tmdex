@@ -28,6 +28,8 @@
             <p class="report__title">Что удалось найти:</p>
 
             @@include('blocks/cards/_app.html')
+            @@include('blocks/cards/_certif.html')
+            @@include('blocks/cards/_company.html')
 
             <div class="notice">
               <p class="notice__info">
@@ -74,6 +76,7 @@
           <!-- Tab -->
           @@include('blocks/result/tabs/_certifs.html')
           @@include('blocks/result/tabs/_apps.html')
+          @@include('blocks/result/tabs/_companies.html')
           <div class="result__tab" data-tab="domens"></div> <!-- Tab Domens no design -->
 
           <div class="notice">
@@ -124,6 +127,12 @@
 
   @@include('blocks/tooltips/_mktu.html')
   @@include('blocks/tooltips/_mktu-legend.html')
+  @@include('blocks/tooltips/_okved.html')
+  <div class="tooltip" id="tooltip-okved-legend">
+    <div class="tooltip__wrapper">
+      <p class="tooltip__title">No design</p>
+    </div>
+  </div>
 
   
 </body>
