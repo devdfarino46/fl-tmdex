@@ -4,13 +4,15 @@ require('jquery-mask-plugin');
 const menuBtn = document.querySelector('.btn--menu');
 const inputs = document.querySelectorAll('.input');
 const inputsText = document.querySelectorAll('.input-text');
-
-const formMain = document.querySelector('.form-main');
-const search = document.querySelector('.search');
+const mktuGroups = document.querySelectorAll('.mktu-group');
+const accordeons = document.querySelectorAll('.accordeon');
 
 const popupLinks = document.querySelectorAll('.popup-link');
 const tooltipLinks = document.querySelectorAll('.tooltip-link');
-const mktuGroups = document.querySelectorAll('.mktu-group');
+
+const formMain = document.querySelector('.form-main');
+const search = document.querySelector('.search');
+const result = document.querySelector('.result');
 
 popupLinks.forEach(link => {
   link.addEventListener('click', (e) => {
@@ -30,25 +32,43 @@ popupLinks.forEach(link => {
 tooltipLinks.forEach(link => {
   const tooltip = document.querySelector(link.getAttribute('data-href'));
 
-  link.addEventListener('mouseenter', (e) => {
-    const rect = tooltip.getBoundingClientRect();
-    tooltip.style.top = `${e.clientY - 5}px`;
+  let timer;
 
-    if (window.innerWidth >= 700) {
-      if (e.clientX < 450) {
-        tooltip.style.left = `${e.clientX - 20}px`;
+  const show = (e) => {
+    timer = setTimeout(() => {
+      const rect = tooltip.getBoundingClientRect();
+      tooltip.style.top = `${e.clientY - 5}px`;
+  
+      if (window.innerWidth >= 700) {
+        if (e.clientX < 450) {
+          tooltip.style.left = `${e.clientX - 20}px`;
+        } else {
+          tooltip.style.left = `${e.clientX - rect.width + 20}px`;
+        }
       } else {
-        tooltip.style.left = `${e.clientX - rect.width + 20}px`;
+        tooltip.style.left = `0`;
+        tooltip.style.right = `0`;
       }
-    } else {
-      tooltip.style.left = `0`;
-      tooltip.style.right = `0`;
-    }
+      tooltip.classList.add('--visibled');
+    }, 400);
+  }
 
-    tooltip.classList.add('--visibled');
-  });
+  link.addEventListener('mouseenter', (e) => show(e));
   tooltip.addEventListener('mouseleave', (e) => {
       document.querySelectorAll('.tooltip').forEach(t => t.classList.remove('--visibled'));
+  });
+  link.addEventListener('mouseleave', () => {
+    clearTimeout(timer);
+  });
+
+  link.addEventListener('touchend', (e) =>  show(e));
+  document.addEventListener('touchend', (e) => {
+    if (!e.composedPath().includes(
+      document.querySelector('.tooltip.--visibled')
+    )) {
+      clearTimeout(timer);
+      document.querySelectorAll('.tooltip').forEach(t => t.classList.remove('--visibled'));
+    }
   });
 });
 
@@ -63,14 +83,14 @@ mktuGroups.forEach(group => {
       let listRight = list.getBoundingClientRect().right;
       let mktuRight = mktu.getBoundingClientRect().right;
   
-      if (mktuRight > listRight - 40) {
+      if (mktuRight > listRight) {
         btn.classList.remove('--hidden');
         mktu.classList.add('--hidden');
         count += 1;
         btn.querySelector('span').textContent = `+${count}`;
         return;
       } else {
-        btn.classList.add('--hidden');
+        if (!group.classList.contains('--opened')) btn.classList.add('--hidden');
       }
     });
   };
@@ -80,7 +100,23 @@ mktuGroups.forEach(group => {
   });
 
   window.addEventListener('load', hide);
+  setInterval(hide, 2000);
 });
+
+accordeons.forEach((accordeon, index) => {
+  const btn = accordeon.querySelector('.btn');
+  const parent = accordeon.parentElement;
+
+  btn.addEventListener('click', ev => {
+    accordeons.forEach((accordeon1, index1) => {
+      if (index !== index1) {
+        if (parent === accordeon1.parentElement) accordeon1.classList.remove('--active');
+      } else {
+        accordeon1.classList.toggle('--active');
+      }
+    })
+  });
+})
 
 if (menuBtn) {
   menuBtn.addEventListener('click', () => {
@@ -196,4 +232,26 @@ if (search) {
       e.preventDefault();
     });
   }
+}
+
+if (result) {
+  const tabBtns = result.querySelectorAll('.result__tabs .tab-btn');
+  const tabs = result.querySelectorAll('.result__tab');
+
+  tabBtns.forEach((tabBtn, index) => {
+    tabBtn.addEventListener('click', () => {
+      tabBtns.forEach((el) => {
+        el.classList.remove('--active');
+      });
+      tabBtn.classList.add('--active');
+
+      tabs.forEach((el) => {
+        el.classList.remove('--active');
+
+        if (el.dataset.tab === tabBtn.dataset.tab) {
+          el.classList.add('--active');
+        }
+      });
+    });
+  });
 }

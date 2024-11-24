@@ -1,0 +1,45 @@
+<form action="#" class="search__form">
+  <div class="search__form-inputs">
+    <label class="input-text">
+      <input type="text" placeholder="Введите название или товарный знак" required>
+      <button type="button" class="btn btn--secondary btn--small">
+        <i class="icon-close"></i>
+      </button>
+    </label>
+    <label class="input">
+      <p class="input__label">Заявка ФИПС</p>
+      <div class="input__wrapper">
+        <input type="text" placeholder="№ 0000 0 00000" required data-mask="№ 0000 0 000000">
+        <button type="button"><i class="icon-close"></i></button>
+      </div>
+      <p class="input__helper">Status</p>
+    </label>
+    <label class="input">
+      <p class="input__label">Свидетельство ФИПС</p>
+      <div class="input__wrapper">
+        <input type="text" placeholder="№ 00000000" required data-mask="№ 00000000">
+        <button type="button"><i class="icon-close"></i></button>
+      </div>
+      <p class="input__helper">Status</p>
+    </label>
+    <label class="input">
+      <p class="input__label">ИНН компании</p>
+      <div class="input__wrapper">
+        <input type="text" placeholder="00 00 00000 0" required data-mask="00 00 00000 0">
+        <button type="button"><i class="icon-close"></i></button>
+      </div>
+      <p class="input__helper">Status</p>
+    </label>
+    <label class="switch">
+      <div class="switch__wrapper">
+        <input type="checkbox" name="title-allow" class="search__switch-input" checked>
+      </div>
+      <p class="switch__label">Поиск по заявке, свидетельству, ИНН</p>
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn--lime btn--large">
+    <span>Найти</span>
+    <i class="icon-search"></i>
+  </button>
+</form>

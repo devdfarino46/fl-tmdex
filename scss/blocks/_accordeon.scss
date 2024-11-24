@@ -1,0 +1,58 @@
+.accordeon {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid #D2D2D6;
+   
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 125%;
+    color: #19191D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    b {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: #787885;
+    }
+  }
+
+  .btn {
+    position: relative;
+  }
+
+  .btn i {
+    transition: .2s ease;
+  }
+
+  .btn .icon-close {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  // State disabled
+  &[disabled], &[data-count="0"] {
+    pointer-events: none;
+    opacity: .3;
+  }
+
+  // State active
+  &.--active {
+    border-bottom: none;
+  }
+  &.--active .btn .icon-close {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &.--active .btn .icon-plus {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
