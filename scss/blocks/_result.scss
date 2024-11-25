@@ -53,6 +53,13 @@
       border: none;
       border-bottom: 1px solid #D2D2D6;
     }
+
+    &[data-count="0"] {
+      margin-top: -1px;
+      hr {
+        opacity: .3;
+      }
+    }
   }
 
   &__tab &__cards {
@@ -65,10 +72,6 @@
 
       .card {
         grid-template-columns: 1fr;
-
-        &__company-coll:not(.--main) {
-          display: none;
-        }
 
         &__mktu-wrapper.--okved {
           display: none !important;

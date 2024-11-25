@@ -21,10 +21,14 @@
       display: flex;
       overflow: hidden;
       gap: 10px 5px;
+      padding-bottom: 4px;
+      padding-right: 4px;
+      margin-bottom: -4px;
+      margin-right: -4px;
     }
 
     &>div .mktu.--hidden {
-      // display: none;
+      opacity: 0;
     }
 
     .btn {
@@ -49,7 +53,7 @@
   }
 
   &.--opened &__list>div .mktu.--hidden {
-    display: flex;
+    opacity: 1;
   }
   &.--opened &__list>div {
     flex-wrap: wrap;

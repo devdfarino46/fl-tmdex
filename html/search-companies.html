@@ -24,11 +24,11 @@
 
           @@include('blocks/search/__form.html')
 
-          <div class="report">
+          <div class="report report--company">
             <p class="report__title">Что удалось найти:</p>
 
+            @@include('blocks/cards/_company.html')
             <div class="report__accordeons">
-              @@include('blocks/cards/_company.html')
 
               <div type="button" class="accordeon" data-count="14">
                 <p>Заявки компании <b>14</b></p>

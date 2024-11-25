@@ -212,7 +212,7 @@
     }
 
     @media (max-width: 740px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -220,6 +220,12 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    grid-column: 1 / 3;
+
+    &:not(.--main) {
+      display: none;
+      grid-column: auto;
+    }
   }
 
   &__company-label {
@@ -247,6 +253,17 @@
   // Company
   &--company {
     gap: 0;
+  }
+  &--company &__specifs {
+    flex-direction: row;
+    align-items: center;
+
+    &>*:not(.status) {
+      display: none;
+    }
+  }
+  &--company &__icons {
+    display: flex;
   }
 
   // State hover

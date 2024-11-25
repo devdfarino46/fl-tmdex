@@ -9,6 +9,7 @@ const accordeons = document.querySelectorAll('.accordeon');
 
 const popupLinks = document.querySelectorAll('.popup-link');
 const tooltipLinks = document.querySelectorAll('.tooltip-link');
+const tooltips = document.querySelectorAll('.tooltip');
 
 const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
@@ -50,26 +51,31 @@ tooltipLinks.forEach(link => {
         tooltip.style.right = `0`;
       }
       tooltip.classList.add('--visibled');
-    }, 400);
+    }, 100);
   }
 
   link.addEventListener('mouseenter', (e) => show(e));
   tooltip.addEventListener('mouseleave', (e) => {
-      document.querySelectorAll('.tooltip').forEach(t => t.classList.remove('--visibled'));
+      tooltips.forEach(t => t.classList.remove('--visibled'));
   });
-  link.addEventListener('mouseleave', () => {
+  link.addEventListener('mouseleave', (e) => {
     clearTimeout(timer);
   });
 
   link.addEventListener('touchend', (e) =>  show(e));
   document.addEventListener('touchend', (e) => {
-    if (!e.composedPath().includes(
-      document.querySelector('.tooltip.--visibled')
-    )) {
-      clearTimeout(timer);
-      document.querySelectorAll('.tooltip').forEach(t => t.classList.remove('--visibled'));
-    }
+    tooltips.forEach(t => {
+      if (!e.composedPath().includes(t)) {
+        t.classList.remove('--visibled');
+      } else {
+        t.classList.add('--visibled');
+      }
+    });
   });
+
+  window.addEventListener('scroll', () => {
+    tooltips.forEach(t => t.classList.remove('--visibled'));
+  })
 });
 
 mktuGroups.forEach(group => {
@@ -78,21 +84,27 @@ mktuGroups.forEach(group => {
   const mktus = group.querySelectorAll('.mktu');
 
   const hide = () => {
-    let count = 0;
-    mktus.forEach((mktu, index) => {
-      let listRight = list.getBoundingClientRect().right;
-      let mktuRight = mktu.getBoundingClientRect().right;
-  
-      if (mktuRight > listRight) {
-        btn.classList.remove('--hidden');
-        mktu.classList.add('--hidden');
-        count += 1;
-        btn.querySelector('span').textContent = `+${count}`;
-        return;
-      } else {
-        if (!group.classList.contains('--opened')) btn.classList.add('--hidden');
-      }
-    });
+    let groupRect = group.getBoundingClientRect();
+    if (groupRect.top >= -100 && groupRect.bottom <= window.innerHeight + 100) {
+      let count = 0;
+      mktus.forEach((mktu, index) => {
+        let listRight = list.getBoundingClientRect().right;
+        let mktuRight = mktu.getBoundingClientRect().right;
+    
+        if (mktuRight > listRight - 51) {
+          btn.classList.remove('--hidden');
+          mktu.classList.add('--hidden');
+          count += 1;
+          btn.querySelector('span').textContent = `+${count}`;
+          return;
+        } else {
+          mktu.classList.remove('--hidden');
+          if (!group.classList.contains('--opened')) {
+            btn.classList.add('--hidden');
+          }
+        }
+      });
+    }
   };
 
   btn.addEventListener('click', ev => {
@@ -104,10 +116,8 @@ mktuGroups.forEach(group => {
 });
 
 accordeons.forEach((accordeon, index) => {
-  const btn = accordeon.querySelector('.btn');
-  const parent = accordeon.parentElement;
 
-  btn.addEventListener('click', ev => {
+  accordeon.addEventListener('click', ev => {
     accordeon.classList.toggle('--active');
 
     // accordeons.forEach((accordeon1, index1) => {

@@ -21,6 +21,7 @@
   &:disabled, &[data-count="0"] {
     pointer-events: none;
     opacity: .3;
+    border-color: transparent;
   }
 
   // State hover
