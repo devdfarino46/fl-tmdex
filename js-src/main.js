@@ -91,7 +91,7 @@ mktuGroups.forEach(group => {
         let listRight = list.getBoundingClientRect().right;
         let mktuRight = mktu.getBoundingClientRect().right;
     
-        if (mktuRight > listRight - 51) {
+        if (mktuRight > listRight) {
           btn.classList.remove('--hidden');
           mktu.classList.add('--hidden');
           count += 1;
