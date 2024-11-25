@@ -39,9 +39,17 @@
     color: #19191D;
   }
 
+  &__title + .card {
+    border-bottom: 1px solid #D2D2D6;
+  }
+
   &__accordeons {
     display: flex;
     flex-direction: column;
+
+    .card {
+      border-bottom: 1px solid #D2D2D6;
+    }
   }
 
   &__cards {
@@ -64,6 +72,10 @@
   &__load-btn {
     margin-top: 20px;
     margin-bottom: 20px;
-    align-self: center;
+    justify-self: center;
+
+    @media (max-width: 740px) {
+      grid-column: 1 / 3;
+    }
   }
 }

@@ -1,6 +1,7 @@
 .accordeon {
   padding: 20px 0;
   display: grid;
+  gap: 30px;
   grid-template-columns: 1fr auto;
   align-items: center;
   border-bottom: 1px solid #D2D2D6;
