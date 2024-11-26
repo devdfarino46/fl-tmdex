@@ -47,12 +47,7 @@
     margin-top: -20px;
     display: flex;
     flex-direction: column;
-
-    .card {
-    }
   }
-
-  &__accordeons ~ .card {}
 
   .card {
     grid-template-columns: 1fr;

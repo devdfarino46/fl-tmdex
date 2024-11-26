@@ -95,9 +95,6 @@
   }
 
   // State disabled
-  &[disabled], &[data-count="0"] {
-    
-  }
   &__tab[data-count="0"] &__filters {
     display: none;
   }

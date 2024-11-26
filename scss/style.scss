@@ -64,7 +64,13 @@ body {
 }
 
 .popup-link { cursor: pointer; }
-.tooltip-link { cursor: pointer; }
+.tooltip-link { 
+  cursor: pointer;
+
+  &:hover {
+    
+  }
+}
 
 .disclamer {
   margin-top: 30px;

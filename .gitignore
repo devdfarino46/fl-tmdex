@@ -1,11 +1,9 @@
-node_modules/
+node_modules/**/*
 package-lock.json
-css/*.css
-css/*.css.map
-js/*.bundle.js
-js/*.bundle.js.map
+css/**/*
+js/**/*
 *.html
 !html/**/*.html
-*.rar
-fontello/*
+fontello/**/*
 !fontello/config.json
+*.zip

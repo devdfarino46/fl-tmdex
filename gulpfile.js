@@ -15,7 +15,12 @@ const babel = require('gulp-babel'); // babel
 const sassGlob = require('gulp-sass-glob'); // globbing for sass]
 const fileInclude = require('gulp-file-include'); // file include
 const fontello = require('gulp-fontello'); // fontello
+const zip = require('gulp-archiver'); // zip
+const gitignoreExclude = require('gulp-gitignore'); // gitignore exclude
+const path = require('path'); // path
 
+const dirname = path.basename(__dirname);
+const resultConfig = require('./result-config.json');
 
 // Browsersync init
 function _bs() {
@@ -41,7 +46,7 @@ function _html() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('.'))
     .pipe(browserSync.stream());
 }
 
@@ -110,6 +115,24 @@ function _fontello() {
     .pipe(browserSync.stream());
 }
 
+function _resultZip() {
+  return gulp.src(resultConfig.files, {base: '.'})
+    .pipe(zip('kword-13.zip'))
+    .pipe(gulp.dest('.'));
+}
+
+function _srcZip() {
+  return gulp.src('**/*', {base: '.'})
+    .pipe(gitignoreExclude())
+    .pipe(zip('kword-13.src.zip'))
+    .pipe(gulp.dest('.'));
+}
+
+function _ghPages() {
+  return gulp.src(resultConfig.files, {base: '.'})
+    .pipe(gulp.dest(`${resultConfig.ghPagesPath}\\${dirname}`));
+}
+
 exports.default = gulp.series(
   _html,
   _sass,
@@ -121,6 +144,11 @@ exports.default = gulp.series(
   )
 );
 
+exports.result = gulp.series(
+  _resultZip,
+  _srcZip,
+  _ghPages
+);
 exports.ttfToWoff2 = _ttfToWoff2;
 exports.imageMin = _imageMin;
 exports.webp = _webp;

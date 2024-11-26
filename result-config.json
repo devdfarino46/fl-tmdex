@@ -1,0 +1,12 @@
+{
+  "files": [
+    "css/**/*",
+    "fontello/**/*",
+    "fonts/**/*",
+    "img/**/*",
+    "js/**/*",
+    "js-lib/**/*",
+    "*.html"
+  ],
+  "ghPagesPath": "D:\\WORK\\devdfarino46.github.io"
+}

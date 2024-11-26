@@ -54,7 +54,7 @@ tooltipLinks.forEach(link => {
     }, 100);
   }
 
-  link.addEventListener('mouseenter', (e) => show(e));
+  link.addEventListener('mouseover', (e) => show(e));
   tooltip.addEventListener('mouseleave', (e) => {
       tooltips.forEach(t => t.classList.remove('--visibled'));
   });
@@ -62,8 +62,9 @@ tooltipLinks.forEach(link => {
     clearTimeout(timer);
   });
 
-  link.addEventListener('touchend', (e) =>  show(e));
-  document.addEventListener('touchend', (e) => {
+  // link.addEventListener('touchmove', false);
+  link.addEventListener('click', (e) =>  show(e));
+  document.addEventListener('click', (e) => {
     tooltips.forEach(t => {
       if (!e.composedPath().includes(t)) {
         t.classList.remove('--visibled');
@@ -116,17 +117,8 @@ mktuGroups.forEach(group => {
 });
 
 accordeons.forEach((accordeon, index) => {
-
   accordeon.addEventListener('click', ev => {
     accordeon.classList.toggle('--active');
-
-    // accordeons.forEach((accordeon1, index1) => {
-    //   if (index !== index1) {
-    //     if (parent === accordeon1.parentElement) accordeon1.classList.remove('--active');
-    //   } else {
-    //     accordeon1.classList.toggle('--active');
-    //   }
-    // })
   });
 })
 
