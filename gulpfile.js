@@ -4,7 +4,6 @@ const sass = require('gulp-sass')(require('sass')); // compile sass to css
 const autoprefixer = require('gulp-autoprefixer'); // add vendor prefixes to CSS rules
 const cleanCSS = require('gulp-clean-css'); // minify css
 const rename = require('gulp-rename'); // rename files
-const ttfToWoff2 = require('gulp-ttf2woff2'); // convert ttf to woff2
 const imageMin = require('gulp-imagemin'); // minify images
 const webp = require('gulp-webp'); // convert images to webp
 const sourceMaps = require('gulp-sourcemaps'); // generate source maps
@@ -93,12 +92,6 @@ function _js() {
     .pipe(browserSync.stream());
 }
 
-function _ttfToWoff2() {
-  return gulp.src('fonts/**/*.ttf')
-    .pipe(ttfToWoff2())
-    .pipe(gulp.dest('fonts'));
-}
-
 function _imageMin() {
   return gulp.src('img/**/*.+(png|jpeg|jpg|gif|svg)')
     .pipe(imageMin({ verbose: true }))
@@ -152,7 +145,6 @@ exports.result = gulp.series(
   _srcZip,
   _ghPages
 );
-exports.ttfToWoff2 = _ttfToWoff2;
 exports.imageMin = _imageMin;
 exports.webp = _webp;
 exports.css = _sass;
