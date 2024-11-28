@@ -1,0 +1,87 @@
+<form action="#" class="search-form rel @@class">
+  <label class="search-form__input input-text" data-item="name">
+    <input type="text" placeholder="Введите название или товарный знак">
+    <button type="button" class="btn btn--secondary btn--small">
+      <i class="icon-close"></i>
+    </button>
+  </label>
+
+  <label class="search-form__input input" data-item="mktu">
+    <p class="input__label">Уточните поиск, указав тип МКТУ</p>
+    <div class="input__wrapper">
+      <input type="text" placeholder="Например, реклама или мкту 15">
+      <button type="button"><i class="icon-close"></i></button>
+    </div>
+    <p class="input__helper">Status</p>
+  </label>
+
+  <div action="#" class="mktu-dropdown">
+    <ul class="mktu-dropdown__list">
+      @@for(let i = 1; i < 45; i++) {
+        <li class="mktu --corresp tooltip-link" data-href="#tooltip-mktu">`+i+`</li>
+      }
+    </ul>
+  
+    <div class="mktu-dropdown__checkbox-wrap">
+      <label class="mktu-dropdown__checkbox checkbox">
+        <div class="checkbox__input">
+          <input type="checkbox">
+          <i class="icon-check"></i>
+        </div>
+        <p class="checkbox__label">Учитывать однородные классы</p>
+      </label>
+      <i class="icon-alert-question tooltip-link" data-href="#tooltip-no-design"></i>
+    </div>
+  
+    <div class="mktu-dropdown__btns">
+      <button type="button" class="btn">применить</button>
+      <button type="button" class="btn btn--secondary">очистить</button>
+    </div>
+  </div>
+
+  <label class="search-form__input input" data-item="app">
+    <p class="input__label">Заявка ФИПС</p>
+    <div class="input__wrapper">
+      <input type="text" placeholder="№ 0000 0 00000" data-mask="№ 0000 0 000000">
+      <button type="button"><i class="icon-close"></i></button>
+    </div>
+    <p class="input__helper">Status</p>
+  </label>
+
+  <label class="search-form__input input" data-item="certif">
+    <p class="input__label">Свидетельство ФИПС</p>
+    <div class="input__wrapper">
+      <input type="text" placeholder="№ 00000000" data-mask="№ 00000000">
+      <button type="button"><i class="icon-close"></i></button>
+    </div>
+    <p class="input__helper">Status</p>
+  </label>
+
+  <label class="search-form__input input" data-item="inn">
+    <p class="input__label">ИНН компании</p>
+    <div class="input__wrapper">
+      <input type="text" placeholder="00 00 00000 0" data-mask="00 00 00000 0">
+      <button type="button"><i class="icon-close"></i></button>
+    </div>
+    <p class="input__helper">Status</p>
+  </label>
+
+  <label class="search-form__switch switch switch--two-text" data-item="switch">
+    <div class="switch__wrapper">
+      <input type="checkbox" class="search__switch-input" @@if(context.checked) { checked } >
+    </div>
+    <p class="switch__label">
+      <span class="_off">Поиск по заявке, свидетельству, ИНН</span>
+      <span class="_on">Переключить на поиск по названию</span>
+    </p>
+  </label>
+
+  <button type="submit" class="search-form__submit btn btn--lime btn--large" data-item="check">
+    <span>Проверить</span>
+    <i class="icon-search"></i>
+  </button>
+  <button type="submit" class="search-form__submit btn btn--lime btn--large" data-item="search">
+    <span>Найти</span>
+    <i class="icon-search"></i>
+  </button>
+</form>

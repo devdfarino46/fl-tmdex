@@ -1,0 +1,42 @@
+.mktu-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D6;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: .3s ease;
+
+  &.--active {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  &__checkbox-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &>i {
+      font-size: 20px;
+      color: #787885;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}

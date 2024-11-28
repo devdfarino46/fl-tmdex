@@ -14,6 +14,7 @@ const tooltips = document.querySelectorAll('.tooltip');
 const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
 const result = document.querySelector('.result');
+const searchForm = document.querySelector('.search-form');
 
 popupLinks.forEach(link => {
   link.addEventListener('click', (e) => {
@@ -33,46 +34,35 @@ popupLinks.forEach(link => {
 tooltipLinks.forEach(link => {
   const tooltip = document.querySelector(link.getAttribute('data-href'));
 
-  let timer;
-
   const show = (e) => {
-    timer = setTimeout(() => {
-      const rect = tooltip.getBoundingClientRect();
-      tooltip.style.top = `${e.clientY - 5}px`;
-  
-      if (window.innerWidth >= 700) {
-        if (e.clientX < 450) {
-          tooltip.style.left = `${e.clientX - 20}px`;
-        } else {
-          tooltip.style.left = `${e.clientX - rect.width + 20}px`;
-        }
+    const rect = tooltip.getBoundingClientRect();
+    const lRect = link.getBoundingClientRect();
+
+    if (window.innerWidth >= 700) {
+      if (lRect.left < 450) {
+        tooltip.style.left = `${lRect.left}px`;
       } else {
-        tooltip.style.left = `0`;
-        tooltip.style.right = `0`;
+        tooltip.style.left = `${lRect.right - rect.width}px`;
       }
-      tooltip.classList.add('--visibled');
-    }, 100);
+    } else {
+      tooltip.style.left = `0`;
+      tooltip.style.right = `0`;
+    }
+
+    if (lRect.top < window.innerHeight - 150) {
+      tooltip.style.top = `${lRect.bottom + 5}px`;
+    } else {
+      tooltip.style.top = `${lRect.top - rect.height - 5}px`;
+    }
+    tooltip.classList.add('--visibled');
   }
 
   link.addEventListener('mouseover', (e) => show(e));
-  tooltip.addEventListener('mouseleave', (e) => {
-      tooltips.forEach(t => t.classList.remove('--visibled'));
-  });
   link.addEventListener('mouseleave', (e) => {
-    clearTimeout(timer);
+    tooltips.forEach(t => t.classList.remove('--visibled'));
   });
-
-  // link.addEventListener('touchmove', false);
+  
   link.addEventListener('click', (e) =>  show(e));
-  document.addEventListener('click', (e) => {
-    tooltips.forEach(t => {
-      if (!e.composedPath().includes(t)) {
-        t.classList.remove('--visibled');
-      } else {
-        t.classList.add('--visibled');
-      }
-    });
-  });
 
   window.addEventListener('scroll', () => {
     tooltips.forEach(t => t.classList.remove('--visibled'));
@@ -193,51 +183,6 @@ inputsText.forEach(input => {
   });
 });
 
-if (search) {
-  const form = search.querySelector('.search__form');
-
-  if (form) {
-    const inputs = form.querySelectorAll('.input');
-    const switchElem = form.querySelector('.switch input');
-    const switchLabel = form.querySelector('.switch__label');
-
-    inputs.forEach((input, index) => {
-      const inputElem = input.querySelector('.input__wrapper input');
-      const btn = input.querySelector('.input__wrapper button');
-      
-      // Set mask inputs
-      $(inputElem).mask(inputElem.dataset.mask);
-
-      // Disable inputs
-      const disableInputs = () => {
-        inputs.forEach((input1, index1) => {
-          const inputElem1 = input1.querySelector('.input__wrapper input');
-
-          if (inputElem.value.length > 0) {
-            if (index !== index1) inputElem1.disabled = true;
-          } else {
-            inputElem1.disabled = false;
-          }
-        });
-      }
-      inputElem.addEventListener('input', disableInputs);
-      btn.addEventListener('click', disableInputs);
-    });
-
-    switchElem.addEventListener('input', ev => {
-      if (switchElem.checked) {
-        switchLabel.textContent = 'Переключить на поиск по названию';
-      } else {
-        switchLabel.textContent = 'Поиск по заявке, свидетельству, ИНН';
-      }
-    });
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-    });
-  }
-}
-
 if (result) {
   const tabBtns = result.querySelectorAll('.result__tabs .tab-btn');
   const tabs = result.querySelectorAll('.result__tab');
@@ -258,4 +203,28 @@ if (result) {
       });
     });
   });
+}
+
+if (searchForm) {
+  const switchInput = searchForm.querySelector('.search-form__switch');
+
+  if (
+    !switchInput.querySelector('input').checked && 
+    !searchForm.classList.contains('--hide-mktu')
+  ) {
+    const mktuInput = searchForm.querySelector('.search-form [data-item="mktu"]');
+    const mktuDropdown = searchForm.querySelector('.mktu-dropdown');
+
+    document.addEventListener('click', ev => {
+      if (
+        ( ev.composedPath().includes(mktuInput) ||
+        ev.composedPath().includes(mktuDropdown) ) &&
+        mktuInput.querySelector('input').value === ''
+      ) {
+        mktuDropdown.classList.add('--active');
+      } else {
+        mktuDropdown.classList.remove('--active');
+      }
+    });
+  }
 }

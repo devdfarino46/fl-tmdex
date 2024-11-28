@@ -7,3 +7,4 @@ js/**/*
 fontello/**/*
 !fontello/config.json
 *.zip
+*.rar

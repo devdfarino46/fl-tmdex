@@ -12,9 +12,11 @@
     width: 28px;
     height: 16px;
     transition: .2s ease;
+    cursor: pointer;
   }
 
   input {
+    cursor: pointer;
     position: absolute;
     opacity: 0;
   }
@@ -36,6 +38,17 @@
     font-size: 14px;
     line-height: 20px;
     color: #19191D;
+  }
+
+  // Two text
+  &--two-text &__label ._on {
+    display: none;
+  }
+  &--two-text:has(input:checked) &__label ._on {
+    display: inline;
+  }
+  &--two-text:has(input:checked) &__label ._off {
+    display: none;
   }
 
   // State disabled

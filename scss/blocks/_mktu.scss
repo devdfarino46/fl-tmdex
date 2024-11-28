@@ -29,17 +29,17 @@
   }
 
   // Corresp
-  &--corresp {
+  &.--corresp {
     border-color: #D2D2D6;
   }
 
   // Busy
-  &--busy {
+  &.--busy {
     color: #F44336;
   }
 
   // Busy and corresp
-  &--busy-corresp {
+  &.--busy-corresp {
     border-color: #FCCBC8;
     color: #F44336;
   }

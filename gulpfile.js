@@ -44,7 +44,10 @@ function _html() {
   return gulp.src(['html/*.html'])
     .pipe(fileInclude({
       prefix: '@@',
-      basepath: '@file'
+      basepath: '@file',
+      context: {
+        class: ''
+      }
     }))
     .pipe(gulp.dest('.'))
     .pipe(browserSync.stream());
