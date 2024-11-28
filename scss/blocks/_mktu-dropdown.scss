@@ -23,6 +23,13 @@
     gap: 5px;
   }
 
+  li + input {
+    display: none;
+  }
+  li + input + input {
+    display: none;
+  }
+
   &__checkbox-wrap {
     display: flex;
     align-items: center;
@@ -35,8 +42,11 @@
   }
 
   &__btns {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 20px;
+  }
+  &__btns.--active {
+    display: flex;
   }
 }

@@ -207,7 +207,8 @@ if (result) {
 
 if (searchForm) {
   const switchInput = searchForm.querySelector('.search-form__switch');
-
+  
+  // If switch is off and mktu is visible
   if (
     !switchInput.querySelector('input').checked && 
     !searchForm.classList.contains('--hide-mktu')
@@ -215,16 +216,21 @@ if (searchForm) {
     const mktuInput = searchForm.querySelector('.search-form [data-item="mktu"]');
     const mktuDropdown = searchForm.querySelector('.mktu-dropdown');
 
-    document.addEventListener('click', ev => {
-      if (
-        ( ev.composedPath().includes(mktuInput) ||
-        ev.composedPath().includes(mktuDropdown) ) &&
-        mktuInput.querySelector('input').value === ''
-      ) {
-        mktuDropdown.classList.add('--active');
-      } else {
-        mktuDropdown.classList.remove('--active');
-      }
-    });
+    // MktuDropdown
+    if (mktuDropdown) {
+      const mktuInputs = mktuDropdown.querySelectorAll('.mktu + input');
+
+      document.addEventListener('click', ev => {
+        if (
+          ev.composedPath().includes(mktuInput) ||
+          ev.composedPath().includes(mktuDropdown)
+        ) {
+          mktuDropdown.classList.add('--active');
+        } else {
+          mktuDropdown.classList.remove('--active');
+        }
+      });
+    }
+    
   }
 }

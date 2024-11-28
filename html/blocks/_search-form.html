@@ -15,29 +15,7 @@
     <p class="input__helper">Status</p>
   </label>
 
-  <div action="#" class="mktu-dropdown">
-    <ul class="mktu-dropdown__list">
-      @@for(let i = 1; i < 45; i++) {
-        <li class="mktu --corresp tooltip-link" data-href="#tooltip-mktu">`+i+`</li>
-      }
-    </ul>
-  
-    <div class="mktu-dropdown__checkbox-wrap">
-      <label class="mktu-dropdown__checkbox checkbox">
-        <div class="checkbox__input">
-          <input type="checkbox">
-          <i class="icon-check"></i>
-        </div>
-        <p class="checkbox__label">Учитывать однородные классы</p>
-      </label>
-      <i class="icon-alert-question tooltip-link" data-href="#tooltip-no-design"></i>
-    </div>
-  
-    <div class="mktu-dropdown__btns">
-      <button type="button" class="btn">применить</button>
-      <button type="button" class="btn btn--secondary">очистить</button>
-    </div>
-  </div>
+  @@include('_mktu-dropdown.html')
 
   <label class="search-form__input input" data-item="app">
     <p class="input__label">Заявка ФИПС</p>
@@ -85,3 +63,4 @@
     <i class="icon-search"></i>
   </button>
 </form>
+
