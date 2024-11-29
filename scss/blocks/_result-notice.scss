@@ -1,0 +1,80 @@
+.result-notice {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 
+    clamp(10px, -0.319rem + 2.04vw, 20px) 
+    clamp(15px, -0.478rem + 3.06vw, 30px) 
+    clamp(15px, -0.478rem + 3.06vw, 30px);
+  background: #F9F9FA;
+  border: 1px solid #D2D2D6;
+  border-radius: 20px;
+  position: relative;
+  transition: .3s ease;
+  margin-left: -1px;
+  margin-top: -1px;
+
+  @media (max-width: 740px) {
+    gap: 0;
+  }
+
+  &__num {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #DFF71C;
+
+    @media (max-width: 740px) {
+      font-size: 24px;
+    }
+
+    &.--warning {
+      color: #FB8200;
+    }
+    &.--danger {
+      color: #F44336;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+
+    @media (max-width: 740px) {
+      font-size: 12px;
+    }
+  }
+
+  &__link {
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration-line: underline;
+    color: #4A4B57;
+    
+    &::before {
+      position: absolute;
+      inset: 0;
+      content: '';
+    }
+
+    @media (max-width: 740px) {
+      font-size: 12px;
+    }
+  }
+
+  // State hover
+  @media (any-hover: hover) {
+    &:hover {
+      background: #F0F0F1;
+    }
+  }
+
+  // State pressed
+  &:active {
+    background: #D2D2D6;
+  }
+}

@@ -1,0 +1,49 @@
+.score-block {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 30px;
+  gap: 10px;
+  background: #313701;
+  border-radius: 20px;
+
+  @media (max-width: 740px) {
+    gap: 5px;
+    padding: 15px 20px 20px;
+  }
+
+  &__num {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 126%;
+    letter-spacing: -0.02em;
+    color: #DFF71C;
+
+    @media (max-width: 740px) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #FFFFFF;
+  }
+
+  // State warning
+  &.--warning {
+    background: #463209;
+  }
+  &.--warning &__num {
+    color: #FFB41F;
+  }
+
+  // State danger
+  &.--danger {
+    background: #43130F;
+
+  }
+  &.--danger &__num {
+    color: #F44336;
+  }
+}

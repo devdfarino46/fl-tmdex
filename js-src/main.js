@@ -6,6 +6,7 @@ const inputs = document.querySelectorAll('.input');
 const inputsText = document.querySelectorAll('.input-text');
 const mktuGroups = document.querySelectorAll('.mktu-group');
 const accordeons = document.querySelectorAll('.accordeon');
+const reportResult = document.querySelector('.report-result');
 
 const popupLinks = document.querySelectorAll('.popup-link');
 const tooltipLinks = document.querySelectorAll('.tooltip-link');
@@ -335,9 +336,6 @@ if (searchForm) {
     }
 
     if (mktuDropdownText) {
-      // Temp
-      // mktuInput.querySelector('input').value = 123;
-      // mktuDropdownText.classList.add('--active');
 
       const items = mktuDropdownText.querySelectorAll('.mktu-dropdown-text__item');
       const applyBtn = mktuDropdownText.querySelector('.mktu-dropdown-text__apply-btn');
@@ -385,4 +383,26 @@ if (searchForm) {
       });
     }
   }
+}
+
+if (reportResult) {
+  const tabBtns = reportResult.querySelectorAll('.tab-btn');
+  const tabContents = reportResult.querySelectorAll('.report-result__notices');
+
+  tabBtns.forEach((tabBtn, index) => {
+    tabBtn.addEventListener('click', () => {
+      tabBtns.forEach(btn => {
+        btn.classList.remove('--active');
+      });
+      tabBtn.classList.add('--active');
+
+      tabContents.forEach(content => {
+        if (tabBtn.dataset.tab === content.dataset.tab) {
+          content.classList.add('--active');
+        } else {
+          content.classList.remove('--active');
+        }
+      })
+    });
+  });
 }
