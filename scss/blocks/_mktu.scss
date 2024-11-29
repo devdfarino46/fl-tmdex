@@ -16,6 +16,7 @@
   transition: .2s ease;
 
   span {
+    pointer-events: none;
     display: block;
     font-weight: 400;
     font-size: 12px;

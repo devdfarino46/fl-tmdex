@@ -1,23 +1,5 @@
 @import 'base/*';
 
-// ::-webkit-scrollbar {
-//   width: 10px;
-// }
-// ::-webkit-scrollbar-track {
-//   background: #FBFFE2;
-//   border-radius: 100ch;
-// }
-// ::-webkit-scrollbar-thumb {
-//   background: #DFF71C;
-//   border-radius: 100ch;
-// }
-// ::-webkit-scrollbar-thumb:hover {
-//   background: #65B168;
-// }
-// ::-webkit-scrollbar-button {
-//   display: none;
-// }
-
 * {
   font-family: 'Wix Madefor Display', sans-serif;
   font-weight: 400;
@@ -27,7 +9,23 @@
 .icon-whatsapp { color: #25D366 !important; }
 
 body {
-  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FBFFE2;
+    border-radius: 100ch;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #DFF71C;
+    border-radius: 100ch;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #65B168;
+  }
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
 }
 
 [class *= "__container"], .container {

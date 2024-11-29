@@ -1,7 +1,8 @@
 <div action="#" class="mktu-dropdown">
   <ul class="mktu-dropdown__list">
-    @@for(let i = 1; i < 45; i++) {
-      <li class="mktu --corresp tooltip-link" data-href="#tooltip-mktu">`+i+`</li>
+    @@for(let i = 10; i < 30; i++) {
+      <li data-value="`+i+`" class="mktu">`+i+`</li>
+      <input type="checkbox" name="" value="">
       <input type="checkbox" name="" value="">
     }
   </ul>
@@ -16,7 +17,11 @@
     <i class="icon-alert-question tooltip-link" data-href="#tooltip-no-design"></i>
   </div>
   <div class="mktu-dropdown__btns">
-    <button type="button" class="btn">применить</button>
-    <button type="button" class="btn btn--secondary">очистить</button>
+    <button type="button" class="mktu-dropdown__apply-btn btn">
+      <span>применить</span>
+    </button>
+    <button type="button" class="mktu-dropdown__clear-btn btn btn--secondary">
+      <span>очистить</span>
+    </button>
   </div>
 </div>

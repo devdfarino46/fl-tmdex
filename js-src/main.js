@@ -16,6 +16,33 @@ const search = document.querySelector('.search');
 const result = document.querySelector('.result');
 const searchForm = document.querySelector('.search-form');
 
+const corresps = {
+  "10": ["13", "14", "17", "21"],
+  "15": ["16", "18", "19", "20"]
+}
+/**
+ * 
+ * @param {Element} mktu 
+ * @param {Element[]} mktus 
+ * @callback handler
+ * @param {Element} el
+ * @returns {void}
+ * @param {handler} handler
+ */
+function mktuCorrespsHandler(mktu, mktus, handler) {
+  for (const [key, value] of Object.entries(corresps)) {
+    if (mktu.dataset.value === key) {
+      value.forEach(corr => {
+        mktus.forEach(el => {
+          if (el.dataset.value === corr) {
+            handler(el);
+          }
+        });
+      });
+    }
+  }
+}
+
 popupLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     const popup = document.querySelector(link.getAttribute('href'));
@@ -208,29 +235,154 @@ if (result) {
 if (searchForm) {
   const switchInput = searchForm.querySelector('.search-form__switch');
   
-  // If switch is off and mktu is visible
+  // If search by title and mktu input is not hidden
   if (
     !switchInput.querySelector('input').checked && 
     !searchForm.classList.contains('--hide-mktu')
   ) {
     const mktuInput = searchForm.querySelector('.search-form [data-item="mktu"]');
     const mktuDropdown = searchForm.querySelector('.mktu-dropdown');
+    const mktuDropdownText = searchForm.querySelector('.mktu-dropdown-text');
 
     // MktuDropdown
     if (mktuDropdown) {
-      const mktuInputs = mktuDropdown.querySelectorAll('.mktu + input');
+      const mktus = mktuDropdown.querySelectorAll('.mktu');
+      const checkbox = mktuDropdown.querySelector('.mktu-dropdown__checkbox');
+      const applyBtn = mktuDropdown.querySelector('.mktu-dropdown__apply-btn');
+      const clearBtn = mktuDropdown.querySelector('.mktu-dropdown__clear-btn');
 
+      // Show dropdown
+      mktuInput.addEventListener('click', () => {
+        mktuDropdown.classList.add('--active');
+      })
+
+      // Hide dropdown
       document.addEventListener('click', ev => {
-        if (
-          ev.composedPath().includes(mktuInput) ||
-          ev.composedPath().includes(mktuDropdown)
-        ) {
-          mktuDropdown.classList.add('--active');
-        } else {
+        if (!ev.composedPath().includes(mktuInput) && !ev.composedPath().includes(mktuDropdown) ) {
           mktuDropdown.classList.remove('--active');
         }
       });
+
+      // Toggle allowed search with corresponds mktu
+      checkbox.addEventListener('click', () => {
+        if (!checkbox.querySelector('input').checked) {
+          mktus.forEach(mktu => {
+            mktu.nextElementSibling.nextElementSibling.removeAttribute('checked');
+          });
+        }
+      });
+
+      // Apply and hide dropdown
+      applyBtn.addEventListener('click', () => {
+        mktuDropdown.classList.remove('--active');
+      });
+
+      // Clear finters
+      clearBtn.addEventListener('click', () => {
+        mktus.forEach(mktu => {
+          mktu.nextElementSibling.removeAttribute('checked');
+          mktu.nextElementSibling.nextElementSibling.removeAttribute('checked');
+        });
+      });
+      
+      mktus.forEach(mktu => {
+        const input = mktu.nextElementSibling;
+        const cInput = mktu.nextElementSibling.nextElementSibling;
+
+        // Hover corresponds mktu
+        mktu.addEventListener('mouseover', ev => {
+          if (checkbox.querySelector('input').checked) {
+            mktuCorrespsHandler(mktu, mktus, el => {
+              el.classList.add('--corresp-hover');
+            });
+          }
+        });
+        mktu.addEventListener('mouseout', ev => {
+          mktus.forEach(el => {
+            el.classList.remove('--corresp-hover');
+          });
+        });
+        
+        mktu.addEventListener('click', ev => {
+          // Clear hover corresponds mktu
+          mktus.forEach(el => {
+            el.classList.remove('--corresp-hover');
+          });
+
+          input.toggleAttribute('checked');
+
+          if (input.getAttribute('checked') !== null) {
+            if (checkbox.querySelector('input').checked) {
+              mktuCorrespsHandler(mktu, mktus, el => {
+                if (el.nextElementSibling.getAttribute('checked') === null) {
+                  el.nextElementSibling.nextElementSibling.setAttribute('checked', '');
+                } else {
+                  el.nextElementSibling.nextElementSibling.removeAttribute('checked');
+                }
+              });
+            }
+            cInput.removeAttribute('checked');
+          } else {
+            if (checkbox.querySelector('input').checked) {
+              mktuCorrespsHandler(mktu, mktus, el => {
+                el.nextElementSibling.nextElementSibling.removeAttribute('checked');
+              });
+            }
+            cInput.removeAttribute('checked');
+          }
+        });
+      });
     }
-    
+
+    if (mktuDropdownText) {
+      // Temp
+      // mktuInput.querySelector('input').value = 123;
+      // mktuDropdownText.classList.add('--active');
+
+      const items = mktuDropdownText.querySelectorAll('.mktu-dropdown-text__item');
+      const applyBtn = mktuDropdownText.querySelector('.mktu-dropdown-text__apply-btn');
+      const clearBtn = mktuDropdownText.querySelector('.mktu-dropdown-text__clear-btn');
+
+      // Show dropdown
+      const show = () => {
+        if (mktuInput.querySelector('input').value.length > 0) {
+          mktuDropdownText.classList.add('--active');
+          mktuDropdown.classList.remove('--active');
+        } else {
+          mktuDropdownText.classList.remove('--active');
+          mktuDropdown.classList.add('--active');
+        }
+      };
+
+      mktuInput.querySelector('input').addEventListener('input', show);
+      mktuInput.addEventListener('click', show);
+
+      // Hide dropdown
+      document.addEventListener('click', ev => {
+        if (!ev.composedPath().includes(mktuInput) && !ev.composedPath().includes(mktuDropdownText) ) {
+          mktuDropdownText.classList.remove('--active');
+        }
+      });
+
+      // Apply and hide dropdown
+      applyBtn.addEventListener('click', () => {
+        mktuDropdownText.classList.remove('--active');
+      });
+
+      // Clear finters
+      clearBtn.addEventListener('click', () => {
+        items.forEach(item => {
+          item.nextElementSibling.removeAttribute('checked');
+        });
+      });
+
+      // Select item
+      items.forEach(item => {
+        const input = item.nextElementSibling;
+        item.addEventListener('click', ev => {
+          input.toggleAttribute('checked');
+        });
+      });
+    }
   }
 }

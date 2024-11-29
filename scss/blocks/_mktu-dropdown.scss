@@ -23,11 +23,22 @@
     gap: 5px;
   }
 
+  li.--corresp-hover {
+    background: #F0F0F1;
+  }
+
   li + input {
     display: none;
   }
   li + input + input {
     display: none;
+  }
+  li:has(+ input + input:checked) {
+    background: #E1E1E3;
+  }
+  li:has(+ input:checked) {
+    background: #5A5B6A;
+    color: white;
   }
 
   &__checkbox-wrap {
@@ -46,7 +57,7 @@
     align-items: center;
     gap: 20px;
   }
-  &__btns.--active {
+  &:has(&__list>input:checked) &__btns {
     display: flex;
   }
 }
