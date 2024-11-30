@@ -113,15 +113,13 @@ function _fontello() {
 
 function _resultZip() {
   return gulp.src(resultConfig.files, {base: '.'})
-    .pipe(zip('kword-13.zip'))
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest(`fl-result/${dirname}`));
 }
 
 function _srcZip() {
   return gulp.src('**/*', {base: '.'})
     .pipe(gitignoreExclude())
-    .pipe(zip('kword-13.src.zip'))
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest(`fl-result/${dirname}.src`));
 }
 
 function _ghPages() {
