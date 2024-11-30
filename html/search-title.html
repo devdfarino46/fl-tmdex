@@ -21,6 +21,34 @@
             Обновление базы:
             <a href="#popup-base" class="label-data popup-link">сегодня</a>
           </p>
+
+          <div class="search__mktu-selected">
+            <button type="button" class="mktu-select" data-value="10">
+              <p class="mktu-select__num">10</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
+            <button type="button" class="mktu-select --busy" data-value="10">
+              <p class="mktu-select__num">10</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
+            <button type="button" class="mktu-select" data-value="10">
+              <p class="mktu-select__num">10</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
+            <button type="button" class="mktu-select --busy" data-value="10">
+              <p class="mktu-select__num">10</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
+            <button type="button" class="mktu-select" data-value="10">
+              <p class="mktu-select__num">10</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
+          </div>
       
           @@include('blocks/_search-form.html', {class: '--hide-mktu'})
           
@@ -122,6 +150,53 @@
           </div>
 
           @@include('blocks/_disclamer.html')
+        </div>
+      </section>
+
+      <section class="section result" data-count="100">
+        <div class="result__container">
+          <h2 class="result__title">Похожие документы</h2>
+
+          <!-- Tabs -->
+          <div class="result__tabs">
+            <button type="button" class="tab-btn" data-tab="certifs" data-count="32">
+              <span>Свидетельства</span>
+              <b>32</b>
+            </button>
+            <button type="button" class="tab-btn" data-tab="apps" data-count="32">
+              <span>Заявки</span>
+              <b>32</b>
+            </button>
+            <button type="button" class="tab-btn --active" data-tab="companies" data-count="7">
+              <span>Компании</span>
+              <b>7</b>
+            </button>
+            <button type="button" class="tab-btn" data-tab="domens" data-count="0">
+              <span>Домены</span>
+              <b>0</b>
+            </button>
+          </div>
+
+          <!-- Tab -->
+          @@include('blocks/result/tabs/_certifs.html', {class: ''})
+          @@include('blocks/result/tabs/_apps.html', {class: ''})
+          @@include('blocks/result/tabs/_companies.html', {class: '--active'})
+          <div class="result__tab" data-tab="domens"></div> <!-- Tab Domens no design -->
+
+          <div class="notice">
+            <p class="notice__info">
+              <i class="icon-alert-circle"></i>
+              <span>
+                Вы так же можете отслеживать изменения по заявке, 
+                свидетельству и ИНН в нашем телеграм-
+                боте — это удобно!
+              </span>
+            </p>
+            <a href="#" class="btn btn--lime btn--large">
+              <span>Telegram-bot tmdex</span>
+              <i class="icon-tg"></i>
+            </a>
+          </div>
         </div>
       </section>
 

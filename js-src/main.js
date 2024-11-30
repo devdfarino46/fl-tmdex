@@ -211,6 +211,20 @@ inputsText.forEach(input => {
   });
 });
 
+if (search) {
+  const mktuSelected = search.querySelector('.search__mktu-selected');
+
+  if (mktuSelected) {
+    const selects = mktuSelected.querySelectorAll('.mktu-select');
+    
+    selects.forEach(select => {
+      select.addEventListener('click', () => {
+        select.remove();
+      });
+    })
+  }
+}
+
 if (result) {
   const tabBtns = result.querySelectorAll('.result__tabs .tab-btn');
   const tabs = result.querySelectorAll('.result__tab');
