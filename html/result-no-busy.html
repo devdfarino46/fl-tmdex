@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('blocks/_head.html')
+
+<body>
+  <div class="wrapper">
+    @@include('blocks/_header.html')
+    <nav class="nav">
+      <ul class="nav__container">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Поиск</a></li>
+      </ul>
+    </nav>
+
+    <main class="page">
+      <section class="section search">
+        <div class="search__container">
+          <h1 class="search__title">Результат проверки <br>по заявке</h1>
+          <p class="search__date">
+            Обновление базы:
+            <a href="#popup-base" class="label-data popup-link">сегодня</a>
+          </p>
+
+          @@include('blocks/_search-form.html')
+
+          <div class="report">
+            <p class="report__title">Что удалось найти:</p>
+
+            <div class="card">
+              <div class="card__image-wrap">
+                <div class="card__image">
+                  <img src="" alt="" data-src="img/ufimka.webp" class="lazyload">
+                </div>
+                <p class="card__title">
+                  <span>Заявка RU</span>
+                  <i>№0000000000</i>
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="card__specifs">
+                  <p class="card__title">
+                    <span>Заявка RU</span>
+                    <i>№0000000000</i>
+                  </p>
+                  <p class="status">Регистрация</p>
+                  <div class="card__icons">
+                    <i class="icon-shield --active"></i>
+                    <i class="icon-shield"></i>
+                    <i class="icon-file-text"></i>
+                    <i class="icon-file-text"></i>
+                    <i class="icon-alert-triangle"></i>
+                    <i class="icon-alert-triangle"></i>
+                  </div>
+                  <p class="card__date">
+                    Приоритет:
+                    <b>18.11.2024</b>
+                    <span class="label-data">1 день</span>
+                  </p>
+                </div>
+                <div class="card__mktu-wrapper">
+                  <div class="mktu-group">
+                    <p class="mktu-group__label">
+                      <span>МКТУ товаров</span>
+                      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+                    </p>
+                    <ul class="mktu-group__list">
+                      <div>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                      </div>
+                      <button type="button" class="btn btn--secondary btn--small">
+                        <span>+25</span>
+                        <i class="icon-close"></i>
+                      </button>
+                    </ul>
+                  </div>
+                  <div class="mktu-group">
+                    <p class="mktu-group__label">
+                      <span>МКТУ услуг</span>
+                      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+                    </p>
+                    <ul class="mktu-group__list">
+                      <div>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                        <li class="mktu tooltip-link" data-href="#tooltip-mktu">00</li>
+                      </div>
+                      <button type="button" class="btn btn--secondary btn--small">
+                        <span>+25</span>
+                        <i class="icon-close"></i>
+                      </button>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card__company">
+                <p class="card__company-top">
+                  Правообладатель:
+                  <span class="card__company-status">действует</span>
+                  <span class="card__icons">
+                    <i class="icon-alert-triangle --active"></i>
+                    <i class="icon-alert-triangle"></i>
+                    <i class="icon-alert-triangle"></i>
+                  </span>
+                </p>
+                <p class="card__company-info">
+                  Общество с ограниченной ответственностью "НОВОВОРОНЕЖСКАЯ
+                  ПИВОВАРЕННАЯ КОМПАНИЯ "КАНЦЛЕРЪ", 394002, Воронежская
+                  область, г. Воронеж, ул. Урывского, 4А (RU)
+                </p>
+              </div>
+            </div>
+
+            <div class="notice">
+              <p class="notice__info">
+                <i class="icon-alert-circle"></i>
+                <span>
+                  Мы нашли похожие товарные знаки, посмотрите их ниже.
+                  Вы так же можете отслеживать изменения по заявке,
+                  свидетельству и ИНН в нашем телеграм-боте — это удобно!
+                </span>
+              </p>
+              <a href="#" class="btn btn--lime btn--large">
+                <span>Telegram-bot tmdex</span>
+                <i class="icon-tg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section result" data-count="0">
+        <div class="result__container">
+          <h2 class="result__title">Потенциальные угрозы</h2>
+
+          <!-- Tabs -->
+          <div class="result__tabs">
+            <button type="button" class="tab-btn" data-tab="no-cards" data-count="0">
+              <span>Свидетельства</span>
+              <b>32</b>
+            </button>
+            <button type="button" class="tab-btn" data-tab="no-cards2" data-count="0">
+              <span>Заявки</span>
+              <b>32</b>
+            </button>
+            <button type="button" class="tab-btn" data-tab="no-cards3" data-count="0">
+              <span>Компании</span>
+              <b>7</b>
+            </button>
+            <button type="button" class="tab-btn" data-tab="no-cards4" data-count="0">
+              <span>Домены</span>
+              <b>0</b>
+            </button>
+          </div>
+
+          <!-- Tab -->
+          <div class="result__tab --active" data-tab="no-cards" data-count="0">
+
+            <hr>
+
+            <!-- Accordeon Точно такие же -->
+            <div type="button" class="accordeon" data-count="0">
+              <p>Точно такие же <b>4</b></p>
+              <button type="button" class="btn btn--secondary btn--small">
+                <i class="icon-plus"></i>
+                <i class="icon-close"></i>
+              </button>
+            </div>
+            <div class="result__cards">
+
+            </div>
+
+            <!-- Accordeon Совпадающие -->
+            <div type="button" class="accordeon" data-count="0">
+              <p>Совпадающие <b>53</b></p>
+              <button type="button" class="btn btn--secondary btn--small">
+                <i class="icon-plus"></i>
+                <i class="icon-close"></i>
+              </button>
+            </div>
+            <div class="result__cards">
+            </div>
+
+            <!-- Accordeon Фонетически совпадающие -->
+            <div type="button" class="accordeon" data-count="0">
+              <p>Фонетически совпадающие <b>32</b></p>
+              <button type="button" class="btn btn--secondary btn--small">
+                <i class="icon-plus"></i>
+                <i class="icon-close"></i>
+              </button>
+            </div>
+            <div class="result__cards">
+            </div>
+
+            <!-- Accordeon Сходные по леммам -->
+            <div type="button" class="accordeon" data-count="0">
+              <p>Сходные по леммам <b>12</b></p>
+              <button type="button" class="btn btn--secondary btn--small">
+                <i class="icon-plus"></i>
+                <i class="icon-close"></i>
+              </button>
+            </div>
+            <div class="result__cards">
+            </div>
+          </div>
+          <div class="result__tab" data-tab="no-cards2" data-count="0"></div>
+          <div class="result__tab" data-tab="no-cards3" data-count="0"></div>
+          <div class="result__tab" data-tab="no-cards4" data-count="0"></div>
+
+          <div class="notice">
+            <p class="notice__info">
+              <i class="icon-alert-circle"></i>
+              <span>
+                Вы так же можете отслеживать изменения по заявке,
+                свидетельству и ИНН в нашем телеграм-
+                боте — это удобно!
+              </span>
+            </p>
+            <a href="#" class="btn btn--lime btn--large">
+              <span>Telegram-bot tmdex</span>
+              <i class="icon-tg"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section disclamer">
+        <div class="disclamer__container">
+          <div class="notice">
+            <p class="notice__info">
+              <i class="icon-alert-circle"></i>
+              <span>
+                Отчет формируется из данных, размещенных в открытых источниках
+                государственных органов и других организаций. Администрация
+                ресурса не несет ответственность за достоверность и полноту
+                представленных сведений. Пользователь ресурса может использовать
+                полученные сведения исключительно в информационно-аналитических целях.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      @@include('blocks/_form-main.html')
+    </main>
+
+    @@include('blocks/_footer.html')
+  </div>
+
+  @@include('blocks/_subwrapper.html')
+</body>
+
+</html>

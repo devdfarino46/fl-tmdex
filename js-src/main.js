@@ -213,6 +213,8 @@ inputsText.forEach(input => {
 
 if (search) {
   const mktuSelected = search.querySelector('.search__mktu-selected');
+  const title = search.querySelector('.search__title');
+  const form = search.querySelector('.search-form');
 
   if (mktuSelected) {
     const selects = mktuSelected.querySelectorAll('.mktu-select');
@@ -221,6 +223,19 @@ if (search) {
       select.addEventListener('click', () => {
         select.remove();
       });
+    })
+  }
+
+  // Retext title by form type
+  if (title && form && title.dataset.text1 && title.dataset.text2) {
+    const switchBtn = form.querySelector('.search-form__switch');
+
+    switchBtn.addEventListener('click', () => {
+      if (!switchBtn.querySelector('input').checked) {
+        title.innerHTML = title.dataset.text1;
+      } else {
+        title.innerHTML = title.dataset.text2;
+      }
     })
   }
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  @@include('blocks/_head.html')
-</head>
+
+@@include('blocks/_head.html')
+
 <body>
   <div class="wrapper">
     @@include('blocks/_header.html')
@@ -21,9 +21,9 @@
             Обновление базы:
             <a href="#popup-base" class="label-data popup-link">сегодня</a>
           </p>
-      
+
           @@include('blocks/_search-form.html')
-          
+
           <div class="report">
             <div class="report__icon-wrapper">
               <i class="icon-alert-circle"></i>
@@ -35,7 +35,8 @@
               <p class="notice__info">
                 <i class="icon-alert-circle"></i>
                 <span>
-                  Вы так же можете отслеживать изменения по заявке, свидетельству и ИНН в нашем телеграм-боте — это удобно!
+                  Вы так же можете отслеживать изменения по заявке, свидетельству и ИНН в нашем телеграм-боте — это
+                  удобно!
                 </span>
               </p>
               <a href="#" class="btn btn--lime btn--large">
@@ -46,14 +47,30 @@
           </div>
         </div>
       </section>
-      
-      @@include('blocks/_disclamer.html')
+
+      <section class="section disclamer">
+        <div class="disclamer__container">
+          <div class="notice">
+            <p class="notice__info">
+              <i class="icon-alert-circle"></i>
+              <span>
+                Отчет формируется из данных, размещенных в открытых источниках
+                государственных органов и других организаций. Администрация
+                ресурса не несет ответственность за достоверность и полноту
+                представленных сведений. Пользователь ресурса может использовать
+                полученные сведения исключительно в информационно-аналитических целях.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
       @@include('blocks/_form-main.html')
     </main>
 
     @@include('blocks/_footer.html')
   </div>
-  
+
   @@include('blocks/_subwrapper.html')
 </body>
+
 </html>

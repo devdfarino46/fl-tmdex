@@ -1,21 +1,6 @@
-1. Search
-  base-popup
-  input
-  btn
-  Switch
-  Report
-    Card заявка
-      Status
-      Label data
-      MKTU
-    Notice
-
-2. Result
-  Tabs
-    tab
-  Filter
-    Checkbox
-  Accordeons
-   Accordeon
-    Card заявка
-    Card компания 
+Restructure
+1. Disclamer
+2. Main title
+3. Report
+4. Result:
+  - Cards

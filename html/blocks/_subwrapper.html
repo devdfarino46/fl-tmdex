@@ -4,7 +4,7 @@
       Обновление базы
     </p>
     <p class="popup__text">
-      Ежедневное обновление баз данных позволяет нашим клиентам 
+      Ежедневное обновление баз данных позволяет нашим клиентам
       быстро реагировать на любые изменения.
     </p>
     <ul class="popup__list-round">
@@ -12,18 +12,70 @@
       <li>Заявки РФ <span class="label-data">сегодня</span></li>
       <li>Документооборот по заявкам РФ <span class="label-data">сегодня</span></li>
       <li>Международные регистрации <span class="label-data">10.11.2024</span></li>
-      <li>ОТЗ РФ  <span class="label-data">1 день назад</span></li>
+      <li>ОТЗ РФ <span class="label-data">1 день назад</span></li>
       <li>НМПТ РФ <span class="label-data">1 день назад</span></li>
     </ul>
     <button type="button" class="popup__btn-ok btn">
       <span>OK</span>
-    </button> 
+    </button>
   </div>
 </div>
 
-@@include('tooltips/_mktu.html')
-@@include('tooltips/_mktu-legend.html')
-@@include('tooltips/_okved.html')
+<div class="tooltip" id="tooltip-mktu">
+  <div class="tooltip__wrapper">
+    <p class="tooltip__title">Класс 00</p>
+    <p class="tooltip__text">
+      Продукты химические, предназначенные для использования в
+      промышленных, научных целях, в фотографии, сельском хозяйстве,
+      садоводстве и лесоводстве; смолы необработанные синтетические,
+      материалы необработанные пластические; составы для тушения огня и
+      предотвращения пожаров; препараты для закалки и пайки металлов;
+      вещества для дубления кожи и шкур животных; вещества клеящие для
+      промышленных целей; мастики и другие наполнители пастообразные;
+      компосты, удобрения, навоз; препараты биологические для промышленных
+      и научных целей.
+    </p>
+  </div>
+</div>
+<div class="tooltip" id="tooltip-mktu-legend">
+  <div class="tooltip__wrapper">
+    <p class="tooltip__title">Международная классификация товаров и услуг</p>
+    <p class="tooltip__text">
+      МКТУ — это список категорий, в которые можно отнести товары и услуги,
+      чтобы легче было найти нужную информацию или определить, к какой
+      области относится тот или иной продукт.
+    </p>
+    <div class="tooltip__text">
+      <p>Классы бывают:</p>
+      <ul>
+        <li>основными</li>
+        <li>корреспондирующими</li>
+      </ul>
+    </div>
+    <p class="tooltip__title">Обозначение в результатах:</p>
+    <p class="tooltip__text">
+      <img src="img/mktu/1.webp" class="_img-shadow" alt="00"> — класс не занят
+    </p>
+    <p class="tooltip__text">
+      <img src="img/mktu/2.webp" class="_img-shadow" alt="00"> — корреспондирующий класс не занят
+    </p>
+    <p class="tooltip__text">
+      <img src="img/mktu/3.webp" class="_img-shadow" alt="00"> — класс занят
+    </p>
+    <p class="tooltip__text">
+      <img src="img/mktu/4.webp" class="_img-shadow" alt="00"> — корреспондирующий класс занят
+    </p>
+  </div>
+</div>
+<div class="tooltip tooltip--okved" id="tooltip-okved">
+  <div class="tooltip__wrapper">
+    <p class="tooltip__overline">Основной</p>
+    <p class="tooltip__title">Общероссийский классификатор видов экономической деятельности 47.19</p>
+    <p class="tooltip__text">
+      Торговля розничная в нестационарных торговых объектах и на рынках
+    </p>
+  </div>
+</div>
 <div class="tooltip" id="tooltip-no-design">
   <div class="tooltip__wrapper">
     <p class="tooltip__title">No design</p>
