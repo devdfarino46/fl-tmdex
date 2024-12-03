@@ -16,7 +16,6 @@ const tooltips = document.querySelectorAll('.tooltip');
 
 const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
-const result = document.querySelector('.result');
 const searchForm = document.querySelector('.search-form');
 
 const corresps = {
@@ -107,7 +106,7 @@ tooltipLinks.forEach(link => {
   }
 
   link.addEventListener('mouseover', (e) => show(e));
-  link.addEventListener('mouseleave', (e) => {
+  link.addEventListener('mouseout', (e) => {
     tooltips.forEach(t => t.classList.remove('--visibled'));
   });
   
@@ -169,10 +168,17 @@ if (menuBtn) {
 
 if (formMain) {
   const form = formMain.querySelector('.form-main__form');
+  const title = formMain.querySelector('.form-main__title');
+  const descr = formMain.querySelector('.form-main__descr');
+  
 
   if (form) {
     formMain.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      title.innerHTML = title.dataset.textSuccess;
+      descr.innerHTML = descr.dataset.textSuccess;
+      form.remove();
     });
 
 
@@ -241,7 +247,8 @@ if (search) {
     const selects = mktuSelected.querySelectorAll('.mktu-select');
     
     selects.forEach(select => {
-      select.addEventListener('click', () => {
+      const btn = select.querySelector('.mktu-select i');
+      btn.addEventListener('click', () => {
         select.remove();
       });
     })
@@ -434,3 +441,4 @@ if (reportResult) {
     });
   });
 }
+

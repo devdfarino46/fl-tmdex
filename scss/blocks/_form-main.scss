@@ -77,6 +77,10 @@
       }
 		}
 
+    .checkbox {
+      align-self: flex-start;
+    }
+
 		&__submit {
 
       @media (max-width: 1040px) {

@@ -18,87 +18,16 @@
 <!------------------------------- MKTU DROPDOWN ------------------------------------>
   <div action="#" class="mktu-dropdown">
     <ul class="mktu-dropdown__list">
-
-      <li data-value="10" class="mktu">10</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="11" class="mktu">11</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="12" class="mktu">12</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="13" class="mktu">13</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="14" class="mktu">14</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="15" class="mktu">15</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="16" class="mktu">16</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="17" class="mktu">17</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="18" class="mktu">18</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="19" class="mktu">19</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="20" class="mktu">20</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="21" class="mktu">21</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="22" class="mktu">22</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="23" class="mktu">23</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="24" class="mktu">24</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="25" class="mktu">25</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="26" class="mktu">26</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="27" class="mktu">27</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="28" class="mktu">28</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
-      <li data-value="29" class="mktu">29</li>
-      <input type="checkbox" name="" value="">
-      <input type="checkbox" name="" value="">
-
+      @@for(let i = 1; i <= 9; i++) {
+        <li data-value="`+i+`" class="mktu">0`+i+`</li>
+        <input type="checkbox" name="" value="">
+        <input type="checkbox" name="" value="">
+      }
+      @@for (let i = 10; i <= 45; i++) {
+        <li data-value="`+i+`" class="mktu">`+i+`</li>
+        <input type="checkbox" name="" value="">
+        <input type="checkbox" name="" value="">
+      }
     </ul>
     <div class="mktu-dropdown__checkbox-wrap">
       <label class="mktu-dropdown__checkbox checkbox">
@@ -108,7 +37,7 @@
         </div>
         <p class="checkbox__label">Учитывать однородные классы</p>
       </label>
-      <i class="icon-alert-question tooltip-link" data-href="#tooltip-no-design"></i>
+      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
     </div>
     <div class="mktu-dropdown__btns">
       <button type="button" class="mktu-dropdown__apply-btn btn">
@@ -121,6 +50,7 @@
   </div>
   <div class="mktu-dropdown-text ">
     <ul class="mktu-dropdown-text__list">
+      
 
       <li class="mktu-dropdown-text__item">
         <p class="mktu-dropdown-text__num">10</p>

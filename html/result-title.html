@@ -16,7 +16,7 @@
     <main class="page">
       <section class="section search">
         <div class="search__container">
-          <h1 class="search__title">Поиск товарного знака по номеру документа</h1>
+          <h1 class="search__title">Результат проверки <br>товарного знака</h1>
           <p class="search__date">
             Обновление базы:
             <a href="#popup-base" class="label-data popup-link">сегодня</a>
@@ -25,28 +25,13 @@
           @@include('blocks/_search-form.html')
 
           <div class="search__mktu-selected">
-            <button type="button" class="mktu-select" data-value="10">
-              <p class="mktu-select__num">10</p>
+            <button type="button" class="mktu-select tooltip-link" data-value="0" data-href="#tooltip-mktu-0">
+              <p class="mktu-select__num">0</p>
               <p class="mktu-select__text">Продукты химические 123 123</p>
               <i class="icon-close"></i>
             </button>
-            <button type="button" class="mktu-select --busy" data-value="10">
-              <p class="mktu-select__num">10</p>
-              <p class="mktu-select__text">Продукты химические 123 123</p>
-              <i class="icon-close"></i>
-            </button>
-            <button type="button" class="mktu-select" data-value="10">
-              <p class="mktu-select__num">10</p>
-              <p class="mktu-select__text">Продукты химические 123 123</p>
-              <i class="icon-close"></i>
-            </button>
-            <button type="button" class="mktu-select --busy" data-value="10">
-              <p class="mktu-select__num">10</p>
-              <p class="mktu-select__text">Продукты химические 123 123</p>
-              <i class="icon-close"></i>
-            </button>
-            <button type="button" class="mktu-select" data-value="10">
-              <p class="mktu-select__num">10</p>
+            <button type="button" class="mktu-select --busy tooltip-link" data-value="0" data-href="#tooltip-mktu-0">
+              <p class="mktu-select__num">0</p>
               <p class="mktu-select__text">Продукты химические 123 123</p>
               <i class="icon-close"></i>
             </button>
@@ -140,7 +125,7 @@
       
             <div class="report__reports">
               <div type="button" class="accordeon accordeon--report">
-                <i class="icon-file-text"></i>
+                <i class="icon-file-text-tiny"></i>
                 <p>Предварительный отчёт по запросу <b>tmdex</b></p>
                 <button type="button" class="btn btn--lime btn--small">
                   <i class="icon-plus"></i>
@@ -179,7 +164,7 @@
       @@include('blocks/_form-main.html')
     </main>
 
-    @@include('blocks/_form-main.html)
+    @@include('blocks/_footer.html')
   </div>
 
   @@include('blocks/_subwrapper.html')

@@ -15,6 +15,7 @@
   [data-item="switch"] {
     grid-row: 2;
     grid-column: 1 / 4;
+    justify-self: flex-start;
   }
 
   .mktu-dropdown,
