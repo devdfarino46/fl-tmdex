@@ -7,6 +7,8 @@ const inputsText = document.querySelectorAll('.input-text');
 const mktuGroups = document.querySelectorAll('.mktu-group');
 const accordeons = document.querySelectorAll('.accordeon');
 const reportResult = document.querySelector('.report-result');
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
 
 const popupLinks = document.querySelectorAll('.popup-link');
 const tooltipLinks = document.querySelectorAll('.tooltip-link');
@@ -43,6 +45,25 @@ function mktuCorrespsHandler(mktu, mktus, handler) {
     }
   }
 }
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    tabBtns.forEach(el => {
+      if (btn.dataset.tab.split(' ')[0] === el.dataset.tab.split(' ')[0]) {
+        el.classList.remove('--active');
+      }
+    });
+    btn.classList.add('--active');
+
+    tabContents.forEach(content => {
+      if (btn.dataset.tab === content.dataset.tab) {
+        content.classList.add('--active');
+      } else {
+        content.classList.remove('--active');
+      }
+    })
+  });
+});
 
 popupLinks.forEach(link => {
   link.addEventListener('click', (e) => {
@@ -238,28 +259,6 @@ if (search) {
       }
     })
   }
-}
-
-if (result) {
-  const tabBtns = result.querySelectorAll('.result__tabs .tab-btn');
-  const tabs = result.querySelectorAll('.result__tab');
-
-  tabBtns.forEach((tabBtn, index) => {
-    tabBtn.addEventListener('click', () => {
-      tabBtns.forEach((el) => {
-        el.classList.remove('--active');
-      });
-      tabBtn.classList.add('--active');
-
-      tabs.forEach((el) => {
-        el.classList.remove('--active');
-
-        if (el.dataset.tab === tabBtn.dataset.tab) {
-          el.classList.add('--active');
-        }
-      });
-    });
-  });
 }
 
 if (searchForm) {

@@ -40,10 +40,6 @@ body {
   }
 }
 
-.section {
-  
-}
-
 .rel {
   position: relative;
 }
@@ -67,12 +63,14 @@ body {
 }
 
 .popup-link { cursor: pointer; }
-.tooltip-link { 
-  cursor: pointer;
+.tooltip-link { cursor: pointer; }
 
-  &:hover {
-    
-  }
+.accordeon:not(.--active) + .subaccordeon {
+  display: none !important;
+}
+
+.tab-content:not(.--active) {
+  display: none !important;
 }
 
 .disclamer {

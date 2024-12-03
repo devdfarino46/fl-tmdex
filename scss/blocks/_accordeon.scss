@@ -39,7 +39,7 @@
   }
 
   // State disabled
-  &[disabled], &[data-count="0"] {
+  &[disabled] {
     pointer-events: none;
     opacity: .3;
   }

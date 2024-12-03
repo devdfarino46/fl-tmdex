@@ -22,15 +22,19 @@
             <a href="#popup-base" class="label-data popup-link">сегодня</a>
           </p>
 
-          @@include('blocks/_search-form.html')
+          @@include('blocks/_search-form.html', {class: '--hide-mktu', checked: true})
+        </div>
+      </section>
 
-          <div class="report">
+      <section class="report">
+        <div class="report__container">
+          <div class="report__wrapper">
             <div class="report__icon-wrapper">
               <i class="icon-alert-circle"></i>
               <p class="report__title">Такого документа нет или его номер введён не верно</p>
               <p class="report__text">Измените запрос и попробуйте снова.</p>
             </div>
-
+    
             <div class="notice">
               <p class="notice__info">
                 <i class="icon-alert-circle"></i>

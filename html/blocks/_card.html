@@ -1,0 +1,87 @@
+<div class="card">
+  <div class="card__image-wrap">
+    <div class="card__image">
+      <img src="" alt="" data-src="img/ufimka.webp" class="lazyload">
+    </div>
+    <p class="card__title">
+      <span>Заявка RU</span>
+      <i>№0000000000</i>
+    </p>
+  </div>
+
+  <div class="card__content">
+    <div class="card__specifs">
+      <p class="card__title">
+        <span>Заявка RU</span>
+        <i>№0000000000</i>
+      </p>
+      <p class="status">Регистрация</p>
+      <div class="card__icons">
+        <i class="icon-shield --active"></i>
+        <i class="icon-shield"></i>
+        <i class="icon-file-text"></i>
+        <i class="icon-file-text"></i>
+        <i class="icon-alert-triangle"></i>
+        <i class="icon-alert-triangle"></i>
+      </div>
+      <p class="card__date">
+        Приоритет:
+        <b>18.11.2024</b>
+        <span class="label-data">1 день</span>
+      </p>
+    </div>
+    <div class="card__mktu-wrapper">
+      <div class="mktu-group">
+        <p class="mktu-group__label">
+          <span>МКТУ товаров</span>
+          <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+        </p>
+        <ul class="mktu-group__list">
+          <div>
+            @@for (i = 0; i < 10; i++) {
+              <li class="mktu tooltip-link @@if(context.mktubusy) {--busy}" data-href="#tooltip-mktu">00</li>
+            }
+          </div>
+          <button type="button" class="btn btn--secondary btn--small">
+            <span>+25</span>
+            <i class="icon-close"></i>
+          </button>
+        </ul>
+      </div>
+      <div class="mktu-group">
+        <p class="mktu-group__label">
+          <span>МКТУ услуг</span>
+          <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+        </p>
+        <ul class="mktu-group__list">
+          <div>
+            @@for (i = 0; i < 5; i++) {
+              <li class="mktu tooltip-link @@if(context.mktubusy) {--busy}" data-href="#tooltip-mktu">00</li>
+            }
+          </div>
+          <button type="button" class="btn btn--secondary btn--small">
+            <span>+25</span>
+            <i class="icon-close"></i>
+          </button>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card__company">
+    <p class="card__company-top">
+      Правообладатель:
+      <span class="card__company-status">действует</span>
+      <span class="card__icons">
+        <i class="icon-alert-triangle --active"></i>
+        <i class="icon-alert-triangle"></i>
+        <i class="icon-alert-triangle"></i>
+      </span>
+    </p>
+    <p class="card__company-info">
+      Общество с ограниченной ответственностью "НОВОВОРОНЕЖСКАЯ
+      ПИВОВАРЕННАЯ КОМПАНИЯ "КАНЦЛЕРЪ", 394002, Воронежская
+      область, г. Воронеж, ул. Урывского, 4А (RU)
+    </p>
+  </div>
+</div>

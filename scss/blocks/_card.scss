@@ -10,7 +10,10 @@
   @media (max-width: 740px) {
     gap: 10px;
     padding: 10px 0 20px;
-    border-bottom: none;
+  }
+
+  .label-data {
+    font-size: 12px;
   }
 
   &__image-wrap {
@@ -122,11 +125,17 @@
     color: #787885;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0px 5px;
     flex-wrap: wrap;
 
     b {
       color: #19191D;
+    }
+
+    @media (max-width: 940px) {
+      .label-data {
+        display: none;
+      }
     }
   }
 
@@ -204,7 +213,7 @@
 
   &__company-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr auto auto;
+    grid-template-columns: auto auto auto auto;
     gap: 10px 30px;
 
     @media (max-width: 940px) {
@@ -212,7 +221,7 @@
     }
 
     @media (max-width: 740px) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto 1fr;
     }
   }
 
@@ -220,11 +229,11 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    grid-column: 1 / 3;
 
-    &:not(.--main) {
-      display: none;
-      grid-column: auto;
+    @media (max-width: 740px) {
+      &.--main {
+        grid-column: 1 / 3;
+      }
     }
   }
 
@@ -257,13 +266,12 @@
   &--company &__specifs {
     flex-direction: row;
     align-items: center;
-
-    &>*:not(.status) {
-      display: none;
-    }
   }
   &--company &__icons {
     display: flex;
+  }
+  &--company &__date .label-data {
+    display: inline;
   }
 
   // State hover

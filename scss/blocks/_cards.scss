@@ -1,0 +1,33 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (max-width: 740px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+
+    .card {
+      grid-template-columns: 1fr;
+      border-bottom: none;
+    }
+    .card--company .card__specifs>*:not(.status) {
+      display: none;
+    }
+    .card--company .card__company-coll:not(.--main) {
+      display: none;
+    }
+    .card--company .card__mktu-wrapper {
+      display: none;
+    }
+  }
+
+  &__load-btn {
+    justify-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (max-width: 740px) {
+      grid-column: 1 / 3;
+    }
+  }
+}

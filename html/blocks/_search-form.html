@@ -15,6 +15,7 @@
     <p class="input__helper">Status</p>
   </label>
 
+<!------------------------------- MKTU DROPDOWN ------------------------------------>
   <div action="#" class="mktu-dropdown">
     <ul class="mktu-dropdown__list">
 
@@ -362,7 +363,7 @@
 
   <label class="search-form__switch switch switch--two-text" data-item="switch">
     <div class="switch__wrapper">
-      <input type="checkbox" class="search__switch-input">
+      <input type="checkbox" class="search__switch-input" @@if(context.checked) {checked}>
     </div>
     <p class="switch__label">
       <span class="_off">Поиск по заявке, свидетельству, ИНН</span>

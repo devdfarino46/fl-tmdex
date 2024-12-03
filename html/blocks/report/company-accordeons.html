@@ -1,0 +1,37 @@
+<div class="report__accordeons">
+  @@include('../_card--company.html')
+
+  <div type="button" class="accordeon">
+    <p>Заявки компании <b>14</b></p>
+    <button type="button" class="btn btn--secondary btn--small">
+      <i class="icon-plus"></i>
+      <i class="icon-close"></i>
+    </button>
+  </div>
+  <div class="cards subaccordeon">
+    @@for (let i = 0; i < 6; i++) {
+      @@include('../_card.html')
+    }
+    <button type="button" class="cards__load-btn btn btn--secondary btn--small">
+      <span>Загрузить ещё</span>
+      <i class="icon-plus"></i>
+    </button>
+  </div>
+  
+  <div type="button" class="accordeon">
+    <p>Свидетельства компании <b>3</b></p>
+    <button type="button" class="btn btn--secondary btn--small">
+      <i class="icon-plus"></i>
+      <i class="icon-close"></i>
+    </button>
+  </div>
+  <div class="cards subaccordeon">
+    @@for (let i = 0; i < 6; i++) {
+      @@include('../_card--certif.html')
+    }
+    <button type="button" class="cards__load-btn btn btn--secondary btn--small">
+      <span>Загрузить ещё</span>
+      <i class="icon-plus"></i>
+    </button>
+  </div>
+</div>
