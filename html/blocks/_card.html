@@ -38,8 +38,8 @@
         </p>
         <ul class="mktu-group__list">
           <div>
-            @@for (i = 0; i < 10; i++) {
-              <li class="mktu tooltip-link" data-href="#tooltip-mktu-0">00</li>
+            @@for (i = 10; i < 21; i++) {
+              <li class="mktu tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">`+i+`</li>
             }
           </div>
           <button type="button" class="btn btn--secondary btn--small">
@@ -55,8 +55,8 @@
         </p>
         <ul class="mktu-group__list">
           <div>
-            @@for (i = 0; i < 5; i++) {
-              <li class="mktu tooltip-link" data-href="#tooltip-mktu-0">00</li>
+            @@for (i = 10; i < 16; i++) {
+              <li class="mktu tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">`+i+`</li>
             }
           </div>
           <button type="button" class="btn btn--secondary btn--small">

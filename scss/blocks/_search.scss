@@ -50,8 +50,15 @@
       display: flex;
       gap: 4px;
       align-items: center;
-      margin-bottom: 20px;
-      margin-top: 20px;
       flex-wrap: wrap;
+
+      .mktu-select {
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+
+      .mktu-select:nth-child(-n+2) {
+        display: none;
+      }
     }
 }

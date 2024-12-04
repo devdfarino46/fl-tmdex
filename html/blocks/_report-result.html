@@ -1,0 +1,80 @@
+<div class="report-result">
+  <div class="report-result__text-wrap">
+    <i class="icon-check-circle"></i>
+    <p class="report-result__title">Название <b>tmdex</b> свободно — высокий шанс регистрации!</p>
+    <p class="report-result__text">
+      Уточните поиск, указав типы ваших товаров, услуг или номер класса МКТУ.
+      Оцените шансы и зарегистрируйте этот товарный знак.
+    </p>
+  </div>
+  <div class="score-block @@if(context.score_block_class) {@@score_block_class}">
+    <p class="score-block__num">99%</p>
+    <p class="score-block__text">
+      Шанс регистрации товарного знака
+    </p>
+  </div>
+  <div class="report-result__tab-btns">
+    <button type="button" class="tab-btn --active" data-tab="with-risk">
+      <span>С рисками</span>
+      <b class="--danger">-35%</b>
+    </button>
+    <button type="button" class="tab-btn" data-tab="no-risk">
+      <i class="icon-shield"></i>
+      <span>Без рисков с TMdex</span>
+      <b class="--success">+35%</b>
+    </button>
+  </div>
+
+  <div class="report-result__notices --active" data-tab="with-risk">
+    <div class="result-notice">
+      <p class="result-notice__num if(context.notice_class) { @@notice_class } ">01</p>
+      <p class="result-notice__text">
+        Без проверки экспертом ТМdex
+      </p>
+      <a href="#" class="result-notice__link">Смотреть</a>
+    </div>
+    <div class="result-notice">
+      <p class="result-notice__num if(context.notice_class) { @@notice_class } ">01</p>
+      <p class="result-notice__text">
+        Без проверки экспертом ТМdex
+      </p>
+      <a href="#" class="result-notice__link">Смотреть</a>
+    </div>
+    <div class="result-notice">
+      <p class="result-notice__num if(context.notice_class) { @@notice_class } ">01</p>
+      <p class="result-notice__text">
+        Без проверки экспертом ТМdex
+      </p>
+      <a href="#" class="result-notice__link">Смотреть</a>
+    </div>
+  </div>
+
+  <div class="report-result__notices" data-tab="no-risk">
+    <div class="result-notice">
+      <p class="result-notice__num">01</p>
+      <p class="result-notice__text">
+        Без проверки экспертом ТМdex
+      </p>
+      <a href="#" class="result-notice__link">Смотреть</a>
+    </div>
+    <div class="result-notice">
+      <p class="result-notice__num">01</p>
+      <p class="result-notice__text">
+        Без проверки экспертом ТМdex
+      </p>
+      <a href="#" class="result-notice__link">Смотреть</a>
+    </div>
+    <div class="result-notice">
+      <p class="result-notice__num">01</p>
+      <p class="result-notice__text">
+        Без проверки экспертом ТМdex
+      </p>
+      <a href="#" class="result-notice__link">Смотреть</a>
+    </div>
+  </div>
+
+  <button type="button" class="report-result__grid-btn btn btn--lime btn--large">
+    <span>Бесплатная консультация</span>
+    <i class="icon-phone"></i>
+  </button>
+</div>

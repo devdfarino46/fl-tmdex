@@ -18,6 +18,61 @@ const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
 const searchForm = document.querySelector('.search-form');
 
+const MKTUS = {
+  "01": "Инновационные решения",
+  "02": "Стратегическое планирование",
+  "03": "Цифровой маркетинг",
+  "04": "Опыт клиента",
+  "05": "Финансовое управление",
+  "06": "Оптимизация цепочки поставок",
+  "07": "Ресурсы человека",
+  "08": "Инфраструктура ИТ",
+  "09": "Контроль качества",
+  "10": "Юридическое соответствие",
+  "11": "Разработка бренда",
+  "12": "Автоматизация маркетинга",
+  "13": "Управление каналом продаж",
+  "14": "Создание контента",
+  "15": "Оптимизация SEO",
+  "16": "Email-маркетинг",
+  "17": "Управление социальными сетями",
+  "18": "Публичные отношения",
+  "19": "Аналитика и отчетность",
+  "20": "Управление проектами",
+  "21": "Аналитика данных",
+  "22": "Бизнес-интеллект",
+  "23": "Поддержка клиентов",
+  "24": "Найм и набор персонала",
+  "25": "Обучение персонала",
+  "26": "Управление рабочей силой",
+  "27": "Управление производительностью",
+  "28": "Льготы для сотрудников",
+  "29": "Отношения с сотрудниками",
+  "30": "Развитие сотрудников",
+  "31": "Участие сотрудников",
+  "32": "Удержание сотрудников",
+  "33": "Оборот сотрудников",
+  "34": "Удовлетворенность сотрудников",
+  "35": "Коммуникация с сотрудниками",
+  "36": "Здоровье сотрудников",
+  "37": "Признание сотрудников",
+  "38": "Производительность сотрудников",
+  "39": "Оплата труда сотрудников",
+  "40": "Льготы для сотрудников",
+  "41": "Отношения с сотрудниками",
+  "42": "Развитие сотрудников",
+  "43": "Участие сотрудников",
+  "44": "Удержание сотрудников",
+  "45": "Оборот сотрудников"
+};
+const OKVEDS = {
+  "47.19.20": "Производство резины и пластмассовых изделий",
+  "47.19.1": "Производство химических продуктов, фармацевтических препаратов и других химических продуктов",
+  "47.19": "Производство машин и оборудования"
+};
+
+let mktuFilter = {};
+
 const CORRESPS = {
   "10": ["13", "14", "17", "21"],
   "15": ["16", "18", "19", "20"]
@@ -86,6 +141,7 @@ tooltipLinks.forEach(link => {
     const rect = tooltip.getBoundingClientRect();
     const lRect = link.getBoundingClientRect();
 
+    // Positioning tooltip
     if (window.innerWidth >= 700) {
       if (lRect.left < 450) {
         tooltip.style.left = `${lRect.left}px`;
@@ -96,12 +152,38 @@ tooltipLinks.forEach(link => {
       tooltip.style.left = `0`;
       tooltip.style.right = `0`;
     }
-
     if (lRect.top < window.innerHeight - 150) {
       tooltip.style.top = `${lRect.bottom + 5}px`;
     } else {
       tooltip.style.top = `${lRect.top - rect.height - 5}px`;
     }
+    
+    // Texting tooltip
+    if (link.getAttribute('data-href') === '#tooltip-mktu-0') {
+      const value = link.getAttribute('data-value');
+      const num = tooltip.querySelector('._mktu-num');
+      const descr = tooltip.querySelector('._mktu-descr');
+
+      num.innerHTML = value;
+      descr.innerHTML = MKTUS[value];
+    }
+
+    if (link.getAttribute('data-href') === '#tooltip-okved') {
+      const value = link.getAttribute('data-value');
+      const num = tooltip.querySelector('._okved-num');
+      const descr = tooltip.querySelector('._okved-descr');
+      const type = tooltip.querySelector('._okved-type');
+
+      num.innerHTML = value;
+      descr.innerHTML = OKVEDS[value];
+
+      if (link.getAttribute('data-main') !== null) {
+        type.innerHTML = type.getAttribute('data-text-main');
+      } else {
+        type.innerHTML = type.getAttribute('data-text-addit');
+      }
+    }
+
     tooltip.classList.add('--visibled');
   }
 
