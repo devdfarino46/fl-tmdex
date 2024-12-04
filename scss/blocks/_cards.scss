@@ -4,11 +4,15 @@
 
   @media (max-width: 740px) {
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 5px;
 
     .card {
       grid-template-columns: 1fr;
       border-bottom: none;
+
+      &__image-wrap {
+        align-items: flex-start;
+      }
     }
     .card--company .card__specifs>*:not(.status) {
       display: none;

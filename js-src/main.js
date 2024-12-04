@@ -18,7 +18,7 @@ const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
 const searchForm = document.querySelector('.search-form');
 
-const corresps = {
+const CORRESPS = {
   "10": ["13", "14", "17", "21"],
   "15": ["16", "18", "19", "20"]
 }
@@ -32,7 +32,7 @@ const corresps = {
  * @param {handler} handler
  */
 function mktuCorrespsHandler(mktu, mktus, handler) {
-  for (const [key, value] of Object.entries(corresps)) {
+  for (const [key, value] of Object.entries(CORRESPS)) {
     if (mktu.dataset.value === key) {
       value.forEach(corr => {
         mktus.forEach(el => {
@@ -123,35 +123,54 @@ mktuGroups.forEach(group => {
   const mktus = group.querySelectorAll('.mktu');
 
   const hide = () => {
+    let timer;
     let groupRect = group.getBoundingClientRect();
-    if (groupRect.top >= -100 && groupRect.bottom <= window.innerHeight + 100) {
-      let count = 0;
-      mktus.forEach((mktu, index) => {
-        let listRight = list.getBoundingClientRect().right;
-        let mktuRight = mktu.getBoundingClientRect().right;
+    let count = 0;
+      // mktus.forEach((mktu, index) => {
+      //   let listRight = list.getBoundingClientRect().right;
+      //   let mktuRight = mktu.getBoundingClientRect().right;
     
-        if (mktuRight > listRight) {
-          btn.classList.remove('--hidden');
-          mktu.classList.add('--hidden');
-          count += 1;
-          btn.querySelector('span').textContent = `+${count}`;
-          return;
-        } else {
-          mktu.classList.remove('--hidden');
-          if (!group.classList.contains('--opened')) {
-            btn.classList.add('--hidden');
-          }
-        }
-      });
-    }
+      //   if (mktuRight + 23 > listRight) {
+      //     btn.classList.remove('--hidden');
+      //     mktu.classList.add('--hidden');
+      //     count += 1;
+      //     btn.querySelector('span').textContent = `+${count}`;
+      //     return;
+      //   } else {
+      //     mktu.classList.remove('--hidden');
+      //     if (!group.classList.contains('--opened')) {
+      //       btn.classList.add('--hidden');
+      //     }
+      //   }
+      // });
+
+    const medias = [
+      [1230, 10],
+      [1140, 8],
+      [940, 6],
+      [740, 4],
+      [0, 2]
+    ];
+
+    btn.classList.add('--hidden');
+
+    mktus.forEach((mktu, index) => {
+      const displayStyle = window.getComputedStyle(mktu).getPropertyValue('display');
+
+      if (displayStyle === 'none') {
+        count += 1;
+        btn.querySelector('span').textContent = `+${count}`;
+        btn.classList.remove('--hidden');
+      }
+    });
   };
+
+  window.addEventListener('load', hide);
+  window.addEventListener('resize', hide);
 
   btn.addEventListener('click', ev => {
     group.classList.toggle('--opened');
   });
-
-  window.addEventListener('load', hide);
-  setInterval(hide, 2000);
 });
 
 accordeons.forEach((accordeon, index) => {

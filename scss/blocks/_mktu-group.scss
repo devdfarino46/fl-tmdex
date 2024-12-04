@@ -1,6 +1,7 @@
 .mktu-group {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   &__label {
     font-size: 14px;
@@ -19,22 +20,21 @@
 
     &>div {
       display: flex;
-      overflow: hidden;
+      flex-wrap: wrap;
       gap: 10px 5px;
       padding-bottom: 4px;
       padding-right: 4px;
       margin-bottom: -4px;
       margin-right: -4px;
-    }
 
-    &>div .mktu.--hidden {
-      opacity: 0;
+      .mktu {
+      }
     }
 
     .btn {
       position: relative;
       font-size: 12px;
-      padding: 9px 10px;
+      padding: 9px 10px 9.5px;
 
       span {
         transition: .2s ease;
@@ -52,11 +52,34 @@
     }
   }
 
-  &.--opened &__list>div .mktu.--hidden {
-    opacity: 1;
+  // &:not(.--opened) &__list>div .mktu.--hidden {
+  //   display: none;
+  // }
+  &:not(.--okved, .--opened) &__list>div .mktu:nth-child(n+9) {
+    display: none;
   }
-  &.--opened &__list>div {
-    flex-wrap: wrap;
+  &.--okved:not(.--opened) &__list>div .mktu:nth-child(n+13) {
+    display: none;
+  }
+  &:not(.--opened) &__list>div .mktu{
+    @media (max-width: 1230px) {
+      &:nth-child(n+9) { display: none; }
+    }
+    @media (max-width: 1140px) {
+      &:nth-child(n+9) { display: none; }
+    }
+    @media (max-width: 940px) {
+      &:nth-child(n+7) { display: none; }
+    }
+    @media (max-width: 740px) {
+      &:nth-child(n+5) { display: none; }
+    }
+    @media (max-width: 540px) {
+      &:nth-child(n+3) { display: none; }
+    }
+    @media (max-width: 440px) {
+      &:nth-child(n+2) { display: none; }
+    }
   }
   &.--opened .btn span {
     opacity: 0;
