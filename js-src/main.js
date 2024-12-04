@@ -71,7 +71,7 @@ const OKVEDS = {
   "47.19": "Производство машин и оборудования"
 };
 
-let mktuFilter = {};
+let mktuFilter = ["01", "10", "13", "15"];
 
 const CORRESPS = {
   "10": ["13", "14", "17", "21"],
@@ -99,6 +99,62 @@ function mktuCorrespsHandler(mktu, mktus, handler) {
     }
   }
 }
+
+function updateMktuFiltersUI() {
+  const mktuItems = searchForm.querySelectorAll(
+    '.mktu-dropdown .mktu');
+  const mktuItemsText = searchForm.querySelectorAll(
+    '.mktu-dropdown-text .mktu-dropdown-text__item');
+  const allowCorrespCheckbox = searchForm.querySelector(
+    '.mktu-dropdown .mktu-dropdown__checkbox input');
+  const mktuSelected = search.querySelector('.search__mktu-selected');
+  const mktuSelects = mktuSelected.querySelectorAll('.mktu-select');
+  
+  // Reset UI
+  mktuItems.forEach(mktuItem => {
+    mktuItem.nextElementSibling.removeAttribute('checked');
+    mktuItem.nextElementSibling.nextElementSibling.removeAttribute('checked');
+  });
+  mktuItemsText.forEach(mktuItemText => {
+    mktuItemText.nextElementSibling.removeAttribute('checked');
+  });
+  mktuSelects.forEach((mktuSelect, index) => {
+    mktuSelect.classList.remove('--show');
+  });
+  
+  mktuFilter.forEach(item => {
+    mktuItems.forEach(mktuItem => {
+      if (mktuItem.dataset.value === item) {
+        mktuItem.nextElementSibling.setAttribute('checked', '');
+        if (allowCorrespCheckbox.checked) {
+          mktuCorrespsHandler(mktuItem, mktuItems, el => {
+            el.nextElementSibling.nextElementSibling.setAttribute('checked', '');
+          });
+        }
+      }
+    });
+    mktuItems.forEach(mktuItem => {
+      mktuCorrespsHandler(mktuItem, mktuItems, el => {
+        if (el.nextElementSibling.getAttribute('checked') !== null) {
+          el.nextElementSibling.nextElementSibling.removeAttribute('checked');
+        }
+      });
+    });
+
+    mktuItemsText.forEach(mktuItemText => {
+      if (mktuItemText.dataset.value === item) {
+        mktuItemText.nextElementSibling.setAttribute('checked', '');
+      }
+    });
+
+    mktuSelects.forEach(mktuSelect => {
+      if (mktuSelect.dataset.value === item) {
+        mktuSelect.classList.add('--show');
+      }
+    })
+  });
+}
+updateMktuFiltersUI();
 
 tabBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
@@ -350,7 +406,8 @@ if (search) {
     selects.forEach(select => {
       const btn = select.querySelector('.mktu-select i');
       btn.addEventListener('click', () => {
-        select.remove();
+        mktuFilter.splice(mktuFilter.indexOf(select.dataset.value), 1);
+        updateMktuFiltersUI();
       });
     })
   }
@@ -402,11 +459,7 @@ if (searchForm) {
 
       // Toggle allowed search with corresponds mktu
       checkbox.addEventListener('click', () => {
-        if (!checkbox.querySelector('input').checked) {
-          mktus.forEach(mktu => {
-            mktu.nextElementSibling.nextElementSibling.removeAttribute('checked');
-          });
-        }
+        updateMktuFiltersUI();
       });
 
       // Apply and hide dropdown
@@ -416,10 +469,8 @@ if (searchForm) {
 
       // Clear finters
       clearBtn.addEventListener('click', () => {
-        mktus.forEach(mktu => {
-          mktu.nextElementSibling.removeAttribute('checked');
-          mktu.nextElementSibling.nextElementSibling.removeAttribute('checked');
-        });
+        mktuFilter = [];
+        updateMktuFiltersUI();
       });
       
       mktus.forEach(mktu => {
@@ -447,25 +498,13 @@ if (searchForm) {
           });
 
           input.toggleAttribute('checked');
-
+          
           if (input.getAttribute('checked') !== null) {
-            if (checkbox.querySelector('input').checked) {
-              mktuCorrespsHandler(mktu, mktus, el => {
-                if (el.nextElementSibling.getAttribute('checked') === null) {
-                  el.nextElementSibling.nextElementSibling.setAttribute('checked', '');
-                } else {
-                  el.nextElementSibling.nextElementSibling.removeAttribute('checked');
-                }
-              });
-            }
-            cInput.removeAttribute('checked');
+            mktuFilter.push(mktu.dataset.value);
+            updateMktuFiltersUI();
           } else {
-            if (checkbox.querySelector('input').checked) {
-              mktuCorrespsHandler(mktu, mktus, el => {
-                el.nextElementSibling.nextElementSibling.removeAttribute('checked');
-              });
-            }
-            cInput.removeAttribute('checked');
+            mktuFilter.splice(mktuFilter.indexOf(mktu.dataset.value), 1);
+            updateMktuFiltersUI();
           }
         });
       });
@@ -505,9 +544,8 @@ if (searchForm) {
 
       // Clear finters
       clearBtn.addEventListener('click', () => {
-        items.forEach(item => {
-          item.nextElementSibling.removeAttribute('checked');
-        });
+        mktuFilter = [];
+        updateMktuFiltersUI();
       });
 
       // Select item
@@ -515,6 +553,14 @@ if (searchForm) {
         const input = item.nextElementSibling;
         item.addEventListener('click', ev => {
           input.toggleAttribute('checked');
+          
+          if (input.hasAttribute('checked')) {
+            mktuFilter.push(item.dataset.value);
+            updateMktuFiltersUI();
+          } else {
+            mktuFilter.splice(mktuFilter.indexOf(item.dataset.value), 1);
+            updateMktuFiltersUI();
+          }
         });
       });
     }

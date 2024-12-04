@@ -52,13 +52,13 @@
       align-items: center;
       flex-wrap: wrap;
 
-      .mktu-select {
-        margin-bottom: 20px;
-        margin-top: 20px;
+      .mktu-select:not(.--show) {
+        display: none;
       }
 
-      .mktu-select:nth-child(-n+2) {
-        display: none;
+      &:has(.--show) {
+        margin-bottom: 20px;
+        margin-top: 20px;
       }
     }
 }
