@@ -9,6 +9,7 @@ const accordeons = document.querySelectorAll('.accordeon');
 const reportResult = document.querySelector('.report-result');
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
+const mktuSelects = document.querySelectorAll('.mktu-select');
 
 const popupLinks = document.querySelectorAll('.popup-link');
 const tooltipLinks = document.querySelectorAll('.tooltip-link');
@@ -101,58 +102,58 @@ function mktuCorrespsHandler(mktu, mktus, handler) {
 }
 
 function updateMktuFiltersUI() {
-  const mktuItems = searchForm.querySelectorAll(
-    '.mktu-dropdown .mktu');
-  const mktuItemsText = searchForm.querySelectorAll(
-    '.mktu-dropdown-text .mktu-dropdown-text__item');
-  const allowCorrespCheckbox = searchForm.querySelector(
-    '.mktu-dropdown .mktu-dropdown__checkbox input');
-  const mktuSelected = search.querySelector('.search__mktu-selected');
-  const mktuSelects = mktuSelected.querySelectorAll('.mktu-select');
-  
-  // Reset UI
-  mktuItems.forEach(mktuItem => {
-    mktuItem.nextElementSibling.removeAttribute('checked');
-    mktuItem.nextElementSibling.nextElementSibling.removeAttribute('checked');
-  });
-  mktuItemsText.forEach(mktuItemText => {
-    mktuItemText.nextElementSibling.removeAttribute('checked');
-  });
-  mktuSelects.forEach((mktuSelect, index) => {
-    mktuSelect.classList.remove('--show');
-  });
-  
-  mktuFilter.forEach(item => {
+  if (mktuSelects && search && searchForm) {
+    const mktuItems = searchForm.querySelectorAll(
+      '.mktu-dropdown .mktu');
+    const mktuItemsText = searchForm.querySelectorAll(
+      '.mktu-dropdown-text .mktu-dropdown-text__item');
+    const allowCorrespCheckbox = searchForm.querySelector(
+      '.mktu-dropdown .mktu-dropdown__checkbox input');
+    
+    // Reset UI
     mktuItems.forEach(mktuItem => {
-      if (mktuItem.dataset.value === item) {
-        mktuItem.nextElementSibling.setAttribute('checked', '');
-        if (allowCorrespCheckbox.checked) {
-          mktuCorrespsHandler(mktuItem, mktuItems, el => {
-            el.nextElementSibling.nextElementSibling.setAttribute('checked', '');
-          });
-        }
-      }
+      mktuItem.nextElementSibling.removeAttribute('checked');
+      mktuItem.nextElementSibling.nextElementSibling.removeAttribute('checked');
     });
-    mktuItems.forEach(mktuItem => {
-      mktuCorrespsHandler(mktuItem, mktuItems, el => {
-        if (el.nextElementSibling.getAttribute('checked') !== null) {
-          el.nextElementSibling.nextElementSibling.removeAttribute('checked');
+    mktuItemsText.forEach(mktuItemText => {
+      mktuItemText.nextElementSibling.removeAttribute('checked');
+    });
+    mktuSelects.forEach((mktuSelect, index) => {
+      mktuSelect.classList.remove('--show');
+    });
+    
+    mktuFilter.forEach(item => {
+      mktuItems.forEach(mktuItem => {
+        if (mktuItem.dataset.value === item) {
+          mktuItem.nextElementSibling.setAttribute('checked', '');
+          if (allowCorrespCheckbox.checked) {
+            mktuCorrespsHandler(mktuItem, mktuItems, el => {
+              el.nextElementSibling.nextElementSibling.setAttribute('checked', '');
+            });
+          }
         }
       });
+      mktuItems.forEach(mktuItem => {
+        mktuCorrespsHandler(mktuItem, mktuItems, el => {
+          if (el.nextElementSibling.getAttribute('checked') !== null) {
+            el.nextElementSibling.nextElementSibling.removeAttribute('checked');
+          }
+        });
+      });
+  
+      mktuItemsText.forEach(mktuItemText => {
+        if (mktuItemText.dataset.value === item) {
+          mktuItemText.nextElementSibling.setAttribute('checked', '');
+        }
+      });
+  
+      mktuSelects.forEach(mktuSelect => {
+        if (mktuSelect.dataset.value === item) {
+          mktuSelect.classList.add('--show');
+        }
+      })
     });
-
-    mktuItemsText.forEach(mktuItemText => {
-      if (mktuItemText.dataset.value === item) {
-        mktuItemText.nextElementSibling.setAttribute('checked', '');
-      }
-    });
-
-    mktuSelects.forEach(mktuSelect => {
-      if (mktuSelect.dataset.value === item) {
-        mktuSelect.classList.add('--show');
-      }
-    })
-  });
+  }
 }
 updateMktuFiltersUI();
 
@@ -373,6 +374,7 @@ inputs.forEach((input) => {
     else if (input.classList.contains('--clear-on')) {
       input.classList.remove('--clear-on');
       inputElem.value = '';
+      inputElem.focus();
     }
   });
 });
@@ -396,21 +398,8 @@ inputsText.forEach(input => {
 });
 
 if (search) {
-  const mktuSelected = search.querySelector('.search__mktu-selected');
   const title = search.querySelector('.search__title');
   const form = search.querySelector('.search-form');
-
-  if (mktuSelected) {
-    const selects = mktuSelected.querySelectorAll('.mktu-select');
-    
-    selects.forEach(select => {
-      const btn = select.querySelector('.mktu-select i');
-      btn.addEventListener('click', () => {
-        mktuFilter.splice(mktuFilter.indexOf(select.dataset.value), 1);
-        updateMktuFiltersUI();
-      });
-    })
-  }
 
   // Retext title by form type
   if (title && form && title.dataset.text1 && title.dataset.text2) {
@@ -426,13 +415,47 @@ if (search) {
   }
 }
 
+if (mktuSelects) {
+  mktuSelects.forEach(select => {
+    const btn = select.querySelector('.mktu-select i');
+    btn.addEventListener('click', () => {
+      mktuFilter.splice(mktuFilter.indexOf(select.dataset.value), 1);
+      updateMktuFiltersUI();
+    });
+  });
+}
+
 if (searchForm) {
   const switchInput = searchForm.querySelector('.search-form__switch');
+  const proInputs = searchForm.querySelectorAll('.search-form__pro-input');
+
+  if (proInputs) {
+    proInputs.forEach((input, index) => {
+      const disableHandler = () => {
+        if (input.querySelector('input').value.length > 0) {
+          proInputs.forEach((el, i) => {
+            if (i !== index) {
+              el.querySelector('input').disabled = true;
+            }
+          });
+        } else {
+          proInputs.forEach((el, i) => {
+            el.querySelector('input').disabled = false;
+          });
+        }
+      };
+
+      input.querySelector('input').addEventListener('input', disableHandler);
+      input.querySelector('input').addEventListener('focus', disableHandler);
+      input.querySelector('input').addEventListener('blur', disableHandler);
+      input.addEventListener('click', disableHandler);
+    });
+  }
   
   // If search by title and mktu input is not hidden
-  if (
+  if ( 
     !switchInput.querySelector('input').checked && 
-    !searchForm.classList.contains('--hide-mktu')
+    !searchForm.classList.contains('--hide-mktu') 
   ) {
     const mktuInput = searchForm.querySelector('.search-form [data-item="mktu"]');
     const mktuDropdown = searchForm.querySelector('.mktu-dropdown');
