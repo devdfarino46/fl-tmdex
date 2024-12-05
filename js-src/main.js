@@ -328,19 +328,33 @@ if (formMain) {
   const form = formMain.querySelector('.form-main__form');
   const title = formMain.querySelector('.form-main__title');
   const descr = formMain.querySelector('.form-main__descr');
+  const policyInput = form.querySelector('.form-main__policy-input');
+  const submitBtn = form.querySelector('.form-main__submit');
   
+  const toggleSubmit = () => {
+    if (
+      policyInput.querySelector('input').checked
+    ) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
+  }
+
+  toggleSubmit();
 
   if (form) {
     formMain.addEventListener('submit', (e) => {
       e.preventDefault();
+      toggleSubmit();
 
       title.innerHTML = title.dataset.textSuccess;
       descr.innerHTML = descr.dataset.textSuccess;
       form.remove();
     });
-
-
   }
+
+  policyInput.addEventListener('click', toggleSubmit);
 }
 
 inputs.forEach((input) => {
