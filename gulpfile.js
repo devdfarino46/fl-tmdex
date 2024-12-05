@@ -17,6 +17,7 @@ const fontello = require('gulp-fontello'); // fontello
 const zip = require('gulp-archiver'); // zip
 const gitignoreExclude = require('gulp-gitignore'); // gitignore exclude
 const path = require('path'); // path
+const ghpages = require('gulp-gh-pages'); // gh-pages
 
 const dirname = path.basename(__dirname);
 const resultConfig = require('./result-config.json');
@@ -122,9 +123,9 @@ function _srcZip() {
     .pipe(gulp.dest(`fl-result/${dirname}.src`));
 }
 
-function _ghPages() {
-  return gulp.src(resultConfig.files, {base: '.'})
-    .pipe(gulp.dest(`${resultConfig.ghPagesPath}\\${dirname}`));
+function _deploy() {
+  return gulp.src(`fl-result/${dirname}/**/*`)
+    .pipe(ghpages());
 }
 
 exports.default = gulp.series(
@@ -141,7 +142,7 @@ exports.default = gulp.series(
 exports.result = gulp.series(
   _resultZip,
   _srcZip,
-  _ghPages
+  _deploy
 );
 exports.imageMin = _imageMin;
 exports.webp = _webp;
