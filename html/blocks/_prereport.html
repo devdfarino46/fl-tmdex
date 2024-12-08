@@ -1,0 +1,497 @@
+<div class="prereport">
+  <div class="prereport__label">
+    <i class="icon-file-text-tiny"></i>
+    <p class="prereport__label-title">Предварительный отчёт по запросу <b>tmdex</b></p>
+    <button type="button" class="prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
+      <i class="icon-plus"></i>
+      <i class="icon-close"></i>
+    </button>
+  </div>
+
+  <div class="prereport__content">
+<!------------------------------- 01 ------------------------------------>
+    <div class="prereport__subcontent">
+      <div class="prereport__subtitle-wrap">
+        <p class="prereport__subtitle">
+          <span class="_num">1</span>
+          <span>Найдены возможные причины отказа в регистрации:</span>
+        </p>
+      </div>
+
+      <div class="prereport__content-alerts">
+        <div class="alert">
+          <i class="alert__icon icon-alert-triangle-tiny"></i>
+          <div class="alert__content">
+            <p class="alert__text">
+              Ваш товарный знак похож на&nbsp;один из&nbsp;Общеизвестных товарных знаков: <a href="#">ЯНДЕКС</a>. <br>
+              Это может стать причиной отказа в&nbsp;регистрации (<u>п.6 ст.1483&nbsp;ГК РФ</u>).
+            </p>
+            <div class="alert__details">
+              <strong>ОТЗ</strong>
+    
+              <p>Согласно <u>пп.&nbsp;3&nbsp;п.&nbsp;6&nbsp;ст.&nbsp;1483&nbsp;ГК РФ</u>, не&nbsp;получится зарегистрировать товарный знак, 
+                который идентичен или сходен до&nbsp;степени смешения с&nbsp;уже введённым в&nbsp;оборот товарным 
+                знаком, признанным в&nbsp;России общеизвестным.</p>
+              <p>В&nbsp;базовом случае этот запрет действует для регистрации товарного знака в&nbsp;отношении 
+                однородных товаров, то&nbsp;есть относящихся к&nbsp;одному классу МКТУ. Но&nbsp;в&nbsp;ст.&nbsp;1508&nbsp;ГК РФ&nbsp;есть 
+                «неудобная» оговорка: правовая охрана общеизвестного товарного знака распространяется 
+                и&nbsp;на&nbsp;неоднородные товары, если у&nbsp;потребителей предположительно будет возникать 
+                ассоциация с&nbsp;правообладателем общеизвестного товарного знака.</p>
+              <p>С&nbsp;учётом этого, при создании своего товарного знака желательно избегать сходства с&nbsp;подобными обозначениями.</p>
+            </div>
+            <button type="button" class="alert__show-details-btn"
+              data-text-show="Подробнее"
+              data-text-hide="Скрыть подробности">
+              Подробнее
+            </button>
+          </div>
+        </div>
+        <div class="alert">
+          <i class="alert__icon icon-alert-triangle-tiny"></i>
+          <div class="alert__content">
+            <p class="alert__text">
+              Ваш товарный знак похож на&nbsp;название зарегистрированного в&nbsp;
+              РФ селекционного достижения: [<a href="#">название объекта</a>]. <br>
+              Это может 
+              стать причиной отказа в регистрации (<u>п.6 ст.1483&nbsp;ГК РФ</u>) в&nbsp;следующих 
+              классах МКТУ:
+            </p>
+            <div class="alert__mktus">
+              @@for (let i = 0; i < 5; i++) {
+                <p class="prereport-mktu --busy tooltip-link" data-value="35" data-href="#tooltip-mktu-35">35</p>
+              }
+            </div>
+            <div class="alert__details">
+              <strong>ОТЗ</strong>
+    
+              <p>Согласно <u>пп.&nbsp;3&nbsp;п.&nbsp;6&nbsp;ст.&nbsp;1483&nbsp;ГК РФ</u>, не&nbsp;получится зарегистрировать товарный знак, 
+                который идентичен или сходен до&nbsp;степени смешения с&nbsp;уже введённым в&nbsp;оборот товарным 
+                знаком, признанным в&nbsp;России общеизвестным.</p>
+              <p>В&nbsp;базовом случае этот запрет действует для регистрации товарного знака в&nbsp;отношении 
+                однородных товаров, то&nbsp;есть относящихся к&nbsp;одному классу МКТУ. Но&nbsp;в&nbsp;ст.&nbsp;1508&nbsp;ГК РФ&nbsp;есть 
+                «неудобная» оговорка: правовая охрана общеизвестного товарного знака распространяется 
+                и&nbsp;на&nbsp;неоднородные товары, если у&nbsp;потребителей предположительно будет возникать 
+                ассоциация с&nbsp;правообладателем общеизвестного товарного знака.</p>
+              <p>С&nbsp;учётом этого, при создании своего товарного знака желательно избегать сходства с&nbsp;подобными обозначениями.</p>
+            </div>
+            <button type="button" class="alert__show-details-btn"
+              data-text-show="Подробнее"
+              data-text-hide="Скрыть подробности">
+              Подробнее
+            </button>
+          </div>
+        </div>
+        <div class="alert">
+          <i class="alert__icon icon-alert-triangle-tiny"></i>
+          <div class="alert__content">
+            <p class="alert__text">
+              Ваш товарный знак похож на&nbsp;один из&nbsp;Общеизвестных товарных знаков: [<a href="">название соответствующего объекта из&nbsp;базы</a>]. <br>
+              Это может стать причиной отказа в&nbsp;регистрации (<u>п.6 ст.1483&nbsp;ГК РФ</u>).
+            </p>
+            <div class="alert__details">
+              <strong>ОТЗ</strong>
+    
+              <p>Согласно <u>пп.&nbsp;3&nbsp;п.&nbsp;6&nbsp;ст.&nbsp;1483&nbsp;ГК РФ</u>, не&nbsp;получится зарегистрировать товарный знак, 
+                который идентичен или сходен до&nbsp;степени смешения с&nbsp;уже введённым в&nbsp;оборот товарным 
+                знаком, признанным в&nbsp;России общеизвестным.</p>
+              <p>В&nbsp;базовом случае этот запрет действует для регистрации товарного знака в&nbsp;отношении 
+                однородных товаров, то&nbsp;есть относящихся к&nbsp;одному классу МКТУ. Но&nbsp;в&nbsp;ст.&nbsp;1508&nbsp;ГК РФ&nbsp;есть 
+                «неудобная» оговорка: правовая охрана общеизвестного товарного знака распространяется 
+                и&nbsp;на&nbsp;неоднородные товары, если у&nbsp;потребителей предположительно будет возникать 
+                ассоциация с&nbsp;правообладателем общеизвестного товарного знака.</p>
+              <p>С&nbsp;учётом этого, при создании своего товарного знака желательно избегать сходства с&nbsp;подобными обозначениями.</p>
+            </div>
+            <button type="button" class="alert__show-details-btn"
+              data-text-show="Подробнее"
+              data-text-hide="Скрыть подробности">
+              Подробнее
+            </button>
+          </div>
+        </div>
+        <div class="alert">
+          <i class="alert__icon icon-alert-triangle-tiny"></i>
+          <div class="alert__content">
+            <p class="alert__text">
+              Найдено возможное указание на&nbsp;название характеристики качества товара либо услуги: [<a href="#">название объекта</a>]. <br>
+              Это может привести к&nbsp;отказу в&nbsp;регистрации или неполной охране знака.
+            </p>
+            <div class="alert__details">
+              <strong>ОТЗ</strong>
+    
+              <p>Согласно <u>пп.&nbsp;3&nbsp;п.&nbsp;6&nbsp;ст.&nbsp;1483&nbsp;ГК РФ</u>, не&nbsp;получится зарегистрировать товарный знак, 
+                который идентичен или сходен до&nbsp;степени смешения с&nbsp;уже введённым в&nbsp;оборот товарным 
+                знаком, признанным в&nbsp;России общеизвестным.</p>
+              <p>В&nbsp;базовом случае этот запрет действует для регистрации товарного знака в&nbsp;отношении 
+                однородных товаров, то&nbsp;есть относящихся к&nbsp;одному классу МКТУ. Но&nbsp;в&nbsp;ст.&nbsp;1508&nbsp;ГК РФ&nbsp;есть 
+                «неудобная» оговорка: правовая охрана общеизвестного товарного знака распространяется 
+                и&nbsp;на&nbsp;неоднородные товары, если у&nbsp;потребителей предположительно будет возникать 
+                ассоциация с&nbsp;правообладателем общеизвестного товарного знака.</p>
+              <p>С&nbsp;учётом этого, при создании своего товарного знака желательно избегать сходства с&nbsp;подобными обозначениями.</p>
+            </div>
+            <button type="button" class="alert__show-details-btn"
+              data-text-show="Подробнее"
+              data-text-hide="Скрыть подробности">
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!------------------------------- 02 ------------------------------------>
+    <div class="prereport__subcontent">
+      <div class="prereport__subtitle-wrap">
+        <p class="prereport__subtitle">
+          <span class="_num">2</span>
+          <span>Свидетельства на тов. знаки — найдено 10</span>
+        </p>
+        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+          <span>Смотреть</span>
+          <i class="icon-corner-right-down"></i>
+        </button>
+      </div>
+
+      <div class="prereport__doc-wrapper">
+        <div class="prereport__doc-top">
+          <div class="alert-text">
+            <i class="icon-alert-triangle-tiny"></i>
+            <div class="alert-text__content">
+              <p class="alert-text__title">
+                Тождественные — <span class="--busy">6</span>
+              </p>
+              <p class="alert-text__text">
+                Это полное совпадение элементов двух обозначений, когда нельзя 
+                отличить их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+              </p>
+            </div>
+          </div>
+          <div class="alert-text">
+            <i class="icon-alert-triangle-tiny"></i>
+            <div class="alert-text__content">
+              <p class="alert-text__title">
+                Сходные до степени смешения — <span class="--busy">4</span>
+              </p>
+              <p class="alert-text__text">
+                Это полное совпадение элементов двух обозначений, когда нельзя 
+                отличить их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="prereport__doc-content">
+          <div class="prereport__doc-mktu-legend">
+            <p>
+              <span class="prereport-mktu --busy">00</span>
+              <span>— класс занят</span>
+            </p>
+            <p>
+              <span class="prereport-mktu">00</span>
+              <span>— класс не занят</span>
+            </p>
+          </div>
+          <div class="prereport__doc-mktus">
+            <div class="prereport__doc-mktus-coll">
+              <p class="prereport__doc-mktus-label">
+                <span>МКТУ товаров</span>
+                <i class="icon-alert-question tooltip-link" 
+                  data-href="#tooltip-mktu-legend"></i>
+              </p>
+              <div class="prereport__doc-mktus-items">
+                <p class="prereport-mktu --busy tooltip-link" data-value="01" data-href="#tooltip-mktu-0">01</p>
+                @@for (let i = 2; i < 10; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="0`+i+`" data-href="#tooltip-mktu-0">0`+i+`</p>
+                }
+                @@for (let i = 10; i < 35; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">`+i+`</p>
+                }
+              </div>
+            </div>
+            <div class="prereport__doc-mktus-coll">
+              <p class="prereport__doc-mktus-label">
+                <span>МКТУ услуг</span>
+                <i class="icon-alert-question tooltip-link" 
+                  data-href="#tooltip-mktu-legend"></i>
+              </p>
+              <div class="prereport__doc-mktus-items">
+                <p class="prereport-mktu --busy tooltip-link" data-value="35" data-href="#tooltip-mktu-35">35</p>
+                @@for (let i = 0; i < 5; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="36" data-href="#tooltip-mktu-0">36</p>
+                }
+                <p class="prereport-mktu tooltip-link" data-value="45" data-href="#tooltip-mktu-35">45</p>
+              </div>
+            </div>
+          </div>
+          <div class="prereport__doc-text">
+            <p class="_title">Виды товаров и услуг, для которых найдены совпадения:</p>
+            <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
+              канцтовары, Материалы, Декор, Утварь, Текстиль, 
+              Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
+              Сельхозтовары, Напитки, Табак</p>
+            <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
+              материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
+              Красота и здоровье, Растения и животные</p>
+          </div>
+
+          <div class="prereport__doc-alerts-bottom">
+            <div class="alert-text">
+              <i class="icon-alert-triangle-tiny"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">Угрозы</p>
+                <p class="alert-text__text">
+                  Это полное совпадение элементов двух обозначений, когда нельзя отличить 
+                  их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!------------------------------- 03 ------------------------------------>
+    <div class="prereport__subcontent">
+      <div class="prereport__subtitle-wrap">
+        <p class="prereport__subtitle">
+          <span class="_num">3</span>
+          <span>Заявки на тов. знаки — найдено 10</span>
+        </p>
+        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+          <span>Смотреть</span>
+          <i class="icon-corner-right-down"></i>
+        </button>
+      </div>
+
+      <div class="prereport__doc-wrapper">
+        <div class="prereport__doc-top">
+          <div class="alert-text">
+            <i class="icon-alert-triangle-tiny"></i>
+            <div class="alert-text__content">
+              <p class="alert-text__title">
+                Тождественные — <span class="--busy">6</span>
+              </p>
+              <p class="alert-text__text">
+                Это полное совпадение элементов двух обозначений, когда нельзя 
+                отличить их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+              </p>
+            </div>
+          </div>
+          <div class="alert-text">
+            <i class="icon-alert-triangle-tiny"></i>
+            <div class="alert-text__content">
+              <p class="alert-text__title">
+                Сходные до степени смешения — <span class="--busy">4</span>
+              </p>
+              <p class="alert-text__text">
+                Это полное совпадение элементов двух обозначений, когда нельзя 
+                отличить их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="prereport__doc-content">
+          <div class="prereport__doc-mktu-legend">
+            <p>
+              <span class="prereport-mktu --busy">00</span>
+              <span>— класс занят</span>
+            </p>
+            <p>
+              <span class="prereport-mktu">00</span>
+              <span>— класс не занят</span>
+            </p>
+          </div>
+          <div class="prereport__doc-mktus">
+            <div class="prereport__doc-mktus-coll">
+              <p class="prereport__doc-mktus-label">
+                <span>МКТУ товаров</span>
+                <i class="icon-alert-question tooltip-link" 
+                  data-href="#tooltip-mktu-legend"></i>
+              </p>
+              <div class="prereport__doc-mktus-items">
+                <p class="prereport-mktu --busy tooltip-link" data-value="01" data-href="#tooltip-mktu-0">01</p>
+                @@for (let i = 2; i < 10; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="0`+i+`" data-href="#tooltip-mktu-0">0`+i+`</p>
+                }
+                @@for (let i = 10; i < 35; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">`+i+`</p>
+                }
+              </div>
+            </div>
+            <div class="prereport__doc-mktus-coll">
+              <p class="prereport__doc-mktus-label">
+                <span>МКТУ услуг</span>
+                <i class="icon-alert-question tooltip-link" 
+                  data-href="#tooltip-mktu-legend"></i>
+              </p>
+              <div class="prereport__doc-mktus-items">
+                <p class="prereport-mktu --busy tooltip-link" data-value="35" data-href="#tooltip-mktu-35">35</p>
+                @@for (let i = 0; i < 5; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="36" data-href="#tooltip-mktu-0">36</p>
+                }
+                <p class="prereport-mktu tooltip-link" data-value="45" data-href="#tooltip-mktu-35">45</p>
+              </div>
+            </div>
+          </div>
+          <div class="prereport__doc-text">
+            <p class="_title">Виды товаров и услуг, для которых найдены совпадения:</p>
+            <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
+              канцтовары, Материалы, Декор, Утварь, Текстиль, 
+              Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
+              Сельхозтовары, Напитки, Табак</p>
+            <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
+              материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
+              Красота и здоровье, Растения и животные</p>
+          </div>
+
+          <div class="prereport__doc-alerts-bottom">
+            <div class="alert-text">
+              <i class="icon-alert-triangle-tiny"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">Угрозы</p>
+                <p class="alert-text__text">
+                  Это полное совпадение элементов двух обозначений, когда нельзя отличить 
+                  их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!------------------------------- 04 ------------------------------------>
+    <div class="prereport__subcontent">
+      <div class="prereport__subtitle-wrap">
+        <p class="prereport__subtitle">
+          <span class="_num">4</span>
+          <span>Заявки на тов. знаки — найдено 10</span>
+        </p>
+        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+          <span>Смотреть</span>
+          <i class="icon-corner-right-down"></i>
+        </button>
+      </div>
+
+      <div class="prereport__doc-wrapper">
+        <div class="prereport__doc-top">
+          <div class="alert-text">
+            <i class="icon-alert-triangle-tiny"></i>
+            <div class="alert-text__content">
+              <p class="alert-text__title">
+                Тождественные — <span class="--busy">6</span>
+              </p>
+              <p class="alert-text__text">
+                Это полное совпадение элементов двух обозначений, когда нельзя 
+                отличить их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+              </p>
+            </div>
+          </div>
+          <div class="alert-text">
+            <i class="icon-alert-triangle-tiny"></i>
+            <div class="alert-text__content">
+              <p class="alert-text__title">
+                Сходные до степени смешения — <span class="--busy">4</span>
+              </p>
+              <p class="alert-text__text">
+                Это полное совпадение элементов двух обозначений, когда нельзя 
+                отличить их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="prereport__doc-content">
+          <div class="prereport__doc-mktu-legend">
+            <p>
+              <span class="prereport-mktu --busy">00</span>
+              <span>— класс занят</span>
+            </p>
+            <p>
+              <span class="prereport-mktu">00</span>
+              <span>— класс не занят</span>
+            </p>
+          </div>
+          <div class="prereport__doc-mktus">
+            <div class="prereport__doc-mktus-coll">
+              <p class="prereport__doc-mktus-label">
+                <span>МКТУ товаров</span>
+                <i class="icon-alert-question tooltip-link" 
+                  data-href="#tooltip-mktu-legend"></i>
+              </p>
+              <div class="prereport__doc-mktus-items">
+                <p class="prereport-mktu --busy tooltip-link" data-value="01" data-href="#tooltip-mktu-0">01</p>
+                @@for (let i = 2; i < 10; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="0`+i+`" data-href="#tooltip-mktu-0">0`+i+`</p>
+                }
+                @@for (let i = 10; i < 35; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">`+i+`</p>
+                }
+              </div>
+            </div>
+            <div class="prereport__doc-mktus-coll">
+              <p class="prereport__doc-mktus-label">
+                <span>МКТУ услуг</span>
+                <i class="icon-alert-question tooltip-link" 
+                  data-href="#tooltip-mktu-legend"></i>
+              </p>
+              <div class="prereport__doc-mktus-items">
+                <p class="prereport-mktu --busy tooltip-link" data-value="35" data-href="#tooltip-mktu-35">35</p>
+                @@for (let i = 0; i < 5; i++) {
+                <p class="prereport-mktu tooltip-link" data-value="36" data-href="#tooltip-mktu-0">36</p>
+                }
+                <p class="prereport-mktu tooltip-link" data-value="45" data-href="#tooltip-mktu-35">45</p>
+              </div>
+            </div>
+          </div>
+          <div class="prereport__doc-text">
+            <p class="_title">Виды товаров и услуг, для которых найдены совпадения:</p>
+            <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
+              канцтовары, Материалы, Декор, Утварь, Текстиль, 
+              Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
+              Сельхозтовары, Напитки, Табак</p>
+            <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
+              материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
+              Красота и здоровье, Растения и животные</p>
+          </div>
+
+          <div class="prereport__doc-alerts-bottom">
+            <div class="alert-text">
+              <i class="icon-alert-triangle-tiny"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">Угрозы</p>
+                <ul class="alert-text__text">
+                  Названия компаний могут помешать, как в процессе регистрации вашего знака, так и при 
+                  использовании его после получения вами свидетельства. Например:
+                  <li>могут возразить в процессе регистрации вашего знака</li>
+                  <li>попробуют отозвать регистрацию вашего знака</li>
+                  <li>могут подать иск по использованию чужой деловой репутации</li>
+                </ul>
+              </div>
+            </div>
+            <div class="alert-text --warning">
+              <i class="icon-alert-circle"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">Угрозы</p>
+                <ul class="alert-text__text">
+                  Названия компаний могут помешать, как в процессе регистрации вашего знака, так и при 
+                  использовании его после получения вами свидетельства. Например:
+                  <li>могут возразить в процессе регистрации вашего знака</li>
+                  <li>попробуют отозвать регистрацию вашего знака</li>
+                  <li>могут подать иск по использованию чужой деловой репутации</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+<!------------------------------- Hide btn ------------------------------------>
+    <button type="button" class="prereport__hide-btn btn btn--secondary">
+      <span>Скрыть отчёт</span>
+    </button>
+  </div>
+</div>

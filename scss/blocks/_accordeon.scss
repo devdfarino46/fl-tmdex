@@ -65,40 +65,4 @@
     opacity: 0;
     transform: scale(0);
   }
-
-  // Report
-  &--report {
-    position: relative;
-    grid-template-columns: auto 1fr auto;
-    gap: 15px;
-    border: none;
-    padding: 15px;
-    background: #FFFFFF;
-    border: 1px solid #D2D2D6;
-    border-radius: 10px;
-  }
-  &--report.--active {
-    border-radius: 10px 10px 0 0;
-  }
-  &--report.--active::after {
-    content: '';
-    position: absolute;
-    height: 0;
-    left: 15px;
-    right: 15px;
-    bottom: 0;
-    border-bottom: 1px solid #D2D2D6;
-  }
-  &--report>i {
-    font-size: 35px;
-    color: #787885;
-  }
-  &--report p {
-    display: block;
-  }
-  &--report p b {
-    font: inherit;
-    color: inherit;
-    font-weight: 700;
-  }
 }

@@ -1,7 +1,7 @@
 const $ = require('jquery');
 require('jquery-mask-plugin');
 
-const menuBtn = document.querySelector('.btn--menu');
+const toggleBtns = document.querySelectorAll('.btn--toggle');
 const inputs = document.querySelectorAll('.input');
 const inputsText = document.querySelectorAll('.input-text');
 const mktuGroups = document.querySelectorAll('.mktu-group');
@@ -10,6 +10,7 @@ const reportResult = document.querySelector('.report-result');
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 const mktuSelects = document.querySelectorAll('.mktu-select');
+const alert = document.querySelectorAll('.alert');
 
 const popupLinks = document.querySelectorAll('.popup-link');
 const tooltipLinks = document.querySelectorAll('.tooltip-link');
@@ -18,6 +19,7 @@ const tooltips = document.querySelectorAll('.tooltip');
 const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
 const searchForm = document.querySelector('.search-form');
+const prereport = document.querySelector('.prereport');
 
 const MKTUS = {
   "01": "Инновационные решения",
@@ -191,6 +193,21 @@ popupLinks.forEach(link => {
   })
 });
 
+alert.forEach(alert => {
+  const btn = alert.querySelector('.alert__show-details-btn');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      btn.classList.toggle('--active');
+  
+      if (btn.classList.contains('--active')) {
+        btn.innerHTML = btn.dataset.textHide;
+      } else {
+        btn.innerHTML = btn.dataset.textShow;
+      }
+    });
+  }
+});
+
 tooltipLinks.forEach(link => {
   const tooltip = document.querySelector(link.getAttribute('data-href'));
 
@@ -318,11 +335,11 @@ accordeons.forEach((accordeon, index) => {
   });
 })
 
-if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('--opened');
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('--opened');
   });
-}
+});
 
 if (formMain) {
   const form = formMain.querySelector('.form-main__form');
@@ -626,3 +643,25 @@ if (reportResult) {
   });
 }
 
+if (prereport) {
+  const label = prereport.querySelector('.prereport__label');
+  const labelBtn = prereport.querySelector('.prereport__label-btn');
+  const hideBtn = prereport.querySelector('.prereport__hide-btn');
+
+  label.addEventListener('click', () => {
+    prereport.classList.toggle('--opened');
+
+    if (prereport.classList.contains('--opened')) {
+      labelBtn.classList.add('--opened');
+    } else {
+      labelBtn.classList.remove('--opened');
+    }
+  });
+
+  hideBtn.addEventListener('click', () => {
+    prereport.classList.remove('--opened');
+    labelBtn.classList.remove('--opened');
+    prereport.scrollIntoView();
+    window.scrollBy(0, -100);
+  })
+}

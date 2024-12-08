@@ -76,22 +76,22 @@
   }
 
   // Menu
-  &--menu {
+  &--toggle {
     position: relative;
   }
-  &--menu i {
+  &--toggle i {
     transition: .2s ease;
   }
-  &--menu i:nth-child(2) {
+  &--toggle i:nth-child(2) {
     position: absolute;
     opacity: 0;
     transform: scale(0);
   }
-  &--menu.--opened i:nth-child(1) {
+  &--toggle.--opened i:nth-child(1) {
     opacity: 0;
     transform: scale(0);
   }
-  &--menu.--opened i:nth-child(2) {
+  &--toggle.--opened i:nth-child(2) {
     opacity: 1;
     transform: scale(1);
   }

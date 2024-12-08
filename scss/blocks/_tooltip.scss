@@ -52,6 +52,10 @@
       list-style-position: inside;
       margin-left: 1em;
     }
+
+    b {
+      font-weight: 700;
+    }
   }
 
   img {
@@ -65,5 +69,16 @@
   // Okver
   &--okved &__wrapper {
     gap: 5px;
+  }
+
+  &#tooltip-mktu-35 ol {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+      list-style: decimal;
+      margin-left: 1.5em;
+    }
   }
 }
