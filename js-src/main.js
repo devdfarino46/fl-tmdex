@@ -695,8 +695,9 @@ if (prereport) {
 
   hideBtn.addEventListener('click', () => {
     labelBtn.classList.remove('--opened');
-    prereport.scrollIntoView();
-    window.scrollBy(0, -100);
+    window.scrollTo({
+      top: prereport.offsetTop - 100
+    });
   })
 }
 
