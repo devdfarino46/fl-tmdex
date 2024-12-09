@@ -1460,12 +1460,12 @@
   </div>
   <div class="report-result__tab-btns">
     <button type="button" class="tab-btn --active" data-tab="report-result with-risk">
-      <span>С рисками</span>
+      <span data-text-mobile="Найденные риски"><span>С рисками</span></span>
       <b class="--danger">-35%</b>
     </button>
     <button type="button" class="tab-btn" data-tab="report-result no-risk">
       <i class="icon-shield"></i>
-      <span>Без рисков с TMdex</span>
+      <span data-text-mobile="С нами надёжнее"><span>Без рисков с TMdex</span></span>
       <b class="--success">+35%</b>
     </button>
   </div>
@@ -1528,7 +1528,7 @@
   <div class="prereport__label">
     <i class="icon-file-text-tiny"></i>
     <p class="prereport__label-title">Предварительный отчёт по запросу <b>tmdex</b></p>
-    <button type="button" class="--opened prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
+    <button type="button" class="prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
       <i class="icon-plus"></i>
       <i class="icon-close"></i>
     </button>
@@ -1866,13 +1866,12 @@
     </ul>
   </div>
 
-  <div class="suggest__right">
-    <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
-    <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
-      <span>Бесплатная консультация</span>
-      <i class="icon-phone"></i>
-    </a>
-  </div>
+  <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
+
+  <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
+    <span>Бесплатная консультация</span>
+    <i class="icon-phone"></i>
+  </a>
 
 </div>
     </div>
@@ -2071,13 +2070,12 @@
     </ul>
   </div>
 
-  <div class="suggest__right">
-    <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
-    <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
-      <span>Бесплатная консультация</span>
-      <i class="icon-phone"></i>
-    </a>
-  </div>
+  <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
+
+  <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
+    <span>Бесплатная консультация</span>
+    <i class="icon-phone"></i>
+  </a>
 
 </div>
     </div>
@@ -2293,13 +2291,12 @@
     </ul>
   </div>
 
-  <div class="suggest__right">
-    <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
-    <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
-      <span>Бесплатная консультация</span>
-      <i class="icon-phone"></i>
-    </a>
-  </div>
+  <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
+
+  <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
+    <span>Бесплатная консультация</span>
+    <i class="icon-phone"></i>
+  </a>
 
 </div>
     </div>
@@ -9827,6 +9824,7 @@
   </div>
 </div>
 
+<!------------------------------- Popup Consult ------------------------------------>
 <div class="consult-popup popup" id="popup-consult">
   <div class="consult-popup__wrapper">
     <button type="button" aria-label="Закрыть" 
