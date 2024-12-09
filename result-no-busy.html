@@ -35,9 +35,9 @@
       <a href="tel:+78125655810">+7 (812) 565-58-10</a>
     </div>
     <div class="header__cta">
-      <button type="button" class="btn btn--outline">
+      <a href="#popup-consult" class="btn btn--outline popup-link">
         <i class="icon-phone"></i>
-      </button>
+      </a>
       <button type="button" class="btn btn--outline">
         <i class="icon-user"></i>
       </button>
@@ -1528,7 +1528,8 @@
 </footer>
   </div>
 
-  <div class="popup" id="popup-base">
+  <!------------------------------- Popup Base ------------------------------------>
+<div class="popup" id="popup-base">
   <div class="popup__wrapper">
     <p class="popup__title">
       Обновление базы
@@ -1545,12 +1546,64 @@
       <li>ОТЗ РФ <span class="label-data">1 день назад</span></li>
       <li>НМПТ РФ <span class="label-data">1 день назад</span></li>
     </ul>
-    <button type="button" class="popup__btn-ok btn">
+    <button type="button" class="popup__btn-ok _btn-ok btn">
       <span>OK</span>
     </button>
   </div>
 </div>
 
+<div class="consult-popup popup" id="popup-consult">
+  <div class="consult-popup__wrapper">
+    <button type="button" aria-label="Закрыть" 
+      class="consult-popup__close-btn _close-btn btn btn--secondary btn--small">
+  
+      <i class="icon-close"></i>
+    </button>
+  
+    <p class="consult-popup__title">Название <b>tmdex</b> можно зарегистрировать!</p>
+    <p class="consult-popup__text">
+      Узнайте у специалиста, как обойти угрозы при 
+      регистрации товарного знака с вашим названием
+    </p>
+    <form action="#" class="consult-popup__form">
+      <label class="input">
+        <p class="input__label">Имя</p>
+        <div class="input__wrapper">
+          <input type="text" placeholder="Ваше имя" required>
+          <button type="button"><i class="icon-close"></i></button>
+        </div>
+        <p class="input__helper">Status</p>
+      </label>
+
+      <label class="input">
+        <p class="input__label">Телефон для связи</p>
+        <div class="input__wrapper">
+          <input type="tel" placeholder="Номер телефона" required>
+          <button type="button"><i class="icon-close"></i></button>
+        </div>
+        <p class="input__helper">Status</p>
+      </label>
+
+      <button type="submit" class="consult-popup__submit-btn btn btn--lime btn--large">
+        <span>Получить консультацию</span>
+      </button>
+
+      <label class="form-main__policy-input checkbox">
+        <div class="checkbox__input">
+          <input type="checkbox" name="policy">
+          <i class="icon-check"></i>
+        </div>
+        <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
+      </label>
+    </form>
+
+    <button type="submit" class="consult-popup__btn-ok _btn-ok btn btn--secondary btn--large">
+      <span>ОК</span>
+    </button>
+  </div>
+</div>
+
+<!------------------------------- Tooltip Mktu 0 ------------------------------------>
 <div class="tooltip" id="tooltip-mktu-0">
   <div class="tooltip__wrapper">
     <p class="tooltip__title"><span class="_mktu-num">Класс 00</span></p>
@@ -1570,6 +1623,7 @@
   </div>
 </div>
 
+<!------------------------------- Tooltip Mktu 35 ------------------------------------>
 <div class="tooltip" id="tooltip-mktu-35">
   <div class="tooltip__wrapper">
     <p class="tooltip__title"><span class="_mktu-num">Класс 35</span></p>
@@ -1588,6 +1642,7 @@
   </div>
 </div>
 
+<!------------------------------- Tooltip Mktu Legend ------------------------------------>
 <div class="tooltip" id="tooltip-mktu-legend">
   <div class="tooltip__wrapper">
     <p class="tooltip__title">Международная классификация товаров и услуг</p>
@@ -1619,6 +1674,7 @@
   </div>
 </div>
 
+<!------------------------------- Tooltip Okved ------------------------------------>
 <div class="tooltip tooltip--okved" id="tooltip-okved">
   <div class="tooltip__wrapper">
     <p class="tooltip__overline">
@@ -1638,6 +1694,8 @@
     </p>
   </div>
 </div>
+
+<!------------------------------- Tooltip no-design ------------------------------------>
 <div class="tooltip" id="tooltip-no-design">
   <div class="tooltip__wrapper">
     <p class="tooltip__title">No design</p>

@@ -35,9 +35,9 @@
       <a href="tel:+78125655810">+7 (812) 565-58-10</a>
     </div>
     <div class="header__cta">
-      <button type="button" class="btn btn--outline">
+      <a href="#popup-consult" class="btn btn--outline popup-link">
         <i class="icon-phone"></i>
-      </button>
+      </a>
       <button type="button" class="btn btn--outline">
         <i class="icon-user"></i>
       </button>
@@ -1459,18 +1459,18 @@
     </p>
   </div>
   <div class="report-result__tab-btns">
-    <button type="button" class="tab-btn --active" data-tab="with-risk">
+    <button type="button" class="tab-btn --active" data-tab="report-result with-risk">
       <span>С рисками</span>
       <b class="--danger">-35%</b>
     </button>
-    <button type="button" class="tab-btn" data-tab="no-risk">
+    <button type="button" class="tab-btn" data-tab="report-result no-risk">
       <i class="icon-shield"></i>
       <span>Без рисков с TMdex</span>
       <b class="--success">+35%</b>
     </button>
   </div>
 
-  <div class="report-result__notices --active" data-tab="with-risk">
+  <div class="report-result__notices tab-content --active" data-tab="report-result with-risk">
     <div class="result-notice">
       <p class="result-notice__num if(context.notice_class) { --danger } ">01</p>
       <p class="result-notice__text">
@@ -1494,7 +1494,7 @@
     </div>
   </div>
 
-  <div class="report-result__notices" data-tab="no-risk">
+  <div class="report-result__notices tab-content" data-tab="report-result no-risk">
     <div class="result-notice">
       <p class="result-notice__num">01</p>
       <p class="result-notice__text">
@@ -1518,24 +1518,24 @@
     </div>
   </div>
 
-  <button type="button" class="report-result__grid-btn btn btn--lime btn--large">
+  <a class="report-result__grid-btn btn btn--lime btn--large popup-link" href="#popup-consult">
     <span>Бесплатная консультация</span>
     <i class="icon-phone"></i>
-  </button>
+  </a>
 </div>
 
             <div class="prereport">
   <div class="prereport__label">
     <i class="icon-file-text-tiny"></i>
     <p class="prereport__label-title">Предварительный отчёт по запросу <b>tmdex</b></p>
-    <button type="button" class="prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
+    <button type="button" class="--opened prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
       <i class="icon-plus"></i>
       <i class="icon-close"></i>
     </button>
   </div>
 
   <div class="prereport__content">
-<!------------------------------- 01 ------------------------------------>
+<!------------------------------- Alerts ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
@@ -1672,14 +1672,16 @@
       </div>
     </div>
 
-<!------------------------------- 02 ------------------------------------>
+<!------------------------------- Certifs ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">2</span>
-          <span>Свидетельства на тов. знаки — найдено 10</span>
+          <span>Свидетельства на тов. знаки</span>
+          <span class="_count">10</span>
         </p>
-        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+        <button type="button" class="target-to-tab prereport__look-btn btn btn--outline btn--small"
+          data-tab="result certifs">
           <span>Смотреть</span>
           <i class="icon-corner-right-down"></i>
         </button>
@@ -1851,16 +1853,40 @@
           </div>
         </div>
       </div>
+
+      <div class="suggest">
+  <div class="suggest__content">
+    <p class="suggest__title">Что можно сделать:</p>
+    <ul class="suggest__list">
+      <li class="suggest__item">Аннулировать мешающее свидетельство</li>
+      <li class="suggest__item">Блокировать чужую заявку</li>
+      <li class="suggest__item">Доработать знак до&nbsp;уникальности</li>
+      <li class="suggest__item">Придумать другое название.</li>
+      <li class="suggest__item">Получить письмо согласия</li>
+    </ul>
+  </div>
+
+  <div class="suggest__right">
+    <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
+    <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
+      <span>Бесплатная консультация</span>
+      <i class="icon-phone"></i>
+    </a>
+  </div>
+
+</div>
     </div>
 
-<!------------------------------- 03 ------------------------------------>
+<!------------------------------- Apps ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">3</span>
-          <span>Заявки на тов. знаки — найдено 10</span>
+          <span>Заявки на тов. знаки</span>
+          <span class="_count">10</span>
         </p>
-        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+        <button type="button" class="target-to-tab prereport__look-btn btn btn--outline btn--small"
+          data-tab="result apps">
           <span>Смотреть</span>
           <i class="icon-corner-right-down"></i>
         </button>
@@ -2032,16 +2058,40 @@
           </div>
         </div>
       </div>
+
+      <div class="suggest">
+  <div class="suggest__content">
+    <p class="suggest__title">Что можно сделать:</p>
+    <ul class="suggest__list">
+      <li class="suggest__item">Аннулировать мешающее свидетельство</li>
+      <li class="suggest__item">Блокировать чужую заявку</li>
+      <li class="suggest__item">Доработать знак до&nbsp;уникальности</li>
+      <li class="suggest__item">Придумать другое название.</li>
+      <li class="suggest__item">Получить письмо согласия</li>
+    </ul>
+  </div>
+
+  <div class="suggest__right">
+    <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
+    <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
+      <span>Бесплатная консультация</span>
+      <i class="icon-phone"></i>
+    </a>
+  </div>
+
+</div>
     </div>
 
-<!------------------------------- 04 ------------------------------------>
+<!------------------------------- Companies ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">4</span>
-          <span>Заявки на тов. знаки — найдено 10</span>
+          <span>Названия компаний</span>
+          <span class="_count">10</span>
         </p>
-        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+        <button type="button" class="target-to-tab prereport__look-btn btn btn--outline btn--small"
+          data-tab="result companies">
           <span>Смотреть</span>
           <i class="icon-corner-right-down"></i>
         </button>
@@ -2226,12 +2276,95 @@
                 </ul>
               </div>
             </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="suggest">
+  <div class="suggest__content">
+    <p class="suggest__title">Что можно сделать:</p>
+    <ul class="suggest__list">
+      <li class="suggest__item">Аннулировать мешающее свидетельство</li>
+      <li class="suggest__item">Блокировать чужую заявку</li>
+      <li class="suggest__item">Доработать знак до&nbsp;уникальности</li>
+      <li class="suggest__item">Придумать другое название.</li>
+      <li class="suggest__item">Получить письмо согласия</li>
+    </ul>
+  </div>
+
+  <div class="suggest__right">
+    <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
+    <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
+      <span>Бесплатная консультация</span>
+      <i class="icon-phone"></i>
+    </a>
+  </div>
+
+</div>
+    </div>
+
+<!------------------------------- Tariffs ------------------------------------>
+    <div class="prereport__subcontent">
+      <div class="prereport__tariffs">
+        <p class="prereport__tariffs-title">Зарегистрируем товарный знак&nbsp;без рисков</p>
+        <p class="prereport__tariffs-descr">Выберите тариф, остальное мы возьмём на себя</p>
+
+        <div class="prereport__tariffs-items">
+          <div class="tariff tariff--dark">
+            <div class="tariff__title-wrap">
+              <p class="tariff__title">Под ключ</p>
+              <p class="tariff__note">Выгодно!</p>
+            </div>
+            <p class="tariff__descr">
+              Оптимально при регистрации без пересечений с другими
+            </p>
+            <button type="button" class="tariff__list-label --active">
+              <span>Что входит в тариф:</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+            <ul class="tariff__list">
+              <li class="tariff__list-item">Подготовка и подача заявки</li>
+              <li class="tariff__list-item">Онлайн-мониторинг статуса заявки</li>
+              <li class="tariff__list-item">Ответы на&nbsp;формальные запросы Роспатента</li>
+              <li class="tariff__list-item">Получение и доставка свидетельства на&nbsp;товарный знак</li>
+            </ul>
+            <p class="tariff__price">24 990 ₽</p>
+            <button type="button" class="btn btn--lime btn--large">
+              <span>Начать регистрацию</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+            <p class="tariff__notice">
+              <i class="icon-alert-circle"></i>
+              <span>Фиксированная стоимость</span>
+            </p>
+          </div>
+          <div class="tariff">
+            <div class="tariff__title-wrap">
+              <p class="tariff__title">Стандарт</p>
+            </div>
+            <p class="tariff__descr">
+              Оптимально при регистрации без пересечений с другими
+            </p>
+            <button type="button" class="tariff__list-label --active">
+              <span>Что входит в тариф:</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+            <ul class="tariff__list">
+              <li class="tariff__list-item">Подготовка и подача заявки</li>
+              <li class="tariff__list-item">Онлайн-мониторинг статуса заявки</li>
+              <li class="tariff__list-item">Ответы на&nbsp;формальные запросы Роспатента</li>
+              <li class="tariff__list-item">Получение и доставка свидетельства на&nbsp;товарный знак</li>
+            </ul>
+            <p class="tariff__price">24 990 ₽</p>
+            <button type="button" class="btn btn--lime btn--large">
+              <span>Начать регистрацию</span>
+              <i class="icon-chevron-right"></i>
+            </button>
           </div>
         </div>
       </div>
     </div>
-
-    
 
 <!------------------------------- Hide btn ------------------------------------>
     <button type="button" class="prereport__hide-btn btn btn--secondary">
@@ -2335,7 +2468,7 @@
             Сопровождение в Суде по Интеллектуальным Правам и в Палате по Патентным Спорам
           </span>
         </p>
-        <a href="#" class="btn btn--lime btn--large">
+        <a href="#popup-consult" class="btn btn--lime btn--large popup-link">
           <span>бесплатная консультация</span>
         </a>
       </div>
@@ -9670,7 +9803,8 @@
 </footer>
   </div>
 
-  <div class="popup" id="popup-base">
+  <!------------------------------- Popup Base ------------------------------------>
+<div class="popup" id="popup-base">
   <div class="popup__wrapper">
     <p class="popup__title">
       Обновление базы
@@ -9687,12 +9821,64 @@
       <li>ОТЗ РФ <span class="label-data">1 день назад</span></li>
       <li>НМПТ РФ <span class="label-data">1 день назад</span></li>
     </ul>
-    <button type="button" class="popup__btn-ok btn">
+    <button type="button" class="popup__btn-ok _btn-ok btn">
       <span>OK</span>
     </button>
   </div>
 </div>
 
+<div class="consult-popup popup" id="popup-consult">
+  <div class="consult-popup__wrapper">
+    <button type="button" aria-label="Закрыть" 
+      class="consult-popup__close-btn _close-btn btn btn--secondary btn--small">
+  
+      <i class="icon-close"></i>
+    </button>
+  
+    <p class="consult-popup__title">Название <b>tmdex</b> можно зарегистрировать!</p>
+    <p class="consult-popup__text">
+      Узнайте у специалиста, как обойти угрозы при 
+      регистрации товарного знака с вашим названием
+    </p>
+    <form action="#" class="consult-popup__form">
+      <label class="input">
+        <p class="input__label">Имя</p>
+        <div class="input__wrapper">
+          <input type="text" placeholder="Ваше имя" required>
+          <button type="button"><i class="icon-close"></i></button>
+        </div>
+        <p class="input__helper">Status</p>
+      </label>
+
+      <label class="input">
+        <p class="input__label">Телефон для связи</p>
+        <div class="input__wrapper">
+          <input type="tel" placeholder="Номер телефона" required>
+          <button type="button"><i class="icon-close"></i></button>
+        </div>
+        <p class="input__helper">Status</p>
+      </label>
+
+      <button type="submit" class="consult-popup__submit-btn btn btn--lime btn--large">
+        <span>Получить консультацию</span>
+      </button>
+
+      <label class="form-main__policy-input checkbox">
+        <div class="checkbox__input">
+          <input type="checkbox" name="policy">
+          <i class="icon-check"></i>
+        </div>
+        <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
+      </label>
+    </form>
+
+    <button type="submit" class="consult-popup__btn-ok _btn-ok btn btn--secondary btn--large">
+      <span>ОК</span>
+    </button>
+  </div>
+</div>
+
+<!------------------------------- Tooltip Mktu 0 ------------------------------------>
 <div class="tooltip" id="tooltip-mktu-0">
   <div class="tooltip__wrapper">
     <p class="tooltip__title"><span class="_mktu-num">Класс 00</span></p>
@@ -9712,6 +9898,7 @@
   </div>
 </div>
 
+<!------------------------------- Tooltip Mktu 35 ------------------------------------>
 <div class="tooltip" id="tooltip-mktu-35">
   <div class="tooltip__wrapper">
     <p class="tooltip__title"><span class="_mktu-num">Класс 35</span></p>
@@ -9730,6 +9917,7 @@
   </div>
 </div>
 
+<!------------------------------- Tooltip Mktu Legend ------------------------------------>
 <div class="tooltip" id="tooltip-mktu-legend">
   <div class="tooltip__wrapper">
     <p class="tooltip__title">Международная классификация товаров и услуг</p>
@@ -9761,6 +9949,7 @@
   </div>
 </div>
 
+<!------------------------------- Tooltip Okved ------------------------------------>
 <div class="tooltip tooltip--okved" id="tooltip-okved">
   <div class="tooltip__wrapper">
     <p class="tooltip__overline">
@@ -9780,6 +9969,8 @@
     </p>
   </div>
 </div>
+
+<!------------------------------- Tooltip no-design ------------------------------------>
 <div class="tooltip" id="tooltip-no-design">
   <div class="tooltip__wrapper">
     <p class="tooltip__title">No design</p>
