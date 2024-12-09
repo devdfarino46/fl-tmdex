@@ -12,6 +12,10 @@
     border-radius: 20px;
     margin-top: auto;
     margin-bottom: auto;
+
+    @media (max-width: 740px) {
+      padding: 15px 20px 30px;
+    }
   }
 
   &__close-btn {
@@ -55,11 +59,21 @@
 
   &__submit-btn {
     margin-top: 15px;
+
+    @media (max-width: 740px) {
+      font-size: 14px;
+      padding: 16px 32px;
+    }
   }
 
   &__btn-ok {
     margin-top: 20px;
     align-self: flex-end;
+
+    @media (max-width: 740px) {
+      font-size: 14px;
+      padding: 16px 32px;
+    }
   }
 
   &.--success &__wrapper {
