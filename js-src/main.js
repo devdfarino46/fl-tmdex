@@ -263,10 +263,17 @@ alert.forEach(alert => {
   }
 });
 
+/**
+ * 
+ * @param {Element} link 
+ * @returns {Element}
+ */
+function getTooltip(link) {
+  return document.querySelector(link.getAttribute('data-href'));
+}
 tooltipLinks.forEach(link => {
-  const tooltip = document.querySelector(link.getAttribute('data-href'));
 
-  const show = (e) => {
+  const change = (tooltip) => {
     const rect = tooltip.getBoundingClientRect();
     const lRect = link.getBoundingClientRect();
 
@@ -312,20 +319,19 @@ tooltipLinks.forEach(link => {
         type.innerHTML = type.getAttribute('data-text-addit');
       }
     }
-
-    tooltip.classList.add('--visibled');
   }
 
-  link.addEventListener('mouseover', (e) => show(e));
-  link.addEventListener('mouseout', (e) => {
+  link.addEventListener('mouseenter', (e) => {
+    change(getTooltip(e.target));
+    getTooltip(e.target).classList.add('--visibled');
+  });
+  link.addEventListener('mouseleave', (e) => {
     tooltips.forEach(t => t.classList.remove('--visibled'));
   });
-  
-  link.addEventListener('click', (e) =>  show(e));
 
   window.addEventListener('scroll', () => {
     tooltips.forEach(t => t.classList.remove('--visibled'));
-  })
+  });
 });
 
 mktuGroups.forEach(group => {
