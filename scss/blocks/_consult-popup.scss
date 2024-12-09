@@ -1,0 +1,77 @@
+.consult-popup {
+  
+  &__wrapper {
+    background: #313701;
+    color: white;
+    max-width: 450px;
+    padding: 20px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    background: #313701;
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__close-btn {
+    margin-bottom: 5px;
+    align-self: flex-end;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #F9F9FA;
+    margin-bottom: 20px;
+
+    b {
+      color: #DFF71C;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #F9F9FA;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+
+    .input__label {
+      color: #F9F9FA;
+    }
+    .checkbox__label {
+      color: #F9F9FA;
+    }
+  }
+
+  &__submit-btn {
+    margin-top: 15px;
+  }
+
+  &__btn-ok {
+    margin-top: 20px;
+    align-self: flex-end;
+  }
+
+  &.--success &__wrapper {
+    padding: 30px;
+  }
+  &.--success &__form {
+    display: none;
+  }
+  &:not(.--success) &__btn-ok {
+    display: none;
+  }
+  &.--success &__close-btn {
+    display: none;
+  }
+}

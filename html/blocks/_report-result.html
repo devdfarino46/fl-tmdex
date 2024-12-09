@@ -14,18 +14,18 @@
     </p>
   </div>
   <div class="report-result__tab-btns">
-    <button type="button" class="tab-btn --active" data-tab="with-risk">
+    <button type="button" class="tab-btn --active" data-tab="report-result with-risk">
       <span>С рисками</span>
       <b class="--danger">-35%</b>
     </button>
-    <button type="button" class="tab-btn" data-tab="no-risk">
+    <button type="button" class="tab-btn" data-tab="report-result no-risk">
       <i class="icon-shield"></i>
       <span>Без рисков с TMdex</span>
       <b class="--success">+35%</b>
     </button>
   </div>
 
-  <div class="report-result__notices --active" data-tab="with-risk">
+  <div class="report-result__notices tab-content --active" data-tab="report-result with-risk">
     <div class="result-notice">
       <p class="result-notice__num if(context.notice_class) { @@notice_class } ">01</p>
       <p class="result-notice__text">
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <div class="report-result__notices" data-tab="no-risk">
+  <div class="report-result__notices tab-content" data-tab="report-result no-risk">
     <div class="result-notice">
       <p class="result-notice__num">01</p>
       <p class="result-notice__text">
@@ -73,8 +73,8 @@
     </div>
   </div>
 
-  <button type="button" class="report-result__grid-btn btn btn--lime btn--large">
+  <a class="report-result__grid-btn btn btn--lime btn--large popup-link" href="#popup-consult">
     <span>Бесплатная консультация</span>
     <i class="icon-phone"></i>
-  </button>
+  </a>
 </div>

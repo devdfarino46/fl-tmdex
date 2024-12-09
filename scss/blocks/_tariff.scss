@@ -1,0 +1,141 @@
+.tariff {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px 20px;
+  gap: 20px;
+  background: #F9F9FA;
+  border: 1px solid #D2D2D6;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+
+  &__title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #19191D;
+  }
+
+  &__note {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #313701;
+    padding: 5px 10px;
+    gap: 10px;
+    background: #FBFFE2;
+    border-radius: 5px;
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #19191D;
+  }
+
+  &__list-label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #4A4B57;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    i {
+      transform: rotate(90deg);
+      transition: .2s ease;
+    }
+  }
+  &__list-label:not(.--active) {
+    i {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: .3s ease;
+    max-height: 3000px;
+  }
+  &__list-label:not(.--active) + &__list {
+    max-height: 0px;
+    margin-top: -20px;
+    opacity: 0;
+  }
+
+  &__list-item {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #19191D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      font-family: fontello;
+      content: '\e80a';
+      font-size: 20px;
+      color: #787885;
+    }
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #19191D;
+  }
+
+  &__notice {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    background: #F0F0F1;
+    border: 1px solid #D2D2D6;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #19191D;
+
+    i {
+      color: #787885;
+    }
+  }
+
+  &--dark {
+    background: #313701;
+    border-color: transparent;
+  }
+  &--dark &__title {
+    color: #DFF71C;
+  }
+  &--dark &__descr {
+    color: white;
+  }
+  &--dark &__list-label {
+    color: #B4B4BB;
+  }
+  &--dark &__list-item {
+    color: white;
+    &::before {
+      color: #DFF71C;
+    }
+  }
+  &--dark &__price {
+    color: #DFF71C;
+  }
+}

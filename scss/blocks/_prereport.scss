@@ -81,6 +81,15 @@
       background: #DFF71C;
       border-radius: 100%;
     }
+
+    ._count {
+      margin-left: -5px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: -0.02em;
+      color: #C8372D;
+    }
   }
 
   &__content-alerts {
@@ -195,7 +204,7 @@
   }
 
   // State not opened
-  &:not(.--opened) &__content {
+  &:not(:has(&__label-btn.--opened)) &__content {
     display: none;
   }
 
@@ -204,5 +213,38 @@
     &__label:hover &__label-title {
       color: #4A4B57;
     }
+  }
+
+  .suggest {
+    margin-top: 30px;
+  }
+
+  &__tariffs {
+
+  }
+
+  &__tariffs-title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__tariffs-descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+    text-align: center;
+  }
+
+  &__tariffs-items {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    gap: 20px;
   }
 }

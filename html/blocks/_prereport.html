@@ -2,14 +2,14 @@
   <div class="prereport__label">
     <i class="icon-file-text-tiny"></i>
     <p class="prereport__label-title">Предварительный отчёт по запросу <b>tmdex</b></p>
-    <button type="button" class="prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
+    <button type="button" class="--opened prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
       <i class="icon-plus"></i>
       <i class="icon-close"></i>
     </button>
   </div>
 
   <div class="prereport__content">
-<!------------------------------- 01 ------------------------------------>
+<!------------------------------- Alerts ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
@@ -138,14 +138,16 @@
       </div>
     </div>
 
-<!------------------------------- 02 ------------------------------------>
+<!------------------------------- Certifs ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">2</span>
-          <span>Свидетельства на тов. знаки — найдено 10</span>
+          <span>Свидетельства на тов. знаки</span>
+          <span class="_count">10</span>
         </p>
-        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+        <button type="button" class="target-to-tab prereport__look-btn btn btn--outline btn--small"
+          data-tab="result certifs">
           <span>Смотреть</span>
           <i class="icon-corner-right-down"></i>
         </button>
@@ -247,16 +249,20 @@
           </div>
         </div>
       </div>
+
+      @@include('_suggest.html')
     </div>
 
-<!------------------------------- 03 ------------------------------------>
+<!------------------------------- Apps ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">3</span>
-          <span>Заявки на тов. знаки — найдено 10</span>
+          <span>Заявки на тов. знаки</span>
+          <span class="_count">10</span>
         </p>
-        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+        <button type="button" class="target-to-tab prereport__look-btn btn btn--outline btn--small"
+          data-tab="result apps">
           <span>Смотреть</span>
           <i class="icon-corner-right-down"></i>
         </button>
@@ -358,16 +364,20 @@
           </div>
         </div>
       </div>
+
+      @@include('_suggest.html')
     </div>
 
-<!------------------------------- 04 ------------------------------------>
+<!------------------------------- Companies ------------------------------------>
     <div class="prereport__subcontent">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">4</span>
-          <span>Заявки на тов. знаки — найдено 10</span>
+          <span>Названия компаний</span>
+          <span class="_count">10</span>
         </p>
-        <button type="button" class="prereport__look-btn btn btn--outline btn--small">
+        <button type="button" class="target-to-tab prereport__look-btn btn btn--outline btn--small"
+          data-tab="result companies">
           <span>Смотреть</span>
           <i class="icon-corner-right-down"></i>
         </button>
@@ -482,12 +492,75 @@
                 </ul>
               </div>
             </div>
+            
+          </div>
+        </div>
+      </div>
+
+      @@include('_suggest.html')
+    </div>
+
+<!------------------------------- Tariffs ------------------------------------>
+    <div class="prereport__subcontent">
+      <div class="prereport__tariffs">
+        <p class="prereport__tariffs-title">Зарегистрируем товарный знак&nbsp;без рисков</p>
+        <p class="prereport__tariffs-descr">Выберите тариф, остальное мы возьмём на себя</p>
+
+        <div class="prereport__tariffs-items">
+          <div class="tariff tariff--dark">
+            <div class="tariff__title-wrap">
+              <p class="tariff__title">Под ключ</p>
+              <p class="tariff__note">Выгодно!</p>
+            </div>
+            <p class="tariff__descr">
+              Оптимально при регистрации без пересечений с другими
+            </p>
+            <button type="button" class="tariff__list-label --active">
+              <span>Что входит в тариф:</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+            <ul class="tariff__list">
+              <li class="tariff__list-item">Подготовка и подача заявки</li>
+              <li class="tariff__list-item">Онлайн-мониторинг статуса заявки</li>
+              <li class="tariff__list-item">Ответы на&nbsp;формальные запросы Роспатента</li>
+              <li class="tariff__list-item">Получение и доставка свидетельства на&nbsp;товарный знак</li>
+            </ul>
+            <p class="tariff__price">24 990 ₽</p>
+            <button type="button" class="btn btn--lime btn--large">
+              <span>Начать регистрацию</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+            <p class="tariff__notice">
+              <i class="icon-alert-circle"></i>
+              <span>Фиксированная стоимость</span>
+            </p>
+          </div>
+          <div class="tariff">
+            <div class="tariff__title-wrap">
+              <p class="tariff__title">Стандарт</p>
+            </div>
+            <p class="tariff__descr">
+              Оптимально при регистрации без пересечений с другими
+            </p>
+            <button type="button" class="tariff__list-label --active">
+              <span>Что входит в тариф:</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+            <ul class="tariff__list">
+              <li class="tariff__list-item">Подготовка и подача заявки</li>
+              <li class="tariff__list-item">Онлайн-мониторинг статуса заявки</li>
+              <li class="tariff__list-item">Ответы на&nbsp;формальные запросы Роспатента</li>
+              <li class="tariff__list-item">Получение и доставка свидетельства на&nbsp;товарный знак</li>
+            </ul>
+            <p class="tariff__price">24 990 ₽</p>
+            <button type="button" class="btn btn--lime btn--large">
+              <span>Начать регистрацию</span>
+              <i class="icon-chevron-right"></i>
+            </button>
           </div>
         </div>
       </div>
     </div>
-
-    
 
 <!------------------------------- Hide btn ------------------------------------>
     <button type="button" class="prereport__hide-btn btn btn--secondary">
