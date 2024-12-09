@@ -1,7 +1,11 @@
 .alert {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
+  gap: 5px 15px;
+
+  @media (max-width: 740px) {
+    flex-direction: column;
+  }
 
   &__icon {
     font-size: 30px;

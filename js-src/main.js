@@ -191,7 +191,6 @@ function toggleTabs(btn, tabBtn = null) {
     });
   });
 }
-
 tabBtns.forEach(btn => { toggleTabs(btn); });
 targetsToTab.forEach(btn => { 
   const tabBtn = document.querySelector(`.tab-btn[data-tab="${btn.dataset.tab}"]`);
