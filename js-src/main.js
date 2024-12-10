@@ -22,6 +22,7 @@ const formMain = document.querySelector('.form-main');
 const search = document.querySelector('.search');
 const searchForm = document.querySelector('.search-form');
 const prereport = document.querySelector('.prereport');
+const result = document.querySelector('.result');
 
 const MKTUS = {
   "01": "Инновационные решения",
@@ -391,8 +392,22 @@ mktuGroups.forEach(group => {
 });
 
 accordeons.forEach((accordeon, index) => {
+  const subaccordeon = accordeon.nextElementSibling;
+
+  if (accordeon.classList.contains('--active')) {
+    subaccordeon.classList.add('--show');
+  }
+
   accordeon.addEventListener('click', ev => {
     accordeon.classList.toggle('--active');
+
+    if (accordeon.classList.contains('--active')) {
+      setTimeout(() => {
+        subaccordeon.classList.add('--show');
+      }, 50);
+    } else {
+      subaccordeon.classList.remove('--show');
+    }
   });
 })
 
@@ -686,10 +701,23 @@ if (prereport) {
   const label = prereport.querySelector('.prereport__label');
   const labelBtn = prereport.querySelector('.prereport__label-btn');
   const hideBtn = prereport.querySelector('.prereport__hide-btn');
+  const content = prereport.querySelector('.prereport__content');
+
+  if (labelBtn.classList.contains('--opened')) {
+    content.classList.add('--show');
+  }
 
   label.addEventListener('click', (ev) => {
     if (!ev.composedPath().includes(labelBtn)) {
       labelBtn.classList.toggle('--opened');
+
+      if (labelBtn.classList.contains('--opened')) {
+        setTimeout( () => {
+          content.classList.add('--show');
+        }, 10);
+      } else {
+        content.classList.remove('--show');
+      }
     }
   });
 
@@ -714,3 +742,14 @@ tariffs.forEach(tariff => {
     });
   }
 });
+
+if (result) {
+  const toUpBtn = result.querySelector('.result__to-up-btn');
+  
+  toUpBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: prereport.offsetTop - 100,
+      behavior: 'smooth'
+    });
+  })
+}

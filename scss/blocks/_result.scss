@@ -13,11 +13,30 @@
     margin-bottom: 15px;
   }
 
+  &__title-wrap {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 10px;
+
+    @media (max-width: 740px) {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+    }
+  }
+
   &__title {
     font-size: 34px;
     line-height: 126%;
     color: #19191D;
-    margin-bottom: 30px;
+  }
+
+  &__to-up-btn {
+    i {
+      transform: translateY(-2px) scaleY(-1);
+    }
   }
 
   &__tabs {
