@@ -344,23 +344,6 @@ mktuGroups.forEach(group => {
     let timer;
     let groupRect = group.getBoundingClientRect();
     let count = 0;
-      // mktus.forEach((mktu, index) => {
-      //   let listRight = list.getBoundingClientRect().right;
-      //   let mktuRight = mktu.getBoundingClientRect().right;
-    
-      //   if (mktuRight + 23 > listRight) {
-      //     btn.classList.remove('--hidden');
-      //     mktu.classList.add('--hidden');
-      //     count += 1;
-      //     btn.querySelector('span').textContent = `+${count}`;
-      //     return;
-      //   } else {
-      //     mktu.classList.remove('--hidden');
-      //     if (!group.classList.contains('--opened')) {
-      //       btn.classList.add('--hidden');
-      //     }
-      //   }
-      // });
 
     const medias = [
       [1230, 10],
@@ -391,6 +374,21 @@ mktuGroups.forEach(group => {
   });
 });
 
+function openAccordeon(accordeon, subaccordeon, delay = 50, open = false) {
+  if (!open) {
+    accordeon.classList.toggle('--active');
+  } else {
+    accordeon.classList.add('--active');
+  }
+
+  if (accordeon.classList.contains('--active')) {
+    setTimeout(() => {
+      subaccordeon.classList.add('--show');
+    }, delay);
+  } else {
+    subaccordeon.classList.remove('--show');
+  }
+}
 accordeons.forEach((accordeon, index) => {
   const subaccordeon = accordeon.nextElementSibling;
 
@@ -399,22 +397,16 @@ accordeons.forEach((accordeon, index) => {
   }
 
   accordeon.addEventListener('click', ev => {
-    accordeon.classList.toggle('--active');
-
-    if (accordeon.classList.contains('--active')) {
-      setTimeout(() => {
-        subaccordeon.classList.add('--show');
-      }, 50);
-    } else {
-      subaccordeon.classList.remove('--show');
-    }
+    openAccordeon(accordeon, subaccordeon);
   });
 })
 
 toggleBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('--opened');
-  });
+  if (!btn.classList.contains('--no-event')) {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('--opened');
+    });
+  }
 });
 
 if (formMain) {
@@ -702,22 +694,41 @@ if (prereport) {
   const labelBtn = prereport.querySelector('.prereport__label-btn');
   const hideBtn = prereport.querySelector('.prereport__hide-btn');
   const content = prereport.querySelector('.prereport__content');
+  const lookBtns = prereport.querySelectorAll('.prereport__look-btn');
+
+  lookBtns.forEach(lookBtn => {
+    lookBtn.addEventListener('click', (ev) => {
+      const content = document.querySelector(
+        `.result__tab[data-tab="${lookBtn.dataset.tab}"]`
+      );
+      const accordeon = content.querySelectorAll('.accordeon')[0];
+
+      const contentRect = content.getBoundingClientRect();
+      const timer = setInterval(() => {
+        if (
+          contentRect.top >= 90
+        ) {
+          openAccordeon(accordeon, accordeon.nextElementSibling, 600, true);
+          
+          clearInterval(timer);
+        }
+      }, 50);
+    });
+  })
 
   if (labelBtn.classList.contains('--opened')) {
     content.classList.add('--show');
   }
 
   label.addEventListener('click', (ev) => {
-    if (!ev.composedPath().includes(labelBtn)) {
-      labelBtn.classList.toggle('--opened');
+    labelBtn.classList.toggle('--opened');
 
-      if (labelBtn.classList.contains('--opened')) {
-        setTimeout( () => {
-          content.classList.add('--show');
-        }, 10);
-      } else {
-        content.classList.remove('--show');
-      }
+    if (labelBtn.classList.contains('--opened')) {
+      setTimeout( () => {
+        content.classList.add('--show');
+      }, 10);
+    } else {
+      content.classList.remove('--show');
     }
   });
 
@@ -726,7 +737,9 @@ if (prereport) {
     window.scrollTo({
       top: prereport.offsetTop - 100
     });
-  })
+    
+    content.classList.remove('--show');
+  });
 }
 
 tariffs.forEach(tariff => {
