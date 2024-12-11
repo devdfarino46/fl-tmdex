@@ -14,10 +14,10 @@ const babel = require('gulp-babel'); // babel
 const sassGlob = require('gulp-sass-glob'); // globbing for sass]
 const fileInclude = require('gulp-file-include'); // file include
 const fontello = require('gulp-fontello'); // fontello
-const zip = require('gulp-archiver'); // zip
 const gitignoreExclude = require('gulp-gitignore'); // gitignore exclude
 const path = require('path'); // path
 const ghpages = require('gulp-gh-pages'); // gh-pages
+const Archiver = require('adm-zip'); // archiver
 
 const dirname = path.basename(__dirname);
 const resultConfig = require('./result-config.json');
@@ -112,15 +112,22 @@ function _fontello() {
     .pipe(browserSync.stream());
 }
 
-function _resultZip() {
+function _resultPack() {
   return gulp.src(resultConfig.files, {base: '.'})
     .pipe(gulp.dest(`fl-result/${dirname}`));
 }
 
-function _srcZip() {
+function _sourcePack() {
   return gulp.src('**/*', {base: '.'})
     .pipe(gitignoreExclude())
     .pipe(gulp.dest(`fl-result/${dirname}.src`));
+}
+
+function _ziping(cb) {
+  const zip = new Archiver();
+  zip.addLocalFolder('./fl-result');
+  zip.writeZip(`./fl-result/${dirname}/TMDEX.zip`);
+  return cb();
 }
 
 function _deploy() {
@@ -140,10 +147,12 @@ exports.default = gulp.series(
 );
 
 exports.result = gulp.series(
-  _resultZip,
-  _srcZip,
+  _resultPack,
+  _sourcePack,
+  _ziping,
   _deploy
 );
+exports.ziping = _ziping;
 exports.imageMin = _imageMin;
 exports.webp = _webp;
 exports.css = _sass;
