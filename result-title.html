@@ -273,7 +273,7 @@
           <input type="checkbox">
           <i class="icon-check"></i>
         </div>
-        <p class="checkbox__label">Учитывать однородные классы</p>
+        <p class="checkbox__label">Учитывать корреспондирующие классы</p>
       </label>
       <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
     </div>
@@ -1498,28 +1498,33 @@
     <div class="result-notice">
       <p class="result-notice__num">01</p>
       <p class="result-notice__text">
-        Без проверки экспертом ТМdex
+        Бесплатная проверка экспертом ТМdex
       </p>
-      <a href="#" class="result-notice__link">Смотреть</a>
     </div>
     <div class="result-notice">
       <p class="result-notice__num">01</p>
       <p class="result-notice__text">
-        Без проверки экспертом ТМdex
+        Мониторинг нарушений и угроз
       </p>
-      <a href="#" class="result-notice__link">Смотреть</a>
     </div>
     <div class="result-notice">
       <p class="result-notice__num">01</p>
       <p class="result-notice__text">
-        Без проверки экспертом ТМdex
+        Поддержка в патентных спорах
       </p>
-      <a href="#" class="result-notice__link">Смотреть</a>
     </div>
   </div>
 
-  <a class="report-result__grid-btn btn btn--lime btn--large popup-link" href="#popup-consult">
+  <a class="report-result__grid-btn btn btn--lime btn--large popup-link tab-content --active" 
+    href="#popup-consult" data-tab="report-result with-risk">
+
     <span>Бесплатная консультация</span>
+    <i class="icon-phone"></i>
+  </a>
+  <a class="report-result__grid-btn btn btn--lime btn--large popup-link tab-content" 
+    href="#popup-consult" data-tab="report-result no-risk">
+  
+    <span>Защитить название с TMdex</span>
     <i class="icon-phone"></i>
   </a>
 </div>
@@ -1528,7 +1533,7 @@
   <div class="prereport__label">
     <i class="icon-file-text-tiny"></i>
     <p class="prereport__label-title">Предварительный отчёт по запросу <b>tmdex</b></p>
-    <button type="button" class="prereport__label-btn btn btn--lime btn--small btn--toggle" aria-label="Показать предварительный отчет">
+    <button type="button" class="prereport__label-btn btn btn--lime btn--small btn--toggle --no-event" aria-label="Показать предварительный отчет">
       <i class="icon-plus"></i>
       <i class="icon-close"></i>
     </button>
@@ -2507,7 +2512,7 @@
       </div>
 
       <div class="result__accordeons">
-  <div type="button" class="accordeon --active">
+  <div type="button" class="accordeon">
     <p>Точно такие же <b>4</b></p>
     <button type="button" class="btn btn--secondary btn--small">
       <i class="icon-plus"></i>
@@ -5313,7 +5318,7 @@
 </div>
       
       <div class="result__accordeons">
-  <div type="button" class="accordeon --active">
+  <div type="button" class="accordeon">
     <p>Точно такие же <b>4</b></p>
     <button type="button" class="btn btn--secondary btn--small">
       <i class="icon-plus"></i>
@@ -7188,7 +7193,7 @@
 </div>
 
       <div class="result__accordeons">
-  <div type="button" class="accordeon --active">
+  <div type="button" class="accordeon">
     <p>Точно такие же <b>4</b></p>
     <button type="button" class="btn btn--secondary btn--small">
       <i class="icon-plus"></i>
@@ -9969,16 +9974,16 @@
     </div>
     <p class="tooltip__title">Обозначение в результатах:</p>
     <p class="tooltip__text">
-      <img src="img/mktu/1.webp" class="_img-shadow" alt="00"> — класс не занят
+      <span class="mktu" style="display: inline-block;">00</span> — класс не занят
     </p>
     <p class="tooltip__text">
-      <img src="img/mktu/2.webp" class="_img-shadow" alt="00"> — корреспондирующий класс не занят
+      <span class="mktu mktu --corresp" style="display: inline-block;">00</span> — корреспондирующий класс не занят
     </p>
     <p class="tooltip__text">
-      <img src="img/mktu/3.webp" class="_img-shadow" alt="00"> — класс занят
+      <span class="mktu --busy" style="display: inline-block;">00</span> — класс занят
     </p>
     <p class="tooltip__text">
-      <img src="img/mktu/4.webp" class="_img-shadow" alt="00"> — корреспондирующий класс занят
+      <span class="mktu --busy-corresp" style="display: inline-block;">00</span> — корреспондирующий класс занят
     </p>
   </div>
 </div>
