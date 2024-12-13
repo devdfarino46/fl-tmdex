@@ -4,7 +4,6 @@ require('jquery-mask-plugin');
 const toggleBtns = document.querySelectorAll('.btn--toggle');
 const inputs = document.querySelectorAll('.input');
 const inputsText = document.querySelectorAll('.input-text');
-const mktuGroups = document.querySelectorAll('.mktu-group');
 const accordeons = document.querySelectorAll('.accordeon');
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -15,7 +14,6 @@ const tariffs = document.querySelectorAll('.tariff');
 const consultPopup = document.querySelector('.consult-popup');
 
 const popupLinks = document.querySelectorAll('.popup-link');
-const tooltipLinks = document.querySelectorAll('.tooltip-link');
 const tooltips = document.querySelectorAll('.tooltip');
 
 const formMain = document.querySelector('.form-main');
@@ -272,107 +270,113 @@ alert.forEach(alert => {
 function getTooltip(link) {
   return document.querySelector(link.getAttribute('data-href'));
 }
-tooltipLinks.forEach(link => {
-
-  const change = (tooltip) => {
-    const rect = tooltip.getBoundingClientRect();
-    const lRect = link.getBoundingClientRect();
-
-    // Positioning tooltip
-    if (window.innerWidth >= 700) {
-      if (lRect.left < 450) {
-        tooltip.style.left = `${lRect.left}px`;
+function updateTooltips () {
+  const tooltipLinks = document.querySelectorAll('.tooltip-link');
+  tooltipLinks.forEach(link => {
+  
+    const change = (tooltip) => {
+      const rect = tooltip.getBoundingClientRect();
+      const lRect = link.getBoundingClientRect();
+  
+      // Positioning tooltip
+      if (window.innerWidth >= 700) {
+        if (lRect.left < 450) {
+          tooltip.style.left = `${lRect.left}px`;
+        } else {
+          tooltip.style.left = `${lRect.right - rect.width}px`;
+        }
       } else {
-        tooltip.style.left = `${lRect.right - rect.width}px`;
+        tooltip.style.left = `0`;
+        tooltip.style.right = `0`;
       }
-    } else {
-      tooltip.style.left = `0`;
-      tooltip.style.right = `0`;
-    }
-    if (lRect.top < window.innerHeight - 150) {
-      tooltip.style.top = `${lRect.bottom + 5}px`;
-    } else {
-      tooltip.style.top = `${lRect.top - rect.height - 5}px`;
-    }
-    
-    // Texting tooltip
-    if (link.getAttribute('data-href') === '#tooltip-mktu-0') {
-      const value = link.getAttribute('data-value');
-      const num = tooltip.querySelector('._mktu-num');
-      const descr = tooltip.querySelector('._mktu-descr');
-
-      num.innerHTML = value;
-      descr.innerHTML = MKTUS[value];
-    }
-
-    if (link.getAttribute('data-href') === '#tooltip-okved') {
-      const value = link.getAttribute('data-value');
-      const num = tooltip.querySelector('._okved-num');
-      const descr = tooltip.querySelector('._okved-descr');
-      const type = tooltip.querySelector('._okved-type');
-
-      num.innerHTML = value;
-      descr.innerHTML = OKVEDS[value];
-
-      if (link.getAttribute('data-main') !== null) {
-        type.innerHTML = type.getAttribute('data-text-main');
+      if (lRect.top < window.innerHeight - 150) {
+        tooltip.style.top = `${lRect.bottom + 5}px`;
       } else {
-        type.innerHTML = type.getAttribute('data-text-addit');
+        tooltip.style.top = `${lRect.top - rect.height - 5}px`;
+      }
+      
+      // Texting tooltip
+      if (link.getAttribute('data-href') === '#tooltip-mktu-0') {
+        const value = link.getAttribute('data-value');
+        const num = tooltip.querySelector('._mktu-num');
+        const descr = tooltip.querySelector('._mktu-descr');
+  
+        num.innerHTML = value;
+        descr.innerHTML = MKTUS[value];
+      }
+  
+      if (link.getAttribute('data-href') === '#tooltip-okved') {
+        const value = link.getAttribute('data-value');
+        const num = tooltip.querySelector('._okved-num');
+        const descr = tooltip.querySelector('._okved-descr');
+        const type = tooltip.querySelector('._okved-type');
+  
+        num.innerHTML = value;
+        descr.innerHTML = OKVEDS[value];
+  
+        if (link.getAttribute('data-main') !== null) {
+          type.innerHTML = type.getAttribute('data-text-main');
+        } else {
+          type.innerHTML = type.getAttribute('data-text-addit');
+        }
       }
     }
-  }
-
-  link.addEventListener('mouseenter', (e) => {
-    change(getTooltip(e.target));
-    getTooltip(e.target).classList.add('--visibled');
-  });
-  link.addEventListener('mouseleave', (e) => {
-    tooltips.forEach(t => t.classList.remove('--visibled'));
-  });
-
-  window.addEventListener('scroll', () => {
-    tooltips.forEach(t => t.classList.remove('--visibled'));
-  });
-});
-
-mktuGroups.forEach(group => {
-  const btn = group.querySelector('.mktu-group .btn');
-  const list = group.querySelector('.mktu-group__list div');
-  const mktus = group.querySelectorAll('.mktu');
-
-  const hide = () => {
-    let timer;
-    let groupRect = group.getBoundingClientRect();
-    let count = 0;
-
-    const medias = [
-      [1230, 10],
-      [1140, 8],
-      [940, 6],
-      [740, 4],
-      [0, 2]
-    ];
-
-    btn.classList.add('--hidden');
-
-    mktus.forEach((mktu, index) => {
-      const displayStyle = window.getComputedStyle(mktu).getPropertyValue('display');
-
-      if (displayStyle === 'none') {
-        count += 1;
-        btn.querySelector('span').textContent = `+${count}`;
-        btn.classList.remove('--hidden');
-      }
+  
+    link.addEventListener('mouseenter', (e) => {
+      change(getTooltip(e.target));
+      getTooltip(e.target).classList.add('--visibled');
     });
-  };
-
-  window.addEventListener('load', hide);
-  window.addEventListener('resize', hide);
-
-  btn.addEventListener('click', ev => {
-    group.classList.toggle('--opened');
+    link.addEventListener('mouseleave', (e) => {
+      tooltips.forEach(t => t.classList.remove('--visibled'));
+    });
+  
+    window.addEventListener('scroll', () => {
+      tooltips.forEach(t => t.classList.remove('--visibled'));
+    });
   });
-});
+}
+updateTooltips();
+
+function updateMktuGroups() {
+  
+  const mktuGroups = document.querySelectorAll('.mktu-group');
+  mktuGroups.forEach(group => {
+    const btn = group.querySelector('.mktu-group .btn');
+    const list = group.querySelector('.mktu-group__list div');
+    const mktus = group.querySelectorAll('.mktu');
+  
+    const hide = () => {
+      // console.log(3454536437);
+      let count = 0;
+  
+      const medias = [
+        [1230, 10],
+        [1140, 8],
+        [940, 6],
+        [740, 4],
+        [0, 2]
+      ];
+  
+      btn.classList.add('--hidden');
+  
+      mktus.forEach((mktu, index) => {
+        const displayStyle = window.getComputedStyle(mktu).getPropertyValue('display');
+  
+        if (displayStyle === 'none') {
+          count += 1;
+          btn.querySelector('span').textContent = `+${count}`;
+          btn.classList.remove('--hidden');
+        }
+      });
+    };
+    hide();
+  
+    btn.addEventListener('click', ev => {
+      group.classList.toggle('--opened');
+    });
+  });
+}
+updateMktuGroups();
 
 function openAccordeon(accordeon, subaccordeon, delay = 50, open = false) {
   if (!open) {
@@ -764,5 +768,5 @@ if (result) {
       top: prereport.offsetTop - 100,
       behavior: 'smooth'
     });
-  })
+  });
 }

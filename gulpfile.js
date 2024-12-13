@@ -18,6 +18,7 @@ const gitignoreExclude = require('gulp-gitignore'); // gitignore exclude
 const path = require('path'); // path
 const ghpages = require('gulp-gh-pages'); // gh-pages
 const Archiver = require('adm-zip'); // archiver
+const clean = require('gulp-clean'); // clean
 
 const dirname = path.basename(__dirname);
 const resultConfig = require('./result-config.json');
@@ -112,6 +113,11 @@ function _fontello() {
     .pipe(browserSync.stream());
 }
 
+function _cleanResult() {
+  return gulp.src(`./fl-result/${dirname}/TMDEX.zip`)
+    .pipe(clean({read: false}));
+}
+
 function _resultPack() {
   return gulp.src(resultConfig.files, {base: '.'})
     .pipe(gulp.dest(`fl-result/${dirname}`));
@@ -147,6 +153,7 @@ exports.default = gulp.series(
 );
 
 exports.result = gulp.series(
+  _cleanResult,
   _resultPack,
   _sourcePack,
   _ziping,
