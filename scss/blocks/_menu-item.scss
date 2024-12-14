@@ -1,0 +1,61 @@
+.menu-item {
+  padding: 20px 40px 30px 30px;
+  background: #F9F9FA;
+  border-radius: 20px;
+  display: flex;
+  transition: .3s ease;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    transition: .3s ease;
+  }
+
+  &__link-title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 110%;
+    color: #19191D;
+    transition: .3s ease;
+  }
+  &__link._main &__link-title {
+    font-size: 60px;
+  }
+
+  &__link-icon {
+    margin-top: auto;
+    font-size: 34px;
+    color: #787885;
+    transition: .3s ease;
+  }
+
+  &__contacts {
+    
+  }
+
+  // Button-extra
+  &.--extra {
+    background: #DFF71C;
+  }
+
+  // State hover
+  @media (any-hover: hover) {
+    &--button:hover {
+      background: #F0F0F1;
+    }
+    &--button.--extra:hover {
+      background: #C3DC04;
+    }
+    &--button:hover &__link-icon {
+      color: #19191D;
+    }
+    &__link._main:hover &__link-title {
+      color: #C3DC04;
+    }
+    &__link._main:hover &__link-icon {
+      color: #C3DC04;
+    }
+  }
+}

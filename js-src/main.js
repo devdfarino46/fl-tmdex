@@ -771,6 +771,22 @@ const Ui = {
       });
     });
   },
+  
+  menuInit: function () {
+    document.querySelectorAll('.menu').forEach(menu => {
+      const slideLeftBtn = menu.querySelector('.menu__slide-left-btn');
+      const slideRightBtn = menu.querySelector('.menu__slide-right-btn');
+      const swiper = new Swiper(menu.querySelector('.menu__items'), {
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        navigation: {
+          nextEl: slideRightBtn,
+          prevEl: slideLeftBtn
+        }
+      });
+    });
+  },
 
   init: function () {
     this.updateMktuFiltersUI();
@@ -792,6 +808,7 @@ const Ui = {
     this.consultPopupInit();
     this.tooltipInit();
     this.mktuGroupInit();
+    this.menuInit();
   }
 }
 Ui.init();
