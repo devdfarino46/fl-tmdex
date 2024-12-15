@@ -16,37 +16,212 @@
   <!-- <link href="js-lib/video-js.css" rel="stylesheet" /> -->
   <script defer src="js-lib/lazysizes.min.js"></script>
   <script defer src="js/main.bundle.js"></script>
-  <!-- <script src="js-lib/swiper.min.js"></script> -->
+  <script src="js-lib/swiper.min.js"></script>
   <!-- <script defer src="js-lib/video.min.js"></script> -->
 </head>
 
 <body>
   <div class="wrapper">
     <header class="header">
-  <div class="header__container">
-    <a href="#" class="header__logo">
-      <img src="img/logo.svg" alt="TMDEX">
-      <p class="header__title">
-        <span>защита и </span>проверка товарного знака онлайн
-      </p>
-    </a>
-    <div class="header__phones">
-      <a href="tel:+74954775475">+7 (495) 477-54-75</a>
-      <a href="tel:+78125655810">+7 (812) 565-58-10</a>
-    </div>
-    <div class="header__cta">
-      <a href="#popup-consult" class="btn btn--outline popup-link">
-        <i class="icon-phone"></i>
+  <div class="header__wrapper">
+    <div class="header__container">
+      <a href="#" class="header__logo">
+        <img src="img/logo.svg" alt="TMDEX">
+        <p class="header__title">
+          <span>защита и </span>проверка товарного знака онлайн
+        </p>
       </a>
-      <button type="button" class="btn btn--outline">
-        <i class="icon-user"></i>
-      </button>
-      <button type="button" class="btn btn--outline btn--toggle" aria-label="Открыть или закрыть меню">
-        <i class="icon-menu"></i>
-        <i class="icon-close"></i>
-      </button>
+      <div class="header__phones">
+        <a href="tel:+74954775475">+7 (495) 477-54-75</a>
+        <a href="tel:+78125655810">+7 (812) 565-58-10</a>
+      </div>
+      <div class="header__cta">
+        <a href="#popup-consult" class="btn btn--outline popup-link">
+          <i class="icon-phone"></i>
+        </a>
+        <button type="button" class="btn btn--outline">
+          <i class="icon-user"></i>
+        </button>
+        <button type="button" class="btn btn--outline btn--toggle menu-open-btn" aria-label="Открыть или закрыть меню">
+          <i class="icon-menu"></i>
+          <i class="icon-close"></i>
+        </button>
+      </div>
     </div>
   </div>
+
+  <div class="menu">
+  <div class="menu__container">
+    <div class="menu__btns-wrap">
+      <button class="btn btn--small _main">
+        <span>Войти</span>
+        <i class="icon-user"></i>
+      </button>
+      <button class="btn btn--small menu__slide-left-btn" aria-label="Слайд влево">
+        <i class="icon-chevron-right" style="rotate: 180deg; translate: 0 -1px;"></i>
+      </button>
+      <button class="btn btn--small menu__slide-right-btn" aria-label="Слайд вправо">
+        <i class="icon-chevron-right"></i>
+      </button>
+    </div>
+    <button class="menu__btn-prev btn btn--small ">
+      <span>назад</span>
+      <i class="icon-arrow-right" style="rotate: 180deg; translate: 0 -1px;"></i>
+    </button>
+
+    <div class="menu__items-wrap">
+      <div class="menu__items swiper">
+        <div class="swiper-wrapper">
+          <div class="menu-item menu-item--button --extra swiper-slide">
+  <a href="#" class="menu-item__link">
+    <p class="tag">Бесплатно</p>
+    <p class="menu-item__link-title">
+      Проверить товарный знак
+    </p>
+    <i class="menu-item__link-icon icon-check-circle-tiny"></i>
+  </a>
+</div>
+<div class="menu-item menu-item--button swiper-slide" data-menu-card-link="services">
+  <a href="#" class="menu-item__link">
+    <p class="tag">Услуги и цены</p>
+    <p class="menu-item__link-title">
+      Умеем и&nbsp;делаем
+    </p>
+    <i class="menu-item__link-icon icon-grid"></i>
+  </a>
+</div>
+<div class="menu-item menu-item--button swiper-slide">
+  <a href="#" class="menu-item__link">
+    <p class="tag">F.A.Q.</p>
+    <p class="menu-item__link-title">
+      Объясняем на котах
+    </p>
+    <i class="menu-item__link-icon icon-arrow-up-right"></i>
+  </a>
+</div>
+<div class="menu-item menu-item--button swiper-slide">
+  <a href="#" class="menu-item__link">
+    <p class="tag">Инфо</p>
+    <p class="menu-item__link-title">
+      Каталог МКТУ
+    </p>
+    <i class="menu-item__link-icon icon-arrow-up-right"></i>
+  </a>
+</div>
+<div class="menu-item menu-item--button swiper-slide">
+  <a href="#" class="menu-item__link">
+    <p class="tag">Статьи</p>
+    <p class="menu-item__link-title">
+      Журнал
+    </p>
+    <i class="menu-item__link-icon icon-arrow-up-right"></i>
+  </a>
+</div>
+<div class="menu-item menu-item--button swiper-slide">
+  <a href="#" class="menu-item__link">
+    <p class="tag">Инфо</p>
+    <p class="menu-item__link-title">
+      Каталог МКТУ
+    </p>
+    <i class="menu-item__link-icon icon-arrow-up-right"></i>
+  </a>
+</div>
+        </div>
+      </div>
+  
+      <div class="menu__bottom menu-item menu-item--contacts">
+        <a href="#" class="menu-item__link _main">
+          <p class="tag">Главная</p>
+          <p class="menu-item__link-title">
+            TMdex
+          </p>
+          <i class="menu-item__link-icon icon-arrow-up-right"></i>
+        </a>
+        
+        <div class="menu-item__contacts">
+          <div class="menu-item__contacts-items">
+            <div class="menu-item__contacts-coll">
+              <p>Санкт-Петербург</p>
+              <p><a href="tel:88125655810" class="_link">8 (812) 565-58-10</a></p>
+              <p class="_gray">Пн-Пт — с 10:00 до 19:00</p>
+            </div>
+            <div class="menu-item__contacts-coll">
+              <p>Москва</p>
+              <p><a href="tel:84954775475" class="_link">8 (495) 477-54-75</a></p>
+              <p class="_gray">Пн-Пт — с 10:00 до 19:00</p>
+            </div>
+            <div class="menu-item__contacts-coll">
+              <p>Москва,&nbsp;ул. Ленинская слобода д. 19 ком. 41М14,41М15</p>
+            </div>
+          </div>
+          <p class="menu-item__contacts-email">
+            <a href="mailto:consult@tmdex.ru" class="_link">consult@tmdex.ru</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="menu-card" data-menu-card="services">
+  <p class="tag">Услуги и цены</p>
+  <p class="menu-card__title">Умеем и&nbsp;делаем</p>
+
+  <div class="menu-card__list-colls">
+    <div class="menu-card__list-coll">
+      <p class="menu-card__list-title">Регистрация</p>
+      <ul class="menu-card__list">
+        <li class="menu-card__list-item"><a href="#" class="_link">Бесплатная проверка</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Регистрация под ключ</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Сопровождение заявки</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Предварительный отказ</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Подготовка заявлений</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Внесение изменений</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Подготовка заявлений</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Ускоренная регистрация</a></li>
+      </ul>
+    </div>
+    
+    <div class="menu-card__list-coll">
+      <p class="menu-card__list-title">Сопровождение</p>
+      <ul class="menu-card__list">
+        <li class="menu-card__list-item"><a href="#" class="_link">Продление срока</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Возражение на&nbsp;регистрацию</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Ознакомление с&nbsp;документами</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Аннулирование</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Досрочное прекращение</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Отчуждение прав</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Лицензионный договор</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Договор франшизы</a></li>
+      </ul>
+    </div>
+    
+    <div class="menu-card__list-coll">
+      <p class="menu-card__list-title">Споры ППС/СИП</p>
+      <ul class="menu-card__list">
+        <li class="menu-card__list-item"><a href="#" class="_link">Возражение на&nbsp;отказ</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Возражение на&nbsp;регистрацию</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Оспаривание отказа</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Оспаривание чужой регистрации</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Претензия по&nbsp;нарушению прав</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Представление интересов в&nbsp;СИП</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Права на&nbsp;доменное имя</a></li>
+      </ul>
+    </div>
+    
+    <div class="menu-card__list-coll">
+      <p class="menu-card__list-title">Мониторинг</p>
+      <ul class="menu-card__list">
+        <li class="menu-card__list-item"><a href="#" class="_link">Нарушения</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Документооборот</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Свидетельства</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Заявки</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">Компании</a></li>
+        <li class="menu-card__list-item"><a href="#" class="_link">МКТУ</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
 </header>
     <nav class="nav">
       <ul class="nav__container">
