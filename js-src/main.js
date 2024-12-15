@@ -774,15 +774,68 @@ const Ui = {
   
   menuInit: function () {
     document.querySelectorAll('.menu').forEach(menu => {
+      const menuOpenBtn = document.querySelector('.menu-open-btn');
       const slideLeftBtn = menu.querySelector('.menu__slide-left-btn');
       const slideRightBtn = menu.querySelector('.menu__slide-right-btn');
-      const swiper = new Swiper(menu.querySelector('.menu__items'), {
+      const menuItens = menu.querySelector('.menu__items');
+      const menuItensWrap = menu.querySelector('.menu__items-wrap');
+      const swiperSlides = menu.querySelectorAll('.menu__items .swiper-slide');
+      const menuCards = menu.querySelectorAll('.menu-card');
+      const prevBtn = menu.querySelector('.menu__btn-prev');
+
+      const transitionDelayStep = 0.1;
+      const swiper = new Swiper(menuItens, {
         direction: 'horizontal',
         slidesPerView: 'auto',
         spaceBetween: 10,
         navigation: {
           nextEl: slideRightBtn,
           prevEl: slideLeftBtn
+        },
+        mousewheel: true,
+        init: false
+      });
+
+      if (window.innerWidth > 740) {
+        swiper.init();
+      }
+
+      swiperSlides.forEach((slide, index) => {
+        slide.style.transitionDelay = `${index * transitionDelayStep}s`;
+
+        if (slide.getAttribute('data-menu-card-link') !== null) {
+          slide.addEventListener('click', ev => {
+            menuCards.forEach(menuCard => {
+              if (menuCard.getAttribute('data-menu-card-link') === slide.getAttribute('data-menu-card')) {
+                menuCard.classList.add('--opened');
+                menuItensWrap.style.minHeight = `${menuCard.offsetHeight}px`;
+              } else {
+                menuCard.classList.remove('--opened');
+                menuItensWrap.style.minHeight = 0;
+              }
+            });
+
+            prevBtn.addEventListener('click', ev => {
+              menuCards.forEach(menuCard => {
+                menuCard.classList.remove('--opened'); 
+              });
+              menuItensWrap.style.minHeight = 0;
+            });
+          });
+        }
+      });
+
+      menuOpenBtn.addEventListener('click', ev => {
+        if (menu.classList.contains('--opened')) {
+          menu.classList.remove('--opened');
+        } else {
+          menu.classList.add('--opened');
+        }
+      });
+
+      document.addEventListener('click', ev => {
+        if (!ev.target.closest('.menu') && !ev.target.closest('.menu-open-btn')) {
+          menu.classList.remove('--opened');
         }
       });
     });
