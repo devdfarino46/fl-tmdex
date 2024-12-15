@@ -18,6 +18,13 @@
   transition: .3s ease;
   opacity: 0;
 
+  &__slide-left-btn,
+  &__slide-right-btn {
+    @media (max-width: 740px) {
+      display: none;
+    }
+  }
+
   &.--opened {
     pointer-events: all;
     transform: translateY(0%);
