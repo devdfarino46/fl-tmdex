@@ -13,7 +13,9 @@
 .icon-eye-off:before { content: '\e80b'; } /* '' */
 .icon-close:before { content: '\e80c'; } /* '' */
 .icon-arrow-up-right:before { content: '\e80d'; } /* '' */
+.icon-star:before { content: '\e80e'; } /* '' */
 .icon-alert-triangle:before { content: '\e80f'; } /* '' */
+.icon-arrow-up-right-medium:before { content: '\e810'; } /* '' */
 .icon-corner-right-down:before { content: '\e811'; } /* '' */
 .icon-alert-triangle-tiny:before { content: '\e812'; } /* '' */
 .icon-arrow-right:before { content: '\e813'; } /* '' */
