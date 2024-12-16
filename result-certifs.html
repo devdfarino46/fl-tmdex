@@ -28,20 +28,17 @@
       <a href="#" class="header__logo">
         <img src="img/logo.svg" alt="TMDEX">
         <p class="header__title">
-          <span>защита и </span>проверка товарного знака онлайн
+          Товарных знаки — проверка, регистрация, мониторинг, сопровождение.
         </p>
       </a>
       <div class="header__phones">
-        <a href="tel:+74954775475">+7 (495) 477-54-75</a>
-        <a href="tel:+78125655810">+7 (812) 565-58-10</a>
+        <a href="tel:+74954775475">8 (495) 477-54-75</a>
+        <a href="tel:+78125655810">8 (812) 565-58-10</a>
       </div>
       <div class="header__cta">
         <a href="#popup-consult" class="btn btn--outline popup-link">
           <i class="icon-phone"></i>
         </a>
-        <button type="button" class="btn btn--outline">
-          <i class="icon-user"></i>
-        </button>
         <button type="button" class="btn btn--outline btn--toggle menu-open-btn" aria-label="Открыть или закрыть меню">
           <i class="icon-menu"></i>
           <i class="icon-close"></i>
@@ -248,7 +245,10 @@
   </label>
 
   <label class="search-form__input input" data-item="mktu">
-    <p class="input__label">Уточните поиск, указав тип МКТУ</p>
+    <p class="input__label">
+      Уточните поиск, указав тип МКТУ
+      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+    </p>
     <div class="input__wrapper">
       <input type="text" placeholder="Например, реклама или мкту 15">
       <button type="button"><i class="icon-close"></i></button>
@@ -450,7 +450,7 @@
         </div>
         <p class="checkbox__label">Учитывать корреспондирующие классы</p>
       </label>
-      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend-corresp"></i>
     </div>
     <div class="mktu-dropdown__btns">
       <button type="button" class="mktu-dropdown__apply-btn btn">
@@ -1552,8 +1552,6 @@
         
         Потенциальные угрозы
       </h2>
-
-      
     </div>
 
 <!------------------------------- Tab btns ------------------------------------>
@@ -9073,6 +9071,32 @@
       <span class="mktu" style="display: inline-block;">00</span> — класс не занят
     </p>
     <p class="tooltip__text">
+      <span class="mktu --busy" style="display: inline-block;">00</span> — класс занят
+    </p>
+  </div>
+</div>
+
+<!------------------------------- Tooltip Mktu Legend Corresp ------------------------------------>
+<div class="tooltip" id="tooltip-mktu-legend-corresp">
+  <div class="tooltip__wrapper">
+    <p class="tooltip__title">Международная классификация товаров и услуг</p>
+    <p class="tooltip__text">
+      МКТУ — это список категорий, в которые можно отнести товары и услуги,
+      чтобы легче было найти нужную информацию или определить, к какой
+      области относится тот или иной продукт.
+    </p>
+    <div class="tooltip__text">
+      <p>Классы бывают:</p>
+      <ul>
+        <li>основными</li>
+        <li>корреспондирующими</li>
+      </ul>
+    </div>
+    <p class="tooltip__title">Обозначение в результатах:</p>
+    <p class="tooltip__text">
+      <span class="mktu" style="display: inline-block;">00</span> — класс не занят
+    </p>
+    <p class="tooltip__text">
       <span class="mktu mktu --corresp" style="display: inline-block;">00</span> — корреспондирующий класс не занят
     </p>
     <p class="tooltip__text">
@@ -9111,6 +9135,8 @@
     <p class="tooltip__title">No design</p>
   </div>
 </div>
+
+
 </body>
 
 </html>

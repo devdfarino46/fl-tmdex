@@ -28,20 +28,17 @@
       <a href="#" class="header__logo">
         <img src="img/logo.svg" alt="TMDEX">
         <p class="header__title">
-          <span>защита и </span>проверка товарного знака онлайн
+          Товарных знаки — проверка, регистрация, мониторинг, сопровождение.
         </p>
       </a>
       <div class="header__phones">
-        <a href="tel:+74954775475">+7 (495) 477-54-75</a>
-        <a href="tel:+78125655810">+7 (812) 565-58-10</a>
+        <a href="tel:+74954775475">8 (495) 477-54-75</a>
+        <a href="tel:+78125655810">8 (812) 565-58-10</a>
       </div>
       <div class="header__cta">
         <a href="#popup-consult" class="btn btn--outline popup-link">
           <i class="icon-phone"></i>
         </a>
-        <button type="button" class="btn btn--outline">
-          <i class="icon-user"></i>
-        </button>
         <button type="button" class="btn btn--outline btn--toggle menu-open-btn" aria-label="Открыть или закрыть меню">
           <i class="icon-menu"></i>
           <i class="icon-close"></i>
@@ -248,7 +245,10 @@
   </label>
 
   <label class="search-form__input input" data-item="mktu">
-    <p class="input__label">Уточните поиск, указав тип МКТУ</p>
+    <p class="input__label">
+      Уточните поиск, указав тип МКТУ
+      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+    </p>
     <div class="input__wrapper">
       <input type="text" placeholder="Например, реклама или мкту 15">
       <button type="button"><i class="icon-close"></i></button>
@@ -450,7 +450,7 @@
         </div>
         <p class="checkbox__label">Учитывать корреспондирующие классы</p>
       </label>
-      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+      <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend-corresp"></i>
     </div>
     <div class="mktu-dropdown__btns">
       <button type="button" class="mktu-dropdown__apply-btn btn">
@@ -1856,10 +1856,25 @@
           </div>
         </div>
       </div>
+
+      <div class="prereport__content-alerts-text">
+        <div class="alert-text --success --large">
+          <i class="icon-alert-circle"></i>
+          <div class="alert-text__content">
+            <p class="alert-text__title">ЧТО можно сделать:</p>
+            <ul class="alert-text__text">
+              <li>выполнить знак комбинированным (добавить графические элементы)</li>
+              <li>добавить при регистрации слово, как неохраняемый элемент (526 поле)/не запрашивать охрану слова,</li>
+              <li>придумать фантазийное значение для слова (например, танцующий стол),</li>
+              <li>нарисовать слово (выполнить в качестве изобразительного элемента)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
 <!------------------------------- Certifs ------------------------------------>
-    <div class="prereport__subcontent">
+    <div class="prereport__subcontent" id="prereport-certifs">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">2</span>
@@ -2024,55 +2039,51 @@
             </div>
           </div>
           <div class="prereport__doc-text">
-            <p class="_title">Виды товаров и услуг, для которых найдены совпадения:</p>
-            <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
-              канцтовары, Материалы, Декор, Утварь, Текстиль, 
-              Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
-              Сельхозтовары, Напитки, Табак</p>
-            <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
-              материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
-              Красота и здоровье, Растения и животные</p>
+            <p class="prereport__doc-text-label">
+              <span>Виды товаров и услуг, для которых найдены совпадения:</span>
+              <i class="icon-chevron-right" style="rotate: 90deg;"></i>
+            </p>
+            <div class="prereport__doc-text-text">
+              <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
+                канцтовары, Материалы, Декор, Утварь, Текстиль, 
+                Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
+                Сельхозтовары, Напитки, Табак</p>
+              <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
+                материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
+                Красота и здоровье, Растения и животные</p>
+            </div>
           </div>
 
           <div class="prereport__doc-alerts-bottom">
             <div class="alert-text">
               <i class="icon-alert-triangle-tiny"></i>
               <div class="alert-text__content">
-                <p class="alert-text__title">Угрозы</p>
+                <p class="alert-text__title">Какие последствия?</p>
                 <p class="alert-text__text">
                   Это полное совпадение элементов двух обозначений, когда нельзя отличить 
                   их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
                 </p>
               </div>
             </div>
+            <div class="alert-text --success">
+              <i class="icon-alert-circle"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">ЧТО можно сделать:</p>
+                <ul class="alert-text__text">
+                  <li>выполнить знак комбинированным (добавить графические элементы)</li>
+                  <li>добавить при регистрации слово, как неохраняемый элемент (526 поле)/не запрашивать охрану слова,</li>
+                  <li>придумать фантазийное значение для слова (например, танцующий стол),</li>
+                  <li>нарисовать слово (выполнить в качестве изобразительного элемента)</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="suggest">
-  <div class="suggest__content">
-    <p class="suggest__title">Что можно сделать:</p>
-    <ul class="suggest__list">
-      <li class="suggest__item">Аннулировать мешающее свидетельство</li>
-      <li class="suggest__item">Блокировать чужую заявку</li>
-      <li class="suggest__item">Доработать знак до&nbsp;уникальности</li>
-      <li class="suggest__item">Придумать другое название.</li>
-      <li class="suggest__item">Получить письмо согласия</li>
-    </ul>
-  </div>
-
-  <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
-
-  <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
-    <span>Бесплатная консультация</span>
-    <i class="icon-phone"></i>
-  </a>
-
-</div>
     </div>
 
 <!------------------------------- Apps ------------------------------------>
-    <div class="prereport__subcontent">
+    <div class="prereport__subcontent" id="prereport-apps">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">3</span>
@@ -2237,55 +2248,51 @@
             </div>
           </div>
           <div class="prereport__doc-text">
-            <p class="_title">Виды товаров и услуг, для которых найдены совпадения:</p>
-            <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
-              канцтовары, Материалы, Декор, Утварь, Текстиль, 
-              Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
-              Сельхозтовары, Напитки, Табак</p>
-            <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
-              материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
-              Красота и здоровье, Растения и животные</p>
+            <p class="prereport__doc-text-label">
+              <span>Виды товаров и услуг, для которых найдены совпадения:</span>
+              <i class="icon-chevron-right" style="rotate: 90deg;"></i>
+            </p>
+            <div class="prereport__doc-text-text">
+              <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
+                канцтовары, Материалы, Декор, Утварь, Текстиль, 
+                Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
+                Сельхозтовары, Напитки, Табак</p>
+              <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
+                материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
+                Красота и здоровье, Растения и животные</p>
+            </div>
           </div>
 
           <div class="prereport__doc-alerts-bottom">
             <div class="alert-text">
               <i class="icon-alert-triangle-tiny"></i>
               <div class="alert-text__content">
-                <p class="alert-text__title">Угрозы</p>
+                <p class="alert-text__title">Какие последствия?</p>
                 <p class="alert-text__text">
                   Это полное совпадение элементов двух обозначений, когда нельзя отличить 
                   их&nbsp;друг от&nbsp;друга. Регистрация такого знака невозможна.
                 </p>
               </div>
             </div>
+            <div class="alert-text --success">
+              <i class="icon-alert-circle"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">ЧТО можно сделать:</p>
+                <ul class="alert-text__text">
+                  <li>выполнить знак комбинированным (добавить графические элементы)</li>
+                  <li>добавить при регистрации слово, как неохраняемый элемент (526 поле)/не запрашивать охрану слова,</li>
+                  <li>придумать фантазийное значение для слова (например, танцующий стол),</li>
+                  <li>нарисовать слово (выполнить в качестве изобразительного элемента)</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="suggest">
-  <div class="suggest__content">
-    <p class="suggest__title">Что можно сделать:</p>
-    <ul class="suggest__list">
-      <li class="suggest__item">Аннулировать мешающее свидетельство</li>
-      <li class="suggest__item">Блокировать чужую заявку</li>
-      <li class="suggest__item">Доработать знак до&nbsp;уникальности</li>
-      <li class="suggest__item">Придумать другое название.</li>
-      <li class="suggest__item">Получить письмо согласия</li>
-    </ul>
-  </div>
-
-  <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
-
-  <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
-    <span>Бесплатная консультация</span>
-    <i class="icon-phone"></i>
-  </a>
-
-</div>
     </div>
 
 <!------------------------------- Companies ------------------------------------>
-    <div class="prereport__subcontent">
+    <div class="prereport__subcontent" id="prereport-companies">
       <div class="prereport__subtitle-wrap">
         <p class="prereport__subtitle">
           <span class="_num">4</span>
@@ -2450,40 +2457,59 @@
             </div>
           </div>
           <div class="prereport__doc-text">
-            <p class="_title">Виды товаров и услуг, для которых найдены совпадения:</p>
-            <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
-              канцтовары, Материалы, Декор, Утварь, Текстиль, 
-              Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
-              Сельхозтовары, Напитки, Табак</p>
-            <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
-              материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
-              Красота и здоровье, Растения и животные</p>
+            <p class="prereport__doc-text-label">
+              <span>Виды товаров и услуг, для которых найдены совпадения:</span>
+              <i class="icon-chevron-right" style="rotate: 90deg;"></i>
+            </p>
+            <div class="prereport__doc-text-text">
+              <p><b>Товары:</b> ГСМ, Здоровье, Оборудование, Оружие, Бумага и 
+                канцтовары, Материалы, Декор, Утварь, Текстиль, 
+                Одежда и обувь, Рукоделие, Игры и спорт, Еда, 
+                Сельхозтовары, Напитки, Табак</p>
+              <p><b>Услуги:</b> Строительство и ремонт, Связь, Перевозки и путешествия, Обработка 
+                материалов и товары на заказ, Исследования и аналитика, Гостиницы и общепит, 
+                Красота и здоровье, Растения и животные</p>
+            </div>
           </div>
 
           <div class="prereport__doc-alerts-bottom">
-            <div class="alert-text">
-              <i class="icon-alert-triangle-tiny"></i>
-              <div class="alert-text__content">
-                <p class="alert-text__title">Угрозы</p>
-                <ul class="alert-text__text">
-                  Названия компаний могут помешать, как в процессе регистрации вашего знака, так и при 
-                  использовании его после получения вами свидетельства. Например:
-                  <li>могут возразить в процессе регистрации вашего знака</li>
-                  <li>попробуют отозвать регистрацию вашего знака</li>
-                  <li>могут подать иск по использованию чужой деловой репутации</li>
-                </ul>
-              </div>
-            </div>
             <div class="alert-text --warning">
               <i class="icon-alert-circle"></i>
               <div class="alert-text__content">
-                <p class="alert-text__title">Угрозы</p>
+                <p class="alert-text__title">Важно</p>
                 <ul class="alert-text__text">
-                  Названия компаний могут помешать, как в процессе регистрации вашего знака, так и при 
-                  использовании его после получения вами свидетельства. Например:
-                  <li>могут возразить в процессе регистрации вашего знака</li>
-                  <li>попробуют отозвать регистрацию вашего знака</li>
-                  <li>могут подать иск по использованию чужой деловой репутации</li>
+                  Это полное совпадение элементов двух обозначений, когда 
+                  нельзя отличить их&nbsp;друг 
+                  от&nbsp;друга. Регистрация такого знака невозможна.
+                </ul>
+              </div>
+            </div>
+            <div class="alert-text">
+              <i class="icon-alert-triangle-tiny"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">Какие последствия?</p>
+                <p class="alert-text__text">
+                  В&nbsp;соответствии с&nbsp;ГК&nbsp;РФ, нельзя регистрировать товарные 
+                  знаки, тождественные или схожие с&nbsp;чужими фирменными 
+                  наименованиями (т.&nbsp;е.&nbsp;с&nbsp;названиями компаний).Роспатент 
+                  при проведении экспертизы товарного знака не&nbsp;проверяет 
+                  соблюдение этого условия, что может привести к&nbsp;удорожанию 
+                  и&nbsp;увеличению сроков процедуры, отказу к&nbsp;регистрации или 
+                  возникновению правовых последствий (штрафы, аннулирование 
+                  полученного свидетельства, иски по&nbsp;использованию чужой 
+                  деловой репутации и&nbsp;суды в&nbsp;ППС, СИП, ФАС)
+                </p>
+              </div>
+            </div>
+            <div class="alert-text --success">
+              <i class="icon-alert-circle"></i>
+              <div class="alert-text__content">
+                <p class="alert-text__title">Возможные решения</p>
+                <ul class="alert-text__text">
+                  <li>выполнить знак комбинированным (добавить графические элементы)</li>
+                  <li>добавить при регистрации слово, как неохраняемый элемент (526 поле)/не запрашивать охрану слова,</li>
+                  <li>придумать фантазийное значение для слова (например, танцующий стол),</li>
+                  <li>нарисовать слово (выполнить в качестве изобразительного элемента)</li>
                 </ul>
               </div>
             </div>
@@ -2491,27 +2517,6 @@
           </div>
         </div>
       </div>
-
-      <div class="suggest">
-  <div class="suggest__content">
-    <p class="suggest__title">Что можно сделать:</p>
-    <ul class="suggest__list">
-      <li class="suggest__item">Аннулировать мешающее свидетельство</li>
-      <li class="suggest__item">Блокировать чужую заявку</li>
-      <li class="suggest__item">Доработать знак до&nbsp;уникальности</li>
-      <li class="suggest__item">Придумать другое название.</li>
-      <li class="suggest__item">Получить письмо согласия</li>
-    </ul>
-  </div>
-
-  <img data-src="img/suggest.webp" alt="" class="suggest__image lazyload" width="176" height="176">
-
-  <a href="#popup-consult" class="suggest__btn btn btn--lime popup-link">
-    <span>Бесплатная консультация</span>
-    <i class="icon-phone"></i>
-  </a>
-
-</div>
     </div>
 
 <!------------------------------- Consult-help ------------------------------------>
@@ -2646,13 +2651,6 @@
         
         Потенциальные угрозы
       </h2>
-
-      
-      <button type="button" class="result__to-up-btn btn btn--outline btn--small">
-        <span>Вернуться к отчетам</span>
-        <i class="icon-corner-right-down"></i>
-      </button>
-      
     </div>
 
 <!------------------------------- Tab btns ------------------------------------>
@@ -10194,6 +10192,32 @@
       <span class="mktu" style="display: inline-block;">00</span> — класс не занят
     </p>
     <p class="tooltip__text">
+      <span class="mktu --busy" style="display: inline-block;">00</span> — класс занят
+    </p>
+  </div>
+</div>
+
+<!------------------------------- Tooltip Mktu Legend Corresp ------------------------------------>
+<div class="tooltip" id="tooltip-mktu-legend-corresp">
+  <div class="tooltip__wrapper">
+    <p class="tooltip__title">Международная классификация товаров и услуг</p>
+    <p class="tooltip__text">
+      МКТУ — это список категорий, в которые можно отнести товары и услуги,
+      чтобы легче было найти нужную информацию или определить, к какой
+      области относится тот или иной продукт.
+    </p>
+    <div class="tooltip__text">
+      <p>Классы бывают:</p>
+      <ul>
+        <li>основными</li>
+        <li>корреспондирующими</li>
+      </ul>
+    </div>
+    <p class="tooltip__title">Обозначение в результатах:</p>
+    <p class="tooltip__text">
+      <span class="mktu" style="display: inline-block;">00</span> — класс не занят
+    </p>
+    <p class="tooltip__text">
       <span class="mktu mktu --corresp" style="display: inline-block;">00</span> — корреспондирующий класс не занят
     </p>
     <p class="tooltip__text">
@@ -10232,6 +10256,16 @@
     <p class="tooltip__title">No design</p>
   </div>
 </div>
+
+
+<div class="up-to-prereport">
+  <button class="btn btn--lime btn--small">
+    <span>Вернуться в отчёт</span>
+    <i class="icon-corner-right-down" 
+      style="scale: 1 -1; translate: 0 -1px;"></i>
+  </button>
+</div>
+
 </body>
 
 </html>
