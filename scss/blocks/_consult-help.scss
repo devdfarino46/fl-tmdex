@@ -1,0 +1,119 @@
+.consult-help {
+  display: flex;
+  padding: 30px 10px 35px 40px;
+  gap: 10px 30px;
+  background: #F0F0F1;
+  border-radius: 10px;
+
+  @media (max-width: 1140px) {
+    flex-direction: column;
+    padding: 30px 40px 35px 40px;
+  }
+
+  @media (max-width: 740px) {
+    padding: 30px 20px 35px 20px;
+    gap: 30px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 110%;
+    color: #19191D;
+    margin-bottom: 20px;
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    margin-bottom: 30px;
+    
+    &:not(:active) i {
+      color: #787885;
+    }
+
+    @media (max-width: 1140px) {
+      width: 100%;
+    }
+
+    @media (max-width: 740px) {
+      padding: 16px 32px;
+      font-size: 14px;
+    }
+  }
+
+  &__rating {
+  }
+
+  &__stars {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+
+    i { color: #4A4B57; }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #19191D;
+    margin-bottom: 5px;
+  }
+
+  &__company {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #787885;
+  }
+
+  &__image {
+    position: relative;
+    align-self: flex-end;
+    flex: 1 0 480px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: -35px;
+    max-width: 480px;
+    height: 311px;
+
+    background: url(../img/rounds-decor.svg) no-repeat bottom / contain;
+
+    img {
+      position: relative;
+      display: block;
+      object-fit: contain;
+      object-position: center bottom;
+      z-index: 4;
+      height: 100%;
+    }
+
+    @media (max-width: 1140px) {
+      flex: 0 0 auto;
+      width: 100%;
+      align-self: flex-start;
+    }
+
+    @media (max-width: 740px) {
+      height: 162px;
+      max-width: 250px;
+    }
+  }
+}
