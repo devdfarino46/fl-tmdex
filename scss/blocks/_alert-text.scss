@@ -43,4 +43,11 @@
   &.--warning>i {
     color: #787885;
   }
+  &.--success>i {
+    color: #43A047;
+  }
+
+  &.--large>i{
+    font-size: 30px;
+  }
 }

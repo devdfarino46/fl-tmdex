@@ -134,6 +134,32 @@
       <span class="mktu" style="display: inline-block;">00</span> — класс не занят
     </p>
     <p class="tooltip__text">
+      <span class="mktu --busy" style="display: inline-block;">00</span> — класс занят
+    </p>
+  </div>
+</div>
+
+<!------------------------------- Tooltip Mktu Legend Corresp ------------------------------------>
+<div class="tooltip" id="tooltip-mktu-legend-corresp">
+  <div class="tooltip__wrapper">
+    <p class="tooltip__title">Международная классификация товаров и услуг</p>
+    <p class="tooltip__text">
+      МКТУ — это список категорий, в которые можно отнести товары и услуги,
+      чтобы легче было найти нужную информацию или определить, к какой
+      области относится тот или иной продукт.
+    </p>
+    <div class="tooltip__text">
+      <p>Классы бывают:</p>
+      <ul>
+        <li>основными</li>
+        <li>корреспондирующими</li>
+      </ul>
+    </div>
+    <p class="tooltip__title">Обозначение в результатах:</p>
+    <p class="tooltip__text">
+      <span class="mktu" style="display: inline-block;">00</span> — класс не занят
+    </p>
+    <p class="tooltip__text">
       <span class="mktu mktu --corresp" style="display: inline-block;">00</span> — корреспондирующий класс не занят
     </p>
     <p class="tooltip__text">
@@ -172,3 +198,13 @@
     <p class="tooltip__title">No design</p>
   </div>
 </div>
+
+@@if(context.hasPrereport) {
+<div class="up-to-prereport">
+  <button class="btn btn--lime btn--small">
+    <span>Вернуться в отчёт</span>
+    <i class="icon-corner-right-down" 
+      style="scale: 1 -1; translate: 0 -1px;"></i>
+  </button>
+</div>
+}

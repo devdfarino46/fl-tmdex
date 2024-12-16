@@ -7,6 +7,13 @@
     font-size: 16px;
     line-height: 130%;
     color: #19191D;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    i {
+      color: #787885;
+    }
   }
 
   &__wrapper {

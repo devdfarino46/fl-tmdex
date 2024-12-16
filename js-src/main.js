@@ -468,6 +468,8 @@ const Ui = {
       const content = prereport.querySelector('.prereport__content');
       const hideBtn = prereport.querySelector('.prereport__hide-btn');
       const lookBtns = prereport.querySelectorAll('.prereport__look-btn');
+      const upTo = document.querySelector('.up-to-prereport');
+      const docTextLabels = prereport.querySelectorAll('.prereport__doc-text-label');
 
       if (labelBtn.classList.contains('--opened')) {
         content.classList.add('--show');
@@ -482,6 +484,12 @@ const Ui = {
         } else {
           content.classList.remove('--show');
         }
+      });
+
+      docTextLabels.forEach(function (docTextLabel) {
+        docTextLabel.addEventListener('click', (ev) => {
+          docTextLabel.classList.toggle('--opened');
+        })
       });
 
       hideBtn.addEventListener('click', () => {
@@ -511,7 +519,20 @@ const Ui = {
               clearInterval(timer);
             }
           }, 50);
+
+          upTo.dataset.section = lookBtn.closest('.prereport__subcontent').getAttribute('id');
+          upTo.classList.add('--visibled');
         });
+      });
+
+      upTo.querySelector('.btn').addEventListener('click', ev => {
+        window.scrollBy({
+          top: document.querySelector('#'+upTo.dataset.section)
+            .getBoundingClientRect().top - 100,
+          behavior: 'smooth'
+        });
+
+        upTo.classList.remove('--visibled');
       });
     });
   },
@@ -607,26 +628,13 @@ const Ui = {
     });
   },
 
-  resultInit: function () {
-    document.querySelectorAll('.result').forEach(result => {
-      const prereport = document.querySelector('.prereport');
-      const toUpBtn = result.querySelector('.result__to-up-btn');
-      
-      if (toUpBtn) toUpBtn.addEventListener('click', () => {
-        window.scrollTo({
-          top: prereport.offsetTop - 100,
-          behavior: 'smooth'
-        });
-      });
-    });
-  },
-
   popupLinkInit: function () {
     document.querySelectorAll('.popup-link').forEach(link => {
       link.addEventListener('click', (e) => {
         const popup = document.querySelector(link.getAttribute('href'));
         const btnOk = popup.querySelector('._btn-ok');
         const btnClose = popup.querySelector('._close-btn');
+        const wrapper = popup.querySelector('.popup__wrapper');
     
         popup.classList.add('--visibled');
         document.body.classList.add('no-scroll');
@@ -640,7 +648,20 @@ const Ui = {
           popup.classList.remove('--visibled');
           document.body.classList.remove('no-scroll');
         });
-      })
+      });
+    });
+  },
+
+  popupInit: function () {
+    document.querySelectorAll('.popup').forEach(popup => {
+      const wrapper = popup.querySelector('.popup__wrapper');
+
+      popup.addEventListener('click', (e) => {
+        if (!e.composedPath().includes(wrapper)) {
+          popup.classList.remove('--visibled');
+          document.body.classList.remove('no-scroll');
+        }
+      });
     });
   },
 
@@ -870,7 +891,7 @@ const Ui = {
     this.tabBtnInit();
     this.targetToTab();
     this.popupLinkInit();
-    this.resultInit();
+    this.popupInit();
     this.consultPopupInit();
     this.tooltipInit();
     this.mktuGroupInit();

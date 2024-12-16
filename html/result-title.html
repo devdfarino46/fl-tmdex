@@ -70,7 +70,7 @@
         </div>
       </section>
 
-      @@include('blocks/_result.html', {tabactive: 'apps', mktubusy: true, toupbtn: true})
+      @@include('blocks/_result.html', {tabactive: 'apps', mktubusy: true})
 
       @@include('blocks/_service.html')
 
@@ -80,7 +80,7 @@
     @@include('blocks/_footer.html')
   </div>
 
-  @@include('blocks/_subwrapper.html')
+  @@include('blocks/_subwrapper.html', {hasPrereport: true})
 </body>
 
 </html>
