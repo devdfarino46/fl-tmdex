@@ -8,12 +8,13 @@
   min-height: max-content;
   transition: .3s ease;
   pointer-events: none;
-  transform: translate(-100%, -100%);
+  transform: scale(0);
+  transform-origin: top left;
   opacity: 0;
 
   &.--opened {
     pointer-events: all;
-    transform: translate(0, 0);
+    transform: scale(1);
     opacity: 1;
   }
 
@@ -44,6 +45,17 @@
     }
   }
 
+  &__list-coll {
+    transition: none;
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  &.--opened &__list-coll {
+    transform: translateX(0);
+    opacity: 1;
+    transition: .3s ease;
+  }
+
   &__list-title {
     font-weight: 400;
     font-size: 24px;
@@ -58,10 +70,17 @@
   }
 
   &__list-item {
+    position: relative;
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
     color: #19191D;
     padding: 10px 15px;
+
+    a::before {
+      position: absolute;
+      content: '';
+      inset: 0;
+    }
   }
 }

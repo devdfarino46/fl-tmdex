@@ -33,12 +33,11 @@
 
   a._link {
     display: inline;
-    position: relative;
     transition: .2s ease;
 
     background: linear-gradient(#19191D, #19191D) no-repeat;
     background-size: 0% 1px;
-    background-position: bottom;
+    background-position: left bottom;
 
     @media (any-hover: hover) {
       &:hover {

@@ -777,14 +777,13 @@ const Ui = {
       const menuOpenBtn = document.querySelector('.menu-open-btn');
       const slideLeftBtn = menu.querySelector('.menu__slide-left-btn');
       const slideRightBtn = menu.querySelector('.menu__slide-right-btn');
-      const menuItens = menu.querySelector('.menu__items');
+      const menuItems = menu.querySelector('.menu__items');
       const menuItensWrap = menu.querySelector('.menu__items-wrap');
       const swiperSlides = menu.querySelectorAll('.menu__items .swiper-slide');
-      const menuCards = menu.querySelectorAll('.menu-card');
       const prevBtn = menu.querySelector('.menu__btn-prev');
-
-      const transitionDelayStep = 0.1;
-      const swiper = new Swiper(menuItens, {
+      
+      const menuCards = menu.querySelectorAll('.menu-card');
+      const swiper = new Swiper(menuItems, {
         direction: 'horizontal',
         slidesPerView: 'auto',
         spaceBetween: 10,
@@ -800,8 +799,16 @@ const Ui = {
         swiper.init();
       }
 
+      menuCards.forEach(card => {
+        const listColls = card.querySelectorAll('.menu-card__list-coll');
+
+        listColls.forEach((coll, index) => {
+          coll.style.transitionDelay = `${index * 0.2 + 0.2}s`
+        });
+      })
+
       swiperSlides.forEach((slide, index) => {
-        slide.style.transitionDelay = `${index * transitionDelayStep}s`;
+        slide.style.transitionDelay = `${index * 0.1}s`;
 
         if (slide.getAttribute('data-menu-card-link') !== null) {
           slide.addEventListener('click', ev => {
@@ -828,6 +835,9 @@ const Ui = {
       menuOpenBtn.addEventListener('click', ev => {
         if (menu.classList.contains('--opened')) {
           menu.classList.remove('--opened');
+          menuCards.forEach(menuCard => {
+            menuCard.classList.remove('--opened');
+          });
         } else {
           menu.classList.add('--opened');
         }
@@ -836,6 +846,9 @@ const Ui = {
       document.addEventListener('click', ev => {
         if (!ev.target.closest('.menu') && !ev.target.closest('.menu-open-btn')) {
           menu.classList.remove('--opened');
+          menuCards.forEach(menuCard => {
+            menuCard.classList.remove('--opened');
+          });
         }
       });
     });
