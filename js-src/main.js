@@ -856,22 +856,39 @@ const Ui = {
       menuOpenBtn.addEventListener('click', ev => {
         if (menu.classList.contains('--opened')) {
           menu.classList.remove('--opened');
+          document.body.classList.remove('no-scroll');
           menuCards.forEach(menuCard => {
             menuCard.classList.remove('--opened');
           });
         } else {
           menu.classList.add('--opened');
+          document.body.classList.add('no-scroll');
         }
       });
 
-      document.addEventListener('click', ev => {
-        if (!ev.target.closest('.menu') && !ev.target.closest('.menu-open-btn')) {
-          menu.classList.remove('--opened');
-          menuOpenBtn.classList.remove('--opened');
-          menuCards.forEach(menuCard => {
-            menuCard.classList.remove('--opened');
-          });
+      // document.addEventListener('click', ev => {
+      //   if (!ev.target.closest('.menu') && !ev.target.closest('.menu-open-btn')) {
+      //     menu.classList.remove('--opened');
+      //     menuOpenBtn.classList.remove('--opened');
+      //     menuCards.forEach(menuCard => {
+      //       menuCard.classList.remove('--opened');
+      //     });
+      //   }
+      // });
+    });
+  },
+
+  headerInit: function() {
+    document.querySelectorAll('.header').forEach(header => {
+      let scrollY = 0;
+      window.addEventListener('scroll', ev => {
+        if (scrollY > window.scrollY) {
+          header.classList.remove('--scrolled');
+        } else if (scrollY > 100) {
+          header.classList.add('--scrolled');
         }
+
+        scrollY = window.scrollY;
       });
     });
   },
@@ -897,6 +914,7 @@ const Ui = {
     this.tooltipInit();
     this.mktuGroupInit();
     this.menuInit();
+    this.headerInit();
   }
 }
 Ui.init();

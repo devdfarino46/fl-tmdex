@@ -1,10 +1,31 @@
+.wrapper {
+  padding-top: 79px;
+  @media (max-width: 740px) {
+    padding-top: 57px;
+  }
+}
 .header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  max-height: 100vh;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  transition: .7s ease;
+  transform: translateY(0%);
+
+  &.--scrolled:not( :has(.menu.--opened) ) {
+    transform: translateY(-100%);
+  }
 
   &__wrapper {
     position: relative;
+    pointer-events: all;
     padding: 15px 0;
-    z-index: 99;
+    z-index: 2;
     background: #FFFFFF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 
