@@ -93,4 +93,33 @@ body {
   margin-top: 30px;
 }
 
+.link {
+  display: inline;
+  transition: .2s ease;
+
+  background: linear-gradient(#19191D, #19191D) no-repeat;
+  background-size: 0% 1px;
+  background-position: left bottom;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-size: 100% 1px;
+    }
+  }
+}
+
+.link-text>span {
+  display: inline;
+  transition: .2s ease;
+
+  background: linear-gradient(#19191D, #19191D) no-repeat;
+  background-size: 0% 1px;
+  background-position: left bottom;
+}
+@media (any-hover: hover) {
+  a._link-text:hover span {
+    background-size: 100% 1px;
+  }
+}
+
 @import 'blocks/*';
