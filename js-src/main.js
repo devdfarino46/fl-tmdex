@@ -867,6 +867,7 @@ const Ui = {
       document.addEventListener('click', ev => {
         if (!ev.target.closest('.menu') && !ev.target.closest('.menu-open-btn')) {
           menu.classList.remove('--opened');
+          menuOpenBtn.classList.remove('--opened');
           menuCards.forEach(menuCard => {
             menuCard.classList.remove('--opened');
           });
