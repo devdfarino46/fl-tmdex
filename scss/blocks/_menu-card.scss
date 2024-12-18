@@ -76,11 +76,24 @@
     line-height: 130%;
     color: #19191D;
     padding: 10px 15px;
+    border-radius: 8px;
+    background: #F9F9FA;
+    transition: .2s ease;
 
     a::before {
       position: absolute;
       content: '';
       inset: 0;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: #F0F0F1;
+      }
+    }
+
+    &:active {
+      background: #E1E1E3;
     }
   }
 }

@@ -8,25 +8,23 @@
 .icon-tg { color: #2BA2DB !important; }
 .icon-whatsapp { color: #25D366 !important; }
 
-body {
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 2px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #FBFFE2;
-    border-radius: 100ch;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #DFF71C;
-    border-radius: 100ch;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #65B168;
-  }
-  ::-webkit-scrollbar-button {
-    display: none;
-  }
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 2px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100ch;
+}
+*::-webkit-scrollbar-thumb {
+  background: #D2D2D6;
+  border-radius: 100ch;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #65B168;
+}
+*::-webkit-scrollbar-button {
+  display: none;
 }
 
 [class *= "__container"], .container {
@@ -117,7 +115,7 @@ body {
   background-position: left bottom;
 }
 @media (any-hover: hover) {
-  a._link-text:hover span {
+  a.link-text:hover span {
     background-size: 100% 1px;
   }
 }

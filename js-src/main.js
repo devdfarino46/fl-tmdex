@@ -450,6 +450,7 @@ const Ui = {
   accordeonInit: function () {
     document.querySelectorAll('.accordeon').forEach(function (accordeon) {
       const subaccordeon = accordeon.nextElementSibling;
+      const btn = accordeon.querySelector('.btn');
 
       if (accordeon.classList.contains('--active')) {
         subaccordeon.classList.add('--show');
@@ -457,6 +458,13 @@ const Ui = {
     
       accordeon.addEventListener('click', ev => {
         Ui.accordeonOpen(accordeon);
+      });
+
+      accordeon.addEventListener('mouseover', ev => {
+        btn.classList.add('--hover');
+      });
+      accordeon.addEventListener('mouseout', ev => {
+        btn.classList.remove('--hover');
       });
     });
   },
@@ -485,6 +493,12 @@ const Ui = {
           content.classList.remove('--show');
         }
       });
+      label.addEventListener('mouseover', (ev) => {
+        labelBtn.classList.add('--hover');
+      });
+      label.addEventListener('mouseout', (ev) => {
+        labelBtn.classList.remove('--hover');
+      })
 
       docTextLabels.forEach(function (docTextLabel) {
         docTextLabel.addEventListener('click', (ev) => {
@@ -866,15 +880,15 @@ const Ui = {
         }
       });
 
-      // document.addEventListener('click', ev => {
-      //   if (!ev.target.closest('.menu') && !ev.target.closest('.menu-open-btn')) {
-      //     menu.classList.remove('--opened');
-      //     menuOpenBtn.classList.remove('--opened');
-      //     menuCards.forEach(menuCard => {
-      //       menuCard.classList.remove('--opened');
-      //     });
-      //   }
-      // });
+      document.addEventListener('click', ev => {
+        if (!ev.target.closest('.menu') && !ev.target.closest('.menu-open-btn')) {
+          menu.classList.remove('--opened');
+          menuOpenBtn.classList.remove('--opened');
+          menuCards.forEach(menuCard => {
+            menuCard.classList.remove('--opened');
+          });
+        }
+      });
     });
   },
 

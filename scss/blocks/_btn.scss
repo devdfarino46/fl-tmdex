@@ -99,21 +99,21 @@
 
   // State hover
   @media (any-hover: hover) {
-    &:hover {
+    &:hover, &.--hover {
       background: #292A31;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-    &--lime:hover {
+    &--lime:hover, &--lime.--hover {
       background: #C3DC04;
     }
-    &--secondary:hover {
+    &--secondary:hover, &--secondary.--hover {
       background: #F0F0F1;
     }
-    &--outline:hover {
+    &--outline:hover, &--outline.--hover {
       border-color: #4A4B57;
       background: #FFFFFF;
     }
-    &--text:hover {
+    &--text:hover, &--text.--hover {
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       background: #FFFFFF;
     }
