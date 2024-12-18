@@ -788,7 +788,7 @@ const Ui = {
       }
     });
 
-    document.body.addEventListener('click', (e) => {
+    document.body.addEventListener('mouseup', (e) => {
       const link = e.target.closest('.tooltip-link');
       const tooltip = e.target.closest('.tooltip');
       const tooltipWrapper = e.target.closest('.tooltip__wrapper');
