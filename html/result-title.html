@@ -26,18 +26,30 @@
 
           <div class="search__mktu-selected">
             @@for (let i = 1; i < 10; i++) {
-              <button type="button" class="mktu-select --busy tooltip-link" data-value="0`+i+`" data-href="#tooltip-mktu-0">
-                <p class="mktu-select__num">0`+i+`</p>
-                <p class="mktu-select__text">Продукты химические 123 123</p>
-                <i class="icon-close"></i>
-              </button>
+            <button type="button" class="mktu-select --busy tooltip-link" data-value="0`+i+`" data-href="#tooltip-mktu-0">
+              <p class="mktu-select__num">0`+i+`</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
             }
-            @@for (let i = 10; i < 46; i++) {
-              <button type="button" class="mktu-select --busy tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">
-                <p class="mktu-select__num">`+i+`</p>
-                <p class="mktu-select__text">Продукты химические 123 123</p>
-                <i class="icon-close"></i>
-              </button>
+            @@for (let i = 10; i < 35; i++) {
+            <button type="button" class="mktu-select --busy tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">
+              <p class="mktu-select__num">`+i+`</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
+            }
+            <button type="button" class="mktu-select --busy tooltip-link" data-value="35" data-href="#tooltip-mktu-35">
+              <p class="mktu-select__num">35</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
+            @@for (let i = 36; i < 46; i++) {
+            <button type="button" class="mktu-select --busy tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">
+              <p class="mktu-select__num">`+i+`</p>
+              <p class="mktu-select__text">Продукты химические 123 123</p>
+              <i class="icon-close"></i>
+            </button>
             }
           </div>
         </div>

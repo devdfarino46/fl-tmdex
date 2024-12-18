@@ -63,7 +63,7 @@ const CORRESPS = {
   "10": ["13", "14", "17", "21"],
   "15": ["16", "18", "19", "20"]
 }
-let MktuFilter = ["01", "10", "13", "15"];
+let MktuFilter = ["01", "10", "13", "15", "35"];
 
 
 const Ui = {
@@ -715,66 +715,99 @@ const Ui = {
     const tooltips = document.querySelectorAll('.tooltip');
     const tooltipLinks = document.querySelectorAll('.tooltip-link');
 
-    tooltipLinks.forEach(link => {
-      const change = (tooltip) => {
-        const rect = tooltip.getBoundingClientRect();
-        const lRect = link.getBoundingClientRect();
-    
-        // Positioning tooltip
-        if (window.innerWidth >= 700) {
-          if (lRect.left < 450) {
-            tooltip.style.left = `${lRect.left}px`;
-          } else {
-            tooltip.style.left = `${lRect.right - rect.width}px`;
-          }
+    const change = (tooltip, link) => {
+      const rect = tooltip.getBoundingClientRect();
+      const lRect = link.getBoundingClientRect();
+  
+      // Positioning tooltip
+      if (window.innerWidth > 700) {
+        if (lRect.left < 450) {
+          tooltip.style.paddingLeft = `${lRect.left}px`;
+          tooltip.style.paddingRight = `0`;
+          tooltip.style.alignItems = 'flex-start';
         } else {
-          tooltip.style.left = `0`;
-          tooltip.style.right = `0`;
+          tooltip.style.paddingLeft = `0`;
+          tooltip.style.paddingRight = `${window.innerWidth - lRect.right}px`;
+          tooltip.style.alignItems = 'flex-end';
         }
-        if (lRect.top < window.innerHeight - 150) {
-          tooltip.style.top = `${lRect.bottom + 5}px`;
-        } else {
-          tooltip.style.top = `${lRect.top - rect.height - 5}px`;
-        }
-        
-        // Texting tooltip
-        if (link.getAttribute('data-href') === '#tooltip-mktu-0') {
-          const value = link.getAttribute('data-value');
-          const num = tooltip.querySelector('._mktu-num');
-          const descr = tooltip.querySelector('._mktu-descr');
-    
-          num.innerHTML = value;
-          descr.innerHTML = MKTUS[value];
-        }
-    
-        if (link.getAttribute('data-href') === '#tooltip-okved') {
-          const value = link.getAttribute('data-value');
-          const num = tooltip.querySelector('._okved-num');
-          const descr = tooltip.querySelector('._okved-descr');
-          const type = tooltip.querySelector('._okved-type');
-    
-          num.innerHTML = value;
-          descr.innerHTML = OKVEDS[value];
-    
-          if (link.getAttribute('data-main') !== null) {
-            type.innerHTML = type.getAttribute('data-text-main');
-          } else {
-            type.innerHTML = type.getAttribute('data-text-addit');
-          }
-        }
+      } else {
+        tooltip.style.paddingLeft = `20px`;
+        tooltip.style.paddingRight = `20px`;
+        tooltip.style.alignItems = 'stretch';
+      }
+      if (lRect.top < window.innerHeight - 350) {
+        tooltip.style.paddingTop = `${lRect.bottom + 5}px`;
+        tooltip.style.paddingBottom = `5px`;
+        tooltip.style.justifyContent = 'flex-start';
+      } else {
+        tooltip.style.paddingTop = `5px`;
+        tooltip.style.paddingBottom = `${window.innerHeight - lRect.top - 5}px`;
+        tooltip.style.justifyContent = 'flex-end';
       }
     
-      link.addEventListener('mouseenter', (e) => {
-        change(Ui.getTooltip(e.target));
-        Ui.getTooltip(e.target).classList.add('--visibled');
-      });
-      link.addEventListener('mouseleave', (e) => {
-        tooltips.forEach(t => t.classList.remove('--visibled'));
-      });
+      // Texting tooltip
+      if (link.getAttribute('data-href') === '#tooltip-mktu-0') {
+        const value = link.getAttribute('data-value');
+        const num = tooltip.querySelector('._mktu-num');
+        const descr = tooltip.querySelector('._mktu-descr');
+  
+        num.innerHTML = value;
+        descr.innerHTML = MKTUS[value];
+      }
+  
+      if (link.getAttribute('data-href') === '#tooltip-okved') {
+        const value = link.getAttribute('data-value');
+        const num = tooltip.querySelector('._okved-num');
+        const descr = tooltip.querySelector('._okved-descr');
+        const type = tooltip.querySelector('._okved-type');
+  
+        num.innerHTML = value;
+        descr.innerHTML = OKVEDS[value];
+  
+        if (link.getAttribute('data-main') !== null) {
+          type.innerHTML = type.getAttribute('data-text-main');
+        } else {
+          type.innerHTML = type.getAttribute('data-text-addit');
+        }
+      }
+    }
+
+    let lockMouseMove = false;
     
-      window.addEventListener('scroll', () => {
+    document.body.addEventListener('mousemove', (e) => {
+      const link = e.target.closest('.tooltip-link');
+
+      if (link && !lockMouseMove) {
+        const tooltipTarget = Ui.getTooltip(link);
+
+        change(tooltipTarget, link);
         tooltips.forEach(t => t.classList.remove('--visibled'));
-      });
+        tooltipTarget.classList.add('--visibled');
+      } else if (!lockMouseMove) {
+        tooltips.forEach(t => t.classList.remove('--visibled'));
+      }
+    });
+
+    document.body.addEventListener('click', (e) => {
+      const link = e.target.closest('.tooltip-link');
+      const tooltip = e.target.closest('.tooltip');
+      const tooltipWrapper = e.target.closest('.tooltip__wrapper');
+
+      if (link) {
+        lockMouseMove = true;
+        const tooltipTarget = Ui.getTooltip(link);
+
+        change(tooltipTarget, link);
+        tooltips.forEach(t => t.classList.remove('--visibled'));
+        tooltipTarget.classList.add('--visibled');
+      } else {
+        lockMouseMove = false;
+        tooltips.forEach(t => t.classList.remove('--visibled'));
+      }
+    });
+
+    window.addEventListener('scroll', e => {
+      tooltips.forEach(t => t.classList.remove('--visibled'));
     });
   },
 
@@ -871,6 +904,7 @@ const Ui = {
         if (menu.classList.contains('--opened')) {
           menu.classList.remove('--opened');
           document.body.classList.remove('no-scroll');
+          swiper.slideTo(0);
           menuCards.forEach(menuCard => {
             menuCard.classList.remove('--opened');
           });

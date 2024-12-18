@@ -1,7 +1,6 @@
 .menu {
   position: relative;
   top: auto;
-  overflow: hidden;
   left: 0;
   right: 0;
   background: #3A3A44;
@@ -10,8 +9,10 @@
   display: flex;
   flex-direction: column;
   z-index: 1;
-  overflow-y: auto;
+  overflow-y: overlay;
   overflow-x: hidden;
+
+  scrollbar-gutter: stable both-edges;
 
   pointer-events: none;
   transform: translateY(-100%);
@@ -38,6 +39,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @media (max-width: 1230px) {
+      margin-right: -6px;
+    }
   }
 
   &__items-wrap {
@@ -75,6 +80,7 @@
     .swiper-wrapper {
       display: flex;
       flex: 1 0;
+      gap: 0;
     }
     
     @media (max-width: 740px) {
@@ -94,7 +100,7 @@
     transition: none;
 
     @media (max-width: 740px) {
-      flex: auto;
+      width: auto;
     }
   }
   &.--opened &__items .menu-item {
