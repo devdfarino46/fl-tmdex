@@ -57,6 +57,16 @@
     gap: 10px;
     background: #FFFFFF;
     border-radius: 5px;
+    transition: .3s ease;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  &__details:not(:has(+ &__show-details-btn.--active)) {
+    transform: translateY(-30px);
+    opacity: 0;
+    height: 0;
+    margin-top: -45px;
+    pointer-events: none;
   }
 
   &__details>p {
@@ -80,10 +90,6 @@
     text-decoration-line: underline;
     color: #4A4B57;
     text-align: left;
-  }
-
-  &__details:not(:has(+ &__show-details-btn.--active)) {
-    display: none;
   }
 
   // State hover

@@ -97,7 +97,7 @@ const Ui = {
     });
   },
 
-  accordeonOpen: function (accordeon, delay = 50, open = false) {
+  accordeonOpen: function (accordeon, open = false) {
     const subaccordeon = accordeon.nextElementSibling;
 
     if (!open) {
@@ -107,11 +107,9 @@ const Ui = {
     }
   
     if (accordeon.classList.contains('--active')) {
-      setTimeout(() => {
-        subaccordeon.classList.add('--show');
-      }, delay);
+      
     } else {
-      subaccordeon.classList.remove('--show');
+      
     }
   },
 
@@ -435,15 +433,17 @@ const Ui = {
     document.querySelectorAll('.alert').forEach(function (alert) {
       const btn = alert.querySelector('.alert__show-details-btn');
 
-      btn.addEventListener('click', (e) => {
-        btn.classList.toggle('--active');
-    
-        if (btn.classList.contains('--active')) {
-          btn.innerHTML = btn.dataset.textHide;
-        } else {
-          btn.innerHTML = btn.dataset.textShow;
-        }
-      });
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          btn.classList.toggle('--active');
+      
+          if (btn.classList.contains('--active')) {
+            btn.innerHTML = btn.dataset.textHide;
+          } else {
+            btn.innerHTML = btn.dataset.textShow;
+          }
+        });
+      }
     });
   },
 
@@ -451,10 +451,6 @@ const Ui = {
     document.querySelectorAll('.accordeon').forEach(function (accordeon) {
       const subaccordeon = accordeon.nextElementSibling;
       const btn = accordeon.querySelector('.btn');
-
-      if (accordeon.classList.contains('--active')) {
-        subaccordeon.classList.add('--show');
-      }
     
       accordeon.addEventListener('click', ev => {
         Ui.accordeonOpen(accordeon);
@@ -485,13 +481,6 @@ const Ui = {
 
       label.addEventListener('click', (ev) => {
         labelBtn.classList.toggle('--opened');
-        if (labelBtn.classList.contains('--opened')) {
-          setTimeout( () => {
-            content.classList.add('--show');
-          }, 10);
-        } else {
-          content.classList.remove('--show');
-        }
       });
       label.addEventListener('mouseover', (ev) => {
         labelBtn.classList.add('--hover');
@@ -523,12 +512,13 @@ const Ui = {
           );
           const accordeon = content.querySelectorAll('.accordeon')[0];
     
-          const resultRect = result.getBoundingClientRect();
           const timer = setInterval(() => {
-            if (
-              resultRect.top >= 90
-            ) {
-              Ui.accordeonOpen(accordeon, 600, true);
+            const resultRect = result.getBoundingClientRect();
+            if (resultRect.top <= 90) {
+              console.log(resultRect.top);
+              
+              setTimeout( () => Ui.accordeonOpen(accordeon, true), 100);
+              
               
               clearInterval(timer);
             }

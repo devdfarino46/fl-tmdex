@@ -1,0 +1,17 @@
+.accordeon {
+  position: relative;
+  z-index: 2;
+}
+.accordeon + .subaccordeon {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: .5s ease;
+}
+.accordeon:not(.--active) + .subaccordeon {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50px);
+}

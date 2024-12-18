@@ -63,26 +63,6 @@
 .popup-link { cursor: pointer; }
 .tooltip-link { cursor: pointer; }
 
-.accordeon:not(.--active) + .subaccordeon {
-  display: none !important;
-}
-
-.accordeon {
-  position: relative;
-  z-index: 2;
-}
-.accordeon + .subaccordeon {
-  position: relative;
-  z-index: 1;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: .4s ease;
-}
-.accordeon + .subaccordeon.--show {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
 .tab-content:not(.--active) {
   display: none !important;
 }
