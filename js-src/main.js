@@ -808,6 +808,7 @@ const Ui = {
 
     window.addEventListener('scroll', e => {
       tooltips.forEach(t => t.classList.remove('--visibled'));
+      lockMouseMove = false;
     });
   },
 
