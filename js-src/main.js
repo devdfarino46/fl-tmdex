@@ -68,7 +68,7 @@ let MktuFilter = ["01", "10", "13", "15", "35"];
 
 const Ui = {
   toggleTabs: function (btn, tabBtn = null) {
-    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabBtns = document.querySelectorAll('.tab-btn, .tab-btn-nocss');
     const tabContents = document.querySelectorAll('.tab-content');
     
     btn.addEventListener('click', ev => {
@@ -620,7 +620,7 @@ const Ui = {
   },
 
   tabBtnInit: function () {
-    document.querySelectorAll('.tab-btn').forEach(btn => {
+    document.querySelectorAll('.tab-btn, .tab-btn-nocss').forEach(btn => {
       Ui.toggleTabs(btn);
     });
   },
@@ -866,7 +866,7 @@ const Ui = {
             slidesPerView: 3
           },
 
-          941: {
+          1141: {
             slidesPerView: 4
           }
         }

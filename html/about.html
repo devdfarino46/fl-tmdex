@@ -13,33 +13,130 @@
       </ul>
     </nav>
 
-    <main class="page">
-      <section class="section search">
-        <div class="search__container">
-          <h1 class="search__title"
-            data-text1="Проверка товарного <br>знака онлайн"
-            data-text2="Поиск товарного знака <br>по номеру документа">
-            Проверка товарного <br>знака онлайн
-          </h1>
-          <p class="search__date">
-            Обновление базы:
-            <a href="#popup-base" class="label-data popup-link">сегодня</a>
+    <main class="page page-about">
+      <h1 class="about-title container">О компании</h1>
+
+      <section class="section about-tabs container">
+        <button class="about-tabs__btn tab-btn-nocss --active" data-tab="about-tabs about">
+          <span>О нас</span>
+        </button>
+        <button class="about-tabs__btn tab-btn-nocss" data-tab="about-tabs team">
+          <span>Команда</span>
+        </button>
+        <button class="about-tabs__btn tab-btn-nocss" data-tab="about-tabs history">
+          <span>История</span>
+        </button>
+        <button class="about-tabs__btn tab-btn-nocss" data-tab="about-tabs adwards">
+          <span>Награды</span>
+        </button>
+        <button class="about-tabs__btn tab-btn-nocss" data-tab="about-tabs publics">
+          <span>Публикации</span>
+        </button>
+        <button class="about-tabs__btn tab-btn-nocss" data-tab="about-tabs reviews">
+          <span>Отзывы</span>
+        </button>
+      </section>
+
+      <section class="section about tab-content container --active" data-tab="about-tabs about">
+        <div class="about__wrapper">
+          <div class="about__content">
+            <p class="about__descr">
+              TMdex&nbsp;специализируется на&nbsp;регистрации товарных знаков. Опытные 
+              юристы и&nbsp;патентные поверенные помогут вам в&nbsp;решении вопросов, 
+              связанных с&nbsp;регистрацией товарных знаков
+            </p>
+            <p class="about__text">
+              Нам&nbsp;известно, как важно защищать интеллектуальные права 
+              от&nbsp;недобросовестной конкуренции и&nbsp;поэтому оказываем 
+              <a href="#">широкий спектр услуг</a> по&nbsp;регистрации и&nbsp;защите 
+              товарных знаков. Мы гарантируем конфиденциальность и обеспечим 
+              высокий уровень экспертизы при оказании услуг.
+            </p>
+          </div>
+          <div class="about__socials">
+            <a href="#" class="btn btn--secondary">
+              <span>написать в telegram</span>
+              <i class="icon-tg"></i>
+            </a>
+            <a href="#" class="btn btn--secondary">
+              <span>написать в whatsapp</span>
+              <i class="icon-whatsapp"></i>
+            </a>
+          </div>
+          <div class="about__reviews">
+            <div class="about__review">
+              <img src="img/icons/yandex.svg" alt="Yandex" class="_icon" width="35" height="35">
+              <div class="_right">
+                <div class="_rating">
+                  <p>4,8</p>
+                  <div class="_stars">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star-half"></i>
+                    <!-- icon-star-empty -->
+                  </div>
+                </div>
+                <p class="_label">Яндекс</p>
+              </div>
+            </div>
+            <div class="about__review">
+              <img src="img/icons/google.svg" alt="Yandex" class="_icon" width="35" height="35">
+              <div class="_right">
+                <div class="_rating">
+                  <p>5,0</p>
+                  <div class="_stars">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <!-- icon-star-empty -->
+                  </div>
+                </div>
+                <p class="_label">Google</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="about__image">
+            <img data-src="img/grusdea-a.webp" alt="" class="lazyload">
+            <div class="bage">
+              <p class="bage__title">Павел Барцев</p>
+              <p class="bage__text">
+                Патентный поверенный РФ №755 <br>
+                Евразийский патентный поверенный №389
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-service container">
+        <div class="about-service__item">
+          <p class="about-service__num">0000+</p>
+          <p class="about-service__text">
+            человек пользуются сервисом для проверки товарных знаков
           </p>
-
-          @@include('blocks/_search-form.html', {class: '--hide-mktu'})
-
-          <p class="search__subtitle">
-            Проверьте вероятность регистрации товарного знака в
-            Роспатенте по актуальным базам и реестрам ФИПС
+        </div>
+        <div class="about-service__item">
+          <p class="about-service__num">0000+</p>
+          <p class="about-service__text">
+            товарных знаков зарегистрировала компания
+          </p>
+        </div>
+        <div class="about-service__item">
+          <p class="about-service__num">0000+</p>
+          <p class="about-service__text">
+            млн рублей сэкономили наши клиенты на&nbsp;судебных тяжбах
           </p>
         </div>
       </section>
       
-      
-
-      @@include('blocks/_advan-search.html')
-      @@include('blocks/_service.html')
-      @@include('blocks/_form-main.html')
+      <section class="section consult-help-section container">
+        @@include('blocks/_consult-help.html', {isSection: true})
+      </section>
     </main>
 
     @@include('blocks/_footer.html')

@@ -1,0 +1,24 @@
+.bage {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  gap: 5px;
+  background: #626E02;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 143%;
+    color: #FFFFFF;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+  }
+}

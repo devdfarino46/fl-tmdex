@@ -1,0 +1,26 @@
+.about-tabs {
+  display: flex;
+  gap: 5px;
+  margin-top: 80px;
+  padding-bottom: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &__btn {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+    padding: 9px 14px;
+    background: #F9F9FA;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: .2s ease;
+    white-space: nowrap;
+  }
+
+  &__btn.--active {
+    background: #FFF;
+    border-color: #D2D2D6;
+  }
+}
