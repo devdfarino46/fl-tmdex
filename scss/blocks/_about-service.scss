@@ -21,6 +21,7 @@
 
     @media (max-width: 740px) {
       padding: 20px 20px 30px;
+      gap: 5px;
 
       &:nth-child(3) {
         grid-column: 1 / 3;
