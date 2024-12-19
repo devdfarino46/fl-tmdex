@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('blocks/_head.html')
+
+<body>
+  <div class="wrapper">
+    @@include('blocks/_header.html')
+    <nav class="nav">
+      <ul class="nav__container">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О компании</a></li>
+      </ul>
+    </nav>
+
+    <main class="page">
+      <section class="section search">
+        <div class="search__container">
+          <h1 class="search__title"
+            data-text1="Проверка товарного <br>знака онлайн"
+            data-text2="Поиск товарного знака <br>по номеру документа">
+            Проверка товарного <br>знака онлайн
+          </h1>
+          <p class="search__date">
+            Обновление базы:
+            <a href="#popup-base" class="label-data popup-link">сегодня</a>
+          </p>
+
+          @@include('blocks/_search-form.html', {class: '--hide-mktu'})
+
+          <p class="search__subtitle">
+            Проверьте вероятность регистрации товарного знака в
+            Роспатенте по актуальным базам и реестрам ФИПС
+          </p>
+        </div>
+      </section>
+      
+      
+
+      @@include('blocks/_advan-search.html')
+      @@include('blocks/_service.html')
+      @@include('blocks/_form-main.html')
+    </main>
+
+    @@include('blocks/_footer.html')
+  </div>
+
+  @@include('blocks/_subwrapper.html')
+</body>
+
+</html>
