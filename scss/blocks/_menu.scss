@@ -12,8 +12,6 @@
   overflow-y: overlay;
   overflow-x: hidden;
 
-  scrollbar-gutter: stable both-edges;
-
   pointer-events: none;
   transform: translateY(-100%);
   transform-origin: top;
@@ -94,13 +92,14 @@
     opacity: 0;
   }
   &__items .menu-item {
-    flex: 0 0 285px;
+    flex: 1 0 auto;
     transform: translateX(200px);
     opacity: 0;
     transition: none;
 
     @media (max-width: 740px) {
       width: auto;
+      flex: auto;
     }
   }
   &.--opened &__items .menu-item {

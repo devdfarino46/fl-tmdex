@@ -800,6 +800,11 @@ const Ui = {
       tooltips.forEach(t => t.classList.remove('--visibled'));
       lockMouseMove = false;
     });
+
+    window.addEventListener('resize', e => {
+      tooltips.forEach(t => t.classList.remove('--visibled'));
+      lockMouseMove = false;
+    });
   },
 
   mktuGroupInit: function () {
@@ -844,19 +849,39 @@ const Ui = {
       const menuCards = menu.querySelectorAll('.menu-card');
       const swiper = new Swiper(menuItems, {
         direction: 'horizontal',
-        slidesPerView: 'auto',
+        // slidesPerView: 'auto',
         spaceBetween: 10,
         navigation: {
           nextEl: slideRightBtn,
           prevEl: slideLeftBtn
         },
         mousewheel: true,
-        init: false
+
+        breakpoints: {
+          741: {
+            slidesPerView: 2
+          },
+
+          841: {
+            slidesPerView: 3
+          },
+
+          941: {
+            slidesPerView: 4
+          }
+        }
       });
 
-      if (window.innerWidth > 740) {
-        swiper.init();
+      const swiperInit = () => {
+        if (window.innerWidth > 740) {
+          swiper.enable();
+        } else {
+          swiper.disable();
+        }
       }
+      swiperInit();
+
+      window.addEventListener('resize', swiperInit);
 
       menuCards.forEach(card => {
         const listColls = card.querySelectorAll('.menu-card__list-coll');
