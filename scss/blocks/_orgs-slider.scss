@@ -1,0 +1,47 @@
+.orgs-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    touch-action: pan-y;
+  }
+
+  &__line {
+    border-bottom: 1px solid #D2D2D6;
+    margin-top: 80px;
+
+    @media (max-width: 740px) {
+      margin-top: 40px;
+    }
+  }
+
+	&__item {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+
+    img {
+      object-fit: contain;
+      object-position: center;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      text-align: center;
+      color: #19191D;
+    }
+
+    @media (max-width: 940px) {
+      flex: 0 0 200px;
+    }
+	}
+}

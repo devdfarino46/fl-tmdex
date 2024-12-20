@@ -1,12 +1,6 @@
 const $ = require('jquery');
 require('jquery-mask-plugin');
 
-// === Renamed ===
-// mktuFilter -> Ui.MktuFilter
-// updateTooltips -> Ui.tooltipInit
-// updateMktuGroups -> Ui.mktuGroupInit
-// function accordeonOpen(accordeon, subaccordeon, delay = 50, open = false) -> Ui.accordeonOpen: function (accordeon, delay = 50, open = false)
-
 const MKTUS = {
   "01": "Инновационные решения",
   "02": "Стратегическое планирование",
@@ -957,6 +951,37 @@ const Ui = {
     });
   },
 
+  orgsSliderInit: function() {
+    document.querySelectorAll('.orgs-slider').forEach(slider => {
+      const swiper = new Swiper(slider, {
+        slidesPerView: 'auto',
+        mousewheel: true,
+        freeMode: true,
+      });
+
+      window.addEventListener('resize', ev => {
+        swiper.update();
+      });
+    });
+  },
+
+  achievsInit: function() {
+    document.querySelectorAll('.achievs').forEach(achievs => {
+      const slider = achievs.querySelector('.achievs__slider');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 'auto',
+        mousewheel: true,
+        freeMode: true,
+        spaceBetween: 10,
+      });
+
+      window.addEventListener('resize', ev => {
+        swiper.update();
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -979,6 +1004,8 @@ const Ui = {
     this.mktuGroupInit();
     this.menuInit();
     this.headerInit();
+    this.orgsSliderInit();
+    this.achievsInit();
   }
 }
 Ui.init();

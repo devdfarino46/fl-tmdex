@@ -1,0 +1,43 @@
+.achievs {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+    max-width: 570px;
+    margin-bottom: 80px;
+
+    b { color: #B4B4BB; }
+
+    @media (max-width: 740px) {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__slider {
+
+    .swiper-wrapper {
+      display: flex;
+      touch-action: pan-y;
+    }
+  }
+
+  &__item {
+    flex: 0 0 285px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 40px 30px 30px;
+    gap: 80px;
+    background: #FFFFFF;
+    border: 1px solid #D2D2D6;
+    border-radius: 20px;
+  }
+}
