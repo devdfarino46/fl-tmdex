@@ -61,7 +61,7 @@ let MktuFilter = ["01", "10", "13", "15", "35"];
 
 
 const Ui = {
-  toggleTabs: function (btn, tabBtn = null) {
+  toggleTabs: function (btn, tabBtn = null, scroll = false) {
     const tabBtns = document.querySelectorAll('.tab-btn, .tab-btn-nocss');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -75,7 +75,8 @@ const Ui = {
         btn.classList.add('--active');
       } else {
         tabBtn.classList.add('--active');
-        window.scroll({
+        
+        if (scroll) window.scroll({
           top: tabBtn.offsetTop - 100,
           behavior: 'smooth'
         });
@@ -183,7 +184,6 @@ const Ui = {
   getTooltip: function (link) {
     return document.querySelector(link.getAttribute('data-href'));
   },
-
 
   tariffInit: function () {
     document.querySelectorAll('.tariff').forEach(function (tariff) {
@@ -619,10 +619,10 @@ const Ui = {
     });
   },
 
-  targetToTab: function () {
+  targetToTabInit: function () {
     document.querySelectorAll('.target-to-tab').forEach(btn => {
       const tabBtn = document.querySelector(`.tab-btn[data-tab="${btn.dataset.tab}"]`);
-      Ui.toggleTabs(btn, tabBtn);
+      Ui.toggleTabs(btn, tabBtn, true);
     });
   },
 
@@ -953,14 +953,32 @@ const Ui = {
 
   orgsSliderInit: function() {
     document.querySelectorAll('.orgs-slider').forEach(slider => {
+
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
         mousewheel: true,
         freeMode: true,
+        loop: true,
+        autoplay: {
+          delay: 1
+        },
+        speed: 1000,
+        breakpoints: {
+          1230: {
+            autoplay: false,
+            loop: false,
+          }
+        }
       });
 
       window.addEventListener('resize', ev => {
         swiper.update();
+
+        if (window.innerWidth < 1230) {
+          swiper.autoplay.start();
+        } else {
+          swiper.autoplay.stop();
+        }
       });
     });
   },
@@ -974,6 +992,51 @@ const Ui = {
         mousewheel: true,
         freeMode: true,
         spaceBetween: 10,
+        loop: true,
+        autoplay: {
+          delay: 1
+        },
+        speed: 1000,
+        breakpoints: {
+          1230: {
+            loop: false,
+            autoplay: false,
+          }
+        }
+      });
+
+      window.addEventListener('resize', ev => {
+        swiper.update();
+
+        if (window.innerWidth < 1230) {
+          swiper.autoplay.start();
+        } else {
+          swiper.autoplay.stop();
+        }
+      });
+    });
+  },
+
+  publicsInit: function() {
+    document.querySelectorAll('.publics').forEach(publics => {
+      const slider = publics.querySelector('.publics__slider');
+      const sliderNum = publics.querySelector('.publics__slider-num');
+      const slideBtnPrev = publics.querySelector('.publics__slider-btn-prev');
+      const slideBtnNext = publics.querySelector('.publics__slider-btn-next');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 'auto',
+        mousewheel: true,
+        spaceBetween: 10,
+
+        navigation: {
+          nextEl: slideBtnNext,
+          prevEl: slideBtnPrev,
+        }
+      });
+
+      swiper.on('slideChange', () => {
+        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length}`;
       });
 
       window.addEventListener('resize', ev => {
@@ -996,7 +1059,7 @@ const Ui = {
     this.inputTextInit();
     this.mktuSelectInit();
     this.tabBtnInit();
-    this.targetToTab();
+    this.targetToTabInit();
     this.popupLinkInit();
     this.popupInit();
     this.consultPopupInit();
@@ -1006,6 +1069,10 @@ const Ui = {
     this.headerInit();
     this.orgsSliderInit();
     this.achievsInit();
+    this.publicsInit();
+
+    this.toggleTabs(document.querySelectorAll('.about-tabs__btn')[1]);
+    console.log(document.querySelectorAll('.about-tabs__btn')[1]);
   }
 }
 Ui.init();

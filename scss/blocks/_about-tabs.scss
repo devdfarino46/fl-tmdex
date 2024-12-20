@@ -1,10 +1,17 @@
 .about-tabs {
   display: flex;
   gap: 5px;
-  margin-top: 80px;
+  margin-top: 60px;
+  padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: 60px;
   overflow-x: auto;
   overflow-y: hidden;
+
+  @media (max-width: 740px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
   &__btn {
     font-weight: 400;
@@ -17,10 +24,29 @@
     border: 1px solid transparent;
     transition: .2s ease;
     white-space: nowrap;
-  }
+    outline: none;
 
-  &__btn.--active {
-    background: #FFF;
-    border-color: #D2D2D6;
+    &.--active {
+      background: #FFF;
+      border-color: #D2D2D6;
+    }
+
+    &:disabled, [disabled] {
+      opacity: .3;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px #D2D2D6;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: #F0F0F1;
+      }
+    }
+
+    &:active {
+      background: #E1E1E3;
+    }
   }
 }
