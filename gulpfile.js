@@ -47,7 +47,9 @@ function _html() {
       prefix: '@@',
       basepath: '@file',
       context: {
-        class: ''
+        class: '',
+        versiontime: '',
+        version: ''
       }
     }))
     .pipe(gulp.dest('.'))
@@ -141,6 +143,23 @@ function _deploy() {
     .pipe(ghpages());
 }
 
+function _version() {
+  const date = new Date();
+  const time = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()} ${date.getHours()}:${date.getMinutes()} (Minsk)`;
+  return gulp.src(['html/*.html'])
+    .pipe(fileInclude({
+      prefix: '@@',
+      basepath: '@file',
+      context: {
+        class: '',
+        versiontime: time,
+        version: date.getTime()
+      }
+    }))
+    .pipe(gulp.dest('.'))
+    .pipe(browserSync.stream());
+}
+
 exports.default = gulp.series(
   _html,
   _sass,
@@ -153,12 +172,14 @@ exports.default = gulp.series(
 );
 
 exports.result = gulp.series(
+  _version,
   _cleanResult,
   _resultPack,
   _sourcePack,
   _ziping,
   _deploy
 );
+exports.version = _version;
 exports.ziping = _ziping;
 exports.imageMin = _imageMin;
 exports.webp = _webp;
