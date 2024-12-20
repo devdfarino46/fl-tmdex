@@ -13,11 +13,11 @@
   <link rel="stylesheet" href="fontello/css/fontello.css">
   <link rel="stylesheet" href="css/fonts.min.css">
   <link rel="stylesheet" href="css/style.min.css">
-  <!-- <link href="js-lib/video-js.css" rel="stylesheet" /> -->
   <script defer src="js-lib/lazysizes.min.js"></script>
   <script defer src="js/main.bundle.js"></script>
   <script src="js-lib/swiper.min.js"></script>
   <!-- <script defer src="js-lib/video.min.js"></script> -->
+  <!-- <link href="js-lib/video-js.css" rel="stylesheet" /> -->
 </head>
 
 <body>
@@ -272,7 +272,8 @@
         </button>
       </section>
 
-      <section class="section about tab-content container --active" data-tab="about-tabs about">
+<!------------------------------- TAB ABOUT ------------------------------------>
+      <section class="section about container tab-content --active" data-tab="about-tabs about">
         <div class="about__wrapper">
           <div class="about__content">
             <p class="about__descr">
@@ -348,7 +349,7 @@
         </div>
       </section>
 
-      <section class="section about-service container">
+      <section class="section about-service container tab-content --active" data-tab="about-tabs about">
         <div class="about-service__item">
           <p class="about-service__num">0000+</p>
           <p class="about-service__text">
@@ -369,7 +370,7 @@
         </div>
       </section>
 
-      <section class="section about-text-block container">
+      <section class="section about-text-block container tab-content --active" data-tab="about-tabs about">
         <div class="about-text-block__wrapper">
           <p>TMdex&nbsp;— это эксперты, которые помогают защищать 
             и&nbsp;регистрировать товарные знаки в&nbsp;сотрудничестве 
@@ -377,7 +378,41 @@
         </div>
       </section>
 
-      <section class="section stats container">
+      <section class="section orgs-slider swiper container tab-content --active" data-tab="about-tabs about">
+        <ul class="swiper-wrapper">
+          <li class="orgs-slider__item swiper-slide">
+            <img data-src="img/logos/wipo.webp" alt="" class="lazyload" width="80" height="80">
+            <p>Всемирная организация интеллектуальной собственности</p>
+          </li>
+          <li class="orgs-slider__item swiper-slide">
+            <img data-src="img/logos/rospatent.webp" alt="" class="lazyload" width="80" height="80">
+            <p>Федеральная служба по&nbsp;интеллектуальной собственности</p>
+          </li>
+          <li class="orgs-slider__item swiper-slide">
+            <img data-src="img/logos/fips.webp" alt="" class="lazyload" width="80" height="80">
+            <p>Федеральный институт промышленной собственности</p>
+          </li>
+          <li class="orgs-slider__item swiper-slide">
+            <img data-src="img/logos/cpa.webp" alt="" class="lazyload" width="80" height="80">
+            <p>Палата Патентных Поверенных</p>
+          </li>
+          <li class="orgs-slider__item swiper-slide">
+            <img data-src="img/logos/ips.webp" alt="" class="lazyload" width="80" height="80">
+            <p>Суд по интеллектуальным правам</p>
+          </li>
+          <li class="orgs-slider__item swiper-slide">
+            <img data-src="img/logos/fips.webp" alt="" class="lazyload" width="80" height="80">
+            <p>Федеральный институт промышленной собственности</p>
+          </li>
+          <li class="orgs-slider__item swiper-slide">
+            <img data-src="img/logos/cpa.webp" alt="" class="lazyload" width="80" height="80">
+            <p>Палата Патентных Поверенных</p>
+          </li>
+        </ul>
+        <div class="orgs-slider__line"></div>
+      </section>
+
+      <section class="section stats container tab-content --active" data-tab="about-tabs about">
         <h2 class="stats__title">
           <b>Безжалостная</b> статистика или зачем мы это делаем
         </h2>
@@ -411,7 +446,162 @@
           с&nbsp;патентными ведомствами и&nbsp;получение регистрационных свидетельств.
         </p>
       </section>
+
+      <!-- Team... -->
+
+      <section class="section achievs container tab-content --active" data-tab="about-tabs about">
+        <h2 class="achievs__title">
+          <b>Каждое</b> достижение — это результат упорного труда
+        </h2>
+        <div class="achievs__slider swiper">
+          <ul class="swiper-wrapper">
+            <li class="achievs__item swiper-slide">
+              <img data-src="img/logos/nasa.webp" alt="" class="lazyload" width="70" height="70">
+              <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+            </li>
+            <li class="achievs__item swiper-slide">
+              <img data-src="img/logos/zamecon.webp" alt="" class="lazyload" width="70" height="70">
+              <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+            </li>
+            <li class="achievs__item swiper-slide">
+              <img data-src="img/logos/hp.webp" alt="" class="lazyload" width="70" height="70">
+              <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+            </li>
+            <li class="achievs__item swiper-slide">
+              <img data-src="img/logos/batman-tdk.webp" alt="" class="lazyload" width="70" height="70">
+              <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+            </li>
+            <li class="achievs__item swiper-slide">
+              <img data-src="img/logos/uniden.webp" alt="" class="lazyload" width="70" height="70">
+              <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+            </li>
+            <li class="achievs__item swiper-slide">
+              <img data-src="img/logos/zamecon-1.webp" alt="" class="lazyload" width="70" height="70">
+              <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Certifs -->
+
+      <section class="section publics container tab-content --active" data-tab="about-tabs about">
+        <div class="publics__wrapper">
+          <div class="publics__left">
+            <h2 class="publics__title">Публикации</h2>
+            <div class="publics__left-bottom">
+              <div class="publics__slider-nav">
+                <button class="btn btn--small publics__slider-btn-prev" aria-label="Предыдущий слайд">
+                  <i class="icon-chevron-right" style="rotate: 180deg; translate: 0 -1px;"></i>
+                </button>
+                <button class="btn btn--small publics__slider-btn-next" aria-label="Следующий слайд">
+                  <i class="icon-chevron-right"></i>
+                </button>
+              </div>
+              <p class="publics__slider-num">1/5</p>
+            </div>
+          </div>
+          <div class="publics__slider swiper">
+            <ul class="swiper-wrapper">
+              <li class="publics__item swiper-slide">
+                <img src="img/logos/tinkof-journal.webp" alt="" class="lazyload" width="132" height="70">
+                <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+              </li>
+              <li class="publics__item swiper-slide">
+                <img src="img/logos/klark.webp" alt="" class="lazyload" width="132" height="70">
+                <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+              </li>
+              <li class="publics__item swiper-slide">
+                <img src="img/logos/vc-ru.webp" alt="" class="lazyload" width="132" height="70">
+                <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+              </li>
+              <li class="publics__item swiper-slide">
+                <img src="img/logos/texterra.webp" alt="" class="lazyload" width="132" height="70">
+                <p>Занимаем лидирующие позиции в рейтинге Право-300</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+<!------------------------------- TAB TEAM ------------------------------------>
+      <section class="section team-items container tab-content --active" data-tab="about-tabs team">
+        <div class="team-item">
+          <div class="team-item__main">
+            <p class="team-item__name">Павел Барцев</p>
+            <p class="team-item__about">
+              Учредитель<br>
+              Патентный поверенный РФ №755<br>
+              Евразийский патентный поверенный №389
+            </p>
+          </div>
+
+          <div class="team-item__line"></div>
+
+          <div class="team-item__info">
+            <p class="team-item__descr">
+              В 2006 году с отличием окончила Пензенский государственный университет 
+              по специальностям «Государственное и муниципальное управление», 
+              «Юриспруденция», «Переводчик в сфере профессиональной коммуникации».
+            </p>
+            <a href="#" class="btn btn--lime btn--large">
+              <span>Связаться</span>
+            </a>
+          </div>
+
+          <img data-src="img/team/1.webp" alt="" class="team-item__image lazyload" width="130" height="173">
+        </div>
+
+        <div class="team-item">
+          <div class="team-item__main">
+            <p class="team-item__name">Анастасия Груздева</p>
+            <p class="team-item__about">
+              Основатель и руководитель <br>
+              Патентный поверенный РФ №755
+            </p>
+          </div>
+
+          <div class="team-item__line"></div>
+
+          <div class="team-item__info">
+            <p class="team-item__descr">
+              В 2006 году с отличием окончила Пензенский государственный университет 
+              по специальностям «Государственное и муниципальное управление».
+            </p>
+            <a href="#" class="btn btn--lime btn--large">
+              <span>Связаться</span>
+            </a>
+          </div>
+
+          <img data-src="img/team/2.webp" alt="" class="team-item__image lazyload" width="130" height="173">
+        </div>
+
+        <div class="team-item">
+          <div class="team-item__main">
+            <p class="team-item__name">Александр Семаков</p>
+            <p class="team-item__about">
+              Патентный поверенный РФ №755
+            </p>
+          </div>
+
+          <div class="team-item__line"></div>
+
+          <div class="team-item__info">
+            <p class="team-item__descr">
+              В 2006 году с отличием окончила Пензенский государственный университет
+            </p>
+            <a href="#" class="btn btn--lime btn--large">
+              <span>Связаться</span>
+            </a>
+          </div>
+
+          <img data-src="img/team/3.webp" alt="" class="team-item__image lazyload" width="130" height="173">
+        </div>
+
+        <div class="team-items__line"></div>
+      </section>
       
+<!------------------------------- ALL TABS ------------------------------------>
       <section class="section consult-help-section container">
         <div class="consult-help">
   <div class="consult-help__content">
