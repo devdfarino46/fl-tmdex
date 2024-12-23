@@ -74,6 +74,16 @@
         display: flex;
         touch-action: pan-y;
       }
+
+      ._space {
+        padding-right: 30px;
+      }
+
+      @media (max-width: 740px) {
+        ._space {
+          padding-right: 10px;
+        }
+      }
 		}
 
 		&__item {

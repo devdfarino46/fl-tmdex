@@ -1,0 +1,144 @@
+.team-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    padding: 30px 0px 30px 40px;
+    gap: 30px;
+    background: #313701;
+    border-radius: 20px;
+
+    @media (max-width: 1040px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 740px) {
+      padding: 30px 0 30px 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width: 1040px) {
+      padding-right: 40px;
+    }
+
+    @media (max-width: 740px) {
+      padding-right: 20px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+    color: #FFFFFF;
+
+    @media (max-width: 1040px) {
+      font-size: 18px;
+    }
+  }
+
+  &__all-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    &.link { background-image: linear-gradient(
+      #FFFFFF,
+      #FFFFFF
+    ); }
+  }
+
+  &__btns-wrap {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @media (max-width: 1040px) {
+      margin-top: 10px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    ._slide-prev {
+    }
+  
+    ._slide-next {
+    }
+  }
+
+  &__num {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: right;
+    color: #787885;
+  }
+
+  &__slider {
+    flex: 0 0 570px;
+    overflow: hidden;
+
+    .swiper-wrapper {
+      touch-action: pan-y;
+      display: flex;
+    }
+
+    ._space {
+      padding-right: 30px;
+    }
+
+    @media (max-width: 1040px) {
+      flex: auto;
+    }
+
+    @media (max-width: 740px) {
+      ._space {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
+    flex: 0 0 auto;
+    
+    img {
+      display: block;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center;
+      width: 260px;
+      height: 346px;
+    }
+
+    .bage {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: .2s ease;
+    }
+
+    &:not(.--hover) .bage {
+      opacity: 0;
+    }
+  }
+}

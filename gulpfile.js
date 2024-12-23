@@ -179,6 +179,8 @@ exports.result = gulp.series(
   _ziping,
   _deploy
 );
+
+
 exports.version = _version;
 exports.ziping = _ziping;
 exports.imageMin = _imageMin;

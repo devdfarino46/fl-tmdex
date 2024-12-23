@@ -956,9 +956,12 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        mousewheel: true,
         freeMode: true,
         loop: true,
+        mousewheel: {
+          forceToAxis: true,
+          enabled: true,
+        },
         autoplay: {
           delay: 1
         },
@@ -989,10 +992,13 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        mousewheel: true,
         freeMode: true,
         spaceBetween: 10,
         loop: true,
+        mousewheel: {
+          enabled: true,
+          forceToAxis: true,
+        },
         autoplay: {
           delay: 1
         },
@@ -1026,7 +1032,10 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        mousewheel: true,
+        mousewheel: {
+          forceToAxis: true,
+          enable: true,
+        },
         spaceBetween: 10,
 
         navigation: {
@@ -1035,8 +1044,69 @@ const Ui = {
         }
       });
 
+      sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
       swiper.on('slideChange', () => {
-        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length}`;
+        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
+      });
+
+      window.addEventListener('resize', ev => {
+        swiper.update();
+      });
+    });
+  },
+
+  teamSliderInit: function() {
+    document.querySelectorAll('.team-slider').forEach(team => {
+      const slider = team.querySelector('.team-slider__slider');
+      const sliderNum = team.querySelector('.team-slider__num');
+      const slideBtnPrev = team.querySelector('.team-slider__btns ._slide-prev');
+      const slideBtnNext = team.querySelector('.team-slider__btns ._slide-next');
+      const slides = team.querySelectorAll('.team-slider__slide');
+
+      const swiper = new Swiper(slider, {
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+
+        navigation: {
+          nextEl: slideBtnNext,
+          prevEl: slideBtnPrev,
+        },
+
+        mousewheel: {
+          enabled: true,
+          forceToAxis: true,
+        }
+      });
+
+      slides.forEach(slide => {
+        slide.addEventListener('mouseenter', ev => {
+          slides.forEach(el => { el.classList.remove('--hover'); });
+          slide.classList.add('--hover');
+        });
+
+        slide.addEventListener('mouseleave', ev => {
+          slides.forEach(el => { el.classList.remove('--hover'); });
+        });
+      });
+
+      if (window.innerWidth <= 740) {
+        slides.forEach(slide => {
+          slide.classList.remove('--hover');
+        });
+        slides[swiper.activeIndex].classList.add('--hover');
+      }
+
+      sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
+      swiper.on('slideChange', () => {
+        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
+
+        if (window.innerWidth <= 740) {
+          slides.forEach(slide => {
+            slide.classList.remove('--hover');
+          });
+          slides[swiper.activeIndex].classList.add('--hover');
+        }
       });
 
       window.addEventListener('resize', ev => {
@@ -1070,9 +1140,7 @@ const Ui = {
     this.orgsSliderInit();
     this.achievsInit();
     this.publicsInit();
-
-    this.toggleTabs(document.querySelectorAll('.about-tabs__btn')[1]);
-    console.log(document.querySelectorAll('.about-tabs__btn')[1]);
+    this.teamSliderInit();
   }
 }
 Ui.init();
