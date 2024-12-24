@@ -1,0 +1,151 @@
+.certifs {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 10px;
+
+    @media (max-width: 1140px) {
+      flex-direction: column;
+    }
+  }
+
+  &__line {
+    border-bottom: 1px solid #D2D2D6;
+    margin-top: 80px;
+
+    @media (max-width: 740px) {
+      margin-top: 40px;
+    }
+  }
+
+  &__info {
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 40px;
+    gap: 40px;
+    background: #F9F9FA;
+    background-image: url(../img/rounds-decor3.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center left;
+    border-radius: 0 20px 20px 0;
+
+    @media (max-width: 740px) {
+      padding: 30px 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+
+    @media (max-width: 740px) {
+      font-size: 24px;
+    }
+  }
+
+  &__btns-wrap {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__num {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: right;
+    color: #787885;
+  }
+
+  &__slider {
+    background: #FFFFFF;
+    border-radius: 20px;
+    width: 580px;
+    display: flex;
+    overflow: hidden;
+
+    .swiper-wrapper {
+      display: flex;
+      touch-action: pan-y;
+    }
+
+    @media (max-width: 1040px) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+
+    @media (max-width: 740px) {
+      flex-direction: column;
+      padding: 30px 20px;
+    }
+  }
+
+  &__item-text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  &__item-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+  }
+
+  &__item-date {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #787885;
+  }
+
+  &__item-image {
+    align-self: center;
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 13px;
+    border: 2px solid #5A5B6A;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    transform: rotate(5deg);
+    transform-origin: top left;
+    width: 154px;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    transition: .3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.1) translate(-5%, -5%) rotate(5deg);
+        box-shadow: 0px 16px 24px transparent;
+      }
+    }
+  }
+}

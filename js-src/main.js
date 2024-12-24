@@ -632,20 +632,9 @@ const Ui = {
         const popup = document.querySelector(link.getAttribute('href'));
         const btnOk = popup.querySelector('._btn-ok');
         const btnClose = popup.querySelector('._close-btn');
-        const wrapper = popup.querySelector('.popup__wrapper');
     
         popup.classList.add('--visibled');
         document.body.classList.add('no-scroll');
-    
-        if (btnOk) btnOk.addEventListener('click', () => {
-          popup.classList.remove('--visibled');
-          document.body.classList.remove('no-scroll');
-        });
-    
-        if (btnClose) btnClose.addEventListener('click', () => {
-          popup.classList.remove('--visibled');
-          document.body.classList.remove('no-scroll');
-        });
       });
     });
   },
@@ -653,12 +642,28 @@ const Ui = {
   popupInit: function () {
     document.querySelectorAll('.popup').forEach(popup => {
       const wrapper = popup.querySelector('.popup__wrapper');
+      const btnOk = popup.querySelector('._btn-ok');
+      const btnClose = popup.querySelector('._close-btn');
+
+      if (popup.classList.contains('--visibled')) {
+        document.body.classList.add('no-scroll');
+      }
 
       popup.addEventListener('click', (e) => {
         if (!e.composedPath().includes(wrapper)) {
           popup.classList.remove('--visibled');
           document.body.classList.remove('no-scroll');
         }
+      });
+    
+      if (btnOk) btnOk.addEventListener('click', () => {
+        popup.classList.remove('--visibled');
+        document.body.classList.remove('no-scroll');
+      });
+  
+      if (btnClose) btnClose.addEventListener('click', () => {
+        popup.classList.remove('--visibled');
+        document.body.classList.remove('no-scroll');
       });
     });
   },
@@ -1115,6 +1120,80 @@ const Ui = {
     });
   },
 
+  certifsInit: function() {
+    document.querySelectorAll('.certifs').forEach(certif => {
+      const slider = certif.querySelector('.certifs__slider');
+      const slidePrev = certif.querySelector('.certifs__btn-prev');
+      const slideNext = certif.querySelector('.certifs__btn-next');
+      const sliderNum = certif.querySelector('.certifs__num');
+
+      const gallery = document.querySelector('.certifs-gallery');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 1,
+        navigation: {
+          nextEl: certif.querySelector('.certifs__btn-next'),
+          prevEl: certif.querySelector('.certifs__btn-prev'),
+        },
+        mousewheel: {
+          enabled: true,
+          forceToAxis: true,
+        }
+      });
+
+      sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length}`;
+      swiper.on('slideChange', () => {
+        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length}`;
+      });
+
+      window.addEventListener('resize', ev => {
+        swiper.update();
+      });
+
+      if (gallery) {
+        const gSlider = gallery.querySelector('.certifs-gallery__images');
+        const gSlidePrev = gallery.querySelector('.certifs-gallery__btn-prev');
+        const gSlideNext = gallery.querySelector('.certifs-gallery__btn-next');
+        const gSliderNum = gallery.querySelector('.certifs-gallery__num');
+        const gTitle = gallery.querySelector('.certifs-gallery__title');
+        const gDate = gallery.querySelector('.certifs-gallery__date');
+
+        const gSwiper = new Swiper(gSlider, {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          mousewheel: true,
+          navigation: {
+            nextEl: gSlideNext,
+            prevEl: gSlidePrev,
+          }
+        });
+
+        const textUpdate = () => {
+          gTitle.innerHTML = gSwiper.slides[gSwiper.activeIndex].dataset.title;
+          gDate.innerHTML = gSwiper.slides[gSwiper.activeIndex].dataset.date;
+          gSliderNum.innerHTML = `${gSwiper.activeIndex + 1}/${gSwiper.slides.length}`;
+        };
+
+        textUpdate();
+        gSwiper.on('slideChange', () => {
+          textUpdate();
+
+          swiper.slideTo(gSwiper.activeIndex, 0);
+        });
+        window.addEventListener('resize', () => {
+          textUpdate();
+          gSwiper.update();
+        });
+
+        swiper.slides.forEach((slide) => {
+          slide.addEventListener('click', () => {
+            gSwiper.slideTo(slide.dataset.index, 0);
+          });
+        });
+      }
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1141,6 +1220,7 @@ const Ui = {
     this.achievsInit();
     this.publicsInit();
     this.teamSliderInit();
+    this.certifsInit();
   }
 }
 Ui.init();
