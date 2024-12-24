@@ -1194,6 +1194,28 @@ const Ui = {
     });
   },
 
+  historyInit: function () {
+    document.querySelectorAll('.history').forEach((history) => {
+      const items = history.querySelectorAll('.history__item');
+
+      items.forEach((item, index) => {
+        item.addEventListener('click', ev => {
+          if (!item.classList.contains('--active')) {
+            items.forEach((el, i) => {
+              el.classList.remove('--active');
+              el.classList.remove('--transform');
+
+              if (i > index) {
+                el.classList.add('--transform');
+              }
+            });
+            item.classList.add('--active');
+          }
+        });
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1221,6 +1243,7 @@ const Ui = {
     this.publicsInit();
     this.teamSliderInit();
     this.certifsInit();
+    this.historyInit();
   }
 }
 Ui.init();
