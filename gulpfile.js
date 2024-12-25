@@ -49,7 +49,8 @@ function _html() {
       context: {
         class: '',
         versiontime: '',
-        version: ''
+        version: '',
+        message: ''
       }
     }))
     .pipe(gulp.dest('.'))
@@ -153,7 +154,8 @@ function _version() {
       context: {
         class: '',
         versiontime: time,
-        version: date.getTime()
+        version: date.getTime(),
+        message: process.argv[4] || ''
       }
     }))
     .pipe(gulp.dest('.'))
@@ -189,3 +191,9 @@ exports.css = _sass;
 exports.js = _js;
 exports.html = _html;
 exports.fontello = _fontello;
+
+exports.test = function (cb) {
+  console.log(process.argv);
+  
+  cb();
+}

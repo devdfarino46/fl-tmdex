@@ -7,4 +7,10 @@
   padding: 5px 10px;
   border: 1px solid #D2D2D6;
   border-radius: 50px;
+
+  &--white {
+    background: white;
+    border-color: transparent;
+    color: #5A5B6A;
+  }
 }

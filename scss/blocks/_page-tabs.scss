@@ -1,4 +1,4 @@
-.about-tabs {
+.page-tabs {
   display: flex;
   gap: 5px;
   margin-top: 60px;
@@ -25,6 +25,13 @@
     transition: .2s ease;
     white-space: nowrap;
     outline: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    i {
+      color: #787885;
+    }
 
     &.--active {
       background: #FFF;

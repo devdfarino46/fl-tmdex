@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('blocks/_head.html')
+
+<body>
+  <div class="wrapper">
+    @@include('blocks/_header.html')
+    <nav class="nav">
+      <ul class="nav__container">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Журнал</a></li>
+      </ul>
+    </nav>
+
+    <main class="page page-articles">
+      <h1 class="page-title container">Журнал</h1>
+
+      <section class="section page-tabs container">
+        <button class="page-tabs__btn tab-btn-nocss" data-tab="articles brends">
+          <i class="icon-shopping-cart"></i>
+          <span>Бренды и логотипы</span>
+        </button>
+        <button class="page-tabs__btn tab-btn-nocss" data-tab="articles defender">
+          <i class="icon-shield"></i>
+          <span>Защита прав</span>
+        </button>
+        <button class="page-tabs__btn tab-btn-nocss" data-tab="articles news">
+          <i class="icon-bell"></i>
+          <span>Новости</span>
+        </button>
+        <button class="page-tabs__btn tab-btn-nocss" data-tab="articles patents">
+          <i class="icon-lock"></i>
+          <span>Патенты</span>
+        </button>
+        <button class="page-tabs__btn tab-btn-nocss" data-tab="articles ebm">
+          <i class="icon-mouse-pointer"></i>
+          <span>Программы для ЭВМ</span>
+        </button>
+        <button class="page-tabs__btn tab-btn-nocss" data-tab="articles trademark">
+          <i class="icon-globe"></i>
+          <span>Товарные знаки</span>
+        </button>
+      </section>
+
+      <section class="section read container">
+        <div class="read__wrapper">
+          <div class="read__left">
+            <p class="tag tag--white">Товарные знаки</p>
+            <h2 class="read__title">
+              Передача прав на&nbsp;товарный знак: как происходит
+            </h2>
+            <p class="read__date">22.10.2024</p>
+          </div>
+
+          <div class="read__line-right"></div>
+
+          <div class="read__middle">
+            <p class="read__text">
+              Как любое имущество, товарный знак можно продать или передать 
+              в&nbsp;пользование. Разберёмся, как оформить передачу 
+              исключительных прав на&nbsp;обозначение.
+            </p>
+            <div class="read__author">
+              <div class="read__author-avas">
+                <img src="img/authors/1.webp" alt="" width="30" height="30">
+                <img src="img/authors/2.webp" alt="" width="30" height="30">
+              </div>
+              <p class="read__author-label">Игорь Жулькин и ещё 1</p>
+            </div>
+          </div>
+
+          <img src="img/read.webp" alt="" class="read__image" width="336" height="252">
+        </div>
+      </section>
+      
+<!------------------------------- ALL TABS ------------------------------------>
+      <section class="section consult-help-section container">
+        @@include('blocks/_consult-help.html', {isSection: true})
+      </section>
+    </main>
+
+    @@include('blocks/_footer.html')
+  </div>
+
+  @@include('blocks/_subwrapper.html')
+</body>
+
+</html>
