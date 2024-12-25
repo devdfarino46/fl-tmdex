@@ -52,7 +52,7 @@
     cursor: pointer;
     position: relative;
     min-height: 280px;
-    padding-right: calc(40px + 123px + 93px * 2);
+    padding-right: 349px;
 
     &::before {
       content: '';
@@ -71,7 +71,7 @@
     &:nth-child(2) { 
       background: #F0F0F1;
       transform: translateX(80px);
-      padding-right: calc(40px + 80px +  123px + 93px);
+      padding-right: 336px;
       &.--transform {
         transform: translateX(calc(100% - 123px * 3 + 30px * 2));
       }
@@ -79,7 +79,7 @@
     &:nth-child(3) { 
       background: #F9F9FA;
       transform: translateX(160px);
-      padding-right: calc(40px + 160px + 123px);
+      padding-right: 323px;
       &.--transform {
         transform: translateX(calc(100% - 123px * 2 + 30px));
       }
@@ -114,22 +114,29 @@
     }
 
     @media (max-width: 940px) {
-      padding-right: 40px !important;
+      padding-right: 0;
+      padding-bottom: 115px;
 
       &:nth-child(2) { 
         transform: translateY(60px);
+        padding-right: 0;
+        padding-bottom: 100px;
         &.--transform {
           transform: translateY( calc(100% + 180px - 105px * 3 + 30px * 2));
         }
       }
       &:nth-child(3) { 
         transform: translateY(60px * 2);
+        padding-right: 0;
+        padding-bottom: 83px;
         &.--transform {
           transform: translateY( calc(100% + 180px - 105px * 2 + 30px));
         }
       }
       &:nth-child(4) { 
         transform: translateY(60px * 3);
+        padding-right: 0;
+        padding-bottom: 40px;
         width: 100%;
         &::before {
           width: auto;
@@ -145,8 +152,21 @@
     }
 
     @media (max-width: 740px) {
-      grid-template-columns: 1fr;
-      padding: 30px 20px !important;
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 105px;
+
+      &:nth-child(2) {
+        padding-bottom: 90px;
+      }
+      &:nth-child(3) {
+        padding-bottom: 73px;
+      }
+      &:nth-child(4) {
+        padding-bottom: 30px;
+      }
     }
   }
 
@@ -162,6 +182,7 @@
     @media (max-width: 740px) {
       padding-right: 0;
       padding-bottom: 20px;
+      justify-content: flex-start;
       border: none;
       border-bottom: 1px solid #D2D2D6;
     }

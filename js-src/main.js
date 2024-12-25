@@ -641,7 +641,7 @@ const Ui = {
 
   popupInit: function () {
     document.querySelectorAll('.popup').forEach(popup => {
-      const wrapper = popup.querySelector('.popup__wrapper');
+      const wrapper = popup.querySelector('.popup-wrapper');
       const btnOk = popup.querySelector('._btn-ok');
       const btnClose = popup.querySelector('._close-btn');
 
