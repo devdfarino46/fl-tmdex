@@ -1,0 +1,80 @@
+.popular-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 670px;
+    gap: 30px;
+
+    @media (max-width: 1040px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+
+    b { color: #B4B4BB; }
+  }
+
+  &__left-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__btn-prev {
+  }
+
+  &__btn-next {
+  }
+
+  &__num {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #787885;
+  }
+
+  &__items {
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+
+    .swiper-wrapper {
+      display: flex;
+      touch-action: pan-y;
+    }
+  }
+
+  &__line {
+    margin-top: 80px;
+    border-bottom: 1px solid #D2D2D6;
+
+    @media (max-width: 740px) {
+      margin-top: 40px;
+    }
+  }
+}

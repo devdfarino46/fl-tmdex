@@ -1,0 +1,25 @@
+.read-more {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 80px;
+  gap: 10px;
+
+  @media (max-width: 940px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 740px) {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+    margin-bottom: 30px;
+    
+    b { color: #B4B4BB; }
+  }
+}

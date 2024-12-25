@@ -1216,6 +1216,45 @@ const Ui = {
     });
   },
 
+  popularSliderInit: function() {
+    document.querySelectorAll('.popular-slider').forEach(popular => {
+      const slider = popular.querySelector('.popular-slider__items');
+      const btnPrev = popular.querySelector('.popular-slider__btn-prev');
+      const btnNext = popular.querySelector('.popular-slider__btn-next');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: btnNext,
+          prevEl: btnPrev,
+        },
+        mousewheel: {
+          enabled: true,
+          forceToAxis: true,
+        },
+        breakpoints: {
+          501: {
+            slidesPerView: 2
+          }
+        }
+      });
+
+      const update = () => {
+        const sliderPRight = 
+          (document.body.clientWidth - popular.clientWidth) / 2;
+
+        slider.style.paddingRight = `${sliderPRight + 100}px`;
+        slider.style.marginRight = `${-sliderPRight - 100}px`;
+
+        swiper.update();
+      }
+      update();
+
+      window.addEventListener('resize', update);
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1244,6 +1283,7 @@ const Ui = {
     this.teamSliderInit();
     this.certifsInit();
     this.historyInit();
+    this.popularSliderInit();
   }
 }
 Ui.init();

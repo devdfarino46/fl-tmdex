@@ -36,6 +36,15 @@
     font-size: 34px;
     line-height: 126%;
     color: #F9F9FA;
+
+    a {
+      display: inline;
+      transition: .2s ease;
+    
+      background: linear-gradient(#FFFFFF, #FFFFFF) no-repeat;
+      background-size: 0% 1px;
+      background-position: left bottom;
+    }
   }
 
   &__date {
@@ -93,13 +102,30 @@
   }
 
   &__image {
-    display: block;
+    overflow: hidden;
     border-radius: 20px;
-    object-fit: cover;
-    object-position: center;
+
+    img {
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      transition: .2s ease;
+    }
 
     @media (max-width: 1040px) {
-      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (any-hover: hover) {
+    &__wrapper:hover &__title a {
+      background-size: 100% 1px;
+    }
+
+    &__wrapper:hover &__image img {
+      transform: scale(1.1);
     }
   }
 }
