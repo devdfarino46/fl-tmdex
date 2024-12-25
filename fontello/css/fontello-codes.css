@@ -28,5 +28,10 @@
 .icon-phone-medium:before { content: '\e81a'; } /* '' */
 .icon-star-half:before { content: '\e81b'; } /* '' */
 .icon-star-empty:before { content: '\e81c'; } /* '' */
+.icon-bell:before { content: '\e81d'; } /* '' */
+.icon-mouse-pointer:before { content: '\e81e'; } /* '' */
+.icon-lock:before { content: '\e81f'; } /* '' */
 .icon-phone:before { content: '\e820'; } /* '' */
 .icon-file-text-tiny:before { content: '\e821'; } /* '' */
+.icon-shopping-cart:before { content: '\e822'; } /* '' */
+.icon-globe:before { content: '\e823'; } /* '' */
