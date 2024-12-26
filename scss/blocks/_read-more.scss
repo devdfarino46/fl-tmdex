@@ -1,8 +1,6 @@
 .read-more {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 80px;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 940px) {
     grid-template-columns: 1fr 1fr;
@@ -13,6 +11,13 @@
     margin-top: 40px;
   }
 
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 80px;
+    gap: 10px;
+  }
+
   &__title {
     font-weight: 400;
     font-size: 34px;
@@ -21,5 +26,10 @@
     margin-bottom: 30px;
     
     b { color: #B4B4BB; }
+  }
+
+  &__load-btn {
+    margin-top: 30px;
+    align-self: center;
   }
 }
