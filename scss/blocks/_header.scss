@@ -10,7 +10,8 @@
   right: 0;
   top: 0;
   z-index: 99;
-  max-height: 100vh;
+  max-height: max-content;
+  bottom: 0;
   pointer-events: none;
   display: flex;
   flex-direction: column;
