@@ -10,12 +10,12 @@
   <link href="https://fonts.googleapis.com/css?family=Wix+Madefor+Display:regular,500,700&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:regular&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="fontello/css/fontello.css?v1735304468358">
-  <link rel="stylesheet" href="css/fonts.min.css?v1735304468358">
-  <link rel="stylesheet" href="css/style.min.css?v1735304468358">
-  <script defer src="js-lib/lazysizes.min.js?v1735304468358"></script>
-  <script defer src="js/main.bundle.js?v1735304468358"></script>
-  <script src="js-lib/swiper.min.js?v1735304468358"></script>
+  <link rel="stylesheet" href="fontello/css/fontello.css?v1735329324131">
+  <link rel="stylesheet" href="css/fonts.min.css?v1735329324131">
+  <link rel="stylesheet" href="css/style.min.css?v1735329324131">
+  <script defer src="js-lib/lazysizes.min.js?v1735329324131"></script>
+  <script defer src="js/main.bundle.js?v1735329324131"></script>
+  <script src="js-lib/swiper.min.js?v1735329324131"></script>
   <!-- <script defer src="js-lib/video.min.js"></script> -->
   <!-- <link href="js-lib/video-js.css" rel="stylesheet" /> -->
 </head>
@@ -252,6 +252,10 @@
       <h1 class="page-title container">Журнал</h1>
 
       <section class="section page-tabs container">
+        <button class="page-tabs__btn tab-btn-nocss --active" data-tab="articles top">
+          <i class="icon-zap"></i>
+          <span>Топ</span>
+        </button>
         <button class="page-tabs__btn tab-btn-nocss" data-tab="articles brends">
           <i class="icon-shopping-cart"></i>
           <span>Бренды и логотипы</span>
@@ -278,14 +282,15 @@
         </button>
       </section>
 
-      <section class="section read container">
+<!------------------------------- TAB TOP ------------------------------------>
+      <section class="section read container tab-content --active" data-tab="articles top">
         <div class="read__wrapper">
           <div class="read__left">
             <p class="tag tag--white">Товарные знаки</p>
             <h2 class="read__title">
               <a href="#">Передача прав на&nbsp;товарный знак: как происходит</a>
             </h2>
-            <p class="read__date">22.10.2024</p>
+            <p class="read__date">22 октября 2024</p>
           </div>
 
           <div class="read__line-right"></div>
@@ -311,7 +316,7 @@
         </div>
       </section>
 
-      <section class="section popular-slider container">
+      <section class="section popular-slider container tab-content --active" data-tab="articles top">
         <div class="popular-slider__wrapper">
           <div class="popular-slider__left">
             <h2 class="popular-slider__title">
@@ -339,7 +344,7 @@
                   <p class="read-card__title">
                     <a href="#">Недобросовестная конкуренция и&nbsp;регистрация товарного знака</a>
                   </p>
-                  <p class="read-card__date">22.10.2024</p>
+                  <p class="read-card__date">22 октября 2024</p>
                 </div>
               </div>
               <div class="read-card swiper-slide">
@@ -349,7 +354,7 @@
                   <p class="read-card__title">
                     <a href="#">Регистрация товарного знака на физическое лицо</a>
                   </p>
-                  <p class="read-card__date">22.10.2024</p>
+                  <p class="read-card__date">22 октября 2024</p>
                 </div>
               </div>
               <div class="read-card swiper-slide">
@@ -359,7 +364,7 @@
                   <p class="read-card__title">
                     <a href="#">Недобросовестная конкуренция и&nbsp;регистрация товарного знака</a>
                   </p>
-                  <p class="read-card__date">22.10.2024</p>
+                  <p class="read-card__date">22 октября 2024</p>
                 </div>
               </div>
             </div>
@@ -369,7 +374,7 @@
         <div class="popular-slider__line"></div>
       </section>
 
-      <section class="section read-more container">
+      <section class="section read-more container tab-content --active" data-tab="articles top">
         <div class="read-more__wrapper">
           <h2 class="read-more__title">
             <b>Также</b> важно прочитать
@@ -381,7 +386,7 @@
               <p class="read-card__title">
                 <a href="#">Авторские права на видео</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
           <div class="read-card read-card--no-image">
@@ -390,7 +395,7 @@
               <p class="read-card__title">
                 <a href="#">Что такое ребрендинг: когда и зачем он нужен</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
           <div class="read-card read-card--no-image">
@@ -399,7 +404,7 @@
               <p class="read-card__title">
                 <a href="#">Влияние товарных знаков на&nbsp;маркетинг и продвижение продукта</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
           <div class="read-card read-card--no-image">
@@ -408,7 +413,7 @@
               <p class="read-card__title">
                 <a href="#">Как защитить свой бренд в&nbsp;социальных сетях</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
           <div class="read-card read-card--no-image">
@@ -417,7 +422,7 @@
               <p class="read-card__title">
                 <a href="#">С 5 октября в России выросли патентные пошлины</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
           <div class="read-card read-card--no-image">
@@ -426,7 +431,7 @@
               <p class="read-card__title">
                 <a href="#">Как подобрать классы МКТУ для товарного знака</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
           <div class="read-card read-card--no-image">
@@ -435,7 +440,7 @@
               <p class="read-card__title">
                 <a href="#">Часто встречающиеся ошибки при регистрации товарного знака</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
           <div class="read-card read-card--no-image">
@@ -444,7 +449,7 @@
               <p class="read-card__title">
                 <a href="#">Как составить договор авторского заказа на разработку программного обеспечения</a>
               </p>
-              <p class="read-card__date">22.10.2024</p>
+              <p class="read-card__date">22 октября 2024</p>
             </div>
           </div>
         </div>
@@ -454,6 +459,627 @@
           <i class="icon-plus"></i>
         </button>
       </section>
+
+<!------------------------------- TAB CATEGORY ------------------------------------>
+      
+      <section class="section articles-cat container tab-content " data-tab="articles brends">
+  <div class="articles-cat__wrapper">
+    <h2 class="articles-cat__title"><b>Бренды и логотипы</b></h2>
+
+    <div class="articles-cat__items">
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Передача прав на&nbsp;товарный знак: как происходит</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Патентный поверенный: кто такой и&nbsp;зачем он&nbsp;нужен</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на&nbsp;видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Как защитить свой бренд в&nbsp;социальных сетях</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Контрафакт и&nbsp;ответственность</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Компенсация за&nbsp;нарушение исключительных прав: как определяется размер</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Что такое кража интеллектуальной собственности</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">РАО и ВОИС: что такое и чем занимаются</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Объекты авторских прав</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Бренды и логотипы</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+
+      <button class="articles-cat__load-btn btn btn--secondary btn--small">
+        <span>Показать ещё</span>
+        <i class="icon-plus"></i>
+      </button>
+    </div>
+  </div>
+</section>
+      <section class="section articles-cat container tab-content " data-tab="articles defender">
+  <div class="articles-cat__wrapper">
+    <h2 class="articles-cat__title"><b>Защита прав</b></h2>
+
+    <div class="articles-cat__items">
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Передача прав на&nbsp;товарный знак: как происходит</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Патентный поверенный: кто такой и&nbsp;зачем он&nbsp;нужен</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на&nbsp;видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Как защитить свой бренд в&nbsp;социальных сетях</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Контрафакт и&nbsp;ответственность</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Компенсация за&nbsp;нарушение исключительных прав: как определяется размер</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Что такое кража интеллектуальной собственности</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">РАО и ВОИС: что такое и чем занимаются</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Объекты авторских прав</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Защита прав</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+
+      <button class="articles-cat__load-btn btn btn--secondary btn--small">
+        <span>Показать ещё</span>
+        <i class="icon-plus"></i>
+      </button>
+    </div>
+  </div>
+</section>
+      <section class="section articles-cat container tab-content " data-tab="articles news">
+  <div class="articles-cat__wrapper">
+    <h2 class="articles-cat__title"><b>Новости</b></h2>
+
+    <div class="articles-cat__items">
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Передача прав на&nbsp;товарный знак: как происходит</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Патентный поверенный: кто такой и&nbsp;зачем он&nbsp;нужен</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на&nbsp;видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Как защитить свой бренд в&nbsp;социальных сетях</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Контрафакт и&nbsp;ответственность</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Компенсация за&nbsp;нарушение исключительных прав: как определяется размер</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Что такое кража интеллектуальной собственности</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">РАО и ВОИС: что такое и чем занимаются</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Объекты авторских прав</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Новости</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+
+      <button class="articles-cat__load-btn btn btn--secondary btn--small">
+        <span>Показать ещё</span>
+        <i class="icon-plus"></i>
+      </button>
+    </div>
+  </div>
+</section>
+      <section class="section articles-cat container tab-content " data-tab="articles patents">
+  <div class="articles-cat__wrapper">
+    <h2 class="articles-cat__title"><b>Патенты</b></h2>
+
+    <div class="articles-cat__items">
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Передача прав на&nbsp;товарный знак: как происходит</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Патентный поверенный: кто такой и&nbsp;зачем он&nbsp;нужен</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на&nbsp;видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Как защитить свой бренд в&nbsp;социальных сетях</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Контрафакт и&nbsp;ответственность</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Компенсация за&nbsp;нарушение исключительных прав: как определяется размер</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Что такое кража интеллектуальной собственности</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">РАО и ВОИС: что такое и чем занимаются</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Объекты авторских прав</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Патенты</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+
+      <button class="articles-cat__load-btn btn btn--secondary btn--small">
+        <span>Показать ещё</span>
+        <i class="icon-plus"></i>
+      </button>
+    </div>
+  </div>
+</section>
+      <section class="section articles-cat container tab-content " data-tab="articles ebm">
+  <div class="articles-cat__wrapper">
+    <h2 class="articles-cat__title"><b>Программы для ЭВМ</b></h2>
+
+    <div class="articles-cat__items">
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Передача прав на&nbsp;товарный знак: как происходит</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Патентный поверенный: кто такой и&nbsp;зачем он&nbsp;нужен</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на&nbsp;видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Как защитить свой бренд в&nbsp;социальных сетях</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Контрафакт и&nbsp;ответственность</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Компенсация за&nbsp;нарушение исключительных прав: как определяется размер</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Что такое кража интеллектуальной собственности</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">РАО и ВОИС: что такое и чем занимаются</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Объекты авторских прав</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Программы для ЭВМ</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+
+      <button class="articles-cat__load-btn btn btn--secondary btn--small">
+        <span>Показать ещё</span>
+        <i class="icon-plus"></i>
+      </button>
+    </div>
+  </div>
+</section>
+      <section class="section articles-cat container tab-content " data-tab="articles trademark">
+  <div class="articles-cat__wrapper">
+    <h2 class="articles-cat__title"><b>Товарные знаки</b></h2>
+
+    <div class="articles-cat__items">
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Передача прав на&nbsp;товарный знак: как происходит</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Патентный поверенный: кто такой и&nbsp;зачем он&nbsp;нужен</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на&nbsp;видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Как защитить свой бренд в&nbsp;социальных сетях</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Контрафакт и&nbsp;ответственность</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Компенсация за&nbsp;нарушение исключительных прав: как определяется размер</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Что такое кража интеллектуальной собственности</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">РАО и ВОИС: что такое и чем занимаются</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Объекты авторских прав</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+      <div class="read-card read-card--no-image">
+        <div class="read-card__texts">
+          <p class="read-card__tag tag">Товарные знаки</p>
+          <p class="read-card__title">
+            <a href="#">Авторские права на видео</a>
+          </p>
+          <p class="read-card__date">22 октября 2024</p>
+        </div>
+      </div>
+
+      <button class="articles-cat__load-btn btn btn--secondary btn--small">
+        <span>Показать ещё</span>
+        <i class="icon-plus"></i>
+      </button>
+    </div>
+  </div>
+</section>
       
 <!------------------------------- ALL TABS ------------------------------------>
       <section class="section consult-help-section container">
