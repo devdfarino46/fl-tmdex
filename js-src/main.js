@@ -943,6 +943,7 @@ const Ui = {
 
   headerInit: function() {
     document.querySelectorAll('.header').forEach(header => {
+
       let scrollY = 0;
       window.addEventListener('scroll', ev => {
         if (scrollY > window.scrollY) {
@@ -1255,6 +1256,43 @@ const Ui = {
     });
   },
 
+  articlesCatInit: function() {
+    const pageTabs = document.querySelector('.page-tabs');
+    const header = document.querySelector('.header');
+
+    if (header && pageTabs) {
+      const pageTabsBtns = pageTabs.querySelectorAll('.page-tabs__btn');
+      
+      const update = () => {
+        const articlesCat = document.querySelector('.articles-cat.--active');
+
+        if (articlesCat) {
+          const items = articlesCat.querySelector('.articles-cat__items');
+          const itemsRect = items.getBoundingClientRect();
+
+          if (itemsRect.top < 0 && itemsRect.bottom > window.innerHeight - 40) {
+            articlesCat.classList.add('--fixed');
+            pageTabs.classList.add('--fixed');
+            header.classList.add('--scrolled');
+          } else {
+            articlesCat.classList.remove('--fixed');
+            pageTabs.classList.remove('--fixed');
+          }
+        }
+      }
+      update();
+      window.addEventListener('scroll', update);
+      window.addEventListener('resize', update);
+      pageTabsBtns.forEach((btn) => {
+        btn.addEventListener('click', ev => {
+          window.scroll({
+            top: 0
+          });
+        });
+      });
+    }
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1284,6 +1322,7 @@ const Ui = {
     this.certifsInit();
     this.historyInit();
     this.popularSliderInit();
+    this.articlesCatInit();
   }
 }
 Ui.init();
