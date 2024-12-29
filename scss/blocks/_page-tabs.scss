@@ -58,28 +58,27 @@
       background: #E1E1E3;
     }
   }
-}
 
-.page:has(.articles-cat.--active.tab-content) .page-tabs {
-  position: absolute;
-  padding-top: 30px;
-  padding-bottom: 40px;
-  top: auto;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  
   &.--fixed {
-    position: fixed;
-    top: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    position: absolute;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    height: 111px;
+    top: auto;
+    left: 0;
+    right: 0;
     z-index: 2;
     background: white;
-  }
-
-  @media (max-width: 740px) {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    transition: .3s ease translate;
+  
+    @media (max-width: 740px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      height: 81px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
 }

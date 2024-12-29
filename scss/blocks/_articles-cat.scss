@@ -2,7 +2,7 @@
   position: relative;
   z-index: 1;
   transition: .3s ease;
-  margin-top: 231px;
+  margin-top: 201px;
 
   @media (max-width: 740px) {
     margin-top: 121px;
@@ -24,10 +24,21 @@
     font-size: 34px;
     line-height: 126%;
     color: #19191D;
-    background: white;
     padding-bottom: 20px;
+
+    position: absolute;
+    top: auto;
+    left: auto;
+    z-index: 2;
+    width: 270px;
+    transition: .3s ease translate;
     
     b { color: #B4B4BB; }
+
+    @media (max-width: 940px) {
+      position: static;
+      width: auto;
+    }
 	}
 
 	&__items {
@@ -42,15 +53,5 @@
     align-self: center;
   }
   &.--fixed &__title {
-    position: fixed;
-    top: 111px;
-    left: auto;
-    z-index: 2;
-    width: 270px;
-
-    @media (max-width: 940px) {
-      position: static;
-      width: auto;
-    }
   }
 }
