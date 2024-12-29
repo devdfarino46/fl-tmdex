@@ -1311,6 +1311,14 @@ const Ui = {
           }
         } else {
           pageTabs.classList.remove('--fixed');
+          pageTabs.style.top = null;
+          pageTabs.style.position = null;
+          pageTabs.style.marginTop = null;
+          pageTabs.style.translate = null;
+          pageTabs.style.top = null;
+          pageTabs.style.position = null;
+          pageTabs.style.marginTop = null;
+          pageTabs.style.translate = null;
         }
       }
       window.addEventListener('scroll', update);
