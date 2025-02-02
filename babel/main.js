@@ -1,6 +1,3 @@
-const $ = require('jquery');
-require('jquery-mask-plugin');
-
 const MKTUS = {
   "01": "Инновационные решения",
   "02": "Стратегическое планирование",

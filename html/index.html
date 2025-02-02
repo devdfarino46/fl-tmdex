@@ -1,66 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
-
-@@include('blocks/_head.html')
-
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links</title>
+</head>
 <body>
-  <div class="wrapper">
-    @@include('blocks/_header.html')
-    <nav class="nav">
-      <ul class="nav__container">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Поиск</a></li>
-      </ul>
-    </nav>
-
-    <main class="page">
-      <section class="section search">
-        <div class="search__container">
-          <h1 class="search__title"
-            data-text1="Проверка товарного <br>знака онлайн"
-            data-text2="Поиск товарного знака <br>по номеру документа">
-            Проверка товарного <br>знака онлайн
-          </h1>
-          <p class="search__date">
-            Обновление базы:
-            <a href="#popup-base" class="label-data popup-link">сегодня</a>
-          </p>
-
-          @@include('blocks/_search-form.html', {class: '--hide-mktu'})
-
-          <p class="search__subtitle">
-            Проверьте вероятность регистрации товарного знака в
-            Роспатенте по актуальным базам и реестрам ФИПС
-          </p>
-        </div>
-      </section>
-      
-      <section class="section disclamer">
-        <div class="disclamer__container">
-          <div class="notice">
-            <p class="notice__info">
-              <i class="icon-alert-circle"></i>
-              <span>
-                Отчет формируется из данных, размещенных в открытых источниках
-                государственных органов и других организаций. Администрация
-                ресурса не несет ответственность за достоверность и полноту
-                представленных сведений. Пользователь ресурса может использовать
-                полученные сведения исключительно в информационно-аналитических целях.
-              </span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      @@include('blocks/_advan-search.html')
-      @@include('blocks/_service.html')
-      @@include('blocks/_form-main.html')
-    </main>
-
-    @@include('blocks/_footer.html')
-  </div>
-
-  @@include('blocks/_subwrapper.html')
+  <ul>
+    <h1>LAST UPDATED <b>@@versiontime</b></h1>
+    <li><a href="home.html">Главная</a></li>
+    <li><a href="articles.html">Журнал [NEW]</a></li>
+    <li><a href="about.html">О компании</a></li>
+    <li><a href="result-title.html">Результат по названию</a></li>
+    <li><a href="result-apps.html">Результат по заявке</a></li>
+    <li><a href="result-certifs.html">Результат по свидетельству</a></li>
+    <li><a href="result-companies.html">Результат по ИНН</a></li>
+    <li><a href="result-no-find.html">Ничего не найдено</a></li>
+    <li><a href="result-no-busy.html">Не найдено угроз</a></li>
+  </ul>
 </body>
-
 </html>
