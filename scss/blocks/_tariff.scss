@@ -30,10 +30,10 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 143%;
-    color: #313701;
+    color: #566b40;
     padding: 5px 10px;
     gap: 10px;
-    background: #FBFFE2;
+    background: #fafff5;
     border-radius: 5px;
   }
 
@@ -126,11 +126,11 @@
   }
 
   &--dark {
-    background: #313701;
+    background: #566b40;
     border-color: transparent;
   }
   &--dark &__title {
-    color: #DFF71C;
+    color: #ccff99;
   }
   &--dark &__descr {
     color: white;
@@ -141,10 +141,10 @@
   &--dark &__list-item {
     color: white;
     &::before {
-      color: #DFF71C;
+      color: #ccff99;
     }
   }
   &--dark &__price {
-    color: #DFF71C;
+    color: #ccff99;
   }
 }

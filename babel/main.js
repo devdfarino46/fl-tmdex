@@ -546,6 +546,12 @@ const Ui = {
     document.querySelectorAll('.input').forEach(function (input) {
       const btn = input.querySelector('.input__wrapper button');
       const inputElem = input.querySelector('.input__wrapper input');
+
+      if (inputElem.hasAttribute('data-mask')) {
+        IMask(inputElem, {
+          mask: inputElem.dataset.mask
+        });
+      }
     
       // Reset state
       input.addEventListener('click', () => {

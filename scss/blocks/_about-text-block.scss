@@ -8,17 +8,9 @@
   &__wrapper {
     position: relative;
     padding: 40px 60px;
-    background: #DFF71C;
+    background: #ccff99;
     border-radius: 20px;
     overflow: hidden;
-
-    &::before {
-      content: '' url(../img/rounds-decor2.svg);
-      position: absolute;
-      right: 50px;
-      bottom: -5px;
-      display: block;
-    }
 
     p {
       position: relative;
@@ -27,16 +19,6 @@
       line-height: 126%;
       text-align: center;
       color: #19191D;
-    }
-
-    @media (max-width: 940px) {
-      
-      &::before {
-        right: 0;
-        transform: translateX(calc(100% - 44px));
-        top: -36px;
-        bottom: auto;
-      }
     }
 
     @media (max-width: 740px) {

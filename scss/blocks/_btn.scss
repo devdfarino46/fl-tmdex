@@ -50,7 +50,7 @@
 
   // Lime
   &--lime {
-    background: #E7FA52;
+    background: #d6ffad;
     color: #19191D;
   }
 
@@ -104,7 +104,7 @@
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
     &--lime:hover, &--lime.--hover {
-      background: #C3DC04;
+      background: #bae88b;
     }
     &--secondary:hover, &--secondary.--hover {
       background: #F0F0F1;
@@ -125,8 +125,8 @@
     box-shadow: 0px 4px 8px transparent;
   }
   &--lime:active {
-    background: #626E02;
-    color: #E7FA52;
+    background: #708c54;
+    color: #d6ffad;
   }
   &--secondary:active {
     background: #E1E1E3;

@@ -123,7 +123,7 @@
 
   // Button-extra
   &.--extra {
-    background: #DFF71C;
+    background: #ccff99;
   }
 
   // Contacts
@@ -160,16 +160,16 @@
       background: #F0F0F1;
     }
     &--button.--extra:hover {
-      background: #C3DC04;
+      background: #bae88b;
     }
     &--button:hover &__link-icon {
       color: #19191D;
     }
     &__link._main:hover &__link-title {
-      color: #C3DC04;
+      color: #bae88b;
     }
     &__link._main:hover &__link-icon {
-      color: #C3DC04;
+      color: #bae88b;
     }
   }
 }
