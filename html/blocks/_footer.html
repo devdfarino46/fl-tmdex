@@ -1,64 +1,377 @@
-<footer class="footer">
-  <div class="footer__container">
-    <div class="footer__main">
-      <div class="footer__main-left">
-        <div class="footer__contacts">
-          <p class="footer__contacts-title">
-            Появились вопросы? <br>
-            Мы на
-            связи&nbsp;&nbsp;<img src="img/icons/finger-up.webp" alt="" width="34" height="34">
-          </p>
-          <div class="footer__contacts-btns">
-            <button type="button" class="btn btn--secondary">
-              <span>Заказать звонок</span>
-            </button>
-            <div class="footer__socials-btns">
-              <a href="#" class="btn btn--secondary">
-                <i class="icon-tg"></i>
-              </a>
-              <a href="#" class="btn btn--secondary">
-                <i class="icon-whatsapp"></i>
-              </a>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__main">
+            <div class="footer__main-left">
+              <div class="footer__contacts">
+                <p class="footer__contacts-title">
+                  Появились вопросы? <br>
+                  Мы на
+                  связи&nbsp;&nbsp;<img src="img/icons/finger-up.webp" alt="" width="34" height="34">
+                </p>
+                <div class="footer__contacts-btns">
+                  <button type="button" class="btn btn--secondary">
+                    <span>Заказать звонок</span>
+                  </button>
+                  <div class="footer__socials-btns">
+                    <a href="#" class="btn btn--secondary">
+                      <i class="icon-tg"></i>
+                    </a>
+                    <a href="#" class="btn btn--secondary">
+                      <i class="icon-whatsapp"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <ul class="footer__contacts-list">
+                  <li>
+                    <p>Москва</p>
+                    <a href="tel:+74954775475">+7 (495) 477-54-75</a>
+                  </li>
+                  <li>
+                    <p>С-Петербург</p>
+                    <a href="tel:+78125655810">+7 (812) 565-58-10</a>
+                  </li>
+                  <li>
+                    <p>E-mail</p>
+                    <a href="mailto:consult@tmdex.ru">consult@tmdex.ru</a>
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="footer__nav-list">
+                <li><a href="#">Проверка знака</a></li>
+                <li><a href="#">МКТУ</a></li>
+                <li><a href="#">Вопрос-ответ</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Контакты</a></li>
+              </ul>
             </div>
+
+            <a class="footer__logo" href="#">
+              <img src="img/logo-gray.svg" alt="TMDEX" width="144" height="40">
+            </a>
           </div>
 
-          <ul class="footer__contacts-list">
-            <li>
-              <p>Москва</p>
-              <a href="tel:+74954775475">+7 (495) 477-54-75</a>
-            </li>
-            <li>
-              <p>С-Петербург</p>
-              <a href="tel:+78125655810">+7 (812) 565-58-10</a>
-            </li>
-            <li>
-              <p>E-mail</p>
-              <a href="mailto:consult@tmdex.ru">consult@tmdex.ru</a>
-            </li>
+          <div class="footer__bottom">
+            <div class="footer__copyright">
+              <p>Copyright TMdex © 2024</p>
+              <p><a href="#">Политика конфиденциальности</a></p>
+            </div>
+            <p class="design-author">Midyanets Design</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!------------------------------- Popup Base ------------------------------------>
+    <div class="popup" id="popup-base">
+      <div class="popup__wrapper popup-wrapper">
+        <p class="popup__title">
+          Обновление базы
+        </p>
+        <p class="popup__text">
+          Ежедневное обновление баз данных позволяет нашим клиентам
+          быстро реагировать на любые изменения.
+        </p>
+        <ul class="popup__list-round">
+          <li>Товарные знаки РФ <span class="label-data">сегодня</span></li>
+          <li>Заявки РФ <span class="label-data">сегодня</span></li>
+          <li>Документооборот по заявкам РФ <span class="label-data">сегодня</span></li>
+          <li>Международные регистрации <span class="label-data">10.11.2024</span></li>
+          <li>ОТЗ РФ <span class="label-data">1 день назад</span></li>
+          <li>НМПТ РФ <span class="label-data">1 день назад</span></li>
+        </ul>
+        <button type="button" class="popup__btn-ok _btn-ok btn">
+          <span>OK</span>
+        </button>
+      </div>
+    </div>
+
+    <!------------------------------- Popup Consult ------------------------------------>
+    <div class="consult-popup popup" id="popup-consult">
+      <div class="consult-popup__wrapper popup-wrapper">
+        <button type="button" aria-label="Закрыть" 
+          class="consult-popup__close-btn _close-btn btn btn--secondary btn--small">
+      
+          <i class="icon-close"></i>
+        </button>
+      
+        <p class="consult-popup__title">Название <b>tmdex</b> можно зарегистрировать!</p>
+        <p class="consult-popup__text">
+          Узнайте у специалиста, как обойти угрозы при 
+          регистрации товарного знака с вашим названием
+        </p>
+        <form action="#" class="consult-popup__form">
+          <label class="input">
+            <p class="input__label">Имя</p>
+            <div class="input__wrapper">
+              <input type="text" placeholder="Ваше имя" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+
+          <label class="input">
+            <p class="input__label">Телефон для связи</p>
+            <div class="input__wrapper">
+              <input type="tel" placeholder="Номер телефона" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+
+          <button type="submit" class="consult-popup__submit-btn btn btn--lime btn--large">
+            <span>Получить консультацию</span>
+          </button>
+
+          <label class="form-main__policy-input checkbox">
+            <div class="checkbox__input">
+              <input type="checkbox" name="policy">
+              <i class="icon-check"></i>
+            </div>
+            <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
+          </label>
+        </form>
+
+        <button type="submit" class="consult-popup__btn-ok _btn-ok btn btn--secondary btn--large">
+          <span>ОК</span>
+        </button>
+      </div>
+    </div>
+
+    <!------------------------------- Tooltip Mktu 0 ------------------------------------>
+    <div class="tooltip" id="tooltip-mktu-0">
+      <div class="tooltip__wrapper">
+        <p class="tooltip__title"><span class="_mktu-num">Класс 00</span></p>
+        <p class="tooltip__text">
+          <span class="_mktu-descr">
+            Продукты химические, предназначенные для использования в
+            промышленных, научных целях, в фотографии, сельском хозяйстве,
+            садоводстве и лесоводстве; смолы необработанные синтетические,
+            материалы необработанные пластические; составы для тушения огня и
+            предотвращения пожаров; препараты для закалки и пайки металлов;
+            вещества для дубления кожи и шкур животных; вещества клеящие для
+            промышленных целей; мастики и другие наполнители пастообразные;
+            компосты, удобрения, навоз; препараты биологические для промышленных
+            и научных целей.
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!------------------------------- Tooltip Mktu 35 ------------------------------------>
+    <div class="tooltip" id="tooltip-mktu-35">
+      <div class="tooltip__wrapper">
+        <p class="tooltip__title"><span class="_mktu-num">Класс 35</span></p>
+        <ol class="tooltip__text">
+          Услуги, оказываемые лицами или организациями, 
+          основной целью которых является:
+          <li>помощь в эксплуатации или управлении коммерческим предприятием;</li>
+          <li>помощь в управлении делами или в коммерческой деятельности 
+            промышленного или торгового предприятия; </li>
+          а также услуги, оказываемые рекламными учреждениями.
+        </ol>
+        <ol class="tooltip__text">
+          Услуги, оказываемые лицами или организациями, 
+          основной целью которых является:
+          <li>помощь в эксплуатации или управлении коммерческим предприятием;</li>
+          <li>помощь в управлении делами или в коммерческой деятельности 
+            промышленного или торгового предприятия; </li>
+          а также услуги, оказываемые рекламными учреждениями.
+        </ol>
+        <ol class="tooltip__text">
+          Услуги, оказываемые лицами или организациями, 
+          основной целью которых является:
+          <li>помощь в эксплуатации или управлении коммерческим предприятием;</li>
+          <li>помощь в управлении делами или в коммерческой деятельности 
+            промышленного или торгового предприятия; </li>
+          а также услуги, оказываемые рекламными учреждениями.
+        </ol>
+        <ol class="tooltip__text">
+          Услуги, оказываемые лицами или организациями, 
+          основной целью которых является:
+          <li>помощь в эксплуатации или управлении коммерческим предприятием;</li>
+          <li>помощь в управлении делами или в коммерческой деятельности 
+            промышленного или торгового предприятия; </li>
+          а также услуги, оказываемые рекламными учреждениями.
+        </ol>
+        <ol class="tooltip__text">
+          Услуги, оказываемые лицами или организациями, 
+          основной целью которых является:
+          <li>помощь в эксплуатации или управлении коммерческим предприятием;</li>
+          <li>помощь в управлении делами или в коммерческой деятельности 
+            промышленного или торгового предприятия; </li>
+          а также услуги, оказываемые рекламными учреждениями.
+        </ol>
+        <ol class="tooltip__text">
+          Услуги, оказываемые лицами или организациями, 
+          основной целью которых является:
+          <li>помощь в эксплуатации или управлении коммерческим предприятием;</li>
+          <li>помощь в управлении делами или в коммерческой деятельности 
+            промышленного или торгового предприятия; </li>
+          а также услуги, оказываемые рекламными учреждениями.
+        </ol>
+        <p class="tooltip__text"><b>
+          Примечание:</b> на практике к 35 классу, 
+          как правило, относят ТОРГОВЛЮ
+        </p>
+      </div>
+    </div>
+
+    <!------------------------------- Tooltip Mktu Legend ------------------------------------>
+    <div class="tooltip" id="tooltip-mktu-legend">
+      <div class="tooltip__wrapper">
+        <p class="tooltip__title">Международная классификация товаров и услуг</p>
+        <p class="tooltip__text">
+          МКТУ — это список категорий, в которые можно отнести товары и услуги,
+          чтобы легче было найти нужную информацию или определить, к какой
+          области относится тот или иной продукт.
+        </p>
+        <div class="tooltip__text">
+          <p>Классы бывают:</p>
+          <ul>
+            <li>основными</li>
+            <li>корреспондирующими</li>
           </ul>
         </div>
-
-        <ul class="footer__nav-list">
-          <li><a href="#">Проверка знака</a></li>
-          <li><a href="#">МКТУ</a></li>
-          <li><a href="#">Вопрос-ответ</a></li>
-          <li><a href="#">Услуги</a></li>
-          <li><a href="#">Статьи</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
+        <p class="tooltip__title">Обозначение в результатах:</p>
+        <p class="tooltip__text">
+          <span class="mktu" style="display: inline-block;">00</span> — класс не занят
+        </p>
+        <p class="tooltip__text">
+          <span class="mktu --busy" style="display: inline-block;">00</span> — класс занят
+        </p>
       </div>
-
-      <a class="footer__logo" href="#">
-        <img src="img/logo-gray.svg" alt="TMDEX" width="144" height="40">
-      </a>
     </div>
 
-    <div class="footer__bottom">
-      <div class="footer__copyright">
-        <p>Copyright TMdex © 2024</p>
-        <p><a href="#">Политика конфиденциальности</a></p>
+    <!------------------------------- Tooltip Mktu Legend Corresp ------------------------------------>
+    <div class="tooltip" id="tooltip-mktu-legend-corresp">
+      <div class="tooltip__wrapper">
+        <p class="tooltip__title">Международная классификация товаров и услуг</p>
+        <p class="tooltip__text">
+          МКТУ — это список категорий, в которые можно отнести товары и услуги,
+          чтобы легче было найти нужную информацию или определить, к какой
+          области относится тот или иной продукт.
+        </p>
+        <div class="tooltip__text">
+          <p>Классы бывают:</p>
+          <ul>
+            <li>основными</li>
+            <li>корреспондирующими</li>
+          </ul>
+        </div>
+        <p class="tooltip__title">Обозначение в результатах:</p>
+        <p class="tooltip__text">
+          <span class="mktu" style="display: inline-block;">00</span> — класс не занят
+        </p>
+        <p class="tooltip__text">
+          <span class="mktu mktu --corresp" style="display: inline-block;">00</span> — корреспондирующий класс не занят
+        </p>
+        <p class="tooltip__text">
+          <span class="mktu --busy" style="display: inline-block;">00</span> — класс занят
+        </p>
+        <p class="tooltip__text">
+          <span class="mktu --busy-corresp" style="display: inline-block;">00</span> — корреспондирующий класс занят
+        </p>
       </div>
-      <p class="design-author">Midyanets Design</p>
     </div>
-  </div>
-</footer>
+
+    <!------------------------------- Tooltip Okved ------------------------------------>
+    <div class="tooltip tooltip--okved" id="tooltip-okved">
+      <div class="tooltip__wrapper">
+        <p class="tooltip__overline">
+          <span class="_okved-type" 
+            data-text-main="Основной"
+            data-text-addit="Дополнительный">
+          Основной</span>
+        </p>
+        <p class="tooltip__title">
+          Общероссийский классификатор видов экономической деятельности 
+          <span class="_okved-num">47.19</span>
+        </p>
+        <p class="tooltip__text">
+          <span class="_okved-descr">
+            Торговля розничная в нестационарных торговых объектах и на рынках
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!------------------------------- Tooltip no-design ------------------------------------>
+    <div class="tooltip" id="tooltip-no-design">
+      <div class="tooltip__wrapper">
+        <p class="tooltip__title">No design</p>
+      </div>
+    </div>
+
+    @@if(context.hasPrereport) {
+    <div class="up-to-prereport">
+      <button class="btn btn--lime btn--small">
+        <span>Вернуться в отчёт</span>
+        <i class="icon-corner-right-down" 
+          style="scale: 1 -1; translate: 0 -1px;"></i>
+      </button>
+    </div>
+    }
+
+    @@if(context.has_certifs_gallery) {
+      <div class="certifs-gallery popup" id="popup-certifs-gallery">
+        <div class="certifs-gallery__wrapper popup-wrapper">
+          <div class="certifs-gallery__top">
+            <div class="certifs-gallery__text">
+              <p class="certifs-gallery__title">
+                Лицензия на&nbsp;осуществление 
+                образовательной деятельности
+              </p>
+              <p class="certifs-gallery__date">2024</p>
+            </div>
+            <button class="btn btn--secondary btn--small _close-btn">
+              <i class="icon-close"></i>
+            </button>
+          </div>
+          <div class="certifs-gallery__images swiper">
+            <div class="swiper-wrapper">
+              <img src="img/certifs/1.webp" alt="" 
+                class="certifs-gallery__image swiper-slide"
+                width="318" height="446"
+                data-index="0"
+                data-title="Лицензия на&nbsp;осуществление 
+                  образовательной деятельности"
+                data-date="2024">
+              <img src="img/certifs/3.webp" alt="" 
+                class="certifs-gallery__image swiper-slide"
+                width="318" height="231"
+                data-index="1"
+                data-title="Какой-то второй сертификат, я в них не бум-бум"
+                data-date="2023">
+              <img src="img/certifs/1.webp" alt="" 
+                class="certifs-gallery__image swiper-slide"
+                width="318" height="446"
+                data-index="2"
+                data-title="Просто копия первой какой-то лицензии"
+                data-date="2022">
+            </div>
+          </div>
+          <div class="certifs-gallery__bottom">
+            <div class="certifs-gallery__btns">
+              <button class="btn btn--small certifs-gallery__btn-prev">
+                <i class="icon-chevron-right" style="rotate: 180deg; translate: 0 -1px;"></i>
+              </button>
+              <button class="btn btn--small certifs-gallery__btn-next">
+                <i class="icon-chevron-right"></i>
+              </button>
+            </div>
+            <p class="certifs-gallery__num">0/0</p>
+          </div>
+        </div>
+      </div>
+    }
+
+    <script src="libs/lazysizes.min.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/jquery.mask.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
