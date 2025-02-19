@@ -1,5 +1,5 @@
-css/**/*
-js/**/*
-*.html
+css/
+js/
 fontello/
+*.html
 !html/**/*.html
