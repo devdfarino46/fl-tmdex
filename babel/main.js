@@ -899,8 +899,11 @@ const Ui = {
 
         if (slide.getAttribute('data-menu-card-link') !== null) {
           slide.addEventListener('click', ev => {
+            const slideClicked = ev.currentTarget;
+            
             menuCards.forEach(menuCard => {
-              if (menuCard.getAttribute('data-menu-card-link') === slide.getAttribute('data-menu-card')) {
+              
+              if (menuCard.getAttribute('data-menu-card') === slideClicked.getAttribute('data-menu-card-link')) {
                 menuCard.classList.add('--opened');
                 menuItensWrap.style.minHeight = `${menuCard.offsetHeight}px`;
               } else {
