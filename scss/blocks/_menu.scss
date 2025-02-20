@@ -1,6 +1,9 @@
 .menu {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: 100vh;
   z-index: 98;
 
   pointer-events: none;
@@ -8,8 +11,15 @@
   transform-origin: top;
   transition: .4s ease;
   opacity: 0;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
+  background: #3A3A44;
+  padding: 99px 0 20px;
+  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 770px) {
+    padding-top: 87px;
+  }
 
   &__slide-left-btn,
   &__slide-right-btn {
@@ -21,21 +31,12 @@
   &.--opened {
     transform: translateY(0%);
     opacity: 1;
+    pointer-events: all;
   }
 
   &__wrapper {
-    overflow: hidden;
-    pointer-events: none;
-    background: #3A3A44;
-    padding: 99px 0 20px;
-    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.2);
-
-    @media (max-width: 770px) {
-      padding-top: 87px;
-    }
   }
   &.--opened &__wrapper {
-    pointer-events: all;
   }
 
   &__container {

@@ -1,0 +1,127 @@
+.home-slider {
+
+  &.--mt-160 {
+    margin-top: 160px;
+
+    @media (max-width: 740px) {
+      margin-top: 120px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 285px 1fr;
+    gap: 40px 10px;
+
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__bg-text {
+    position: absolute;
+    z-index: -1;
+    top: -75px;
+    left: auto;
+
+    @media (max-width: 740px) {
+      top: -80px;
+    }
+  }
+
+  &__left {
+    position: relative;
+    z-index: 2;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: 940px) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 43px;
+    color: #19191D;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+    max-width: 250px;
+
+    @media (max-width: 940px) {
+      max-width: 380px;
+    }
+
+    b {
+      color: #B4B4BB;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    @media (max-width: 740px) {
+      display: none;
+    }
+  }
+
+  &__slider {
+    z-index: 1;
+    position: relative;
+    margin-right: -285px;
+    padding-right: 285px;
+    overflow: hidden;
+
+    .swiper {
+      overflow: visible;
+      display: flex;
+      width: 0;
+      min-width: 100%;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+    }
+    
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 80px;
+    background: #FFFFFF;
+    border: 1px solid #D2D2D6;
+    border-radius: 20px;
+    width: 285px;
+  }
+
+  &__slide-icon {
+    padding: 10px;
+    background: #CCFF99;
+    border-radius: 50px;
+    
+    i {
+      font-size: 30px;
+      color: #566B40;
+      line-height: 1;
+    }
+  }
+
+  &__slide-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+  }
+}

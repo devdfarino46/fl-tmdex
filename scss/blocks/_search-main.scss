@@ -1,5 +1,10 @@
 .search-main {
   margin-top: 10px;
+  margin-bottom: 107px;
+
+  @media (max-width: 740px) {
+    margin-bottom: 120px;
+  }
 
   &__container {
     display: flex;
