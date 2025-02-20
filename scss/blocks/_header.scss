@@ -1,7 +1,7 @@
 .wrapper {
-  padding-top: 79px;
+  padding-top: 99px;
   @media (max-width: 740px) {
-    padding-top: 57px;
+    padding-top: 77px;
   }
 }
 .header {
@@ -10,7 +10,6 @@
   right: 0;
   top: 0;
   z-index: 99;
-  max-height: max-content;
   bottom: 0;
   pointer-events: none;
   display: flex;
@@ -25,13 +24,11 @@
   &__wrapper {
     position: relative;
     pointer-events: all;
-    padding: 15px 0;
     z-index: 2;
-    background: #FFFFFF;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    margin-top: 10px;
 
     @media (max-width: 740px) {
-      padding: 10px 0;
+      // padding: 10px 0;
     }
   }
 
@@ -39,6 +36,21 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    max-width: 1170px;
+
+    @media (max-width: 1230px) {
+      margin: 0 30px;
+    }
+
+    @media (max-width: 740px) {
+      border-radius: 15px;
+      margin: 0 15px;
+    }
   }
 
   &__logo {
@@ -54,12 +66,18 @@
     }
 
     p {
-      max-width: 250px;
+      max-width: 176px;
       font-weight: 400;
       font-size: 12px;
       line-height: 125%;
       letter-spacing: -0.02em;
       color: #787885;
+    }
+
+    @media (max-width: 940px) {
+      p {
+        max-width: 220px;
+      }
     }
 
     @media (max-width: 740px) {
@@ -72,10 +90,17 @@
   &__title {
   }
 
-  &__phones {
+  &__phone-wrap {
     display: flex;
     align-items: center;
-    gap: 5px 15px;
+    gap: 15px;
+
+    @media (max-width: 1230px) {
+      display: none;
+    }
+  }
+
+  &__phone {
 
     a {
       color: #19191D;
@@ -85,10 +110,6 @@
       line-height: 129%;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-    }
-
-    @media (max-width: 940px) {
-      display: none;
     }
   }
 

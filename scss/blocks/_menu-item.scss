@@ -4,6 +4,7 @@
   border-radius: 20px;
   display: flex;
   transition: .3s ease;
+  position: relative;
 
   @media (max-width: 740px) {
     padding: 10px 30px 30px 20px;
@@ -15,6 +16,12 @@
     gap: 10px;
     align-items: flex-start;
     transition: .3s ease;
+
+    &:not(._main)::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
   }
 
   &__link-title {
@@ -84,7 +91,7 @@
 
   &__contacts-bottom {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.7fr;
+    grid-template-columns: auto 1fr auto;
     gap: 30px;
 
     p {
@@ -105,7 +112,7 @@
       vertical-align: bottom;
     }
 
-    @media (max-width: 940px) {
+    @media (max-width: 1230px) {
       grid-template-columns: 1fr;
     }
   }
@@ -113,9 +120,8 @@
   &__contacts-socials {
     display: flex;
     gap: 30px;
-    grid-column: 1 / 3;
 
-    @media (max-width: 940px) {
+    @media (max-width: 1230px) {
       grid-column: auto;
       flex-direction: column;
     }

@@ -841,6 +841,7 @@ const Ui = {
   menuInit: function () {
     document.querySelectorAll('.menu').forEach(menu => {
       const menuOpenBtn = document.querySelector('.menu-open-btn');
+      const menuWrapper = menu.querySelector('.menu__wrapper');
       const slideLeftBtn = menu.querySelector('.menu__slide-left-btn');
       const slideRightBtn = menu.querySelector('.menu__slide-right-btn');
       const menuItems = menu.querySelector('.menu__items');

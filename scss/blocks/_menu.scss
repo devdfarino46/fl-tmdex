@@ -1,19 +1,15 @@
 .menu {
-  position: relative;
-  background: #3A3A44;
-  padding: 10px 0 20px;
-  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-  overflow-y: overlay;
-  overflow-x: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: 98;
 
   pointer-events: none;
   transform: translateY(-100%);
   transform-origin: top;
-  transition: .3s ease;
+  transition: .4s ease;
   opacity: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   &__slide-left-btn,
   &__slide-right-btn {
@@ -23,14 +19,26 @@
   }
 
   &.--opened {
-    pointer-events: all;
     transform: translateY(0%);
     opacity: 1;
   }
 
+  &__wrapper {
+    overflow: hidden;
+    pointer-events: none;
+    background: #3A3A44;
+    padding: 99px 0 20px;
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 770px) {
+      padding-top: 87px;
+    }
+  }
+  &.--opened &__wrapper {
+    pointer-events: all;
+  }
+
   &__container {
-    flex: 1 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -56,12 +64,19 @@
     .btn._main {
       flex: 1 0;
     }
+
+    .btn i {
+      color: #D6FFAD;
+    }
   }
   &:has(.menu-card.--opened) &__btns-wrap {
     display: none;
   }
   &:not(:has(.menu-card.--opened)) &__btn-prev {
     display: none;
+  }
+  &__btn-prev i {
+    color: #D6FFAD;
   }
 
   &__items {
