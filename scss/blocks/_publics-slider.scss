@@ -1,0 +1,91 @@
+.publics-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 285px 1fr;
+    gap: 40px 10px;
+
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: 940px) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 43px;
+    color: #19191D;
+
+    b {
+
+      @media (min-width: 741px) {
+        color: #B4B4BB;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @media (max-width: 740px) {
+      display: none;
+    }
+  }
+
+  &__prev-btn {
+  }
+
+  &__next-btn {
+  }
+
+  &__slider {
+    // width: 0;
+    // min-width: 100%;
+    touch-action: pan-y;
+    overflow: hidden;
+    padding: 10px;
+    margin: -10px;
+    margin-right: -285px;
+    padding-right: 285px;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px 40px 30px 30px;
+    gap: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D2D2D6;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    width: 285px;
+    flex-shrink: 0;
+  }
+}

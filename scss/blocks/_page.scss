@@ -1,0 +1,12 @@
+.page-main {
+
+  &__divider {
+    margin-top: 80px;
+    border: none;
+    border-bottom: 1px solid #D2D2D6;
+
+    @media (max-width: 740px) {
+      margin-top: 40px;
+    }
+  }
+}
