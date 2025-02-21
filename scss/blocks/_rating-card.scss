@@ -1,0 +1,89 @@
+.rating-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 40px 40px;
+  gap: 20px;
+  background: #CCFF99;
+  border-radius: 20px;
+
+  @media (max-width: 540px) {
+    padding: 30px 20px 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 43px;
+    color: #566B40;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  &__rating-num {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #566B40;
+  }
+
+  &__rating-right {
+    padding-top: 5px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__rating-icons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    i {
+      display: block;
+      font-size: 18px;
+      color: #4A4B57;
+    }
+  }
+
+  &__rating-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #787885;
+  }
+
+  &__slider {
+    overflow: hidden;
+    touch-action: pan-y;
+    display: flex;
+    width: 0;
+    min-width: 100%;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      color: #566B40;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #19191D;
+  }
+}

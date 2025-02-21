@@ -1418,6 +1418,51 @@ const Ui = {
     });
   },
 
+  ratingCardInit: function() {
+    document.querySelectorAll('.rating-card').forEach((ratingCard) => {
+      const slider = ratingCard.querySelector('.rating-card__slider');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+          delay: 2000,
+        },
+      })
+    });
+  },
+
+  reviewsSliderInit: function() {
+    document.querySelectorAll('.reviews-slider').forEach((reviewsSlider) => {
+      const slider = reviewsSlider.querySelector('.reviews-slider__slider');
+      const sliderCount = reviewsSlider.querySelector('.reviews-slider__slider-count');
+      const prevBtn = reviewsSlider.querySelector('.reviews-slider__prev-btn');
+      const nextBtn = reviewsSlider.querySelector('.reviews-slider__next-btn');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: nextBtn,
+          prevEl: prevBtn,
+        },
+        mousewheel: {
+          enabled: true,
+          forceToAxis: 'horizontal',
+        },
+        on: {
+          init: function () {
+            sliderCount.innerHTML = `${this.activeIndex + 1}/${this.slides.length}`;
+          },
+          slideChange: function () {
+            sliderCount.innerHTML = `${this.activeIndex + 1}/${this.slides.length}`;
+          }
+        }
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1452,6 +1497,8 @@ const Ui = {
     this.servicesSliderInit();
     this.publicsSliderInit();
     this.clientsSliderInit();
+    this.ratingCardInit();
+    this.reviewsSliderInit();
   }
 }
 Ui.init();

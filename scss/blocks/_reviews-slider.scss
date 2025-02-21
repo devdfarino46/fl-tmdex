@@ -1,0 +1,140 @@
+.reviews-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 10px;
+    align-items: flex-start;
+
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__slider-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 20px;
+    background: #F9F9FA;
+    border-radius: 20px;
+
+    @media (max-width: 540px) {
+      padding: 30px 20px;
+    }
+  }
+
+  &__slider {
+    width: 0;
+    min-width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+    display: flex;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__item-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__item-rating-icon {
+    width: 39px;
+    height: 39px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__item-rating-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  &__item-rating-name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #19191D;
+  }
+
+  &__item-rating-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    i {
+      color: #4A4B57;
+      font-size: 12px;
+    }
+  }
+
+  &__item-date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #787885;
+  }
+
+  &__item-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #19191D;
+  }
+
+  &__item-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+  }
+
+  &__slider-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__prev-btn {
+  }
+
+  &__next-btn {
+  }
+
+  &__slider-count {
+  }
+}
