@@ -1,0 +1,47 @@
+.clients-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 43px;
+    color: #19191D;
+
+    b {
+      color: #B4B4BB;
+    }
+  }
+
+  &__slider {
+    margin-top: 80px;
+    touch-action: pan-y;
+    overflow: hidden;
+    padding-right: 186px;
+    margin-right: -186px;
+
+    @media (max-width: 740px) {
+      margin-top: 40px;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+    }
+    .swiper-slide {
+      padding: 10px;
+      background: #FFFFFF;
+      border-radius: 20px;
+      width: 186px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+  }
+}

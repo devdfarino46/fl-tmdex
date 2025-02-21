@@ -76,6 +76,7 @@
     gap: 10px;
     transition: .3s ease;
     max-height: 3000px;
+    margin-bottom: auto;
   }
   &__list-label:not(.--active) + &__list {
     max-height: 0px;
@@ -119,6 +120,7 @@
     font-size: 14px;
     line-height: 143%;
     color: #19191D;
+    margin-bottom: -10px;
 
     i {
       color: #787885;
@@ -128,7 +130,6 @@
   .btn {
     font-size: 14px;
     padding: 16px 32px;
-    margin-top: auto;
 
     @media (max-width: 540px) {
       padding: 16px 20px;

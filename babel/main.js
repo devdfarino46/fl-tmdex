@@ -1403,6 +1403,21 @@ const Ui = {
     })
   },
 
+  clientsSliderInit: function() {
+    document.querySelectorAll('.clients-slider').forEach((clientsSlider) => {
+      const slider = clientsSlider.querySelector('.clients-slider__slider');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        mousewheel: {
+          enabled: true,
+          forceToAxis: 'horizontal',
+        },
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1436,6 +1451,7 @@ const Ui = {
     this.homeSliderInit();
     this.servicesSliderInit();
     this.publicsSliderInit();
+    this.clientsSliderInit();
   }
 }
 Ui.init();
