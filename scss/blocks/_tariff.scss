@@ -7,6 +7,7 @@
   border: 1px solid #D2D2D6;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
   border-radius: 20px;
+  position: relative;
 
   @media (max-width: 740px) {
     padding: 25px 15px 20px;
@@ -27,14 +28,18 @@
   }
 
   &__note {
+    position: absolute;
     font-weight: 400;
     font-size: 14px;
     line-height: 143%;
     color: #566b40;
     padding: 5px 10px;
     gap: 10px;
-    background: #fafff5;
+    background: #CCFF99;
     border-radius: 5px;
+    top: 0;
+    left: 20px;
+    transform: translateY(-50%);
   }
 
   &__descr {
@@ -123,6 +128,11 @@
   .btn {
     font-size: 14px;
     padding: 16px 32px;
+    margin-top: auto;
+
+    @media (max-width: 540px) {
+      padding: 16px 20px;
+    }
   }
 
   &--dark {

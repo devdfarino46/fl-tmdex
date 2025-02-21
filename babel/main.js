@@ -186,7 +186,7 @@ const Ui = {
     document.querySelectorAll('.tariff').forEach(function (tariff) {
       const listLabel = tariff.querySelector('.tariff__list-label');
       if (listLabel) {
-        if (window.innerWidth < 740) {
+        if (window.innerWidth < 940) {
           listLabel.classList.remove('--active');
         }
     

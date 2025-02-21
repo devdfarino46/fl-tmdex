@@ -341,12 +341,17 @@
   &__tariffs-items {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr 1fr;
+    // align-items: flex-start;
     gap: 20px;
 
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+    }
+
     @media (max-width: 740px) {
-      grid-template-columns: 1fr;
+      
     }
   }
 }

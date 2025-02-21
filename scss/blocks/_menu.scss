@@ -1,9 +1,6 @@
 .menu {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  max-height: 100vh;
+  inset: 0;
   z-index: 98;
 
   pointer-events: none;
