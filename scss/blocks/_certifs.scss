@@ -31,11 +31,20 @@
     padding: 30px 40px;
     gap: 40px;
     background: #F9F9FA;
-    background-image: url(../img/rounds-decor3.svg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center left;
-    border-radius: 0 20px 20px 0;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url(../img/rounds-decor3.svg);
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center left;
+      filter: blur(50px);
+    }
 
     @media (max-width: 1140px) {
       border-radius: 20px;
@@ -47,6 +56,7 @@
   }
 
   &__title {
+    position: relative;
     font-weight: 400;
     font-size: 34px;
     line-height: 126%;
@@ -58,6 +68,7 @@
   }
 
   &__btns-wrap {
+    position: relative;
     display: flex;
     gap: 10px;
     align-items: flex-end;
