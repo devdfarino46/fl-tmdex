@@ -1,0 +1,132 @@
+.tg-bot {
+  background: linear-gradient(180deg, #2B96C4 0%, #1C7ABA 100%);
+  border-radius: 20px;
+  padding: 30px 40px 50px;
+  gap: 18px 20px;
+  display: grid;
+  grid-template-columns: 525px 375px;
+  justify-content: space-between;
+  overflow: hidden;
+  min-height: 416px;
+  margin-top: 20px;
+
+  @media (max-width: 1230px) {
+    padding: 30px 20px 40px;
+  }
+
+  @media (max-width: 940px) {
+    grid-template-columns: 360px 186px;
+  }
+
+  @media (max-width: 740px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px 20px 0;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+
+    @media (max-width: 740px) {
+      align-items: stretch;
+      gap: 20px;
+    }
+  }
+
+  &__title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px 30px;
+
+    @media (max-width: 740px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    padding: 5px;
+    background: #FFFFFF;
+    border: 1px solid rgba(120, 120, 128, 0.2);
+    border-radius: 20px;
+
+    img {
+      width: 75px;
+      height: auto;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #FFFFFF;
+
+    @media (max-width: 1230px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 940px) {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__button {
+
+    @media (max-width: 540px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    i {
+      @media (max-width: 740px) {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    height: 0;
+    min-height: 100%;
+
+    @media (max-width: 740px) {
+      min-height: 0;
+      height: 230px;
+      width: 270px;
+      align-self: center;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
