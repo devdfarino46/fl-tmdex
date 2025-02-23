@@ -762,6 +762,12 @@ const Ui = {
           type.innerHTML = type.getAttribute('data-text-addit');
         }
       }
+
+      if (link.getAttribute('data-href') === '#tooltip-stats') {
+        const title = tooltip.querySelector('._title');
+
+        title.innerHTML = link.getAttribute('data-title');
+      }
     }
 
     let lockMouseMove = false;
@@ -1463,6 +1469,58 @@ const Ui = {
     });
   },
 
+  pieChartInit: function () {
+    document.querySelectorAll('.pie-chart').forEach( pieChart => {
+      const segments = pieChart.querySelectorAll('.pie-chart__canvas svg>g>circle');
+      const legendItems = pieChart.querySelectorAll('.pie-chart__legend li');
+
+      segments.forEach((segment, index) => {
+        segment.addEventListener('click', () => {
+          segments.forEach((el, i) => {
+            el.classList.remove('--hover');
+          });
+          segment.classList.add('--hover');
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.pie-chart__canvas svg>g>circle')) {
+          segments.forEach((segment, index) => {
+            segment.classList.remove('--hover');
+          });
+        }
+      });
+
+      legendItems.forEach((legendItem, index) => {
+        legendItem.addEventListener('click', () => {
+          legendItems.forEach((el, i) => {
+            el.classList.remove('--hover');
+          });
+          legendItems[index].classList.add('--hover');
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.pie-chart__legend li')) {
+          legendItems.forEach((legendItem, index) => {
+            legendItem.classList.remove('--hover');
+          });
+        }
+      });
+
+      window.addEventListener('scroll', ev => {
+        segments.forEach((segment, index) => {
+          if (segment.classList.contains('--hover')) {
+            segment.classList.remove('--hover');
+          }
+        });
+        legendItems.forEach((legendItem, index) => {
+          if (legendItem.classList.contains('--hover')) {
+            legendItem.classList.remove('--hover');
+          }
+        });
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1499,6 +1557,7 @@ const Ui = {
     this.clientsSliderInit();
     this.ratingCardInit();
     this.reviewsSliderInit();
+    this.pieChartInit();
   }
 }
 Ui.init();

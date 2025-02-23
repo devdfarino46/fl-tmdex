@@ -1,0 +1,48 @@
+.mktus-home-stats {
+  padding-right: 5px;
+
+  &__item {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 52px 100px 1fr;
+    padding: 9px 0px;
+    gap: 10px;
+    border-bottom: 1px solid #D2D2D6;
+  }
+
+  &__num {
+    padding: 5px 10px;
+    background: #F9F9FA;
+    border: 1px solid #D2D2D6;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #5A5B6A;
+    text-align: center;
+  }
+  &__num.--red {
+    color: #F44336;
+    background: #FEEDEC;
+    border-color: #FCCBC8;
+  }
+  
+
+  &__mktu {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #787885;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
