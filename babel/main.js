@@ -1640,6 +1640,24 @@ const Ui = {
     });
   },
 
+  publicsSiteInit: function () {
+    document.querySelectorAll('.publics-site').forEach((publicsSite) => {
+      const slider = publicsSite.querySelector('.publics-site__slider');
+      const prevBtn = publicsSite.querySelector('.publics-site__prev-btn');
+      const nextBtn = publicsSite.querySelector('.publics-site__next-btn');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+          nextEl: nextBtn,
+          prevEl: prevBtn,
+        },
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1679,6 +1697,7 @@ const Ui = {
     this.pieChartInit();
     this.selectInit();
     this.targetToTabContentInit();
+    this.publicsSiteInit();
   }
 }
 Ui.init();

@@ -113,4 +113,14 @@
   }
 }
 
+.page-line {
+  border-bottom: 1px solid #D2D2D6;
+
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+}
+
 @import 'blocks/*';
