@@ -971,9 +971,9 @@ const Ui = {
   },
 
   orgsSliderInit: function() {
-    document.querySelectorAll('.orgs-slider').forEach(slider => {
+    document.querySelectorAll('.orgs-slider').forEach(orgsSlider => {
 
-      const swiper = new Swiper(slider, {
+      const swiper = new Swiper(orgsSlider.querySelector('.swiper'), {
         slidesPerView: 'auto',
         freeMode: true,
         loop: true,
@@ -1255,12 +1255,6 @@ const Ui = {
       });
 
       const update = () => {
-        const sliderPRight = 
-          (document.body.clientWidth - popular.clientWidth) / 2;
-
-        slider.style.paddingRight = `${sliderPRight + 100}px`;
-        slider.style.marginRight = `${-sliderPRight - 100}px`;
-
         swiper.update();
       }
       update();

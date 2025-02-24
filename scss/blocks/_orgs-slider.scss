@@ -5,6 +5,12 @@
     margin-top: 40px;
   }
 
+  .swiper {
+    overflow: hidden;
+    margin-right: -30px;
+    padding-right: 30px;
+  }
+
   .swiper-wrapper {
     display: flex;
     touch-action: pan-y;

@@ -20,14 +20,17 @@
   }
 
   &__slider {
-    margin-top: 80px;
     touch-action: pan-y;
     overflow: hidden;
-    padding-right: 186px;
-    margin-right: -186px;
+
+    padding: 30px 0;
+    margin: -30px 0;
+    margin-right: -30px;
+    padding-right: 30px;
+    margin-top: 50px;
 
     @media (max-width: 740px) {
-      margin-top: 40px;
+      margin-top: 10px;
     }
 
     .swiper-wrapper {

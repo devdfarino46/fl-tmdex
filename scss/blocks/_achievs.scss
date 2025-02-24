@@ -22,10 +22,15 @@
   }
 
   &__slider {
+    overflow: hidden;
+    touch-action: pan-y;
+    padding: 30px 0;
+    margin: -30px 0;
+    margin-right: -30px;
+    padding-right: 30px;
 
     .swiper-wrapper {
       display: flex;
-      touch-action: pan-y;
     }
   }
 

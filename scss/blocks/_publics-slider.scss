@@ -60,14 +60,12 @@
   }
 
   &__slider {
-    // width: 0;
-    // min-width: 100%;
     touch-action: pan-y;
     overflow: hidden;
-    padding: 10px;
-    margin: -10px;
-    margin-right: -285px;
-    padding-right: 285px;
+    padding: 30px 0;
+    margin: -30px 0;
+    padding-right: 30px;
+    margin-right: -30px;
 
     .swiper-wrapper {
       display: flex;
