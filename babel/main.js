@@ -1173,7 +1173,7 @@ const Ui = {
         slides.forEach(slide => {
           slide.classList.remove('--hover');
         });
-        slides[swiper.activeIndex].classList.add('--hover');
+        if (slides[swiper.activeIndex]) slides[swiper.activeIndex].classList.add('--hover');
       }
 
       sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
@@ -1184,7 +1184,7 @@ const Ui = {
           slides.forEach(slide => {
             slide.classList.remove('--hover');
           });
-          slides[swiper.activeIndex].classList.add('--hover');
+          if (slides[swiper.activeIndex]) slides[swiper.activeIndex].classList.add('--hover');
         }
       });
 
