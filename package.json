@@ -1,0 +1,20 @@
+{
+  "name": "fl-tmdex",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/devdfarino46/fl-tmdex#readme",
+  "bugs": {
+    "url": "https://github.com/devdfarino46/fl-tmdex/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devdfarino46/fl-tmdex.git"
+  },
+  "license": "ISC",
+  "author": "Dzmitry Faryna",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
