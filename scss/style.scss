@@ -85,6 +85,20 @@
   }
 }
 
+.link-parent .link-child {
+  display: inline;
+  transition: .2s ease;
+
+  background: linear-gradient(#19191D, #19191D) no-repeat;
+  background-size: 0% 1px;
+  background-position: left bottom;
+}
+@media (any-hover: hover) {
+  .link-parent:hover .link-child {
+    background-size: 100% 1px;
+  }
+}
+
 .link-text>span {
   display: inline;
   transition: .2s ease;

@@ -89,6 +89,47 @@ const Ui = {
     });
   },
 
+  toggleTabContents: function (tabLink, scroll = true) {
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLink.addEventListener('click', ev => {
+      ev.preventDefault();
+      
+      tabContents.forEach(content => {
+        if (tabLink.dataset.tab === content.dataset.tab) {
+          content.classList.add('--active');
+        
+          if (scroll) window.scroll({
+            top: content.offsetTop - 100,
+            behavior: 'instant'
+          });
+        } else if (tabLink.dataset.tab.split(' ')[0] === content.dataset.tab.split(' ')[0]) {
+          content.classList.remove('--active');
+        }
+      });
+
+      // ДЛЯ ЧЕЛОВЕКА С КОМАНДЫ (для бекендера)
+
+      // Чтобы не нагружать пользователя лишними данными в ОЗУ, так как людей может быть много
+      // лучше оставить один блок человека, и динамично изменять его контент, общаясь с сервером
+      if (tabLink.hasAttribute('data-employer-id')) {
+        // Получаем id человека
+        const dataEmployerId = tabLink.getAttribute('data-employer-id');
+        // Секция для изменения контента
+        const employerSections = document.querySelector('.employer-section');
+
+        // С помощью запросов и DOM делаем манипуляции:
+        // TODO
+      }
+    });
+  },
+
+  targetToTabContentInit: function () {
+    document.querySelectorAll('.target-to-tab-content').forEach(tabLink => {
+      Ui.toggleTabContents(tabLink);
+    });
+  },
+
   accordeonOpen: function (accordeon, open = false) {
     const subaccordeon = accordeon.nextElementSibling;
 
@@ -1637,6 +1678,7 @@ const Ui = {
     this.reviewsSliderInit();
     this.pieChartInit();
     this.selectInit();
+    this.targetToTabContentInit();
   }
 }
 Ui.init();
