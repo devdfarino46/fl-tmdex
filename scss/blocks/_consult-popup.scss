@@ -18,9 +18,13 @@
     }
   }
 
+  &__title-wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
   &__close-btn {
-    margin-bottom: 5px;
-    align-self: flex-end;
   }
 
   &__title {
@@ -41,6 +45,14 @@
     font-size: 16px;
     line-height: 130%;
     color: #F9F9FA;
+  }
+
+  &__social-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
   }
 
   &__form {
@@ -78,6 +90,9 @@
 
   &.--success &__wrapper {
     padding: 30px;
+  }
+  &.--success &__social-btns {
+    display: none;
   }
   &.--success &__form {
     display: none;

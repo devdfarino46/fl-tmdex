@@ -638,6 +638,26 @@ const Ui = {
     
         popup.classList.add('--visibled');
         document.body.classList.add('no-scroll');
+
+        if (link.getAttribute('href') === '#popup-consult') {
+          const dataMenId = link.getAttribute('data-consult-men-id');
+          const dataTitle = link.getAttribute('data-consult-title');
+
+          const consultPopup = document.querySelector('#popup-consult');
+
+          if (consultPopup) {
+            const title = consultPopup.querySelector('.consult-popup__title');
+            const id = consultPopup.querySelector('.consult-popup__men-id');
+
+            if (dataMenId !== null) {
+              title.innerHTML = dataTitle;
+              id.value = dataMenId;
+            } else {
+              title.innerHTML = title.getAttribute('data-default-title');
+              id.value = '';
+            }
+          }
+        }
       });
     });
   },
@@ -687,7 +707,6 @@ const Ui = {
         form.addEventListener('submit', (e) => {
           e.preventDefault();
           consultPopup.classList.add('--success');
-          // send form
         });
     
         const disableSubmitBtn = () => {
@@ -1515,6 +1534,71 @@ const Ui = {
     });
   },
 
+  selectUpdate: function (select) {
+    const button = select.querySelector('.select__button');
+    const selectMenu = select.querySelector('.select-menu');
+    
+    let selected = [];
+
+    if (selectMenu) {
+      const items = selectMenu.querySelectorAll('.select-item');
+      items.forEach((item) => {
+        if (item.querySelector('input').checked) {
+          selected.push(item.querySelector('input').value);
+        }
+      });
+      if (selected.length !== 0) {
+        select.classList.add('--filled');
+        button.querySelector('span').textContent = selected.join(', ');
+      } else {
+        select.classList.remove('--filled');
+        button.querySelector('span').textContent = button.dataset.emptyLabel;
+      }
+    }
+  },
+
+  selectReset: function (select) {
+    const selectMenu = select.querySelector('.select-menu');
+
+    if (selectMenu) {
+      const items = selectMenu.querySelectorAll('.select-item');
+      items.forEach((item) => {
+        if (!item.querySelector('input').hasAttribute('data-start-checked')) {
+          item.querySelector('input').checked = false;
+        }
+      });
+      Ui.selectUpdate(select);
+    }
+  },
+
+  selectInit: function () {
+    const select = document.querySelectorAll('.select').forEach((select) => {
+      const button = select.querySelector('.select__button');
+      const selectMenu = select.querySelector('.select-menu');
+
+      button.addEventListener('click', () => {
+        select.classList.toggle('--active');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.select')) {
+          select.classList.remove('--active');
+        }
+      });
+
+      if (selectMenu) {
+        Ui.selectUpdate(select);
+        const items = selectMenu.querySelectorAll('.select-item');
+
+        items.forEach((item) => {
+          item.addEventListener('click', ev => {
+            Ui.selectUpdate(select);
+          });
+        });
+      }
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1552,6 +1636,7 @@ const Ui = {
     this.ratingCardInit();
     this.reviewsSliderInit();
     this.pieChartInit();
+    this.selectInit();
   }
 }
 Ui.init();
