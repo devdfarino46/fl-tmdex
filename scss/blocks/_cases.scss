@@ -1,0 +1,143 @@
+.cases {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 20px;
+    background: #F9F9FA;
+    border-radius: 20px;
+    gap: 40px;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+
+    @media (max-width: 740px) {
+      padding: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      inset: 0;
+      background: url(../img/rounds-decor3.svg) no-repeat left center;
+      background-size: auto;
+      filter: blur(25px);
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+    position: relative;
+  }
+
+  &__btns-wrap {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__num {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: right;
+    color: #787885;
+  }
+
+  &__prev-btn {
+  }
+
+  &__next-btn {
+  }
+
+  &__slider {
+    overflow: hidden;
+    touch-action: pan-y;
+    width: 0;
+    min-width: 100%;
+    display: flex;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 40px 30px 30px;
+    background: #FFFFFF;
+    border: 1px solid #D2D2D6;
+    border-radius: 20px;
+    transition: .3s ease;
+    position: relative;
+
+    @media (max-width: 740px) {
+      padding: 30px 20px 30px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: #19191D;
+      }
+    }
+  }
+
+  &__item-image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__item-title {
+    margin-top: 80px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+    color: #19191D;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__item-date {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #787885;
+  }
+}

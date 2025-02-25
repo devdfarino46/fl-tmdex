@@ -100,7 +100,7 @@ const Ui = {
           content.classList.add('--active');
         
           if (scroll) window.scroll({
-            top: content.offsetTop - 100,
+            top: 0,
             behavior: 'instant'
           });
         } else if (tabLink.dataset.tab.split(' ')[0] === content.dataset.tab.split(' ')[0]) {
@@ -1658,6 +1658,36 @@ const Ui = {
     });
   },
 
+  casesInit: function () {
+    document.querySelectorAll('.cases').forEach(cases => {
+      const slider = cases.querySelector('.cases__slider');
+      const prevBtn = cases.querySelector('.cases__prev-btn');
+      const nextBtn = cases.querySelector('.cases__next-btn');
+      const num = cases.querySelector('.cases__num');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: nextBtn,
+          prevEl: prevBtn,
+        },
+        mousewheel: {
+          enabled: true,
+          forceToAxis: 'horizontal',
+        },
+        on: {
+          init: function () {
+            num.innerHTML = `${this.activeIndex + 1} / ${this.slides.length}`;
+          },
+          slideChange: function () {
+            num.innerHTML = `${this.activeIndex + 1} / ${this.slides.length}`;
+          }
+        }
+      })
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1698,6 +1728,7 @@ const Ui = {
     this.selectInit();
     this.targetToTabContentInit();
     this.publicsSiteInit();
+    this.casesInit();
   }
 }
 Ui.init();
