@@ -25,6 +25,17 @@
     }
   }
 
+  &--rounded {
+    padding: 10px 15px;
+    background: #F9F9FA;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+    border: 1px solid transparent;
+  }
+
   // State disabled
   &:disabled {
     pointer-events: none;
@@ -37,6 +48,9 @@
     &:hover {
       background: #F9F9FA;
     }
+    &--rounded:hover {
+      background: #F0F0F1;
+    }
   }
 
   // State active
@@ -45,5 +59,21 @@
     color: #19191D;
     border-bottom: 3px solid #5A5B6A;
     padding-bottom: 11px;
+  }
+  &--rounded.--active {
+    background: #FFFFFF;
+    border-color: #D2D2D6;
+    border-radius: 8px;
+    border: 1px solid #D2D2D6;
+  }
+
+  // State pressed 
+  &:active {
+    background: #E1E1E3;
+  }
+
+  // State focused
+  &:focus {
+    box-shadow: 0 0 0 3px #D2D2D6;
   }
 }
