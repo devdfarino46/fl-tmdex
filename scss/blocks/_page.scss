@@ -10,3 +10,40 @@
     }
   }
 }
+
+.page-cases {
+  padding-top: 20px;
+
+  &__title, 
+  &__laptop-title, 
+  &__mobile-title {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #19191D;
+    max-width: 770px;
+
+    @media (max-width: 740px) {
+      font-size: 34px;
+    }
+  }
+
+  &__title {
+    @media (max-width: 940px) {
+      display: none;
+    }
+  }
+
+  &__laptop-title {
+    @media (min-width: 941px ) or (max-width: 740px) {
+      display: none;
+    }
+  }
+
+  &__mobile-title {
+    @media (min-width: 741px) {
+      display: none;
+    }
+  }
+}
