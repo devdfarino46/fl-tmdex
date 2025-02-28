@@ -1295,6 +1295,7 @@ const Ui = {
       const slider = popular.querySelector('.popular-slider__items');
       const btnPrev = popular.querySelector('.popular-slider__btn-prev');
       const btnNext = popular.querySelector('.popular-slider__btn-next');
+      const num = popular.querySelector('.popular-slider__num');
 
       const swiper = new Swiper(slider, {
         slidesPerView: 1,
@@ -1310,6 +1311,15 @@ const Ui = {
         breakpoints: {
           501: {
             slidesPerView: 2
+          }
+        },
+
+        on: {
+          init: function() {
+            num.textContent = `${this.activeIndex + 1}/${this.slides.length}`;
+          },
+          slideChange: function() {
+            num.textContent = `${this.activeIndex + 1}/${this.slides.length}`;
           }
         }
       });
@@ -1409,6 +1419,7 @@ const Ui = {
       const swiper = new Swiper(slider.querySelector('.swiper'), {
         slidesPerView: 'auto',
         spaceBetween: 10,
+        loop: true,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
@@ -1430,6 +1441,7 @@ const Ui = {
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
         spaceBetween: 10,
+        loop: true,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
@@ -1451,6 +1463,7 @@ const Ui = {
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
         spaceBetween: 10,
+        loop: true,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
