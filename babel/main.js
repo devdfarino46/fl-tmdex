@@ -674,8 +674,6 @@ const Ui = {
     document.querySelectorAll('.popup-link').forEach(link => {
       link.addEventListener('click', (e) => {
         const popup = document.querySelector(link.getAttribute('href'));
-        const btnOk = popup.querySelector('._btn-ok');
-        const btnClose = popup.querySelector('._close-btn');
     
         popup.classList.add('--visibled');
         document.body.classList.add('no-scroll');
@@ -1268,6 +1266,28 @@ const Ui = {
     });
   },
 
+  certifsAllInit: function () {
+    const certifPopup = document.querySelector('.certif-popup');
+
+    document.querySelectorAll('.certifs-all').forEach((certifsAll) => {
+      const items = certifsAll.querySelectorAll('.certifs-all__item');
+
+      items.forEach((item, index) => {
+        item.addEventListener('click', ev => {
+          const title = item.querySelector('.certifs-all__item-title').textContent;
+          const date = item.querySelector('.certifs-all__item-date').textContent;
+          const image = item.querySelector('.certifs-all__item-image').src;
+
+          if (certifPopup) {
+            certifPopup.querySelector('.certif-popup__title').textContent = title;
+            certifPopup.querySelector('.certif-popup__date').textContent = date;
+            certifPopup.querySelector('.certif-popup__image').src = image;
+          }
+        });
+      })
+    });
+  },
+
   historyInit: function () {
     document.querySelectorAll('.history').forEach((history) => {
       const items = history.querySelectorAll('.history__item');
@@ -1742,6 +1762,7 @@ const Ui = {
     this.targetToTabContentInit();
     this.publicsSiteInit();
     this.casesInit();
+    this.certifsAllInit();
   }
 }
 Ui.init();

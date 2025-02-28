@@ -480,53 +480,25 @@
 
     @@if(context.has_certif_popup) {
     <div class="certif-popup popup" id="popup-certif">
-      <div class="certifs-gallery__wrapper popup-wrapper">
-        <div class="certifs-gallery__top">
-          <div class="certifs-gallery__text">
-            <p class="certifs-gallery__title">
+      <div class="certif-popup__wrapper popup-wrapper">
+        <div class="certif-popup__top">
+          <div class="certif-popup__text">
+            <p class="certif-popup__title">
               Лицензия на&nbsp;осуществление 
               образовательной деятельности
             </p>
-            <p class="certifs-gallery__date">2024</p>
+            <p class="certif-popup__date">2024</p>
           </div>
           <button class="btn btn--secondary btn--small _close-btn">
             <i class="icon-close"></i>
           </button>
         </div>
-        <div class="certifs-gallery__images swiper">
-          <div class="swiper-wrapper">
-            <img src="img/certifs/1.webp" alt="" 
-              class="certifs-gallery__image swiper-slide"
-              width="318" height="446"
-              data-index="0"
-              data-title="Лицензия на&nbsp;осуществление 
-                образовательной деятельности"
-              data-date="2024">
-            <img src="img/certifs/3.webp" alt="" 
-              class="certifs-gallery__image swiper-slide"
-              width="318" height="231"
-              data-index="1"
-              data-title="Какой-то второй сертификат, я в них не бум-бум"
-              data-date="2023">
-            <img src="img/certifs/1.webp" alt="" 
-              class="certifs-gallery__image swiper-slide"
-              width="318" height="446"
-              data-index="2"
-              data-title="Просто копия первой какой-то лицензии"
-              data-date="2022">
-          </div>
-        </div>
-        <div class="certifs-gallery__bottom">
-          <div class="certifs-gallery__btns">
-            <button class="btn btn--small certifs-gallery__btn-prev">
-              <i class="icon-chevron-right" style="rotate: 180deg; translate: 0 -1px;"></i>
-            </button>
-            <button class="btn btn--small certifs-gallery__btn-next">
-              <i class="icon-chevron-right"></i>
-            </button>
-          </div>
-          <p class="certifs-gallery__num">0/0</p>
-        </div>
+        <img src="img/certifs/1.webp" alt="" 
+          class="certif-popup__image"
+          width="318" height="446"
+          data-title="Лицензия на&nbsp;осуществление 
+            образовательной деятельности"
+          data-date="2024">
       </div>
     </div>
     }
