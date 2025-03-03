@@ -14,6 +14,7 @@
     line-height: 129%;
     letter-spacing: 0.04em;
     color: #19191D;
+    width: 19px;
   }
 
   &__text {
@@ -27,6 +28,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @media (max-width: 740px) {
+      width: 82px;
+    }
   }
 
   i {
