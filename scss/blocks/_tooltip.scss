@@ -53,11 +53,18 @@
     line-height: 143%;
     color: #787885;
 
-    li {
-      font: inherit;
-      list-style: disc;
-      list-style-position: inside;
-      margin-left: 1em;
+    &>ul {
+      &>li {
+        font: inherit;
+        list-style: disc;
+        list-style-position: inside;
+        margin-left: 1em;
+      }
+
+      &.--outside>li{
+        margin-left: 1.5em;
+        list-style-position: outside;
+      }
     }
 
     b {
