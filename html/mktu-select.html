@@ -404,5 +404,98 @@
   </section>
 
   @@include('blocks/_form-main.html', {mktu_select_sub: true})
+
+  <section class="mktu-whatis container">
+    <div class="mktu-whatis__wrapper">
+      <h2 class="mktu-whatis__title">
+        Что такое МКТУ и зачем это нужно?
+      </h2>
+      <p class="mktu-whatis__text">
+        Международная классификация товаров и услуг (МКТУ) — это перечень 
+        продукции и сервисов, которые разделены на классы, который широко 
+        используется во многих странах мира. Поскольку выбор подходящих 
+        классов МКТУ является обязательным этапом при регистрации товарного 
+        знака, мы сделали бесплатный сервис для самостоятельного подбора 
+        соответствующих классов. Вам нужно лишь указать вид деятельности, 
+        например, одежда, чтобы узнать, какие классы МКТУ вам подходят.
+      </p>
+      <a href="#" class="mktu-whatis__link link">узнать больше</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="page-line"></div>
+  </div>
+
+  <section class="faq">
+    <div class="faq__container">
+      <h2 class="faq__title">
+        <b>Ответы</b> на вопросы о МКТУ
+      </h2>
+
+      <div class="faq__accordeons">
+        <div type="button" class="accordeon">
+          <p>Может ли разработчик ПО зарегистрировать своё авторское право для его защиты?</p>
+          <button type="button" class="btn btn--secondary btn--small">
+            <i class="icon-plus"></i>
+            <i class="icon-minus"></i>
+          </button>
+        </div>
+        <div class="faq-answer subaccordeon">
+          <p class="_num">01</p>
+          <h3>Какие базы учитываются в поиске</h3>
+          <p>
+            В результатах поиска можно увидеть все знаки, зарегистрированные в ФИПС 
+            по национальной или международной процедуре, а также обозначения, 
+            находящиеся в процессе регистрации. Кроме того, учитываются заявки, 
+            которые подавались на регистрацию и получили отказ либо были отозваны.
+          </p>
+          <p>
+            <img src="data:," 
+              data-src="img/bases-screen.webp" alt="" 
+              class="lazyload " width="498" height="441">
+          </p>
+          <h4>Поиск проводится по шести независимым базам:</h4>
+          <ul>
+            <li>Зарегистрированные товарные знаки РФ</li>
+            <li>Зарегистрированные НМПТ (наименования места происхождения товаров)</li>
+            <li>Признанные общеизвестными знаки (ОТЗ)</li>
+            <li>Международные регистрации, распространенные на Россию</li>
+            <li>Ранее поданные заявки на товарные знаки РФ</li>
+            <li>Ранее поданные заявки на НМПТ</li>
+          </ul>
+        </div>
+        
+        <div type="button" class="accordeon">
+          <p>Нужно ли регистрировать программу для ЭВМ в Роспатенте?</p>
+          <button type="button" class="btn btn--secondary btn--small">
+            <i class="icon-plus"></i>
+            <i class="icon-minus"></i>
+          </button>
+        </div>
+        <div class="faq-answer subaccordeon">
+          <h3>NO DESIGN</h3>
+          <p>no design</p>
+        </div>
+        
+        <div type="button" class="accordeon">
+          <p>Нужно ли как-то оформлять своё право на использование придуманного доменного имени?</p>
+          <button type="button" class="btn btn--secondary btn--small">
+            <i class="icon-plus"></i>
+            <i class="icon-minus"></i>
+          </button>
+        </div>
+        <div class="faq-answer subaccordeon">
+          <h3>NO DESIGN</h3>
+          <p>no design</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="section consult-help-section container">
+    @@include('blocks/_consult-help.html', {isSection: true})
+  </section>
 </main>
 @@include('blocks/_footer.html')
