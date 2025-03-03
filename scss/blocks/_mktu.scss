@@ -17,6 +17,7 @@
   text-align: center;
   width: 35px;
   height: 35px;
+  user-select: none;
 
   span {
     pointer-events: none;
@@ -35,6 +36,18 @@
   &--okved {
     width: auto;
     height: auto;
+  }
+
+  &.--active {
+    background: #5A5B6A;
+    box-shadow: transparent;
+    color: #FFFFFF;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: #4A4B57;
+      }
+    }
   }
 
   // Corresp

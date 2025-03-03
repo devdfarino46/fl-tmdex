@@ -1,0 +1,28 @@
+.mktu-classes-tabs {
+
+  &__label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #787885;
+  }
+
+  &__mktus {
+    padding: 10px 0;
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    margin-right: calc((100vw - 100%) / -2);
+    padding-right: calc((100vw - 100%) / 2);
+    
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+
+    @media (any-hover: hover) {
+      &:hover::-webkit-scrollbar-thumb {
+        background: #d2d2d6;
+      }
+    }
+  }
+}
