@@ -1,0 +1,120 @@
+@@include('blocks/_header.html')
+<main class="page page-mktu-select">
+  <section class="section search">
+    <div class="search__container">
+      <h1 class="search__title">
+        Подберите МКТУ для <br>
+        товарного знака</h1>
+      
+      <form class="search-form-mktu">
+        <label class="search-form-mktu__input input">
+          <p class="input__label">
+            Поиск МКТУ <span class="_grey">(12 редакция 2023 года)</span>
+            <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend"></i>
+          </p>
+          <div class="input__wrapper">
+            <input type="text" placeholder="Например, реклама или мкту 15">
+            <button type="button"><i class="icon-close"></i></button>
+          </div>
+          <p class="input__helper">Status</p>
+        </label>
+
+
+        <button type="submit" class="search-form__submit btn btn--lime btn--large">
+          <span>Найти</span>
+          <i class="icon-search"></i>
+        </button>
+
+        <div action="#" class="mktu-dropdown">
+          <ul class="mktu-dropdown__list">
+            @@for(let i = 1; i <= 9; i++) {
+              <li data-value="0`+i+`" class="mktu">0`+i+`</li>
+              <input type="checkbox" name="" value="0`+i+`">
+              <input type="checkbox" name="" value="0`+i+`">
+            }
+            @@for (let i = 10; i <= 45; i++) {
+              <li data-value="`+i+`" class="mktu">`+i+`</li>
+              <input type="checkbox" name="" value="`+i+`">
+              <input type="checkbox" name="" value="`+i+`">
+            }
+          </ul>
+          <div class="mktu-dropdown__checkbox-wrap">
+            <label class="mktu-dropdown__checkbox checkbox">
+              <div class="checkbox__input">
+                <input type="checkbox">
+                <i class="icon-check"></i>
+              </div>
+              <p class="checkbox__label">Учитывать корреспондирующие классы</p>
+            </label>
+            <i class="icon-alert-question tooltip-link" data-href="#tooltip-mktu-legend-corresp"></i>
+          </div>
+          <div class="mktu-dropdown__btns">
+            <button type="button" class="mktu-dropdown__apply-btn btn">
+              <span>применить</span>
+            </button>
+            <button type="button" class="mktu-dropdown__clear-btn btn btn--secondary">
+              <span>очистить</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mktu-dropdown-text ">
+          <ul class="mktu-dropdown-text__list">
+            
+            @@for (let i = 1; i < 10; i++) {
+              <li class="mktu-dropdown-text__item" data-value="0`+i+`">
+                <p class="mktu-dropdown-text__num">0`+i+`</p>
+                <p class="mktu-dropdown-text__label">
+                  Химические продукты, предназначенные для использования в
+                  промышленных, научных целях и сельском хозяйстве, в том числе,
+                  входящие в состав товаров, относящихся к другим классам
+                </p>
+                <p class="mktu-dropdown-text__text">
+                  <b>Предох</b>ранители для каучука, <b>Предох</b>ранители для консервации кирпичной кладки, за
+                  исключением
+                  красок и масел, <b>Предох</b>ранители для цемента, за исключением
+                  красок и масел, <b>Предох</b>ранители для черепицы, за исключением
+                  красок и масел, Препараты, <b>Предох</b>раняющие от влажности
+                  кирпичную или каменную кладку, за исключением красок
+                </p>
+              </li>
+              <input type="checkbox" value="0`+i+`">
+            }
+            @@for (let i = 10; i < 46; i++) {
+              <li class="mktu-dropdown-text__item" data-value="`+i+`">
+                <p class="mktu-dropdown-text__num">`+i+`</p>
+                <p class="mktu-dropdown-text__label">
+                  Химические продукты, предназначенные для использования в
+                  промышленных, научных целях и сельском хозяйстве, в том числе,
+                  входящие в состав товаров, относящихся к другим классам
+                </p>
+                <p class="mktu-dropdown-text__text">
+                  <b>Предох</b>ранители для каучука, <b>Предох</b>ранители для консервации кирпичной кладки, за
+                  исключением
+                  красок и масел, <b>Предох</b>ранители для цемента, за исключением
+                  красок и масел, <b>Предох</b>ранители для черепицы, за исключением
+                  красок и масел, Препараты, <b>Предох</b>раняющие от влажности
+                  кирпичную или каменную кладку, за исключением красок
+                </p>
+              </li>
+              <input type="checkbox" value="`+i+`">
+            }
+      
+          </ul>
+          <div class="mktu-dropdown-text__btns">
+            <button type="button" class="mktu-dropdown-text__apply-btn btn">
+              <span>применить</span>
+            </button>
+            <button type="button" class="mktu-dropdown-text__clear-btn btn btn--secondary">
+              <span>очистить</span>
+            </button>
+          </div>
+          <p class="mktu-dropdown-text__no-find">
+            Совпадений нет. Попробуйте другой запрос.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+@@include('blocks/_footer.html')

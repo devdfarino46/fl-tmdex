@@ -1,0 +1,34 @@
+.search-form-mktu {
+  position: relative;
+  display: grid;
+  grid-template-columns: 468px auto 1fr;
+  align-items: flex-end;
+  gap: 20px 30px;
+
+  @media (max-width: 940px) {
+    grid-template-columns: 1fr auto;
+  }
+
+  @media (max-width: 740px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__input {
+    
+  }
+
+
+  .mktu-dropdown,
+  .mktu-dropdown-text {
+    position: absolute;
+    grid-column: 1 / 3;
+    grid-row: 2;
+    align-self: flex-start;
+    margin-top: 5px;
+
+    @media (max-width: 740px) {
+      grid-column: 1;
+      margin-top: -15px;
+    }
+  }
+}

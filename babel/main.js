@@ -161,11 +161,10 @@ const Ui = {
   },
 
   updateMktuFiltersUI: function () {
-    const search = document.querySelector('.search');
-    const searchForm = document.querySelector('.search-form');
+    const searchForm = document.querySelector('.search-form, .search-form-mktu');
     const mktuSelects = document.querySelectorAll('.mktu-select');
   
-    if (mktuSelects && search && searchForm) {
+    if (searchForm) {
       const mktuItems = searchForm.querySelectorAll(
         '.mktu-dropdown .mktu');
       const mktuItemsText = searchForm.querySelectorAll(
@@ -260,7 +259,7 @@ const Ui = {
   },
 
   searchFormInit: function () {
-    document.querySelectorAll('.search-form').forEach(searchForm => {
+    document.querySelectorAll('.search-form, .search-form-mktu').forEach(searchForm => {
       const switchInput = searchForm.querySelector('.search-form__switch');
       const proInputs = searchForm.querySelectorAll('.search-form__pro-input');
     
@@ -288,11 +287,9 @@ const Ui = {
       }
       
       // If search by title and mktu input is not hidden
-      if ( 
-        !switchInput.querySelector('input').checked && 
-        !searchForm.classList.contains('--hide-mktu') 
+      if ( true
       ) {
-        const mktuInput = searchForm.querySelector('.search-form [data-item="mktu"]');
+        const mktuInput = searchForm.querySelector('.search-form [data-item="mktu"], .search-form-mktu__input');
         const mktuDropdown = searchForm.querySelector('.mktu-dropdown');
         const mktuDropdownText = searchForm.querySelector('.mktu-dropdown-text');
     
