@@ -1,0 +1,120 @@
+.mktu-products {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+
+    b {
+      @media (min-width: 941px) {
+        color: #B4B4BB;
+      }
+    }
+  }
+
+  &__filter {
+    margin-top: 40px;
+
+    @media (max-width: 740px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__filter-label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #787885;
+  }
+
+  &__filter-btns {
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0;
+    margin-right: -30px;
+    padding-right: 30px;
+
+    .mktu {
+      flex-shrink: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+
+    @media (any-hover: hover) {
+      &:hover::-webkit-scrollbar-thumb {
+        background: #d2d2d6;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    @media (max-width: 940px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 740px) {
+      margin-top: 10px;
+      grid-template-columns: 1fr;
+    }
+
+    &[data-colls="2"] {
+      grid-template-columns: 1fr 1fr;
+
+      @media (max-width: 740px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &[data-colls="1"] {
+      grid-template-columns: 1fr;
+
+      @media (max-width: 940px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &>li {
+      margin-top: -1px;
+      margin-left: -1px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 20px;
+      border: 1px solid #D2D2D6;
+      border-radius: 20px;
+
+      &:not(.--active) {
+        display: none;
+      }
+
+      &>p {
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 126%;
+        color: #19191D;
+      }
+
+      &>ul {
+        
+        &>li {
+          list-style: disc;
+          margin-left: 1.5em;
+        }
+      }
+    }
+  }
+}

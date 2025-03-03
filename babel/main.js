@@ -1734,6 +1734,60 @@ const Ui = {
     });
   },
 
+  mktuProductsInit: function () {
+    document.querySelectorAll('.mktu-products').forEach(mktuProducts => {
+      const list = mktuProducts.querySelector('.mktu-products__list');
+      const filterBtns = mktuProducts.querySelectorAll('.mktu-products__filter-btns .mktu');
+      const items = mktuProducts.querySelectorAll('.mktu-products__list>li');
+
+      let values = [];
+      
+      const update = function () {
+        // Сброс values[]
+        values = [];
+        // Ищем активные кнопки
+        filterBtns.forEach(btn => {
+          if (btn.classList.contains('--active')) {
+            values.push(btn.dataset.value);
+          }
+        });
+
+        if (values.length > 0) {
+          items.forEach(item => {
+            item.classList.remove('--active');
+          });
+          values.forEach(value => {
+            items.forEach(item => {
+              if (item.dataset.value === value) {
+                item.classList.add('--active');
+              }
+            });
+          });
+        } else {
+          items.forEach(item => {
+            item.classList.add('--active');
+          });
+        }
+
+        if (values.length === 2) {
+          list.setAttribute('data-colls', '2');
+        } else if (values.length === 1) {
+          list.setAttribute('data-colls', '1');
+        } else {
+          list.removeAttribute('data-colls');
+        }
+      }
+      update();
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', ev => {
+          btn.classList.toggle('--active');
+          update();
+        });
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1777,6 +1831,7 @@ const Ui = {
     this.casesInit();
     this.certifsAllInit();
     this.mktuSliderInit();
+    this.mktuProductsInit();
   }
 }
 Ui.init();
