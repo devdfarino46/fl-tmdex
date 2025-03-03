@@ -1718,6 +1718,22 @@ const Ui = {
     });
   },
 
+  mktuSliderInit: function () {
+    document.querySelectorAll('.mktu-slider').forEach(mktuSlider => {
+      const slider = mktuSlider.querySelector('.mktu-slider__slider');
+
+      const swiper = new Swiper(slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        mousewheel: {
+          enabled: true,
+          forceToAxis: 'horizontal',
+        }
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1760,6 +1776,7 @@ const Ui = {
     this.publicsSiteInit();
     this.casesInit();
     this.certifsAllInit();
+    this.mktuSliderInit();
   }
 }
 Ui.init();
