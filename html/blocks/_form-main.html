@@ -1,34 +1,63 @@
-<section class="section form-main">
+<section class="section form-main  @@class">
   <div class="form-main__container">
     <div class="form-main__wrapper">
+      @@if(!context.mktu_select) {
       <h2 class="form-main__title"
         data-text-success="Заявка успешно отправлена!">
         Узнайте вероятность регистрации <br>
         тoварного знака у экспертов
       </h2>
-      <p class="form-main__descr"
-        data-text-success="Наш специалист свяжется с вами через несколько минут. 
-        Вы так же можете написать нам в мессенджеры:">
-        Оставьте заявку или напишите в мессенджер и
-        мы поможем найти решение
-      </p>
-      <div class="form-main__socials">
-        <a href="#" class="btn btn--secondary">
-          <span>Telegram</span>
-          <i class="icon-tg"></i>
-        </a>
-        <a href="#" class="btn btn--secondary">
-          <span>WhatsApp</span>
-          <i class="icon-whatsapp"></i>
-        </a>
+      }
+      @@if(context.mktu_select) {
+      <h2 class="form-main__title"
+        data-text-success="Заявка успешно отправлена!">
+        Отправьте эксперту на проверку
+      </h2>
+      }
+
+
+      @@if(context.mktu_select) {
+      <div class="form-main__mktu-selects-wrap">
+        <p class="form-main__mktu-selects-label">Выбранные классы:</p>
+        
+        <div class="form-main__mktu-selects">
+          @@for (let i = 1; i < 10; i++) {
+          <button type="button" class="mktu-select tooltip-link" data-value="0`+i+`" data-href="#tooltip-mktu-0">
+            <p class="mktu-select__num">0`+i+`</p>
+            <p class="mktu-select__text">Продукты химические 123 123</p>
+            <i class="icon-close"></i>
+          </button>
+          }
+          @@for (let i = 10; i < 35; i++) {
+          <button type="button" class="mktu-select tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">
+            <p class="mktu-select__num">`+i+`</p>
+            <p class="mktu-select__text">Продукты химические 123 123</p>
+            <i class="icon-close"></i>
+          </button>
+          }
+          <button type="button" class="mktu-select tooltip-link" data-value="35" data-href="#tooltip-mktu-35">
+            <p class="mktu-select__num">35</p>
+            <p class="mktu-select__text">Продукты химические 123 123</p>
+            <i class="icon-close"></i>
+          </button>
+          @@for (let i = 36; i < 46; i++) {
+          <button type="button" class="mktu-select tooltip-link" data-value="`+i+`" data-href="#tooltip-mktu-0">
+            <p class="mktu-select__num">`+i+`</p>
+            <p class="mktu-select__text">Продукты химические 123 123</p>
+            <i class="icon-close"></i>
+          </button>
+          }
+        </div>
       </div>
+      }
 
       <form action="#" class="form-main__form">
         <div class="form-main__inputs-wrap">
           <label class="input" data-status="">
             <p class="input__label">
               Какое название проверяем?
-              <i class="icon-alert-question tooltip-link" data-href="#tooltip-no-design"></i>
+              <i class="icon-alert-question tooltip-link" data-href="#tooltip-no-design"
+                style="color: #D6FFAD;"></i>
             </p>
             <div class="input__wrapper">
               <input type="text" placeholder="Например, ТМДЕКС" required>
@@ -61,6 +90,34 @@
           <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
         </label>
       </form>
+      
+      <div class="form-main__socials-wrap">
+        @@if(!context.mktu_select) {
+        <p class="form-main__descr"
+          data-text-success="Наш специалист свяжется с вами через несколько минут. 
+          Вы так же можете написать нам в мессенджеры:">
+          Оставьте заявку или напишите в мессенджер и
+          мы поможем найти решение
+        </p>
+        }
+        @@if(context.mktu_select) {
+        <p class="form-main__descr"
+          data-text-success="Наш специалист свяжется с вами через несколько минут. 
+          Вы так же можете написать нам в мессенджеры:">
+          Или напишите в мессенджеры
+        </p>
+        }
+        <div class="form-main__socials">
+          <a href="#" class="btn btn--secondary">
+            <span>Telegram</span>
+            <i class="icon-tg"></i>
+          </a>
+          <a href="#" class="btn btn--secondary">
+            <span>WhatsApp</span>
+            <i class="icon-whatsapp"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -59,4 +59,8 @@
   &:active {
     background: #E1E1E3;
   }
+
+  &:not(.--show) {
+    display: none;
+  }
 }
