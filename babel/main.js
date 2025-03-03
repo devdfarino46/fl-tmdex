@@ -1832,6 +1832,11 @@ const Ui = {
     this.certifsAllInit();
     this.mktuSliderInit();
     this.mktuProductsInit();
+
+    addEventListener('popstate', ev => {
+      ev.preventDefault();
+      alert('HUI');
+    });
   }
 }
 Ui.init();
