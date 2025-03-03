@@ -1,7 +1,7 @@
 <section class="section form-main  @@class">
   <div class="form-main__container">
     <div class="form-main__wrapper">
-      @@if(!context.mktu_select && !context.mktu_select_sub) {
+      @@if(!context.mktu_select && !context.mktu_select_sub && !context.mktu_class) {
       <h2 class="form-main__title"
         data-text-success="Заявка успешно отправлена!">
         Узнайте вероятность регистрации <br>
@@ -18,6 +18,12 @@
       <h2 class="form-main__title"
         data-text-success="Заявка успешно отправлена!">
         Бесплатно проверим шанс регистрации товарного знака в выбранных классах МКТУ
+      </h2>
+      }
+      @@if(context.mktu_class) {
+      <h2 class="form-main__title"
+        data-text-success="Заявка успешно отправлена!">
+        Проверим товарный знак в 1 классе 
       </h2>
       }
 
@@ -98,7 +104,7 @@
       </form>
       
       <div class="form-main__socials-wrap">
-        @@if(!context.mktu_select && !context.mktu_select_sub) {
+        @@if(!context.mktu_select && !context.mktu_select_sub && !context.mktu_class) {
         <p class="form-main__descr"
           data-text-success="Наш специалист свяжется с вами через несколько минут. 
           Вы так же можете написать нам в мессенджеры:">
@@ -114,6 +120,13 @@
         </p>
         }
         @@if(context.mktu_select_sub) {
+        <p class="form-main__descr"
+          data-text-success="Наш специалист свяжется с вами через несколько минут. 
+          Вы так же можете написать нам в мессенджеры:">
+          Или напишите в мессенджеры
+        </p>
+        }
+        @@if(context.mktu_class) {
         <p class="form-main__descr"
           data-text-success="Наш специалист свяжется с вами через несколько минут. 
           Вы так же можете написать нам в мессенджеры:">
