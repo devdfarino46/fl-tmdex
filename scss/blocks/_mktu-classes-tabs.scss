@@ -1,4 +1,9 @@
 .mktu-classes-tabs {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
 
   &__label {
     font-weight: 400;
