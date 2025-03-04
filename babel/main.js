@@ -138,12 +138,6 @@ const Ui = {
     } else {
       accordeon.classList.add('--active');
     }
-  
-    if (accordeon.classList.contains('--active')) {
-      
-    } else {
-      
-    }
   },
 
   mktuCorrespsHandler: function (mktu, mktus, handler) {
@@ -480,9 +474,12 @@ const Ui = {
     document.querySelectorAll('.accordeon').forEach(function (accordeon) {
       const subaccordeon = accordeon.nextElementSibling;
       const btn = accordeon.querySelector('.btn');
+      const switchElem = accordeon.querySelector('.switch');
     
       accordeon.addEventListener('click', ev => {
-        Ui.accordeonOpen(accordeon);
+        if (!ev.composedPath().includes(switchElem)) {
+          Ui.accordeonOpen(accordeon);
+        }
       });
 
       accordeon.addEventListener('mouseover', ev => {
@@ -572,11 +569,12 @@ const Ui = {
 
   toggleBtnInit: function () {
     document.querySelectorAll('.btn--toggle').forEach(function (btn) {
-      if (!btn.classList.contains('--no-event')) {
-        btn.addEventListener('click', () => {
+      btn.addEventListener('click', () => {
+        if (!btn.classList.contains('--no-event')) {
+          console.log(123);
           btn.classList.toggle('--opened');
-        });
-      }
+        }
+      });
     });
   },
   
@@ -1788,6 +1786,48 @@ const Ui = {
     });
   },
 
+  mktuAccordeonInit: function () {
+    document.querySelectorAll('.mktu-accordeon').forEach(mktuAccordeon => {
+      const label = mktuAccordeon.querySelector('.mktu-accordeon__label');
+      const toggleBtn = mktuAccordeon.querySelector('.mktu-accordeon__toggle-btn');
+      const dropdown = mktuAccordeon.querySelector('.mktu-accordeon__dropdown');
+      const text = mktuAccordeon.querySelector('.mktu-accordeon__text');
+      const textOpenBtn = mktuAccordeon.querySelector('.mktu-accordeon__text-open-btn');
+      const textCloseBtn = mktuAccordeon.querySelector('.mktu-accordeon__text-close-btn');
+
+      if (mktuAccordeon.classList.contains('--active')) {
+        toggleBtn.classList.add('--opened');
+      }
+
+      const updateDropdownHeight = function () {
+        if (mktuAccordeon.classList.contains('--active')) {
+          dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
+        } else {
+          dropdown.style.maxHeight = '0px';
+        }
+      }
+      updateDropdownHeight();
+
+      label.addEventListener('click', ev => {
+        mktuAccordeon.classList.toggle('--active');
+        toggleBtn.classList.toggle('--opened');
+
+        updateDropdownHeight();
+      });
+
+      if (textOpenBtn) textOpenBtn.addEventListener('click', ev => {
+        dropdown.classList.add('--text-show');
+        text.style.maxHeight = `${text.scrollHeight}px`;
+        updateDropdownHeight();
+      });
+      if (textCloseBtn) textCloseBtn.addEventListener('click', ev => {
+        dropdown.classList.remove('--text-show');
+        text.style.maxHeight = null;
+        updateDropdownHeight();
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -1832,11 +1872,7 @@ const Ui = {
     this.certifsAllInit();
     this.mktuSliderInit();
     this.mktuProductsInit();
-
-    addEventListener('popstate', ev => {
-      ev.preventDefault();
-      alert('HUI');
-    });
+    this.mktuAccordeonInit();
   }
 }
 Ui.init();

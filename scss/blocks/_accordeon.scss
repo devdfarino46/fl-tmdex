@@ -1,14 +1,26 @@
 .accordeon {
   padding: 20px 0;
   display: grid;
-  gap: 30px;
+  gap: 10px 30px;
   grid-template-columns: 1fr auto;
   align-items: center;
   border-bottom: 1px solid #D2D2D6;
   cursor: pointer;
   user-select: none;
+
+  &--with-switch {
+    grid-template-columns: 1fr auto auto;
+
+    @media (max-width: 740px) {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &--with-switch:has(.accordeon-switch-hide:checked) + .subaccordeon .accordeon-elem-allow-hidden {
+    display: none;
+  }
    
-  p {
+  &>p {
     font-weight: 400;
     font-size: 20px;
     line-height: 125%;
@@ -26,15 +38,22 @@
     }
   }
 
-  .btn {
+  &>.btn {
     position: relative;
   }
+  &--with-switch>.btn {
 
-  .btn i {
+    @media (max-width: 740px) {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+  }
+
+  &>.btn i {
     transition: .2s ease;
   }
 
-  .btn .icon-close, .btn .icon-minus {
+  &>.btn .icon-close, &>.btn .icon-minus {
     position: absolute;
     opacity: 0;
     transform: scale(0);
@@ -48,7 +67,7 @@
 
   // State hover
   @media (any-hover: hover) {
-    &:hover p {
+    &:hover>p {
       color: #4A4B57;
     }
   }
@@ -57,12 +76,12 @@
   &.--active {
     border-bottom: none;
   }
-  &.--active .btn .icon-close, .btn .icon-minus {
+  &.--active>.btn .icon-close, &.--active>.btn .icon-minus {
     opacity: 1;
     transform: scale(1);
   }
 
-  &.--active .btn .icon-plus {
+  &.--active>.btn .icon-plus {
     opacity: 0;
     transform: scale(0);
   }

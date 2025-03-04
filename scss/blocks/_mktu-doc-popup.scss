@@ -1,0 +1,46 @@
+.mktu-doc-popup {
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 20px;
+    gap: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 1170px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__subaccordeon {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subaccordeon-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subaccordeon-note {
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #19191D;
+
+    ._busy {
+      font-weight: 700;
+      color: #F44336;
+    }
+  }
+}
