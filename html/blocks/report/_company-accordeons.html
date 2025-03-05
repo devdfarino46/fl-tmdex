@@ -1,5 +1,5 @@
 <div class="report__accordeons">
-  @@include('../_card--company.html')
+  @@include('../_card--company.html', {mktu_doc: true})
 
   <div type="button" class="accordeon">
     <p>Заявки компании <b>14</b></p>
@@ -10,7 +10,7 @@
   </div>
   <div class="cards subaccordeon">
     @@for (let i = 0; i < 6; i++) {
-      @@include('../_card.html')
+      @@include('../_card.html', {mktu_doc: true})
     }
     <button type="button" class="cards__load-btn btn btn--secondary btn--small">
       <span>Загрузить ещё</span>
@@ -27,7 +27,7 @@
   </div>
   <div class="cards subaccordeon">
     @@for (let i = 0; i < 6; i++) {
-      @@include('../_card--certif.html')
+      @@include('../_card--certif.html', {mktu_doc: true})
     }
     <button type="button" class="cards__load-btn btn btn--secondary btn--small">
       <span>Загрузить ещё</span>
