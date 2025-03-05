@@ -668,27 +668,29 @@ const Ui = {
   popupLinkInit: function () {
     document.querySelectorAll('.popup-link').forEach(link => {
       link.addEventListener('click', (e) => {
-        const popup = document.querySelector(link.getAttribute('href'));
-    
-        popup.classList.add('--visibled');
-        document.body.classList.add('no-scroll');
-
-        if (link.getAttribute('href') === '#popup-consult') {
-          const dataMenId = link.getAttribute('data-consult-men-id');
-          const dataTitle = link.getAttribute('data-consult-title');
-
-          const consultPopup = document.querySelector('#popup-consult');
-
-          if (consultPopup) {
-            const title = consultPopup.querySelector('.consult-popup__title');
-            const id = consultPopup.querySelector('.consult-popup__men-id');
-
-            if (dataMenId !== null) {
-              title.innerHTML = dataTitle;
-              id.value = dataMenId;
-            } else {
-              title.innerHTML = title.getAttribute('data-default-title');
-              id.value = '';
+        if (!e.target.closest('.card a')) {
+          const popup = document.querySelector(link.getAttribute('href'));
+      
+          popup.classList.add('--visibled');
+          document.body.classList.add('no-scroll');
+  
+          if (link.getAttribute('href') === '#popup-consult') {
+            const dataMenId = link.getAttribute('data-consult-men-id');
+            const dataTitle = link.getAttribute('data-consult-title');
+  
+            const consultPopup = document.querySelector('#popup-consult');
+  
+            if (consultPopup) {
+              const title = consultPopup.querySelector('.consult-popup__title');
+              const id = consultPopup.querySelector('.consult-popup__men-id');
+  
+              if (dataMenId !== null) {
+                title.innerHTML = dataTitle;
+                id.value = dataMenId;
+              } else {
+                title.innerHTML = title.getAttribute('data-default-title');
+                id.value = '';
+              }
             }
           }
         }

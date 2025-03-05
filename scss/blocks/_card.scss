@@ -7,6 +7,10 @@
   border-bottom: 1px solid #D2D2D6;
   grid-template-columns: auto 1fr;
 
+  &.popup-link {
+    cursor: pointer;
+  }
+
   @media (max-width: 740px) {
     gap: 10px;
     padding: 10px 0 20px;
@@ -58,7 +62,7 @@
     line-height: 143%;
     color: #787885;
 
-    i {
+    a {
       font-style: normal;
       font-size: 14px;
       line-height: 129%;
