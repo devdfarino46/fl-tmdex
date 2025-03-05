@@ -669,7 +669,9 @@ const Ui = {
     document.querySelectorAll('.popup-link').forEach(link => {
       link.addEventListener('click', (e) => {
         if (!e.target.closest('.card a') &&
-            !e.target.closest('.card .mktu')) {
+            !e.target.closest('.card .tooltip-link') &&
+            !e.target.closest('.card .popup-link') &&
+            !e.target.closest('.card .btn')) {
           const popup = document.querySelector(link.getAttribute('href'));
       
           popup.classList.add('--visibled');
