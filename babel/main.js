@@ -1815,6 +1815,13 @@ const Ui = {
         updateDropdownHeight();
       });
 
+      label.addEventListener('mouseover', ev => {
+        toggleBtn.classList.add('--hover');
+      });
+      label.addEventListener('mouseout', ev => {
+        toggleBtn.classList.remove('--hover');
+      });
+
       if (textOpenBtn) textOpenBtn.addEventListener('click', ev => {
         dropdown.classList.add('--text-show');
         text.style.maxHeight = `${text.scrollHeight}px`;
