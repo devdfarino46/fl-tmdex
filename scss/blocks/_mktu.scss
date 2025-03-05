@@ -20,6 +20,15 @@
   height: 35px;
   user-select: none;
 
+  &--menu-helper:not(&--okved) {
+    width: 42px;
+    height: 42px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #19191D;
+  }
+
   span {
     pointer-events: none;
     display: block;

@@ -961,6 +961,10 @@ const Ui = {
         if (slide.getAttribute('data-menu-card-link') !== null) {
           slide.addEventListener('click', ev => {
             const slideClicked = ev.currentTarget;
+            menu.scroll({
+              top: 0,
+              behavior: 'smooth'
+            });
             
             menuCards.forEach(menuCard => {
               

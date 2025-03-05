@@ -1,0 +1,40 @@
+.menu-mktu-helper {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  margin-top: 40px;
+
+  &__colls {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: 700px 277px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @media (max-width: 1230px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__coll {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__coll-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #787885;
+  }
+
+  &__mktus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  &__link {
+  }
+}
