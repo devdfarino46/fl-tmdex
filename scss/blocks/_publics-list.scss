@@ -1,0 +1,28 @@
+.publics-list {
+  margin-top: 80px;
+
+  @media (max-width: 40px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 940px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__load-btn {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
