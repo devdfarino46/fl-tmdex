@@ -249,7 +249,7 @@
         @@include('_card.html', {class: "--no-border-bottom"})
 
         <div class="mktu-doc-popup__accordeons">
-          <div type="button" class="accordeon accordeon--with-switch --active">
+          <div type="button" class="accordeon accordeon--with-switch">
             <p>Занимаемые классы МКТУ <b>6</b></p>
             <label class="search-form__switch switch" data-item="switch">
               <div class="switch__wrapper">
@@ -694,6 +694,165 @@
               <span class="_busy">*</span> — мы не можем на 100% распознать, но показываем то, в чем точно уверены.
             </p>
           </div>
+
+          <div type="button" class="accordeon accordeon">
+            <p>Документооборот по заявке <b>4</b></p>
+            <button type="button" class="btn btn--secondary btn--small">
+              <i class="icon-plus"></i>
+              <i class="icon-minus"></i>
+            </button>
+          </div>
+          <div class="mktu-doc-popup__subaccordeon subaccordeon">
+            <div class="mktu-doc-popup__subaccordeon-tables">
+              <table class="table">
+                <tr>
+                  <th style="width: 100%;">Входящая документация ФИПС</th>
+                  <th style="white-space: nowrap;">Дата</th>
+                </tr>
+                <tr>
+                  <td>Корреспонденция, поступившая через личный кабинет и требующая представления оригинала документа</td>
+                  <td>11.09.2007</td>
+                </tr>
+                <tr>
+                  <td>Заявление об изменении сведений о заявителе в случае передачи или перехода права</td>
+                  <td>11.09.2007</td>
+                </tr>
+                <tr>
+                  <td>Письмо о соответствии перечня товаров и/или услуг требованиям Кодекса</td>
+                  <td>11.09.2007</td>
+                </tr>
+                <tr>
+                  <td>Уведомление об отказе в удовлетворении просьбы</td>
+                  <td>11.09.2007</td>
+                </tr>
+                <tr>
+                  <td>Запрос формальной экспертизы</td>
+                  <td>н/д</td>
+                </tr>
+              </table>
+              <table class="table">
+                <tr>
+                  <th style="width: 100%;">Исходящая документация заявителя</th>
+                  <th style="white-space: nowrap;">Дата</th>
+                </tr>
+                <tr>
+                  <td>Уведомление о необходимости соглашения по заявкам на тождественные знаки</td>
+                  <td>11.09.2007</td>
+                </tr>
+                <tr>
+                  <td>Заявление об изменении наименования заявителя</td>
+                  <td>11.09.2007</td>
+                </tr>
+                <tr>
+                  <td>Ходатайство о восстановлении пропущенного срока</td>
+                  <td>11.09.2007</td>
+                </tr>
+                <tr>
+                  <td>Заявление об изменении наименования заявителя</td>
+                  <td>11.09.2007</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div type="button" class="accordeon accordeon">
+            <p>Последние изменения <b>5</b></p>
+            <button type="button" class="btn btn--secondary btn--small">
+              <i class="icon-plus"></i>
+              <i class="icon-minus"></i>
+            </button>
+          </div>
+          <div class="mktu-doc-popup__subaccordeon subaccordeon">
+            <table class="table">
+              <tr>
+                <th style="white-space: nowrap;">Дата</th>
+                <th style="width: 100%;">Событие</th>
+              </tr>
+              <tr>
+                <td>22.09.2007</td>
+                <td>Продление срока действия исключительного права на товарный знак</td>
+              </tr>
+              <tr>
+                <td>11.09.2007</td>
+                <td>Продление срока действия исключительного права на товарный знак</td>
+              </tr>
+              <tr>
+                <td>11.09.2007</td>
+                <td>Изменение наименования, фамилии, имени, отчества правообладателя и/или места нахождения или места жительства</td>
+              </tr>
+              <tr>
+                <td>11.09.2007</td>
+                <td>Изменение отдельных элементов товарного знака, не меняющее его существа</td>
+              </tr>
+              <tr>
+                <td>11.09.2007</td>
+                <td>Изменение наименования, фамилии, имени, отчества правообладателя и/или места нахождения или места жительства</td>
+              </tr>
+            </table>
+          </div>
+
+          <div type="button" class="accordeon accordeon">
+            <p>Другие свидетельства компании <b>4</b></p>
+            <button type="button" class="btn btn--secondary btn--small">
+              <i class="icon-plus"></i>
+              <i class="icon-minus"></i>
+            </button>
+          </div>
+          <div class="mktu-doc-popup__subaccordeon subaccordeon">
+            <div class="mktu-doc-popup__subaccordeon-cards">
+              @@include('_card--certif.html')
+              @@include('_card--certif.html')
+              @@include('_card--certif.html')
+              @@include('_card--certif.html')
+              @@include('_card--certif.html')
+              @@include('_card--certif.html')
+              @@include('_card--certif.html')
+            </div>
+
+            <button type="button" class="mktu-doc-popup__cards-load-btn btn btn--secondary btn--small">
+              <span>Загрузить ещё</span>
+              <i class="icon-plus"></i>
+            </button>
+          </div>
+
+          <div type="button" class="accordeon accordeon">
+            <p>Другие заявки компании <b>6</b></p>
+            <button type="button" class="btn btn--secondary btn--small">
+              <i class="icon-plus"></i>
+              <i class="icon-minus"></i>
+            </button>
+          </div>
+          <div class="mktu-doc-popup__subaccordeon subaccordeon">
+            <div class="mktu-doc-popup__subaccordeon-cards">
+              @@include('_card.html')
+              @@include('_card.html')
+              @@include('_card.html')
+              @@include('_card.html')
+              @@include('_card.html')
+              @@include('_card.html')
+              @@include('_card.html')
+            </div>
+
+            <button type="button" class="mktu-doc-popup__cards-load-btn btn btn--secondary btn--small">
+              <span>Загрузить ещё</span>
+              <i class="icon-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="notice">
+          <p class="notice__info">
+            <i class="icon-alert-circle"></i>
+            <span>
+              Мы нашли похожие товарные знаки, посмотрите их ниже.
+              Вы так же можете отслеживать изменения по заявке,
+              свидетельству и ИНН в нашем телеграм-боте — это удобно!
+            </span>
+          </p>
+          <a href="#" class="btn btn--lime btn--large">
+            <span>Telegram-bot tmdex</span>
+            <i class="icon-tg"></i>
+          </a>
         </div>
       </div>
     </div>

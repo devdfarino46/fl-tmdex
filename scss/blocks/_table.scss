@@ -1,0 +1,27 @@
+.table {
+  border-spacing: 1px 0;
+
+  td, th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #19191D;
+  }
+
+  th {
+    background: #F0F0F1;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #4A4B57;
+  }
+
+  td {
+    border-bottom: 1px solid #D2D2D6;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
