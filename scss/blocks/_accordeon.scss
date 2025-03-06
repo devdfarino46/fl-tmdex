@@ -19,6 +19,14 @@
   &--with-switch:has(.accordeon-switch-hide:checked) + .subaccordeon .accordeon-elem-allow-hidden {
     display: none;
   }
+  &--with-switch:not(.--active) .switch {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &--with-switch .switch {
+    transition: .3s ease;
+  }
    
   &>p {
     font-weight: 400;

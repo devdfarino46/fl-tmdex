@@ -97,9 +97,9 @@
   &__slider {
     flex: 0 0 570px;
     overflow: hidden;
+    touch-action: pan-y;
 
     .swiper-wrapper {
-      touch-action: pan-y;
       display: flex;
     }
 

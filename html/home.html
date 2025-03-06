@@ -1,4 +1,4 @@
-@@include('blocks/_header.html')
+@@include('blocks/_header.html', {no_nav: true})
 
 <main class="page page-main">
   <section class="search-main">
@@ -50,7 +50,7 @@
 
         <ul class="search-main__list">
           <li class="search-main__litem">
-            <a href="#" class="search-main__litem-title">
+            <a href="#check-step" class="search-main__litem-title">
               Проверка
               <i class="icon-arrow-up-right"></i>
             </a>
@@ -59,7 +59,7 @@
             </p>
           </li>
           <li class="search-main__litem">
-            <a href="#" class="search-main__litem-title">
+            <a href="#register-step" class="search-main__litem-title">
               Регистрация
               <i class="icon-arrow-up-right"></i>
             </a>
@@ -68,7 +68,7 @@
             </p>
           </li>
           <li class="search-main__litem">
-            <a href="#" class="search-main__litem-title">
+            <a href="#monitor-step" class="search-main__litem-title">
               Мониторинг
               <i class="icon-arrow-up-right"></i>
             </a>
@@ -77,7 +77,7 @@
             </p>
           </li>
           <li class="search-main__litem">
-            <a href="#" class="search-main__litem-title">
+            <a href="#defender-step" class="search-main__litem-title">
               Защита в суде
               <i class="icon-arrow-up-right"></i>
             </a>
@@ -94,7 +94,7 @@
     </div>
   </section>
 
-  <section class="home-slider">
+  <section class="home-slider" id="check-step">
     <div class="home-slider__container">
       <img class="home-slider__bg-text" src="img/bg-text/01.svg" alt="">
       <div class="home-slider__left">
@@ -229,6 +229,7 @@
                       stroke: #FFAE4C !important; 
                       --length: .25;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="0"
                       data-title="Процедура длится более года">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -236,6 +237,7 @@
                       --offset: -0.25; 
                       --length: .140;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="1"
                       data-title="Не оплачена/увеличенна пошлина">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -243,6 +245,7 @@
                       --offset: -.39; 
                       --length: .150;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="2"
                       data-title="Отозваны/отказано в регистрации">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -250,6 +253,7 @@
                       --offset: -.54; 
                       --length: .05;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="3"
                       data-title="Еще можно восстановить">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -257,6 +261,7 @@
                       --offset: -.59; 
                       --length: .16;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="4"
                       data-title="Предварительный отказ">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -264,6 +269,7 @@
                       --offset: -.75; 
                       --length: .16;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="5"
                       data-title="С увеличенной вдвое пошлиной">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -271,6 +277,7 @@
                       --offset: -.91; 
                       --length: .09;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="6"
                       data-title="Возражений от третьих лиц">
                     </circle>
                   </g>
@@ -283,45 +290,38 @@
               </div>
 
               <ul class="pie-chart__legend">
-                <li style="--color: #FFAE4C;" class="tooltip-link" 
-                  data-href="#tooltip-stats" 
-                  data-title="Процедура длится более года">
+                <li style="--color: #FFAE4C;" class="" 
+                  data-index="0">
                   <b>46 869</b>
                   Процедура длится более года
                 </li>
-                <li style="--color: #537FF1;" class="tooltip-link" 
-                data-href="#tooltip-stats" 
-                data-title="Не оплачена/увеличенна пошлина">
+                <li style="--color: #537FF1;" class="" 
+                  data-index="1">
                   <b>12 480</b>
                   Не оплачена/увеличенна пошлина
                 </li>
-                <li style="--color: #6FD195;" class="tooltip-link" 
-                data-href="#tooltip-stats" 
-                data-title="Отозваны/отказано в регистрации">
+                <li style="--color: #6FD195;" class="" 
+                  data-index="2">
                   <b>9 889</b>
                   Отозваны/отказано в регистрации
                 </li>
-                <li style="--color: #8C63DA;" class="tooltip-link" 
-                data-href="#tooltip-stats" 
-                data-title="Еще можно восстановить">
+                <li style="--color: #8C63DA;" class="" 
+                  data-index="3">
                   <b>3 737</b>
                   Еще можно восстановить
                 </li>
-                <li style="--color: #8979FF;" class="tooltip-link" 
-                data-href="#tooltip-stats" 
-                data-title="Предварительный отказ">
+                <li style="--color: #8979FF;" class="" 
+                  data-index="4">
                   <b>25 736</b>
                   Предварительный отказ
                 </li>
-                <li style="--color: #FF928A;" class="tooltip-link" 
-                data-href="#tooltip-stats" 
-                data-title="С увеличенной вдвое пошлиной">
+                <li style="--color: #FF928A;" class="" 
+                  data-index="5">
                   <b>24 376</b>
                   С увеличенной вдвое пошлиной
                 </li>
-                <li style="--color: #3CC3DF;" class="tooltip-link" 
-                data-href="#tooltip-stats" 
-                data-title="Возражений от третьих лиц">
+                <li style="--color: #3CC3DF;" class="" 
+                  data-index="6">
                   <b>7 263</b>
                   Возражений от третьих лиц
                 </li>
@@ -579,7 +579,7 @@
     <hr class="page-main__divider">
   </div>
 
-  <section class="home-slider --mt-160">
+  <section class="home-slider --mt-160" id="register-step">
     <div class="home-slider__container">
       <img class="home-slider__bg-text" src="img/bg-text/02.svg" alt="">
       <div class="home-slider__left">
@@ -953,7 +953,7 @@
     </div>
   </section>
 
-  <section class="home-slider --mt-160">
+  <section class="home-slider --mt-160" id="monitor-step">
     <div class="home-slider__container">
       <img class="home-slider__bg-text" src="img/bg-text/03.svg" alt="">
       <div class="home-slider__left">
@@ -1199,7 +1199,7 @@
     </div>
   </section>
 
-  <section class="home-slider --mt-160">
+  <section class="home-slider --mt-160" id="defender-step">
     <div class="home-slider__container">
       <img class="home-slider__bg-text" src="img/bg-text/04.svg" alt="">
       <div class="home-slider__left">
@@ -1392,6 +1392,7 @@
                       stroke: #FF928A !important; 
                       --length: .35;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="0"
                       data-title="Иск удовлетворен полностью">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -1399,6 +1400,7 @@
                       --offset: -0.35; 
                       --length: .30;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="1"
                       data-title="Иск удовлетворен частично">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -1406,6 +1408,7 @@
                       --offset: -.65; 
                       --length: .04;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="2"
                       data-title="Мировое соглашение">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -1413,6 +1416,7 @@
                       --offset: -.69; 
                       --length: .20;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="3"
                       data-title="Прочее">
                     </circle>
                     <circle r="43" cx="50%" cy="50%" style="
@@ -1420,6 +1424,7 @@
                       --offset: -.89; 
                       --length: .11;" class="tooltip-link" 
                       data-href="#tooltip-stats" 
+                      data-index="4"
                       data-title="Иск не удовлетворен">
                     </circle>
                   </g>
@@ -1432,33 +1437,33 @@
               </div>
 
               <ul class="pie-chart__legend">
-                <li style="--color: #FF928A;" class="tooltip-link" 
+                <li style="--color: #FF928A;" class="" 
                   data-href="#tooltip-stats" 
-                  data-title="Иск удовлетворен полностью">
+                  data-index="0">
                   <b>9 676</b>
                   Иск удовлетворен полностью
                 </li>
-                <li style="--color: #3CC3DF;" class="tooltip-link" 
+                <li style="--color: #3CC3DF;" class="" 
                   data-href="#tooltip-stats" 
-                  data-title="Иск удовлетворен частично">
+                  data-index="1">
                   <b>8 242</b>
                   Иск удовлетворен частично
                 </li>
-                <li style="--color: #FFAE4C;" class="tooltip-link" 
+                <li style="--color: #FFAE4C;" class="" 
                   data-href="#tooltip-stats" 
-                  data-title="Мировое соглашение">
+                  data-index="2">
                   <b>731</b>
                   Мировое соглашение
                 </li>
-                <li style="--color: #537FF1;" class="tooltip-link" 
+                <li style="--color: #537FF1;" class="" 
                   data-href="#tooltip-stats" 
-                  data-title="Прочее">
+                  data-index="3">
                   <b>12 480</b>
                   Прочее
                 </li>
-                <li style="--color: #8979FF;" class="tooltip-link" 
+                <li style="--color: #8979FF;" class="" 
                   data-href="#tooltip-stats" 
-                  data-title="Иск не удовлетворен">
+                  data-index="4">
                   <b>3 128</b>
                   Иск не удовлетворен
                 </li>

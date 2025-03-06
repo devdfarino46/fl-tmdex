@@ -4,6 +4,13 @@
   background: #FFFFFF;
   border-radius: 5px;
   transition: .3s ease;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+
+  &.--busy {
+    border-left-color: #F44336;
+    border-right-color: #F44336;
+  }
 
   &__label {
     gap: 5px 15px;
@@ -12,15 +19,8 @@
     position: relative;
     cursor: pointer;
     user-select: none;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
     padding: 10px 10px 20px;
     border-radius: 5px;
-  }
-
-  &.--busy &__label {
-    border-left-color: #F44336;
-    border-right-color: #F44336;
   }
 
   &__label-num {

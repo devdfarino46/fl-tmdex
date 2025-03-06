@@ -44,11 +44,6 @@
         &.--hover {
           opacity: .5;
         }
-        @media (any-hover: hover) {
-          &:hover {
-            opacity: .3;
-          }
-        }
       }
     }
 
@@ -99,6 +94,9 @@
       color: #4A4B57;
       cursor: pointer;
       transition: .3s ease;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
 
       &::before {
         content: '';
@@ -120,6 +118,7 @@
         background: var(--color);
         padding-inline: 2px;
         border-radius: 2px;
+        white-space: nowrap;
       }
 
       &.--hover {
@@ -127,15 +126,6 @@
 
         &::before {
           opacity: 1;
-        }
-      }
-      @media (any-hover: hover) {
-        &:hover {
-          background: #F0F0F1;
-  
-          &::before {
-            opacity: 1;
-          }
         }
       }
     }

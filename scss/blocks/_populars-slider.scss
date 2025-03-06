@@ -64,10 +64,14 @@
     margin: -30px 0;
     margin-right: -30px;
     padding-right: 30px;
+    touch-action: pan-y;
 
     .swiper-wrapper {
       display: flex;
-      touch-action: pan-y;
+    }
+
+    .swiper-slide {
+      margin-right: 10px;
     }
   }
 

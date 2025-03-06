@@ -87,6 +87,7 @@
     flex-shrink: 0;
     transition: .3s ease;
     position: relative;
+    margin-right: 10px;
 
     @media (any-hover: hover) {
       &:hover {

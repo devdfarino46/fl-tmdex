@@ -157,6 +157,7 @@ const Ui = {
   updateMktuFiltersUI: function () {
     const searchForm = document.querySelector('.search-form, .search-form-mktu');
     const mktuSelects = document.querySelectorAll('.mktu-select');
+    const mktuHelper = document.querySelector('.mktu-helper');
   
     if (searchForm) {
       const mktuItems = searchForm.querySelectorAll(
@@ -208,6 +209,21 @@ const Ui = {
             mktuSelect.classList.add('--show');
           }
         })
+      });
+    }
+
+    if (mktuHelper) {
+      const items = mktuHelper.querySelectorAll('.mktu-helper__item');
+      
+      items.forEach(item => {
+        item.classList.remove('--active');
+      });
+      MktuFilter.forEach((value) => {
+        items.forEach(el => {
+          if (el.dataset.value === value) {
+            el.classList.add('--active');
+          }
+        });
       });
     }
   },
@@ -1037,32 +1053,15 @@ const Ui = {
 
       const swiper = new Swiper(orgsSlider.querySelector('.swiper'), {
         slidesPerView: 'auto',
-        freeMode: true,
         loop: true,
         mousewheel: {
           forceToAxis: true,
           enabled: true,
         },
-        autoplay: {
-          delay: 1
-        },
-        speed: 1000,
-        breakpoints: {
-          1230: {
-            autoplay: false,
-            loop: false,
-          }
-        }
       });
 
       window.addEventListener('resize', ev => {
         swiper.update();
-
-        if (window.innerWidth < 1230) {
-          swiper.autoplay.start();
-        } else {
-          swiper.autoplay.stop();
-        }
       });
     });
   },
@@ -1073,33 +1072,16 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        freeMode: true,
-        spaceBetween: 10,
+        spaceBetween: 0,
         loop: true,
         mousewheel: {
           enabled: true,
           forceToAxis: true,
-        },
-        autoplay: {
-          delay: 1
-        },
-        speed: 1000,
-        breakpoints: {
-          1230: {
-            loop: false,
-            autoplay: false,
-          }
         }
       });
 
       window.addEventListener('resize', ev => {
         swiper.update();
-
-        if (window.innerWidth < 1230) {
-          swiper.autoplay.start();
-        } else {
-          swiper.autoplay.stop();
-        }
       });
     });
   },
@@ -1148,7 +1130,6 @@ const Ui = {
         direction: 'horizontal',
         slidesPerView: 'auto',
         spaceBetween: 10,
-
         navigation: {
           nextEl: slideBtnNext,
           prevEl: slideBtnPrev,
@@ -1207,6 +1188,7 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 1,
+        loop: true,
         navigation: {
           nextEl: certif.querySelector('.certifs__btn-next'),
           prevEl: certif.querySelector('.certifs__btn-prev'),
@@ -1214,12 +1196,17 @@ const Ui = {
         mousewheel: {
           enabled: true,
           forceToAxis: true,
+        },
+        on: {
+          init: (swiper) => {
+            sliderNum.innerHTML = 
+              `${Number(swiper.slides[swiper.activeIndex].dataset.index)+1}/${swiper.slides.length}`;
+          },
+          slideChange: (swiper) => {
+            sliderNum.innerHTML = 
+              `${Number(swiper.slides[swiper.activeIndex].dataset.index)+1}/${swiper.slides.length}`;
+          },
         }
-      });
-
-      sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length}`;
-      swiper.on('slideChange', () => {
-        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length}`;
       });
 
       window.addEventListener('resize', ev => {
@@ -1323,7 +1310,8 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 1,
-        spaceBetween: 10,
+        spaceBetween: 0,
+        loop: true,
         navigation: {
           nextEl: btnNext,
           prevEl: btnPrev,
@@ -1340,10 +1328,10 @@ const Ui = {
 
         on: {
           init: function() {
-            num.textContent = `${this.activeIndex + 1}/${this.slides.length}`;
+            num.textContent = `${Number(this.slides[this.activeIndex].dataset.swiperSlideIndex) + 1}/${this.slides.length}`;
           },
           slideChange: function() {
-            num.textContent = `${this.activeIndex + 1}/${this.slides.length}`;
+            num.textContent = `${Number(this.slides[this.activeIndex].dataset.swiperSlideIndex) + 1}/${this.slides.length}`;
           }
         }
       });
@@ -1464,7 +1452,7 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        spaceBetween: 10,
+        spaceBetween: 0,
         loop: true,
         mousewheel: {
           enabled: true,
@@ -1486,7 +1474,7 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        spaceBetween: 10,
+        spaceBetween: 0,
         loop: true,
         mousewheel: {
           enabled: true,
@@ -1507,6 +1495,7 @@ const Ui = {
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
         spaceBetween: 0,
+        loop: true,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
@@ -1565,49 +1554,80 @@ const Ui = {
       const segments = pieChart.querySelectorAll('.pie-chart__canvas svg>g>circle');
       const legendItems = pieChart.querySelectorAll('.pie-chart__legend li');
 
-      segments.forEach((segment, index) => {
-        segment.addEventListener('click', () => {
-          segments.forEach((el, i) => {
+      let clicked = false;
+
+      document.addEventListener('click', ev => {
+        const targetSegment = ev.target.closest('.pie-chart__canvas svg>g>circle');
+        const targetLegendItem = ev.target.closest('.pie-chart__legend li');
+        
+        if (targetSegment || targetLegendItem) {
+          clicked = true;
+          segments.forEach( (el, i) => {
             el.classList.remove('--hover');
           });
-          segment.classList.add('--hover');
-        });
-      });
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('.pie-chart__canvas svg>g>circle')) {
-          segments.forEach((segment, index) => {
-            segment.classList.remove('--hover');
+          legendItems.forEach( (el, i) => {
+            el.classList.remove('--hover');
+          });
+          if (targetSegment) {
+            const dataIndex = targetSegment.dataset.index;
+            targetSegment.classList.add('--hover');
+            if (legendItems[dataIndex]) {
+              legendItems[dataIndex].classList.add('--hover');
+            }
+          }
+          if (targetLegendItem) {
+            const dataIndex = targetLegendItem.dataset.index;
+            targetLegendItem.classList.add('--hover');
+            if (segments[dataIndex]) {
+              segments[dataIndex].classList.add('--hover');
+            }
+          }
+        } else {
+          clicked = false;
+          segments.forEach( (el, i) => {
+            el.classList.remove('--hover');
+          });
+          legendItems.forEach( (el, i) => {
+            el.classList.remove('--hover');
           });
         }
       });
 
-      legendItems.forEach((legendItem, index) => {
-        legendItem.addEventListener('click', () => {
-          legendItems.forEach((el, i) => {
-            el.classList.remove('--hover');
-          });
-          legendItems[index].classList.add('--hover');
-        });
-      });
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('.pie-chart__legend li')) {
-          legendItems.forEach((legendItem, index) => {
-            legendItem.classList.remove('--hover');
-          });
+      document.addEventListener('mouseover', ev => {
+        const targetSegment = ev.target.closest('.pie-chart__canvas svg>g>circle');
+        const targetLegendItem = ev.target.closest('.pie-chart__legend li');
+        
+        if (!clicked) {
+          if (targetSegment || targetLegendItem) {
+            segments.forEach( (el, i) => {
+              el.classList.remove('--hover');
+            });
+            legendItems.forEach( (el, i) => {
+              el.classList.remove('--hover');
+            });
+            if (targetSegment) {
+              const dataIndex = targetSegment.dataset.index;
+              targetSegment.classList.add('--hover');
+              if (legendItems[dataIndex]) {
+                legendItems[dataIndex].classList.add('--hover');
+              }
+            }
+            if (targetLegendItem) {
+              const dataIndex = targetLegendItem.dataset.index;
+              targetLegendItem.classList.add('--hover');
+              if (segments[dataIndex]) {
+                segments[dataIndex].classList.add('--hover');
+              }
+            }
+          } else {
+            segments.forEach( (el, i) => {
+              el.classList.remove('--hover');
+            });
+            legendItems.forEach( (el, i) => {
+              el.classList.remove('--hover');
+            });
+          }
         }
-      });
-
-      window.addEventListener('scroll', ev => {
-        segments.forEach((segment, index) => {
-          if (segment.classList.contains('--hover')) {
-            segment.classList.remove('--hover');
-          }
-        });
-        legendItems.forEach((legendItem, index) => {
-          if (legendItem.classList.contains('--hover')) {
-            legendItem.classList.remove('--hover');
-          }
-        });
       });
     });
   },
@@ -1839,6 +1859,9 @@ const Ui = {
       if (textCloseBtn) textCloseBtn.addEventListener('click', ev => {
         dropdown.classList.remove('--text-show');
         text.style.maxHeight = null;
+        
+        mktuAccordeon.classList.remove('--active');
+        toggleBtn.classList.remove('--opened');
         updateDropdownHeight();
       });
     });
