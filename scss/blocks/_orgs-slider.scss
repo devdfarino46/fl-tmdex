@@ -8,12 +8,13 @@
   .swiper {
     overflow: hidden;
     margin-right: -30px;
-    padding-right: 30px;
+    width: 0;
+    min-width: calc(100% + 30px);
+    touch-action: pan-y;
   }
 
   .swiper-wrapper {
     display: flex;
-    touch-action: pan-y;
   }
 
   &__line {
@@ -26,12 +27,13 @@
   }
 
 	&__item {
-    flex: 0 0 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     padding: 0 10px;
+    width: 220px;
+    flex-shrink: 0;
 
     img {
       object-fit: contain;
@@ -47,7 +49,7 @@
     }
 
     @media (max-width: 940px) {
-      flex: 0 0 200px;
+      // flex: 0 0 200px;
     }
 	}
 }

@@ -232,6 +232,17 @@ const Ui = {
     return document.querySelector(link.getAttribute('data-href'));
   },
 
+  swiperPerViewAutoUpdate(swiper, slideWidth) {
+    swiper.width = slideWidth * swiper.slidesPerViewDynamic();
+    console.log(swiper.width, swiper.slidesPerViewDynamic(), swiper.slides.length);
+    if (swiper.slides.length <= swiper.slidesPerViewDynamic()) {
+      swiper.params.loop = false;
+    } else {
+      swiper.params.loop = true;
+    }
+    swiper.update();
+  },
+
   tariffInit: function () {
     document.querySelectorAll('.tariff').forEach(function (tariff) {
       const listLabel = tariff.querySelector('.tariff__list-label');
@@ -1050,15 +1061,23 @@ const Ui = {
 
   orgsSliderInit: function() {
     document.querySelectorAll('.orgs-slider').forEach(orgsSlider => {
+      const slider = orgsSlider.querySelector('.swiper')
+      const slideWidth = 220;
 
-      const swiper = new Swiper(orgsSlider.querySelector('.swiper'), {
+      const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        loop: true,
-        loopedSlides: 5,
         mousewheel: {
           forceToAxis: true,
           enabled: true,
         },
+        on: {
+          init: function () {
+            Ui.swiperPerViewAutoUpdate(this, slideWidth);
+          },
+          resize: function () {
+            Ui.swiperPerViewAutoUpdate(this, slideWidth);
+          },
+        }
       });
 
       window.addEventListener('resize', ev => {
