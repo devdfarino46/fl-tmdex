@@ -92,6 +92,11 @@
     font-size: 14px;
     line-height: 143%;
     color: #19191D;
+<<<<<<< HEAD
+=======
+    overflow: hidden;
+    text-overflow: ellipsis;
+>>>>>>> cb5e7b5 (Mktu-accordeon fixed (fix-commit))
 
     &.--busy {
       color: #F44336;
