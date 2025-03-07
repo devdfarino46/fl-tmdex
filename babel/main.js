@@ -1854,10 +1854,6 @@ const Ui = {
       label.addEventListener('mouseout', ev => {
         toggleBtn.classList.remove('--hover');
       });
-<<<<<<< HEAD
-=======
-
->>>>>>> cb5e7b5 (Mktu-accordeon fixed (fix-commit))
       if (textCloseBtn) textCloseBtn.addEventListener('click', ev => {
         mktuAccordeon.classList.remove('--active');
         toggleBtn.classList.remove('--opened');
