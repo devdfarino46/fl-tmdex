@@ -1054,6 +1054,7 @@ const Ui = {
       const swiper = new Swiper(orgsSlider.querySelector('.swiper'), {
         slidesPerView: 'auto',
         loop: true,
+        loopedSlides: 5,
         mousewheel: {
           forceToAxis: true,
           enabled: true,
@@ -1074,10 +1075,11 @@ const Ui = {
         slidesPerView: 'auto',
         spaceBetween: 0,
         loop: true,
+        loopedSlides: 3,
         mousewheel: {
           enabled: true,
           forceToAxis: true,
-        }
+        },
       });
 
       window.addEventListener('resize', ev => {
@@ -1476,6 +1478,7 @@ const Ui = {
         slidesPerView: 'auto',
         spaceBetween: 0,
         loop: true,
+        loopedSlides: 4,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
@@ -1707,6 +1710,7 @@ const Ui = {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
+        loopedSlides: 5,
         navigation: {
           nextEl: nextBtn,
           prevEl: prevBtn,
@@ -1850,16 +1854,7 @@ const Ui = {
       label.addEventListener('mouseout', ev => {
         toggleBtn.classList.remove('--hover');
       });
-
-      if (textOpenBtn) textOpenBtn.addEventListener('click', ev => {
-        dropdown.classList.add('--text-show');
-        text.style.maxHeight = `${text.scrollHeight}px`;
-        updateDropdownHeight();
-      });
       if (textCloseBtn) textCloseBtn.addEventListener('click', ev => {
-        dropdown.classList.remove('--text-show');
-        text.style.maxHeight = null;
-        
         mktuAccordeon.classList.remove('--active');
         toggleBtn.classList.remove('--opened');
         updateDropdownHeight();

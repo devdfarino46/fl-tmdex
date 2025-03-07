@@ -92,10 +92,6 @@
     font-size: 14px;
     line-height: 143%;
     color: #19191D;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    max-height: calc(1.43 * 13em);
 
     &.--busy {
       color: #F44336;
@@ -107,17 +103,9 @@
     }
   }
 
-  &__text-open-btn,
   &__text-close-btn {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  &__dropdown:not(.--text-show) &__text-close-btn {
-    display: none;
-  }
-  &__dropdown.--text-show &__text-open-btn {
-    display: none;
   }
 
   @media (any-hover: hover) {
