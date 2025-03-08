@@ -1353,7 +1353,7 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 10,
         loop: true,
         navigation: {
           nextEl: btnNext,
@@ -1371,10 +1371,10 @@ const Ui = {
 
         on: {
           init: function() {
-            num.textContent = `${Number(this.slides[this.activeIndex].dataset.swiperSlideIndex) + 1}/${this.slides.length}`;
+            num.textContent = `${this.realIndex + 1}/${this.slides.length}`;
           },
           slideChange: function() {
-            num.textContent = `${Number(this.slides[this.activeIndex].dataset.swiperSlideIndex) + 1}/${this.slides.length}`;
+            num.textContent = `${this.realIndex + 1}/${this.slides.length}`;
           }
         }
       });
