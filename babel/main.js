@@ -1841,7 +1841,7 @@ const Ui = {
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
         spaceBetween: 10,
-        loop: true,
+        slidesOffsetAfter: 30,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
