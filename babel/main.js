@@ -1226,7 +1226,6 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 1,
-        loop: true,
         navigation: {
           nextEl: certif.querySelector('.certifs__btn-next'),
           prevEl: certif.querySelector('.certifs__btn-prev'),
@@ -1236,13 +1235,13 @@ const Ui = {
           forceToAxis: true,
         },
         on: {
-          init: (swiper) => {
+          init: function() {
             sliderNum.innerHTML = 
-              `${Number(swiper.slides[swiper.activeIndex].dataset.index)+1}/${swiper.slides.length}`;
+              `${this.realIndex + 1}/${this.slides.length}`;
           },
-          slideChange: (swiper) => {
+          slideChange: function() {
             sliderNum.innerHTML = 
-              `${Number(swiper.slides[swiper.activeIndex].dataset.index)+1}/${swiper.slides.length}`;
+              `${this.realIndex + 1}/${this.slides.length}`;
           },
         }
       });
