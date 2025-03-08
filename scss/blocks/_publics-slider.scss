@@ -64,7 +64,8 @@
     overflow: hidden;
     padding: 30px 0;
     margin: -30px 0;
-    padding-right: 30px;
+    width: 0;
+    min-width: calc(100% + 30px);
     margin-right: -30px;
 
     .swiper-wrapper {

@@ -1102,6 +1102,7 @@ const Ui = {
         on: {
           init: function() {
             Ui.swiperPerViewAutoUpdate(this, 285);
+            this.update();
           },
           resize: function() {
             Ui.swiperPerViewAutoUpdate(this, 285);
@@ -1198,6 +1199,7 @@ const Ui = {
               });
               if (this.slides[this.activeIndex]) this.slides[this.activeIndex].classList.add('--hover');
             }
+            this.update();
           },
           slideChange: function () {
             sliderNum.innerHTML = `${this.realIndex + 1}/${this.slides.length}`;
@@ -1515,9 +1517,7 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        spaceBetween: 0,
         loop: true,
-        loopedSlides: 4,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
@@ -1525,6 +1525,16 @@ const Ui = {
         navigation: {
           nextEl: nextBtn,
           prevEl: prevBtn,
+        },
+        on: {
+          init: function() {
+            Ui.swiperPerViewAutoUpdate(this, 285+10);
+            this.update();
+          },
+          resize: function() {
+            Ui.swiperPerViewAutoUpdate(this, 285+10);
+            this.update();
+          }
         }
       })
     })
@@ -1755,10 +1765,10 @@ const Ui = {
         on: {
           init: function() {
             Ui.swiperPerViewAutoUpdate(this, 285+10);
+            this.update();
           },
           resize: function() {
             Ui.swiperPerViewAutoUpdate(this, 285+10);
-            console.log(this.slides.length, this.slidesPerViewDynamic());
             
             this.update();
           }
