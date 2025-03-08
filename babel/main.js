@@ -1786,7 +1786,7 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 1,
-        spaceBetween: 10,
+        loop: true,
         navigation: {
           nextEl: nextBtn,
           prevEl: prevBtn,
@@ -1797,10 +1797,10 @@ const Ui = {
         },
         on: {
           init: function () {
-            num.innerHTML = `${this.activeIndex + 1} / ${this.slides.length}`;
+            num.innerHTML = `${this.realIndex + 1} / ${this.slides.length}`;
           },
           slideChange: function () {
-            num.innerHTML = `${this.activeIndex + 1} / ${this.slides.length}`;
+            num.innerHTML = `${this.realIndex + 1} / ${this.slides.length}`;
           }
         }
       })
