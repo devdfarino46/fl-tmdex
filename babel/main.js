@@ -234,7 +234,6 @@ const Ui = {
 
   swiperPerViewAutoUpdate(swiper, slideWidth, loop = 'dynamic') {
     swiper.width = slideWidth * swiper.slidesPerViewDynamic();
-    console.log(swiper.width, swiper.slidesPerViewDynamic(), swiper.slides.length);
     if (loop === 'dynamic') {
       if (swiper.slides.length <= swiper.slidesPerViewDynamic()) {
         swiper.params.loop = false;
@@ -1122,25 +1121,30 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
+        loop: true,
         mousewheel: {
           forceToAxis: true,
           enable: true,
         },
-        spaceBetween: 10,
-
+        // spaceBetween: 10,
         navigation: {
           nextEl: slideBtnNext,
           prevEl: slideBtnPrev,
+        },
+        on: {
+          init: function() {
+            Ui.swiperPerViewAutoUpdate(this, 270+10);
+            this.update();
+            sliderNum.innerHTML = `${this.realIndex + 1}/${this.slides.length}`;
+          },
+          resize: function() {
+            Ui.swiperPerViewAutoUpdate(this, 270+10);
+            this.update();
+          },
+          slideChange: function() {
+            sliderNum.innerHTML = `${this.realIndex + 1}/${this.slides.length}`;
+          }
         }
-      });
-
-      sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
-      swiper.on('slideChange', () => {
-        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
-      });
-
-      window.addEventListener('resize', ev => {
-        swiper.update();
       });
     });
   },
