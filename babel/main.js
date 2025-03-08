@@ -1564,12 +1564,21 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        spaceBetween: 0,
         loop: true,
         mousewheel: {
           enabled: true,
           forceToAxis: 'horizontal',
         },
+        on: {
+          init: function() {
+            Ui.swiperPerViewAutoUpdate(this, 150+10);
+            this.update();
+          },
+          resize: function() {
+            Ui.swiperPerViewAutoUpdate(this, 150+10);
+            this.update();
+          }
+        }
       });
     });
   },
@@ -1598,7 +1607,7 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 1,
-        spaceBetween: 10,
+        loop: true,
         navigation: {
           nextEl: nextBtn,
           prevEl: prevBtn,
@@ -1609,10 +1618,10 @@ const Ui = {
         },
         on: {
           init: function () {
-            sliderCount.innerHTML = `${this.activeIndex + 1}/${this.slides.length}`;
+            sliderCount.innerHTML = `${this.realIndex + 1}/${this.slides.length}`;
           },
           slideChange: function () {
-            sliderCount.innerHTML = `${this.activeIndex + 1}/${this.slides.length}`;
+            sliderCount.innerHTML = `${this.realIndex + 1}/${this.slides.length}`;
           }
         }
       });
