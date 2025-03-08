@@ -6,13 +6,15 @@
   }
 
   &__wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 570px;
     padding: 30px 0px 30px 40px;
     gap: 30px;
     background: #566b40;
     border-radius: 20px;
 
     @media (max-width: 1040px) {
+      display: flex;
       flex-direction: column;
     }
 
@@ -95,32 +97,21 @@
   }
 
   &__slider {
-    flex: 0 0 570px;
     overflow: hidden;
     touch-action: pan-y;
+    width: 0;
+    min-width: 100%;
 
     .swiper-wrapper {
       display: flex;
-    }
-
-    ._space {
-      padding-right: 30px;
-    }
-
-    @media (max-width: 1040px) {
-      flex: auto;
-    }
-
-    @media (max-width: 740px) {
-      ._space {
-        padding-right: 10px;
-      }
     }
   }
 
   &__slide {
     position: relative;
-    flex: 0 0 auto;
+    width: 260px;
+    flex-shrink: 0;
+    // margin-right: 10px;
     
     img {
       display: block;

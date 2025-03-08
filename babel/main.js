@@ -232,15 +232,20 @@ const Ui = {
     return document.querySelector(link.getAttribute('data-href'));
   },
 
-  swiperPerViewAutoUpdate(swiper, slideWidth) {
+  swiperPerViewAutoUpdate(swiper, slideWidth, loop = 'dynamic') {
     swiper.width = slideWidth * swiper.slidesPerViewDynamic();
     console.log(swiper.width, swiper.slidesPerViewDynamic(), swiper.slides.length);
-    if (swiper.slides.length <= swiper.slidesPerViewDynamic()) {
-      swiper.params.loop = false;
-    } else {
+    if (loop === 'dynamic') {
+      if (swiper.slides.length <= swiper.slidesPerViewDynamic()) {
+        swiper.params.loop = false;
+      } else {
+        swiper.params.loop = true;
+      }
+    } else if (loop === true) {
       swiper.params.loop = true;
+    } else if (loop === false) {
+      swiper.params.loop = false;
     }
-    swiper.update();
   },
 
   tariffInit: function () {
@@ -1073,15 +1078,13 @@ const Ui = {
         on: {
           init: function () {
             Ui.swiperPerViewAutoUpdate(this, slideWidth);
+            this.update();
           },
           resize: function () {
             Ui.swiperPerViewAutoUpdate(this, slideWidth);
+            this.update();
           },
         }
-      });
-
-      window.addEventListener('resize', ev => {
-        swiper.update();
       });
     });
   },
@@ -1151,49 +1154,60 @@ const Ui = {
         direction: 'horizontal',
         slidesPerView: 'auto',
         spaceBetween: 10,
+        slidesOffsetAfter: 20,
         navigation: {
           nextEl: slideBtnNext,
           prevEl: slideBtnPrev,
         },
-
         mousewheel: {
           enabled: true,
           forceToAxis: true,
+        },
+        breakpoints: {
+          741: {
+            slidesOffsetAfter: 40,
+          }
+        },
+        on: {
+          init: function () {
+            this.slides.forEach(slide => {
+              slide.addEventListener('mouseenter', ev => {
+                this.slides.forEach(el => { el.classList.remove('--hover'); });
+                ev.currentTarget.classList.add('--hover');
+              });
+      
+              slide.addEventListener('mouseleave', ev => {
+                this.slides.forEach(el => { el.classList.remove('--hover'); });
+              });
+            });
+
+            Ui.swiperPerViewAutoUpdate(this, 260+10, false);
+
+            sliderNum.innerHTML = `${this.realIndex + 1}/${this.slides.length}`;
+
+            if (window.innerWidth < 740) {
+              this.slides.forEach(slide => {
+                slide.classList.remove('--hover');
+              });
+              if (this.slides[this.activeIndex]) this.slides[this.activeIndex].classList.add('--hover');
+            }
+          },
+          slideChange: function () {
+            sliderNum.innerHTML = `${this.realIndex + 1}/${this.slides.length}`;
+
+            if (window.innerWidth < 740) {
+              this.slides.forEach(slide => {
+                slide.classList.remove('--hover');
+              });
+              if (this.slides[this.activeIndex]) this.slides[this.activeIndex].classList.add('--hover');
+            }
+          },
+          resize: function () {
+            Ui.swiperPerViewAutoUpdate(this, 260+10, false);
+            
+            this.update();
+          }
         }
-      });
-
-      slides.forEach(slide => {
-        slide.addEventListener('mouseenter', ev => {
-          slides.forEach(el => { el.classList.remove('--hover'); });
-          slide.classList.add('--hover');
-        });
-
-        slide.addEventListener('mouseleave', ev => {
-          slides.forEach(el => { el.classList.remove('--hover'); });
-        });
-      });
-
-      if (window.innerWidth <= 740) {
-        slides.forEach(slide => {
-          slide.classList.remove('--hover');
-        });
-        if (slides[swiper.activeIndex]) slides[swiper.activeIndex].classList.add('--hover');
-      }
-
-      sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
-      swiper.on('slideChange', () => {
-        sliderNum.innerHTML = `${swiper.activeIndex + 1}/${swiper.slides.length - 1}`;
-
-        if (window.innerWidth <= 740) {
-          slides.forEach(slide => {
-            slide.classList.remove('--hover');
-          });
-          if (slides[swiper.activeIndex]) slides[swiper.activeIndex].classList.add('--hover');
-        }
-      });
-
-      window.addEventListener('resize', ev => {
-        swiper.update();
       });
     });
   },
