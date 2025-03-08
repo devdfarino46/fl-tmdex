@@ -63,6 +63,10 @@
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     gap: 10px;
+
+    @media (max-width: 940px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__cards-load-btn {
