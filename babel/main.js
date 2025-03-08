@@ -1747,13 +1747,22 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        spaceBetween: 10,
         loop: true,
-        loopedSlides: 5,
         navigation: {
           nextEl: nextBtn,
           prevEl: prevBtn,
         },
+        on: {
+          init: function() {
+            Ui.swiperPerViewAutoUpdate(this, 285+10);
+          },
+          resize: function() {
+            Ui.swiperPerViewAutoUpdate(this, 285+10);
+            console.log(this.slides.length, this.slidesPerViewDynamic());
+            
+            this.update();
+          }
+        }
       });
     });
   },

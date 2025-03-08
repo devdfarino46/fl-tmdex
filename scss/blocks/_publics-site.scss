@@ -57,10 +57,9 @@
     min-width: calc(100% + 30px);
     overflow: hidden;
     touch-action: pan-y;
-    padding: 30px 0;
-    margin: -30px 0;
+    padding: 30px 5px;
+    margin: -30px -5px;
     margin-right: -30px;
-    padding-right: 30px;
 
     .swiper-wrapper {
       display: flex;
