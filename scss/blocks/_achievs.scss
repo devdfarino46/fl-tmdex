@@ -27,7 +27,8 @@
     padding: 30px 0;
     margin: -30px 0;
     margin-right: -30px;
-    // padding-right: 143px;
+    width: 0;
+    min-width: calc(100% + 30px);
 
     .swiper-wrapper {
       display: flex;
@@ -35,7 +36,6 @@
   }
 
   &__item {
-    margin-right: 10px;
     flex: 0 0 285px;
     display: flex;
     flex-direction: column;

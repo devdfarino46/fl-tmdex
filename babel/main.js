@@ -1095,17 +1095,20 @@ const Ui = {
 
       const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        spaceBetween: 0,
-        loop: true,
-        loopedSlides: 3,
+        spaceBetween: 10,
         mousewheel: {
           enabled: true,
           forceToAxis: true,
         },
-      });
-
-      window.addEventListener('resize', ev => {
-        swiper.update();
+        on: {
+          init: function() {
+            Ui.swiperPerViewAutoUpdate(this, 285);
+          },
+          resize: function() {
+            Ui.swiperPerViewAutoUpdate(this, 285);
+            this.update();
+          }
+        }
       });
     });
   },
