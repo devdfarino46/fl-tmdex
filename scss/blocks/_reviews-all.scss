@@ -26,6 +26,16 @@
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @media (max-width: 740px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      
+      .select .select__button {
+        width: 0;
+        min-width: 100%;
+      }
+    }
   }
 
   &__list {

@@ -1362,6 +1362,39 @@ const Ui = {
     });
   },
 
+  videoPopupInit: function () {
+    const videoPopup = document.querySelector('.video-popup');
+    const videoPopupLinks = document.querySelectorAll('.video-popup-link');
+    
+    if (videoPopup && videoPopupLinks) {
+      const video = videoPopup.querySelector('video.video-js');
+      const topImage = videoPopup.querySelector('.video-popup__top-image');
+      const title = videoPopup.querySelector('.video-popup__title');
+      const date = videoPopup.querySelector('.video-popup__date');
+
+      videoPopupLinks.forEach(link => {
+        link.addEventListener('click', ev => {
+          title.textContent = link.dataset.title || '';
+          topImage.src = link.dataset.topImg || '';
+          date.textContent = link.dataset.date || '';
+          video.src = link.dataset.videoSrc || '';
+          video.play();
+        });
+      });
+
+      videoPopup.querySelector('._close-btn').addEventListener('click', ev => {
+        video.pause();
+        video.currentTime = 0;
+      });
+      videoPopup.addEventListener('click', ev => {
+        if (!ev.target.closest('.popup-wrapper')) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    }
+  },
+
   popularSliderInit: function() {
     document.querySelectorAll('.popular-slider').forEach(popular => {
       const slider = popular.querySelector('.popular-slider__items');
@@ -2023,6 +2056,7 @@ const Ui = {
     this.mktuProductsInit();
     this.mktuAccordeonInit();
     this.reviewCardInit();
+    this.videoPopupInit();
   }
 }
 Ui.init();
