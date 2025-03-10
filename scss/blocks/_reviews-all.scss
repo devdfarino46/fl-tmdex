@@ -1,0 +1,36 @@
+.reviews-all {
+  margin-top: 60px;
+
+  @media (max-width: 740px) {
+    margin-top: 20px;
+  }
+
+  &__container {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    align-items: flex-start;
+
+    @media (max-width: 940px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__list {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -9,4 +9,8 @@
   transition: .3s ease;
   max-height: 300px;
   overflow-y: auto;
+
+  &--radio {
+    padding: 5px;
+  }
 }

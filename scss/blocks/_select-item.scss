@@ -46,6 +46,10 @@
     }
   }
 
+  &--radio &__input-wrapper {
+    display: none;
+  }
+
   span {
     font-weight: 400;
     cursor: inherit;

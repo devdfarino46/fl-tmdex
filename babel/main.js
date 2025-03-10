@@ -1275,8 +1275,10 @@ const Ui = {
         });
 
         const textUpdate = () => {
-          gTitle.innerHTML = gSwiper.slides[gSwiper.activeIndex].dataset.title;
-          gDate.innerHTML = gSwiper.slides[gSwiper.activeIndex].dataset.date;
+          if (gSwiper.slides[gSwiper.activeIndex]) gTitle.innerHTML = 
+            gSwiper.slides[gSwiper.activeIndex].dataset.title || '';
+          if (gSwiper.slides[gSwiper.activeIndex]) gDate.innerHTML = 
+            gSwiper.slides[gSwiper.activeIndex].dataset.date || '';
           gSliderNum.innerHTML = `${gSwiper.activeIndex + 1}/${gSwiper.slides.length}`;
         };
 
@@ -1308,17 +1310,33 @@ const Ui = {
 
       items.forEach((item, index) => {
         item.addEventListener('click', ev => {
-          const title = item.querySelector('.certifs-all__item-title').textContent;
-          const date = item.querySelector('.certifs-all__item-date').textContent;
-          const image = item.querySelector('.certifs-all__item-image').src;
+          const title = item.querySelector('.certifs-all__item-title');
+          const date = item.querySelector('.certifs-all__item-date');
+          const image = item.querySelector('.certifs-all__item-image');
 
           if (certifPopup) {
-            certifPopup.querySelector('.certif-popup__title').textContent = title;
-            certifPopup.querySelector('.certif-popup__date').textContent = date;
-            certifPopup.querySelector('.certif-popup__image').src = image;
+            if (title) certifPopup.querySelector('.certif-popup__title').textContent = title.textContent || '';
+            if (date) certifPopup.querySelector('.certif-popup__date').textContent = date.textContent || '';
+            certifPopup.querySelector('.certif-popup__image').src = image.src || image.dataset.src;
           }
         });
-      })
+      });
+    });
+  },
+
+  reviewCardInit: function () {
+    const certifPopup = document.querySelector('.certif-popup');
+
+    document.querySelectorAll('.review-card').forEach((reviewCard) => {
+      const title = reviewCard.querySelector('.review-card__title');
+      const date = reviewCard.querySelector('.review-card__date');
+      const image = reviewCard.querySelector('.review-card__certif');
+      
+      if (image && certifPopup) image.addEventListener('click', ev => {
+        if (title) certifPopup.querySelector('.certif-popup__title').textContent = title.textContent;
+        if (date) certifPopup.querySelector('.certif-popup__date').textContent = date.textContent;
+        certifPopup.querySelector('.certif-popup__image').src = image.src || image.dataset.src;
+      });
     });
   },
 
@@ -1711,7 +1729,7 @@ const Ui = {
     });
   },
 
-  selectUpdate: function (select) {
+  selectUpdate: function (select, selectItemClicked = null) {
     const button = select.querySelector('.select__button');
     const selectMenu = select.querySelector('.select-menu');
     
@@ -1719,11 +1737,23 @@ const Ui = {
 
     if (selectMenu) {
       const items = selectMenu.querySelectorAll('.select-item');
-      items.forEach((item) => {
-        if (item.querySelector('input').checked) {
-          selected.push(item.querySelector('input').value);
+
+      if (selectMenu.classList.contains('select-menu--radio')) {
+        if (selectItemClicked) {
+          selected = [];
+          items.forEach((item) => {
+            item.querySelector('input').checked = false;
+          });
+          selected.push(selectItemClicked.querySelector('input').value);
+          selectItemClicked.querySelector('input').checked = true;
         }
-      });
+      } else {
+        items.forEach((item) => {
+          if (item.querySelector('input').checked) {
+            selected.push(item.querySelector('input').value);
+          }
+        });
+      }
       if (selected.length !== 0) {
         select.classList.add('--filled');
         button.querySelector('span').textContent = selected.join(', ');
@@ -1769,7 +1799,7 @@ const Ui = {
 
         items.forEach((item) => {
           item.addEventListener('click', ev => {
-            Ui.selectUpdate(select);
+            Ui.selectUpdate(select, ev.currentTarget);
           });
         });
       }
@@ -1992,6 +2022,7 @@ const Ui = {
     this.mktuSliderInit();
     this.mktuProductsInit();
     this.mktuAccordeonInit();
+    this.reviewCardInit();
   }
 }
 Ui.init();
