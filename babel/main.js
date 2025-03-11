@@ -2055,6 +2055,55 @@ const Ui = {
     });
   },
 
+  textareaUpdate: function (textarea, value = null) {
+    const textareaElem = textarea.querySelector('textarea');
+    if (value && value !== null) {
+      textareaElem.value = value;
+    }
+    if (textareaElem.value.length > 0) {
+      textarea.classList.add('--filled');
+    } else {
+      textarea.classList.remove('--filled');
+    }
+  },
+
+  textareaInit: function () {
+    document.querySelectorAll('.textarea').forEach(textarea => {
+      const textareaElem = textarea.querySelector('textarea');
+      
+      Ui.textareaUpdate(textarea);
+
+      textareaElem.addEventListener('input', ev => {
+        Ui.textareaUpdate(textarea);
+      });
+    });
+  },
+
+  contactsFeedback: function () {
+    document.querySelectorAll('.contacts-feedback').forEach(contactsFeedback => {
+      const form = contactsFeedback.querySelector('form');
+      const submitBtn = contactsFeedback.querySelector('.contacts-feedback__submit-btn');
+      const policyInput = contactsFeedback.querySelector('.contacts-feedback__policy-input');
+
+      const update = () => {
+        if (!policyInput.querySelector('input').checked) {
+          submitBtn.setAttribute('disabled', '');
+        } else {
+          submitBtn.removeAttribute('disabled');
+        }
+      };
+      update();
+
+      form.addEventListener('submit', ev => {
+        ev.preventDefault();
+      });
+
+      policyInput.addEventListener('click', ev => {
+        update();
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2104,6 +2153,8 @@ const Ui = {
     this.videoPopupInit();
     this.copyBtnInit();
     this.contactsSliderInit();
+    this.textareaInit();
+    this.contactsFeedback();
   }
 }
 Ui.init();

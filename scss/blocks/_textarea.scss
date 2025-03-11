@@ -1,0 +1,64 @@
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &>p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+  }
+
+  &>textarea {
+    background: #FFFFFF;
+    border: 1px solid #D2D2D6;
+    border-radius: 10px;
+    resize: vertical;
+    min-height: 74px;
+    padding: 4px 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+    transition: .3s ease;
+    transition-property: 
+      color, 
+      border-color, 
+      background-color, 
+      box-shadow,
+      opacity;
+    min-width: 160px;
+
+    &::placeholder {
+      color: #9696A0;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover>textarea {
+      border-color: #19191D;
+    }
+  }
+
+  &:has(textarea:focus)>textarea {
+    box-shadow: 0 0 0 3px #D2D2D6;
+  }
+
+  &.--filled textarea {
+    border-color: #19191D;
+  }
+
+  &:has(textarea[disabled]) {
+    pointer-events: none;
+    opacity: .3;
+
+    textarea {
+      background: #EDEDED;
+
+      &, &::placeholder {
+        color: #B4B4BB;
+      }
+    }
+  }
+}

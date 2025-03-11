@@ -30,6 +30,19 @@
     opacity: .3;
   }
 
+  span {
+    &.--media-min-940px {
+      @media (max-width: 1230px) {
+        display: none;
+      }
+    }
+    &.--media-max-940px {
+      @media (min-width: 1231px) {
+        display: none;
+      }
+    }
+  }
+
   // Small
   &--small {
     padding: 10px 20px;

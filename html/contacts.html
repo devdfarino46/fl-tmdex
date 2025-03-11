@@ -276,5 +276,66 @@
       </div>
     </div>
   </section>
+
+  <section class="contacts-feedback container">
+    <div class="contacts-feedback__wrapper">
+      <h2 class="contacts-feedback__title">Связаться с нами</h2>
+      <p class="contacts-feedback__text">
+        Хотите задать вопрос или согласовать встречу? Напишите или позвоните нам — мы поможем!
+      </p>
+
+      <form action="#" class="contacts-feedback__form">
+        <div class="contacts-feedback__inputs-grid">
+          <label class="input" data-status="">
+            <p class="input__label">
+              Ваше имя
+            </p>
+            <div class="input__wrapper">
+              <input type="number" placeholder="Иван Иванов" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+          <label class="input" data-status="">
+            <p class="input__label">
+              Телефон для связи
+            </p>
+            <div class="input__wrapper">
+              <input type="number" placeholder="Номер телефона" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+          <label class="input" data-status="">
+            <p class="input__label">
+              Email для ответов
+            </p>
+            <div class="input__wrapper">
+              <input type="number" placeholder="user@mail.ru" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+          <label class="textarea">
+            <p>Опишите суть вопроса</p>
+            <textarea placeholder="Здравствуйте, хочу назначить встречу в офисе"></textarea>
+          </label>
+        </div>
+
+        <button type="submit" disabled class="contacts-feedback__submit-btn btn btn--lime btn--large">
+          <span class="--media-min-940px">Получить консультацию</span>
+          <span class="--media-max-940px">Отправить</span>
+        </button>
+
+        <label class="contacts-feedback__policy-input checkbox">
+          <div class="checkbox__input">
+            <input type="checkbox" name="policy">
+            <i class="icon-check"></i>
+          </div>
+          <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
+        </label>
+      </form>
+    </div>
+  </section>
 </main>
 @@include('blocks/_footer.html')
