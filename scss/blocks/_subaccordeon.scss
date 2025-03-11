@@ -8,6 +8,7 @@
   opacity: 1;
   transform: translateY(0px);
   transition: .5s ease;
+  overflow: hidden;
 }
 .accordeon:not(.--active) + .subaccordeon {
   height: 0;

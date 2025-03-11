@@ -15,6 +15,7 @@
     max-width: 1170px;
     overflow-y: auto;
     overflow-x: hidden;
+    max-height: max-content;
 
     &>* {
       width: 100%;
@@ -31,7 +32,7 @@
   }
 
   &__accordeons {
-    // display: none;
+    
   }
 
   &__subaccordeon {
