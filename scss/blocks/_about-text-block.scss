@@ -21,14 +21,35 @@
       color: #19191D;
     }
 
+    &::before {
+      content: '';
+      background: url(../img/rounds-decor2.svg) no-repeat bottom center;
+      background-size: contain;
+      position: absolute;
+      right: 50px;
+      bottom: 0px;
+      width: 480px;
+      height: 240px;
+      display: block;
+
+      @media (max-width: 940px) {
+        width: 712px;
+        height: 356px;
+        right: -256px;
+      }
+
+      @media (max-width: 740px) {
+        width: 380px;
+        height: 190px;
+        right: -140px;
+      }
+    }
+
+
     @media (max-width: 740px) {
       padding: 20px 15px;
 
       p { font-size: 20px; }
-
-      &::before {
-        content: none;
-      }
     }
   }
 }
