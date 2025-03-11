@@ -1,0 +1,41 @@
+.our-advantages {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+    max-width: 570px;
+    margin-bottom: 80px;
+  
+    @media (max-width: 740px) {
+      margin-bottom: 40px;
+    }
+    
+    b {
+      color: #B4B4BB;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: 740px) {
+      grid-template-columns: 1fr;
+    }
+
+    .advantage-card {
+      margin-top: -1px;
+      margin-left: -1px;
+    }
+  }
+}
