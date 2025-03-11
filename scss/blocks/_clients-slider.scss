@@ -5,6 +5,10 @@
     margin-top: 40px;
   }
 
+  &--without-title {
+    margin-top: 10px;
+  }
+
   &__container {
   }
 
@@ -47,5 +51,10 @@
       justify-content: center;
       flex-shrink: 0;
     }
+  }
+
+  &--without-title &__slider {
+    margin-top: 0;
+    margin-bottom: -50px;
   }
 }
