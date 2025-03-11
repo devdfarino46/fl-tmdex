@@ -44,39 +44,4 @@
       }
     }
   }
-
-  &__bottom {
-    margin-top: -20px;
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    align-items: center;
-    padding: 55px 50px 30px;
-    gap: 20px 30px;
-    background: #CCFF99;
-    border-radius: 0px 0px 20px 20px;
-
-    @media (max-width: 1230px) {
-      grid-template-columns: auto auto;
-    }
-
-    @media (max-width: 740px) {
-      grid-template-columns: 1fr;
-      padding: 55px 20px 30px;
-
-      .price-note {
-        margin-right: auto;
-      }
-    }
-  }
-
-  &__bottom-text {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 125%;
-    color: #19191D;
-
-    @media (max-width: 1230px) {
-      grid-column: 1 / -1;
-    }
-  }
 }

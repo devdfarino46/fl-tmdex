@@ -8,6 +8,14 @@
     }
   }
 
+  &.--mt-80-40 {
+    margin-top: 80px;
+
+    @media (max-width: 740px) {
+      margin-top: 40px;
+    }
+  }
+
   &__container {
     position: relative;
     display: grid;
