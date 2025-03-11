@@ -1,0 +1,20 @@
+.price-note {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  background: #FAFFF5;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #19191D;
+  
+  b {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 125%;
+    color: #566B40;
+  }
+}
