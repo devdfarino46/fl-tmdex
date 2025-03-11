@@ -1,0 +1,67 @@
+.contacts-tabs {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0;
+  }
+
+  &__tab-content {
+    margin-top: 20px;
+  }
+
+  &__slider-wrapper {
+  }
+
+  &__radio-tabs {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px
+  }
+
+  &__feedback-table {
+    overflow-y: hidden;
+    overflow-x: auto;
+    .table {
+      width: 100%;
+      min-width: 500px;
+    }
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: flex-start;
+
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__details-table {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    @media (max-width: 940px) {
+      width: 100%;
+    }
+
+    .table {
+      min-width: 500px;
+      width: 100%;
+    }
+  }
+}

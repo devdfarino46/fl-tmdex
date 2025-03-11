@@ -59,7 +59,7 @@ let MktuFilter = ["01", "10", "13", "15", "35"];
 
 const Ui = {
   toggleTabs: function (btn, tabBtn = null, scroll = false) {
-    const tabBtns = document.querySelectorAll('.tab-btn, .tab-btn-nocss');
+    const tabBtns = document.querySelectorAll('.tab-btn, .tab-btn-nocss, .radio-tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     
     btn.addEventListener('click', ev => {
@@ -245,6 +245,21 @@ const Ui = {
     } else if (loop === false) {
       swiper.params.loop = false;
     }
+  },
+
+  copyBtnInit: function () {
+    document.querySelectorAll('.copy-btn').forEach(copyBtn => {
+      copyBtn.addEventListener('click', ev => {
+        const range = document.createRange();
+        const selection = window.getSelection();
+        range.selectNodeContents(
+          copyBtn.closest('.copy-parent').
+          querySelector('.copy-text')
+        );
+        selection.removeAllRanges();
+        selection.addRange(range);
+      });
+    });
   },
 
   tariffInit: function () {
@@ -684,7 +699,7 @@ const Ui = {
   },
 
   tabBtnInit: function () {
-    document.querySelectorAll('.tab-btn, .tab-btn-nocss').forEach(btn => {
+    document.querySelectorAll('.tab-btn, .tab-btn-nocss, .radio-tab-btn').forEach(btn => {
       Ui.toggleTabs(btn);
     });
   },
@@ -2010,6 +2025,36 @@ const Ui = {
     });
   },
 
+  contactsSliderInit: function () {
+    document.querySelectorAll('.contacts-slider').forEach(contactsSlider => {
+      const swiper = new Swiper(contactsSlider.querySelector('.swiper'), {
+        direction: 'horizontal',
+        slidesPerView: 1,
+        spaceBetween: 10,
+        allowTouchMove: false,
+        mousewheel: {
+          forceToAxis: 'horizontal',
+          enabled: true
+        },
+        effect: 'fade',
+        navigation: {
+          nextEl: contactsSlider.querySelector('.contacts-slider__next-btn'),
+          prevEl: contactsSlider.querySelector('.contacts-slider__prev-btn'),
+        },
+        on: {
+          init: function () {
+            contactsSlider.querySelector('.contacts-slider__slider-num').innerHTML = 
+              `${this.realIndex+1}/${this.slides.length}`;
+          },
+          slideChange: function () {
+            contactsSlider.querySelector('.contacts-slider__slider-num').innerHTML =
+              `${this.realIndex+1}/${this.slides.length}`;
+          }
+        }
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2057,6 +2102,8 @@ const Ui = {
     this.mktuAccordeonInit();
     this.reviewCardInit();
     this.videoPopupInit();
+    this.copyBtnInit();
+    this.contactsSliderInit();
   }
 }
 Ui.init();

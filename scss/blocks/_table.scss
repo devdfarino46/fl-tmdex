@@ -20,6 +20,17 @@
 
   td {
     border-bottom: 1px solid #D2D2D6;
+
+    a {
+      color: #2979FF;
+      transition: .3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: #1B4EA3;
+        }
+      }
+    }
   }
   tr:last-child td {
     border-bottom: none;

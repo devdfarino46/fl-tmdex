@@ -3,6 +3,7 @@
   <div class="container">
     <h1 class="page-contacts__title">Контакты</h1>
   </div>
+
   <section class="contacts-main">
     <div class="contacts-main__container">
       <ul class="contacts-main__left">
@@ -49,6 +50,229 @@
           <span>Telegram-bot tmdex</span>
           <i class="icon-tg"></i>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts-tabs">
+    <div class="contacts-tabs__container">
+      <div class="contacts-tabs__tabs">
+        <button class="tab-btn --active" data-tab="contacts search">
+          <span>Как найти</span>
+        </button>
+        <button class="tab-btn" data-tab="contacts feedback">
+          <span>Связаться с сотрудником</span>
+        </button>
+        <button class="tab-btn" data-tab="contacts details">
+          <span>Реквизиты</span>
+        </button>
+      </div>
+      <div class="contacts-tabs__tab-content tab-content --active" data-tab="contacts search">
+        <div class="contacts-tabs__slider-wrapper">
+          <div class="contacts-tabs__radio-tabs">
+            <label class="radio radio-tab-btn --active" data-tab="contacts-search sankt-peterburg">
+              <div>
+                <input type="radio" name="contacts-search-tab" checked>
+              </div>
+              <p>Санкт- Петербург</p>
+            </label>
+            <label class="radio radio-tab-btn" data-tab="contacts-search moskow">
+              <div>
+                <input type="radio" name="contacts-search-tab">
+              </div>
+              <p>Москва</p>
+            </label>
+          </div>
+  
+          <div class="contacts-slider tab-content --active" data-tab="contacts-search sankt-peterburg">
+            <div class="contacts-slider__left">
+              <p class="contacts-slider__title">
+                Бизнес-центр «Сенатор» находится на <br>7-й линии, как и станция метро Василеостровская
+              </p>
+              <ul class="contacts-slider__list">
+                <li>
+                  Выйдя из метро, перейдите Средний проспект и пройдите полтора квартала по 7-й линии В.О. в сторону реки Смоленки;
+                </li>
+                <li>
+                  Для входа в БЦ паспорт и пропуск не нужны. Вызовите лифт и поднимитесь на 7 этаж, офис будет слева от лифтового холла.
+                </li>
+              </ul>
+              <div class="contacts-slider__copy-text copy-parent">
+                <p class="copy-text">59.947742, 30.272759</p>
+                <button class="copy-btn">
+                  <i class="icon-copy"></i>
+                </button>
+              </div>
+              <div class="contacts-slider__left-bottom">
+                <div class="contacts-slider__slider-btns">
+                  <button type="button" class="contacts-slider__prev-btn btn btn--small" aria-label="Предыдущий слайд">
+                    <i class="icon-chevron-right" style="rotate: 180deg; translate: -1px -1px;"></i>
+                  </button>
+                  <button type="button" class="contacts-slider__next-btn btn btn--small" aria-label="Следующий слайд">
+                    <i class="icon-chevron-right"></i>
+                  </button>
+                </div>
+                <p class="contacts-slider__slider-num">0/0</p>
+              </div>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae18bcc19aa399968acf94aecbc432f5e7d050c03da06427b818d84efa24ab7e9&amp;source=constructor" width="530" height="346" frameborder="0"></iframe>
+                </div>
+                <div class="swiper-slide">
+                  <img src="data:," 
+                    data-src="img/photo-map1.webp" alt="" 
+                    class="lazyload ">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contacts-slider tab-content" data-tab="contacts-search moskow">
+            <div class="contacts-slider__left">
+              <p class="contacts-slider__title">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, nulla.
+              </p>
+              <ul class="contacts-slider__list">
+                <li>
+                  Выйдя из метро, перейдите Средний проспект и пройдите полтора квартала по 7-й линии В.О. в сторону реки Смоленки;
+                </li>
+                <li>
+                  Для входа в БЦ паспорт и пропуск не нужны. Вызовите лифт и поднимитесь на 7 этаж, офис будет слева от лифтового холла.
+                </li>
+              </ul>
+              <div class="contacts-slider__copy-text copy-parent">
+                <p class="copy-text">59.947742, 30.272759</p>
+                <button class="copy-btn">
+                  <i class="icon-copy"></i>
+                </button>
+              </div>
+              <div class="contacts-slider__left-bottom">
+                <div class="contacts-slider__slider-btns">
+                  <button type="button" class="contacts-slider__prev-btn btn btn--small" aria-label="Предыдущий слайд">
+                    <i class="icon-chevron-right" style="rotate: 180deg; translate: -1px -1px;"></i>
+                  </button>
+                  <button type="button" class="contacts-slider__next-btn btn btn--small" aria-label="Следующий слайд">
+                    <i class="icon-chevron-right"></i>
+                  </button>
+                </div>
+                <p class="contacts-slider__slider-num">0/0</p>
+              </div>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae18bcc19aa399968acf94aecbc432f5e7d050c03da06427b818d84efa24ab7e9&amp;source=constructor" width="530" height="346" frameborder="0"></iframe>
+                </div>
+                <div class="swiper-slide">
+                  <img src="data:," 
+                    data-src="img/photo-map2.webp" alt="" 
+                    class="lazyload ">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts-tabs__tab-content tab-content" data-tab="contacts feedback">
+        <div class="contacts-tabs__feedback-table">
+          <table class="table">
+            <tr>
+              <th style="width: 33.33%;">Сотрудник</th>
+              <th style="width: 33.33%;">Должность</th>
+              <th style="width: 33.33%;">Контакты</th>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold;">Павел Барцев</td>
+              <td style="vertical-align: top;">
+                Учредитель <br>
+                Патентный поверенный РФ №755 <br>
+                Евразийский патентный поверенный №389
+              </td>
+              <td style="vertical-align: top;">
+                8 (900) 999-99-99 <br>
+                <a href="#">mail@mail.ru</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold;">Павел Барцев</td>
+              <td style="vertical-align: top;">
+                Учредитель <br>
+                Патентный поверенный РФ №755 <br>
+                Евразийский патентный поверенный №389
+              </td>
+              <td style="vertical-align: top;">
+                8 (900) 999-99-99 <br>
+                <a href="#">mail@mail.ru</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-weight: bold;">Павел Барцев</td>
+              <td style="vertical-align: top;">
+                Учредитель <br>
+                Патентный поверенный РФ №755 <br>
+                Евразийский патентный поверенный №389
+              </td>
+              <td style="vertical-align: top;">
+                8 (900) 999-99-99 <br>
+                <a href="#">mail@mail.ru</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="contacts-tabs__tab-content tab-content" data-tab="contacts details">
+        <div class="contacts-tabs__details">
+          <div class="contacts-tabs__details-table">
+            <table class="table">
+              <tr>
+                <td style="vertical-align: top; width: 50%;">Полное наименование фирмы</td>
+                <td style="vertical-align: top; width: 50%;">Общество с ограниченной ответственностью «ТМДЕКС»</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Юридический адрес</td>
+                <td style="vertical-align: top;">г. Москва, ул. Ленинская слобода д. 19 ком. 41М14,41М15</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Почтовый адрес</td>
+                <td style="vertical-align: top;">121059, Москва, а/я 107, ООО «ТМДЕКС»</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Фактический адрес</td>
+                <td style="vertical-align: top;">г. Санкт-Петербург, 7-линия В. О., д. 76, лит. А, Бизнес-центр «Сенатор», 7 этаж, комната 19</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Телефон/факс</td>
+                <td style="vertical-align: top;">8 (495) 477-54-75, 8 (495) 477-54-75</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Полное наименование фирмы</td>
+                <td style="vertical-align: top;">Общество с ограниченной ответственностью «ТМДЕКС»</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">ОГРН</td>
+                <td style="vertical-align: top;">1047796463714</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">ИНН</td>
+                <td style="vertical-align: top;">7722518387</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">КПП</td>
+                <td style="vertical-align: top;">772501001</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Генеральный директор</td>
+                <td style="vertical-align: top;">Фамилия Имя Отчество</td>
+              </tr>
+            </table>
+          </div>
+          <a href="files/sample1.pdf" class="btn btn--secondary" download="">
+            <span>Скачать реквизиты (PDF, 52 КБ)</span>
+            <i class="icon-file"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
