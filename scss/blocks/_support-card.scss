@@ -1,0 +1,35 @@
+.support-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 40px 30px 30px;
+  gap: 40px;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D6;
+  border-radius: 20px;
+
+  &__num {
+    width: 25px;
+    height: 25px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #566B40;
+    padding: 5px;
+    gap: 10px;
+    background: #CCFF99;
+    border-radius: 100px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+  }
+}

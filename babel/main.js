@@ -2079,7 +2079,7 @@ const Ui = {
     });
   },
 
-  contactsFeedback: function () {
+  contactsFeedbackInit: function () {
     document.querySelectorAll('.contacts-feedback').forEach(contactsFeedback => {
       const form = contactsFeedback.querySelector('form');
       const submitBtn = contactsFeedback.querySelector('.contacts-feedback__submit-btn');
@@ -2100,6 +2100,21 @@ const Ui = {
 
       policyInput.addEventListener('click', ev => {
         update();
+      });
+    });
+  },
+
+  supportSliderInit: function () {
+    document.querySelectorAll('.support-slider').forEach(supportSlider => {
+      const swiper = new Swiper(supportSlider.querySelector('.swiper'), {
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        slidesOffsetAfter: 30,
+        mousewheel: {
+          enabled: true,
+          forceToAxis: 'horizontal'
+        }
       });
     });
   },
@@ -2154,7 +2169,8 @@ const Ui = {
     this.copyBtnInit();
     this.contactsSliderInit();
     this.textareaInit();
-    this.contactsFeedback();
+    this.contactsFeedbackInit();
+    this.supportSliderInit();
   }
 }
 Ui.init();

@@ -1,0 +1,43 @@
+.support-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__title {
+    color: #19191D;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 143%;
+    max-width: 570px;
+    margin-bottom: 80px;
+
+    @media (max-width: 740px) {
+      margin-bottom: 40px;
+    }
+
+    b {
+      color: #B4B4BB;
+    }
+  }
+
+  .swiper {
+    overflow: hidden;
+    touch-action: pan-y;
+    padding: 30px 0;
+    margin: -30px 0;
+    width: 0;
+    min-width: calc(100% + 30px);
+    margin-right: -30px;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  .swiper-slide {
+    width: 285px;
+    flex-shrink: 0;
+  }
+}
