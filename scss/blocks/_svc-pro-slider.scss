@@ -1,0 +1,71 @@
+.svc-pro-slider {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 470px 1fr;
+    gap: 30px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+
+    b {
+      color: #B4B4BB;
+    }
+  }
+
+  &__left-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__num {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #787885;
+  }
+
+  .swiper {
+    overflow: hidden;
+    touch-action: pan-y;
+    padding: 30px 0;
+    margin: -30px 0;
+    margin-right: -30px;
+    min-width: calc(100% + 30px);
+    width: 0;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
+      width: 330px;
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+  }
+}

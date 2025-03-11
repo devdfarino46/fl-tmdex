@@ -2119,6 +2119,41 @@ const Ui = {
     });
   },
 
+  svcProSliderInit: function () {
+    document.querySelectorAll('.svc-pro-slider').forEach(svcProSlider => {
+      const swiper = new Swiper(svcProSlider.querySelector('.swiper'), {
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        loop: true,
+        mousewheel: {
+          enabled: true,
+          forceToAxis: 'horizontal'
+        },
+        navigation: {
+          nextEl: svcProSlider.querySelector('.swiper-slide-next'),
+          prevEl: svcProSlider.querySelector('.swiper-slide-prev'),
+        },
+
+        on: {
+          init: function () {
+            svcProSlider.querySelector('.swiper-num').innerHTML =
+              `${this.realIndex + 1}/${this.slides.length}`;
+            Ui.swiperPerViewAutoUpdate(this, 330);
+            this.update();
+          },
+          resize: function () {
+            Ui.swiperPerViewAutoUpdate(this, 330);
+            this.update();
+          },
+          slideChange: function () {
+            svcProSlider.querySelector('.swiper-num').innerHTML =
+              `${this.realIndex + 1}/${this.slides.length}`;
+          }
+        }
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2171,6 +2206,7 @@ const Ui = {
     this.textareaInit();
     this.contactsFeedbackInit();
     this.supportSliderInit();
+    this.svcProSliderInit();
   }
 }
 Ui.init();
