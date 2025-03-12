@@ -10,8 +10,11 @@
     flex-direction: column;
 
     .accordeon {
-      @media (max-width: 740px) {
-        &:not(:first-child) {
+      
+      &:not(:first-child) {
+        margin-top: 10px;
+
+        @media (max-width: 740px) {
           margin-top: 40px;
         }
       }

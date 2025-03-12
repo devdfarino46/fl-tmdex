@@ -2162,7 +2162,7 @@ const Ui = {
         if (window.innerWidth >= 740) {
           if (svcTab.querySelector('.services-tab__accordeon.--active')) {
             svcTab.style.minHeight = `${
-              svcTab.querySelector('.services-tab__accordeon.--active').nextElementSibling.scrollHeight
+              svcTab.querySelector('.services-tab__accordeon.--active').nextElementSibling.scrollHeight + 40
             }px`;
           } else {
             svcTab.style.minHeight = '0px';

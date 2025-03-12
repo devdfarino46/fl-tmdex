@@ -6,12 +6,15 @@
   position: relative;
   min-height: 0px;
   transition: .3s ease min-height;
-  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 30px;
 
   @media (max-width: 740px) {
     align-items: stretch;
     gap: 0;
     margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
   }
 
   &__accordeon {
@@ -28,7 +31,7 @@
 
   &__subaccordeon {
     position: absolute;
-    top: 0;
+    top: 40px;
     left: 300px;
     right: 0;
     opacity: 1;

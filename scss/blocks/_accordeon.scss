@@ -102,6 +102,10 @@
   }
   &--for-mobile.--active {
     border-bottom: 1px solid #D2D2D6;
+
+    @media (max-width: 740px) {
+      border-bottom: none;
+    }
   }
   &.--active>.btn .icon-close, &.--active>.btn .icon-minus {
     opacity: 1;

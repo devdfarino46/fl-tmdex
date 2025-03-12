@@ -94,7 +94,11 @@
 
     @media (max-width: 740px) {
       font-size: 14px;
-      padding: 16px 32px;
+      padding: 16px 10px;
+
+      i {
+        display: none;
+      }
     }
   }
 
