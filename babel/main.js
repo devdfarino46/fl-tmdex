@@ -59,7 +59,7 @@ let MktuFilter = ["01", "10", "13", "15", "35"];
 
 const Ui = {
   toggleTabs: function (btn, tabBtn = null, scroll = false) {
-    const tabBtns = document.querySelectorAll('.tab-btn, .tab-btn-nocss, .radio-tab-btn');
+    const tabBtns = document.querySelectorAll('.tab-btn, .tab-btn-nocss, .radio-tab-btn, .menu-tab');
     const tabContents = document.querySelectorAll('.tab-content');
     
     btn.addEventListener('click', ev => {
@@ -699,7 +699,7 @@ const Ui = {
   },
 
   tabBtnInit: function () {
-    document.querySelectorAll('.tab-btn, .tab-btn-nocss, .radio-tab-btn').forEach(btn => {
+    document.querySelectorAll('.tab-btn, .tab-btn-nocss, .radio-tab-btn, .menu-tab').forEach(btn => {
       Ui.toggleTabs(btn);
     });
   },
@@ -2154,6 +2154,58 @@ const Ui = {
     });
   },
 
+  servicesTabInit: function () {
+    document.querySelectorAll('.services-tab').forEach(svcTab => {
+      const accordeons = svcTab.querySelectorAll('.services-tab__accordeon');
+
+      const updateLaptopHeight = () => {
+        if (window.innerWidth >= 740) {
+          if (svcTab.querySelector('.services-tab__accordeon.--active')) {
+            svcTab.style.minHeight = `${
+              svcTab.querySelector('.services-tab__accordeon.--active').nextElementSibling.scrollHeight
+            }px`;
+          } else {
+            svcTab.style.minHeight = '0px';
+          }
+
+          accordeons.forEach(accordeon => {
+            accordeon.nextElementSibling.style.maxHeight = null;
+          });
+        } else {
+          svcTab.style.minHeight = null;
+
+          accordeons.forEach(accordeon => {
+            if (accordeon.classList.contains('--active')) {
+              accordeon.nextElementSibling.style.maxHeight = `${
+                accordeon.nextElementSibling.scrollHeight
+              }px`;
+            } else {
+              accordeon.nextElementSibling.style.maxHeight = `0px`;
+            }
+          });
+        }
+      }
+      updateLaptopHeight();
+
+      accordeons.forEach((accordeon, index) => {
+        accordeon.addEventListener('click', ev => {
+          accordeons.forEach( (el, i) => {
+            if (i === index) {
+              el.classList.toggle('--active');
+            } else {
+              el.classList.remove('--active');
+            }
+          });
+          updateLaptopHeight();
+        });
+      });
+
+      window.addEventListener('resize', ev => {
+        updateLaptopHeight();
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2207,6 +2259,7 @@ const Ui = {
     this.contactsFeedbackInit();
     this.supportSliderInit();
     this.svcProSliderInit();
+    this.servicesTabInit();
   }
 }
 Ui.init();

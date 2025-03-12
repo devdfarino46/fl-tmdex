@@ -8,11 +8,19 @@
   opacity: 1;
   transform: translateY(0px);
   transition: .5s ease;
-  overflow: hidden;
 }
 .accordeon:not(.--active) + .subaccordeon {
   height: 0;
   opacity: 0;
   pointer-events: none;
+  overflow: hidden;
   transform: translateY(-50px);
+}
+.accordeon--for-mobile:not(.--active) + .subaccordeon {
+  @media (max-width: 740px) {
+    height: auto;
+    opacity: 1;
+    pointer-events: unset;
+    transform: translateY(0);
+  }
 }
