@@ -9,6 +9,10 @@
     display: grid;
     grid-template-columns: 470px 1fr;
     gap: 30px;
+
+    @media (max-width: 940px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__left {

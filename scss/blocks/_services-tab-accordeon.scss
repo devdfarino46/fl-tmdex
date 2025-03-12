@@ -1,0 +1,51 @@
+.services-tab-accordeon {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #787885;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  cursor: pointer;
+  transition: .3s ease;
+
+  i {
+    font-size: 21px;
+    opacity: 0;
+    transition: .3s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #5A5B6A;
+
+      i {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.--active {
+    color: #19191D;
+
+    i {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 740px) {
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #D2D2D6;
+    color: #19191D;
+
+    i {
+      opacity: 1;
+    }
+
+    &.--active i {
+      transform: rotate(90deg);
+    }
+  }
+}
