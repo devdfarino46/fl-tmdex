@@ -766,7 +766,7 @@ const Ui = {
       }
 
       popup.addEventListener('click', (e) => {
-        if (!e.composedPath().includes(wrapper)) {
+        if (!e.composedPath().includes(wrapper) && !popup.classList.contains('--no-close')) {
           popup.classList.remove('--visibled');
           document.body.classList.remove('no-scroll');
         }
