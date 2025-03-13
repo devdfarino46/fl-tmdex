@@ -2332,11 +2332,13 @@ const Ui = {
       const moreArticles = articleContent.querySelector('.more-articles');
 
       const updatePos = () => {
-        const rect = articleContent.getBoundingClientRect();
-        
-        if (moreArticles) moreArticles.style.top = `${
-          Number(-rect.top).clamp(-20, rect.height - moreArticles.clientHeight)
-        }px`;
+        if (window.innerWidth >= 1230) {
+          const rect = articleContent.getBoundingClientRect();
+          
+          if (moreArticles) moreArticles.style.top = `${
+            Number(-rect.top).clamp(-20, rect.height - moreArticles.clientHeight )
+          }px`;
+        }
       };
 
       window.addEventListener('DOMContentLoaded', ev => {
@@ -2344,6 +2346,10 @@ const Ui = {
       });
 
       window.addEventListener('scroll', ev => {
+        updatePos();
+      });
+
+      window.addEventListener('resize', ev => {
         updatePos();
       });
     });

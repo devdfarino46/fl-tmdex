@@ -17,6 +17,10 @@
       width: 200px;
       top: 0;
       right: -210px;
+
+      @media (max-width: 1230px) {
+        display: none;
+      }
     }
   }
 }

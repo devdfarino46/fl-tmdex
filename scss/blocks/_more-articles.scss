@@ -19,6 +19,7 @@
     flex-direction: column;
     gap: 5px;
     padding: 10px 0;
+    position: relative;
   }
 
   &__item-title {
@@ -26,6 +27,12 @@
     font-size: 14px;
     line-height: 143%;
     color: #19191D;
+
+    a::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
   }
 
   &__item-date {
