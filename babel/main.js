@@ -56,6 +56,10 @@ const CORRESPS = {
 }
 let MktuFilter = ["01", "10", "13", "15", "35"];
 
+Number.prototype.clamp = function(min, max) {
+  return Math.min(Math.max(this, min), max);
+};
+
 
 const Ui = {
   toggleTabs: function (btn, tabBtn = null, scroll = false) {
@@ -2323,6 +2327,28 @@ const Ui = {
     });
   },
 
+  articleContentInit: function () {
+    document.querySelectorAll('.article-content').forEach(articleContent => {
+      const moreArticles = articleContent.querySelector('.more-articles');
+
+      const updatePos = () => {
+        const rect = articleContent.getBoundingClientRect();
+        
+        if (moreArticles) moreArticles.style.top = `${
+          Number(-rect.top).clamp(-20, rect.height - moreArticles.clientHeight)
+        }px`;
+      };
+
+      window.addEventListener('DOMContentLoaded', ev => {
+        updatePos();
+      });
+
+      window.addEventListener('scroll', ev => {
+        updatePos();
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2379,6 +2405,7 @@ const Ui = {
     this.servicesTabInit();
     this.priceCalcInit();
     this.pageTabLoad();
+    this.articleContentInit();
   }
 }
 Ui.init();

@@ -1,11 +1,22 @@
 .article-content {
   margin-top: 40px;
+  min-height: 1000px;
 
   &__container {
     max-width: 690px;
+    position: relative;
 
     @media (max-width: 940) {
       max-width: 584px;
+    }
+
+    .more-articles {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      position: absolute;
+      width: 200px;
+      top: 0;
+      right: -210px;
     }
   }
 }
