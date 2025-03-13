@@ -1,0 +1,31 @@
+.help-expert-banner {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  background: linear-gradient(107.06deg, #A8D17D 1.09%, #566B40 100%);
+  border-radius: 20px;
+  margin-top: 40px;
+
+  @media (max-width: 740px) {
+    padding: 30px 20px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #FFFFFF;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #FFFFFF;
+  }
+
+  &__btn {
+    margin-top: 30px;
+  }
+}
