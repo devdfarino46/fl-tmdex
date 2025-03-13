@@ -29,6 +29,24 @@
     }
   }
 
+  &__top-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+    gap: 5px;
+
+    li {
+      gap: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: #19191D;
+    }
+  }
+
   &__main-btn {
     @media (max-width: 440px) {
       padding-left: 5px;

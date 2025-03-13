@@ -357,6 +357,7 @@
       </h2>
       <div class="price-calc-section__content">
         <form action="#" class="price-calc">
+          <input type="text" name="price-total">
           <div class="price-calc__row">
             <p class="price-calc__subtitle">
               <b>1</b>
@@ -368,7 +369,7 @@
             <div class="price-calc__count-wrap">
               <label class="input --clear-on --integer-min-max">
                 <div class="input__wrapper">
-                  <input type="number" placeholder="1" value="1" required data-mask-min="1" data-mask-max="45" >
+                  <input type="number" name="mktu-count" placeholder="1" value="1" required data-mask-min="1" data-mask-max="45" >
                   <button type="button"><i class="icon-close"></i></button>
                 </div>
               </label>
@@ -380,7 +381,7 @@
               </button>
               <label class="checkbox">
                 <div class="checkbox__input">
-                  <input type="checkbox" name="">
+                  <input type="checkbox" name="mktu-all">
                   <i class="icon-check"></i>
                 </div>
                 <p class="checkbox__label">Все 45 классов</p>
@@ -398,19 +399,19 @@
               <div class="price-calc__tariffs-radios">
                 <label class="radio radio-tab-btn --active" data-tab="price-calc-tariff 1">
                   <div>
-                    <input type="radio" name="price-calc-tariff" checked>
+                    <input type="radio" name="tariff" value="Мало времени, хочу под ключ" checked>
                   </div>
                   <p>Мало времени, хочу под ключ</p>
                 </label>
                 <label class="radio radio-tab-btn" data-tab="price-calc-tariff 2">
                   <div>
-                    <input type="radio" name="price-calc-tariff">
+                    <input type="radio" name="tariff" value="Мне нужна простая регистрация">
                   </div>
                   <p>Мне нужна простая регистрация</p>
                 </label>
                 <label class="radio radio-tab-btn" data-tab="price-calc-tariff 3">
                   <div>
-                    <input type="radio" name="price-calc-tariff">
+                    <input type="radio" name="tariff" value="Мне нужно полное сопровождение">
                   </div>
                   <p>Мне нужно полное сопровождение</p>
                 </label>
@@ -497,13 +498,6 @@
                   </div>
                   <p class="checkbox__label">Подать заявку за 24 часа</p>
                 </label>
-                <label class="checkbox">
-                  <div class="checkbox__input">
-                    <input type="checkbox" name="">
-                    <i class="icon-check"></i>
-                  </div>
-                  <p class="checkbox__label">Ускоренная регистрация</p>
-                </label>
               </div>
             </div>
           </div>
@@ -514,6 +508,16 @@
             <span>Стоимость:</span>
             <b>103 000 ₽</b>
           </p>
+          <ul class="price-total__top-list">
+            <li>
+              <span>Подача заявки:</span>
+              <b>24 часа</b>
+            </li>
+            <li>
+              <span>Срок регистрации:</span>
+              <b>6-8 месяца</b>
+            </li>
+          </ul>
           <button type="button" class="price-total__main-btn btn btn--large btn--lime">
             <span>Получить услугу</span>
             <i class="icon-check-circle"></i>
