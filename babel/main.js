@@ -2250,6 +2250,10 @@ const Ui = {
         updateCountBtns();
       });
 
+      countValue.addEventListener('input', ev => {
+        updateCountBtns();
+      });
+
       countAll.addEventListener('change', ev => {
         if (countAll.checked) {
           countMinus.setAttribute('disabled', 'disabled');
