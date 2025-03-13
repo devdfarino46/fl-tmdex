@@ -633,6 +633,14 @@ const Ui = {
         IMask(inputElem, {
           mask: inputElem.dataset.mask
         });
+      } else if (input.classList.contains('--integer-min-max')) {
+        IMask(inputElem, {
+          mask: Number,
+          min: Number(inputElem.dataset.maskMin),
+          max: Number(inputElem.dataset.maskMax),
+          autofix: true,
+          scale: 0,
+        });
       }
     
       // Reset state
@@ -2206,6 +2214,78 @@ const Ui = {
     });
   },
 
+  priceCalcInit: function () {
+    document.querySelectorAll('.price-calc').forEach(priceCalc => {
+      const countMinus = priceCalc.querySelectorAll('.price-calc__count-wrap .btn')[0];
+      const countPlus = priceCalc.querySelectorAll('.price-calc__count-wrap .btn')[1];
+      const countValue = priceCalc.querySelector('.price-calc__count-wrap .input input');
+      const countAll = priceCalc.querySelector('.price-calc__count-wrap .checkbox input');
+
+      const tariffsLists = priceCalc.querySelectorAll('.price-calc__tariffs-list');
+
+      priceCalc.addEventListener('submit', ev => {
+        ev.preventDefault();
+      });
+
+      const updateCountBtns = () => {
+        if (Number(countValue.value) <= 1) {
+          countMinus.setAttribute('disabled', 'disabled');
+        } else {
+          countMinus.removeAttribute('disabled');
+        }
+        if (Number(countValue.value) >= Number(countValue.dataset.maskMax)) {
+          countPlus.setAttribute('disabled', 'disabled');
+        } else {
+          countPlus.removeAttribute('disabled');
+        }
+      }
+
+      countMinus.addEventListener('click', ev => {
+        countValue.value = Number(countValue.value) - 1;
+        updateCountBtns();
+      });
+      
+      countPlus.addEventListener('click', ev => {
+        countValue.value = Number(countValue.value) + 1;
+        updateCountBtns();
+      });
+
+      countAll.addEventListener('change', ev => {
+        if (countAll.checked) {
+          countMinus.setAttribute('disabled', 'disabled');
+          countPlus.setAttribute('disabled', 'disabled');
+          countValue.setAttribute('disabled', 'disabled');
+        } else {
+          updateCountBtns();
+          countValue.removeAttribute('disabled');
+        }
+      });
+
+      tariffsLists.forEach(list => {
+        const label = list.querySelector('.price-calc__tariffs-list>p');
+        const content = list.querySelector('.price-calc__tariffs-list>ul');
+
+        const updateHeight = () => {
+          if (label.classList.contains('--active')) {
+            content.style.maxHeight = `${content.scrollHeight}px`;
+          } else {
+            content.style.maxHeight = `0px`;
+          }
+        }
+        updateHeight();
+
+        label.addEventListener('click', ev => {
+          label.classList.toggle('--active');
+          updateHeight();
+        });
+
+        window.addEventListener('resize', ev => {
+          updateHeight();
+        });
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2260,6 +2340,7 @@ const Ui = {
     this.supportSliderInit();
     this.svcProSliderInit();
     this.servicesTabInit();
+    this.priceCalcInit();
   }
 }
 Ui.init();
