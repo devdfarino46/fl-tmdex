@@ -1,13 +1,14 @@
 .article-content {
   margin-top: 40px;
   min-height: 1000px;
+  padding-bottom: 40px;
 
   &__container {
-    max-width: 690px;
+    max-width: 690px+60;
     position: relative;
 
     @media (max-width: 940) {
-      max-width: 584px;
+      max-width: 584px+60;
     }
 
     .more-articles {
