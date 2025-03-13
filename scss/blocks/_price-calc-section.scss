@@ -1,0 +1,44 @@
+.price-calc-section {
+  margin-top: 80px;
+
+  @media (max-width: 740px) {
+    margin-top: 40px;
+  }
+
+  &__container {
+  }
+
+  &__title {
+    margin-bottom: 80px;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 126%;
+    color: #19191D;
+    max-width: 580px;
+
+    b {
+      color: #B4B4BB;
+    }
+  
+    @media (max-width: 740px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 370px;
+    gap: 0 30px;
+
+    @media (max-width: 1230px) {
+      grid-template-columns: 1fr;
+    }
+
+    .price-total {
+
+      @media (max-width: 1230px) {
+        margin-top: -10px;
+      }
+    }
+  }
+}

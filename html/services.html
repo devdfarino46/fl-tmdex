@@ -355,158 +355,209 @@
       <h2 class="price-calc-section__title">
         <b>Калькулятор</b> стоимости регистрации товарного знака
       </h2>
-      <form action="#" class="price-calc">
-        <div class="price-calc__row">
-          <p class="price-calc__subtitle">
-            <b>1</b>
-            <span>
-              Укажите количество МКТУ
-              <span class="tooltip-link" data-href="#tooltip-no-design">Что&nbsp;это?</span>
-            </span>
-          </p>
-          <div class="price-calc__count-wrap">
-            <label class="input --clear-on --integer-min-max">
-              <div class="input__wrapper">
-                <input type="number" placeholder="1" value="1" required data-mask-min="1" data-mask-max="45" >
-                <button type="button"><i class="icon-close"></i></button>
-              </div>
-            </label>
-            <button type="button" class="btn btn--large btn--lime" disabled>
-              <i class="icon-minus"></i>
-            </button>
-            <button type="button" class="btn btn--large btn--lime">
-              <i class="icon-plus"></i>
-            </button>
-            <label class="checkbox">
-              <div class="checkbox__input">
-                <input type="checkbox" name="">
-                <i class="icon-check"></i>
-              </div>
-              <p class="checkbox__label">Все 45 классов</p>
-            </label>
-          </div>
-        </div>
-        <div class="price-calc__row">
-          <p class="price-calc__subtitle">
-            <b>2</b>
-            <span>
-              Выберите тариф
-            </span>
-          </p>
-          <div class="price-calc__tariffs-wrap">
-            <div class="price-calc__tariffs-radios">
-              <label class="radio radio-tab-btn --active" data-tab="price-calc-tariff 1">
-                <div>
-                  <input type="radio" name="price-calc-tariff" checked>
+      <div class="price-calc-section__content">
+        <form action="#" class="price-calc">
+          <div class="price-calc__row">
+            <p class="price-calc__subtitle">
+              <b>1</b>
+              <span>
+                Укажите количество МКТУ
+                <span class="tooltip-link" data-href="#tooltip-no-design">Что&nbsp;это?</span>
+              </span>
+            </p>
+            <div class="price-calc__count-wrap">
+              <label class="input --clear-on --integer-min-max">
+                <div class="input__wrapper">
+                  <input type="number" placeholder="1" value="1" required data-mask-min="1" data-mask-max="45" >
+                  <button type="button"><i class="icon-close"></i></button>
                 </div>
-                <p>Мало времени, хочу под ключ</p>
               </label>
-              <label class="radio radio-tab-btn" data-tab="price-calc-tariff 2">
-                <div>
-                  <input type="radio" name="price-calc-tariff">
+              <button type="button" class="btn btn--large btn--lime" disabled>
+                <i class="icon-minus"></i>
+              </button>
+              <button type="button" class="btn btn--large btn--lime">
+                <i class="icon-plus"></i>
+              </button>
+              <label class="checkbox">
+                <div class="checkbox__input">
+                  <input type="checkbox" name="">
+                  <i class="icon-check"></i>
                 </div>
-                <p>Мне нужна простая регистрация</p>
-              </label>
-              <label class="radio radio-tab-btn" data-tab="price-calc-tariff 3">
-                <div>
-                  <input type="radio" name="price-calc-tariff">
-                </div>
-                <p>Мне нужно полное сопровождение</p>
+                <p class="checkbox__label">Все 45 классов</p>
               </label>
             </div>
-            <p class="price-calc__tariffs-text tab-content --active" data-tab="price-calc-tariff 1">
-              Оптимально при регистрации без пересечений с другими
-            </p>
-            <div class="price-calc__tariffs-list tab-content --active" data-tab="price-calc-tariff 1">
-              <p>
-                <span>Что входит в тариф</span>
-                <i class="icon-chevron-right" style="rotate: 90deg;"></i>
-              </p>
-              <ul>
-                <li> <i class="icon-check-circle"></i>
-                  Подготовка и подача заявки
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Онлайн-мониторинг статуса заявки
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Ответы на формальные запросы Роспатента
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Получение и доставка свидетельства на товарный знак
-                </li>
-              </ul>
-            </div>
-
-            <p class="price-calc__tariffs-text tab-content" data-tab="price-calc-tariff 2">
-              Оптимально при регистрации без пересечений с другими
-            </p>
-            <div class="price-calc__tariffs-list tab-content" data-tab="price-calc-tariff 2">
-              <p>
-                <span>Что входит в тариф</span>
-                <i class="icon-chevron-right" style="rotate: 90deg;"></i>
-              </p>
-              <ul>
-                <li> <i class="icon-check-circle"></i>
-                  Подготовка и подача заявки
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Онлайн-мониторинг статуса заявки
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Ответы на формальные запросы Роспатента
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Получение и доставка свидетельства на товарный знак
-                </li>
-              </ul>
-            </div>
-            
-            <p class="price-calc__tariffs-text tab-content" data-tab="price-calc-tariff 3">
-              Оптимально при регистрации без пересечений с другими
-            </p>
-            <div class="price-calc__tariffs-list tab-content" data-tab="price-calc-tariff 3">
-              <p>
-                <span>Что входит в тариф</span>
-                <i class="icon-chevron-right" style="rotate: 90deg;"></i>
-              </p>
-              <ul>
-                <li> <i class="icon-check-circle"></i>
-                  Подготовка и подача заявки
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Онлайн-мониторинг статуса заявки
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Ответы на формальные запросы Роспатента
-                </li>
-                <li> <i class="icon-check-circle"></i>
-                  Получение и доставка свидетельства на товарный знак
-                </li>
-              </ul>
-            </div>
-            
           </div>
           <div class="price-calc__row">
-            <div class="price-calc__speed-wrap">
-              <label class="checkbox">
-                <div class="checkbox__input">
-                  <input type="checkbox" name="">
-                  <i class="icon-check"></i>
-                </div>
-                <p class="checkbox__label">Подать заявку за 24 часа</p>
-              </label>
-              <label class="checkbox">
-                <div class="checkbox__input">
-                  <input type="checkbox" name="">
-                  <i class="icon-check"></i>
-                </div>
-                <p class="checkbox__label">Ускоренная регистрация</p>
-              </label>
+            <p class="price-calc__subtitle">
+              <b>2</b>
+              <span>
+                Выберите тариф
+              </span>
+            </p>
+            <div class="price-calc__tariffs-wrap">
+              <div class="price-calc__tariffs-radios">
+                <label class="radio radio-tab-btn --active" data-tab="price-calc-tariff 1">
+                  <div>
+                    <input type="radio" name="price-calc-tariff" checked>
+                  </div>
+                  <p>Мало времени, хочу под ключ</p>
+                </label>
+                <label class="radio radio-tab-btn" data-tab="price-calc-tariff 2">
+                  <div>
+                    <input type="radio" name="price-calc-tariff">
+                  </div>
+                  <p>Мне нужна простая регистрация</p>
+                </label>
+                <label class="radio radio-tab-btn" data-tab="price-calc-tariff 3">
+                  <div>
+                    <input type="radio" name="price-calc-tariff">
+                  </div>
+                  <p>Мне нужно полное сопровождение</p>
+                </label>
+              </div>
+              <p class="price-calc__tariffs-text tab-content --active" data-tab="price-calc-tariff 1">
+                Оптимально при регистрации без пересечений с другими
+              </p>
+              <div class="price-calc__tariffs-list tab-content --active" data-tab="price-calc-tariff 1">
+                <p>
+                  <span>Что входит в тариф</span>
+                  <i class="icon-chevron-right" style="rotate: 90deg;"></i>
+                </p>
+                <ul>
+                  <li> <i class="icon-check-circle"></i>
+                    Подготовка и подача заявки
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Онлайн-мониторинг статуса заявки
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Ответы на формальные запросы Роспатента
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Получение и доставка свидетельства на товарный знак
+                  </li>
+                </ul>
+              </div>
+  
+              <p class="price-calc__tariffs-text tab-content" data-tab="price-calc-tariff 2">
+                Оптимально при регистрации без пересечений с другими
+              </p>
+              <div class="price-calc__tariffs-list tab-content" data-tab="price-calc-tariff 2">
+                <p>
+                  <span>Что входит в тариф</span>
+                  <i class="icon-chevron-right" style="rotate: 90deg;"></i>
+                </p>
+                <ul>
+                  <li> <i class="icon-check-circle"></i>
+                    Подготовка и подача заявки
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Онлайн-мониторинг статуса заявки
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Ответы на формальные запросы Роспатента
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Получение и доставка свидетельства на товарный знак
+                  </li>
+                </ul>
+              </div>
+              
+              <p class="price-calc__tariffs-text tab-content" data-tab="price-calc-tariff 3">
+                Оптимально при регистрации без пересечений с другими
+              </p>
+              <div class="price-calc__tariffs-list tab-content" data-tab="price-calc-tariff 3">
+                <p>
+                  <span>Что входит в тариф</span>
+                  <i class="icon-chevron-right" style="rotate: 90deg;"></i>
+                </p>
+                <ul>
+                  <li> <i class="icon-check-circle"></i>
+                    Подготовка и подача заявки
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Онлайн-мониторинг статуса заявки
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Ответы на формальные запросы Роспатента
+                  </li>
+                  <li> <i class="icon-check-circle"></i>
+                    Получение и доставка свидетельства на товарный знак
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+            <div class="price-calc__row">
+              <div class="price-calc__speed-wrap">
+                <label class="checkbox">
+                  <div class="checkbox__input">
+                    <input type="checkbox" name="">
+                    <i class="icon-check"></i>
+                  </div>
+                  <p class="checkbox__label">Подать заявку за 24 часа</p>
+                </label>
+                <label class="checkbox">
+                  <div class="checkbox__input">
+                    <input type="checkbox" name="">
+                    <i class="icon-check"></i>
+                  </div>
+                  <p class="checkbox__label">Ускоренная регистрация</p>
+                </label>
+              </div>
             </div>
           </div>
+        </form>
+
+        <div class="price-total">
+          <p class="price-total__price">
+            <span>Стоимость:</span>
+            <b>103 000 ₽</b>
+          </p>
+          <button type="button" class="price-total__main-btn btn btn--large btn--lime">
+            <span>Получить услугу</span>
+            <i class="icon-check-circle"></i>
+          </button>
+          <div class="price-total__rating">
+            <div class="price-total__rating-stars">
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+            </div>
+            <p class="price-total__rating-text">
+              «Регистрация товарного знака с ТМдекс — это быстро, профессионально и надёжно!…»
+            </p>
+            <p class="price-total__rating-name">Компания «Кот в сапогах»</p>
+          </div>
+          <div class="price-total__list">
+            <p class="price-total__item">
+              <span>Наши услуги</span>
+              <b>65 000 ₽</b>
+            </p>
+            <p class="price-total__item-label">
+              Госпошлины в Роспатент:
+            </p>
+            <p class="price-total__item">
+              <span>при подаче</span>
+              <b>17 000 ₽</b>
+            </p>
+            <p class="price-total__item">
+              <span>при получении</span>
+              <b>21 000 ₽</b>
+            </p>
+            <p class="price-total__item --bold">
+              <span>Сумма госпошлин</span>
+              <b>38 000 ₽</b>
+            </p>
+          </div>
+          <p class="price-total__notice">
+            <i class="icon-alert-circle"></i>
+            <span>Без визита в офис, всё онлайн</span>
+          </p>
         </div>
-      </form>
+      </div>
     </div>
   </section>
 
