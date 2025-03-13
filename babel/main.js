@@ -228,6 +228,39 @@ const Ui = {
     }
   },
 
+  pageTabLoad: function () {
+    const update = () => {
+      const hash = window.location.hash;
+      const tab = document.querySelector(`.page-tab-load${hash}`);
+      const pageTabs = document.querySelectorAll('.page-tab-load');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      
+      if (tab && tab.classList.contains('page-tab-load')) {
+        pageTabs.forEach(el => {
+          el.classList.remove('--active');
+        });
+        tab.classList.add('--active');
+    
+        tabContents.forEach(content => {
+          if (tab.dataset.tab === content.dataset.tab) {
+            content.classList.add('--active');
+          } else if (tab.dataset.tab.split(' ')[0] === content.dataset.tab.split(' ')[0]) {
+            content.classList.remove('--active');
+          }
+        });
+
+        window.scroll(0, 0);
+      }
+    }
+    window.addEventListener('hashchange', ev => {
+      update();
+    });
+    window.addEventListener('load', ev => {
+      update();
+    });
+  },
+
   getTooltip: function (link) {
     return document.querySelector(link.getAttribute('data-href'));
   },
@@ -2345,6 +2378,7 @@ const Ui = {
     this.svcProSliderInit();
     this.servicesTabInit();
     this.priceCalcInit();
+    this.pageTabLoad();
   }
 }
 Ui.init();
