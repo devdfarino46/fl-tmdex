@@ -1,22 +1,14 @@
-.article-short {
-  max-width: 690px;
+.article-short-list {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px 30px;
+  gap: 5px;
+  border: 1px solid #566B40;
+  border-radius: 20px;
 
-  @media (max-width: 940px) {
-    max-width: 584px;
-  }
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 40px 30px;
-    gap: 5px;
-    border: 1px solid #566B40;
-    border-radius: 20px;
-
-    @media (max-width: 740px) {
-      padding: 20px 15px 15px;
-    }
+  @media (max-width: 740px) {
+    padding: 20px 15px 15px;
   }
 
   &__label {

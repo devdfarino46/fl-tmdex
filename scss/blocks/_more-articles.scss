@@ -1,0 +1,37 @@
+.more-articles {
+
+  &__title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 125%;
+    color: #19191D;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0;
+  }
+
+  &__item-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #19191D;
+  }
+
+  &__item-date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #787885;
+  }
+}

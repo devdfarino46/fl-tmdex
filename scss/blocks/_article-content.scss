@@ -1,0 +1,11 @@
+.article-content {
+  margin-top: 40px;
+
+  &__container {
+    max-width: 690px;
+
+    @media (max-width: 940) {
+      max-width: 584px;
+    }
+  }
+}
