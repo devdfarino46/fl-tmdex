@@ -1,7 +1,6 @@
 .article-content {
   margin-top: 40px;
   min-height: 1000px;
-  padding-bottom: 40px;
 
   &__container {
     max-width: 690px+60;
@@ -22,6 +21,10 @@
       @media (max-width: 1230px) {
         display: none;
       }
+    }
+
+    &>.page-line {
+      margin-top: 40px;
     }
   }
 
