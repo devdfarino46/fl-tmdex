@@ -2336,7 +2336,7 @@ const Ui = {
           const rect = articleContent.getBoundingClientRect();
           
           if (moreArticles) moreArticles.style.top = `${
-            Number(-rect.top).clamp(-20, rect.height - moreArticles.clientHeight )
+            Number(-rect.top).clamp(-120, rect.height - moreArticles.clientHeight )
           }px`;
         }
       };
