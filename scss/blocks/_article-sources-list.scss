@@ -1,0 +1,44 @@
+.article-sources-list {
+  margin-top: 40px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #19191D;
+    list-style: decimal;
+    margin-left: 1.4em;
+
+    a:not(._sublink) {
+      
+      &::after {
+        content: '\e810';
+        font-family: fontello;
+        line-height: 110%;
+        color: #787885;
+        vertical-align: bottom;
+        transition: .3s ease;
+      }
+
+      @media (any-hover: hover) {
+        &:hover::after {
+          color: #19191D;
+        }
+      }
+    }
+
+    ._sublink {
+      text-decoration: underline;
+      transition: .3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration-color: transparent;
+        }
+      }
+    }
+  }
+}

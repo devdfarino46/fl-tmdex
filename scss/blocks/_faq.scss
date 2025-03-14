@@ -1,6 +1,10 @@
 .faq {
   margin-top: 80px;
 
+  &--block {
+    margin-top: 40px;
+  }
+
   @media (max-width: 740px) {
     margin-top: 40px;
   }

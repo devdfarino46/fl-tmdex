@@ -1,0 +1,13 @@
+.article-coll-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  @media (max-width: 740px) {
+    grid-template-columns: 1fr;
+  }
+
+  .article-num-item {
+    margin-top: 0;
+  }
+}

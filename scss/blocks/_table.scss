@@ -35,4 +35,14 @@
   tr:last-child td {
     border-bottom: none;
   }
+
+  &.--border-bottom tr:last-child td {
+    border-bottom: 1px solid #D2D2D6;
+  }
+
+  &.--vertical-align-td-top {
+    td {
+      vertical-align: top;
+    }
+  }
 }

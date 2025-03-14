@@ -26,8 +26,13 @@
       font-weight: 700;
     }
 
-    ol li {
+    ol>li {
       list-style: decimal;
+      margin-left: 1.4em;
+    }
+
+    ul>li {
+      list-style: disc;
       margin-left: 1.4em;
     }
 

@@ -2,6 +2,10 @@
   margin-top: 40px;
   min-height: 1000px;
 
+  &--mt-20 {
+    margin-top: 20px;
+  }
+
   &__container {
     max-width: 690px+60;
     position: relative;
@@ -28,6 +32,17 @@
     }
   }
 
+  &__overline-txt {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #4A4B57;
+    opacity: 0.48;
+  }
+
   &__title {
     font-weight: 700;
     font-size: 34px;
@@ -35,6 +50,10 @@
     letter-spacing: -0.02em;
     color: #19191D;
     margin-top: 40px;
+  }
+
+  &__overline-txt + &__title {
+    margin-top: 10px;
   }
 
   &__text {
