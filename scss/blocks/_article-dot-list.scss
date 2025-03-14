@@ -1,0 +1,48 @@
+.article-dot-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #19191D;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: #787885;
+      border-radius: 10px;
+      flex-shrink: 0;
+      margin: 9.5px;
+    }
+
+    a {
+      text-decoration: underline;
+      transition: .3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.--check-icons li::before {
+    width: auto;
+    height: auto;
+    content: '\e809';
+    font-size: 25px;
+    font-family: fontello;
+    background-color: transparent;
+    margin: 0;
+    color: #65B168;
+  }
+}

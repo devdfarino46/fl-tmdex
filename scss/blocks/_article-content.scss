@@ -24,4 +24,32 @@
       }
     }
   }
+
+  &__title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 126%;
+    letter-spacing: -0.02em;
+    color: #19191D;
+    margin-top: 40px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #19191D;
+    margin-top: 40px;
+
+    a {
+      text-decoration: underline;
+      transition: .3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration-color: transparent;
+        }
+      }
+    }
+  }
 }
