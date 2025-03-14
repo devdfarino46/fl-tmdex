@@ -39,6 +39,7 @@
     object-position: center;
     display: block;
     margin-bottom: 5px;
+    border-radius: 200px;
 
     @media (max-width: 740px) {
       grid-column: 1;
