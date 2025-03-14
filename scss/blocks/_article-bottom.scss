@@ -1,0 +1,31 @@
+.article-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 40px;
+
+  &__coll {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #19191D;
+
+    b {
+      color: #43A047;
+    }
+  }
+
+  &__btns {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
