@@ -1,6 +1,22 @@
 @@include('blocks/_header.html')
 <main class="page page-journal-article">
 
+  <section class="search-in-article">
+    <form action="#" class="search-in-article__container">
+      <label class="input-text" data-item="name">
+        <input type="text" placeholder="Введите название или товарный знак">
+        <button type="button" class="btn btn--secondary btn--small">
+          <i class="icon-close"></i>
+        </button>
+      </label>
+  
+      <button type="submit" class="btn btn--large btn--lime">
+        <span>проверить</span>
+        <i class="icon-search"></i>
+      </button>
+    </form>
+  </section>
+
   <section class="section page-tabs container">
     <a href="articles.html#articles_top" class="page-tabs__btn page-tab-link">
       <i class="icon-zap"></i>

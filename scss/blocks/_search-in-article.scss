@@ -1,0 +1,10 @@
+.search-in-article {
+  margin-top: 20px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: center;
+  }
+}
