@@ -234,8 +234,8 @@ const Ui = {
 
   pageTabLoad: function () {
     const update = () => {
-      const hash = window.location.hash;
-      const tab = document.querySelector(`.page-tab-load${hash}`);
+      const hash = window.location.hash.split('#')[1];
+      const tab = document.getElementById(hash);
       const pageTabs = document.querySelectorAll('.page-tab-load');
       const tabContents = document.querySelectorAll('.tab-content');
 
@@ -1427,6 +1427,9 @@ const Ui = {
     const videoPopupLinks = document.querySelectorAll('.video-popup-link');
     
     if (videoPopup && videoPopupLinks) {
+      /**
+       * @type {HTMLVideoElement}
+       */
       const video = videoPopup.querySelector('video.video-js');
       const topImage = videoPopup.querySelector('.video-popup__top-image');
       const title = videoPopup.querySelector('.video-popup__title');
@@ -1444,12 +1447,14 @@ const Ui = {
 
       videoPopup.querySelector('._close-btn').addEventListener('click', ev => {
         video.pause();
-        video.currentTime = 0;
+        video.removeAttribute('src'); // empty source
+        video.load();
       });
       videoPopup.addEventListener('click', ev => {
         if (!ev.target.closest('.popup-wrapper')) {
           video.pause();
-          video.currentTime = 0;
+          video.removeAttribute('src'); // empty source
+          video.load();
         }
       });
     }

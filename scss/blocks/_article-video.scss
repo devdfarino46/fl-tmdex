@@ -1,0 +1,43 @@
+.article-video {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 40px;
+  gap: 10px;
+
+  &__wrap {
+    height: 328px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+
+    @media (max-width: 740px) {
+      height: 192px;
+    }
+
+    .btn {
+
+    }
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #4A4B57;
+
+    a {
+      text-decoration: underline;
+      transition: .3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration-color: transparent;
+        }
+      }
+    }
+  }
+}
