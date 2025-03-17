@@ -2360,6 +2360,39 @@ const Ui = {
     });
   },
 
+  tariffSingleInit: function () {
+    document.querySelectorAll('.tariff-single').forEach(tariffSingle => {
+      const list = tariffSingle.querySelector('.tariff-single__list');
+      const listLabel = tariffSingle.querySelector('.tariff-single__list-label');
+      const listDropdown = tariffSingle.querySelector('.tariff-single__list-dropdown');
+      
+      const updateHeight = () => {
+        if (listLabel.classList.contains('--active')) {
+          listDropdown.style.maxHeight = `${listDropdown.scrollHeight}px`;
+        } else {
+          listDropdown.style.maxHeight = `0px`;
+        }
+      }
+
+      if (window.innerWidth < 940) {
+        listLabel.classList.remove('--active');
+      } else {
+        listLabel.classList.add('--active');
+      }
+
+      updateHeight();
+      
+      listLabel.addEventListener('click', ev => {
+        listLabel.classList.toggle('--active');
+        updateHeight();
+      });
+      
+      window.addEventListener('resize', ev => {
+        updateHeight();
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2417,6 +2450,7 @@ const Ui = {
     this.priceCalcInit();
     this.pageTabLoad();
     this.articleContentInit();
+    this.tariffSingleInit();
   }
 }
 Ui.init();

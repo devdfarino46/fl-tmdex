@@ -1,0 +1,122 @@
+.tariff-single {
+  position: relative;
+  padding: 30px 20px;
+  gap: 40px 20px;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D6;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 940px) {
+    padding: 30px 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  &__note {
+    position: absolute;
+    padding: 5px 10px;
+    background: #CCFF99;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #566B40;
+    top: 0;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    letter-spacing: -0.02em;
+    color: #19191D;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #19191D;
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+    color: #19191D;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list-label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #4A4B57;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+
+    i {
+      transform: rotate(90deg);
+      transition: .3s ease;
+    }
+
+    &.--active i {
+      transform: rotate(270deg);
+    }
+  }
+
+  &__list-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    padding-top: 0;
+    transition: .3s ease;
+    opacity: 0;
+
+    li {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: #19191D;
+      gap: 10px;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '\e80a';
+        font-family: fontello;
+        font-size: 14px;
+        color: #787885;
+      }
+    }
+  }
+  &__list-label.--active + &__list-dropdown {
+    padding-top: 20px;
+    opacity: 1;
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+  }
+}

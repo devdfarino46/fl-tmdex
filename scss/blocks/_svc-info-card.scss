@@ -1,6 +1,6 @@
 .svc-info-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   padding: 0;
   gap: 15px;
   background: #FFFFFF;
@@ -34,6 +34,10 @@
       letter-spacing: -0.02em;
       color: #CCFF99;
     }
+
+    &.--medium b {
+      font-size: 34px;
+    }
   }
 
   &__text {
@@ -47,7 +51,6 @@
     display: flex;
     gap: 5px;
     flex-direction: column;
-    margin-top: auto;
     padding: 0 30px 30px;
 
     @media (max-width: 940px) {
@@ -65,6 +68,17 @@
       color: #19191D;
       list-style: disc;
       margin-left: 1.6em;
+
+      a {
+        text-decoration: underline;
+        transition: .3s ease;
+  
+        @media (any-hover: hover) {
+          &:hover {
+            text-decoration-color: transparent;
+          }
+        }
+      }
 
       &._grey {
         color: #787885;

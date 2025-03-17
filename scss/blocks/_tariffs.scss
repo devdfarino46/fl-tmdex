@@ -38,5 +38,14 @@
       display: flex;
       flex-direction: column;
     }
+
+    &.--colls-1 {
+      grid-template-columns: 1fr;
+    }
+
+    &.--subtariffs {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
   }
 }
