@@ -217,6 +217,26 @@
     font-size: 14px;
     line-height: 143%;
     color: #19191D;
+
+    b {
+      color: #787885;
+    }
+
+    &.--2-colls {
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      max-height: calc(2em * 1.43);
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+
+      @media (max-width: 940px) {
+        max-height: calc(3em * 1.43);
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
+      }
+    }
   }
 
   &__company-grid {
