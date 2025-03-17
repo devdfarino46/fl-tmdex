@@ -768,11 +768,11 @@ const Ui = {
           popup.classList.add('--visibled');
           document.body.classList.add('no-scroll');
   
-          if (link.getAttribute('href') === '#popup-consult') {
+          if (link.getAttribute('href') === '#popup-consult-employer') {
             const dataMenId = link.getAttribute('data-consult-men-id');
             const dataTitle = link.getAttribute('data-consult-title');
   
-            const consultPopup = document.querySelector('#popup-consult');
+            const consultPopup = document.querySelector('#popup-consult-employer');
   
             if (consultPopup) {
               const title = consultPopup.querySelector('.consult-popup__title');
@@ -783,7 +783,7 @@ const Ui = {
                 id.value = dataMenId;
               } else {
                 title.innerHTML = title.getAttribute('data-default-title');
-                id.value = '';
+                id.value = '';z
               }
             }
           }
@@ -824,11 +824,6 @@ const Ui = {
   consultPopupInit: function () {
     document.querySelectorAll('.consult-popup').forEach(consultPopup => {
       const form = consultPopup.querySelector('.consult-popup__form');
-      const btnOk = consultPopup.querySelector('.consult-popup__btn-ok');
-      
-      btnOk.addEventListener('click', () => {
-        consultPopup.classList.remove('--success');
-      })
     
       if (form) {
         const checkbox = form.querySelector('.checkbox');
@@ -836,7 +831,6 @@ const Ui = {
     
         form.addEventListener('submit', (e) => {
           e.preventDefault();
-          consultPopup.classList.add('--success');
         });
     
         const disableSubmitBtn = () => {

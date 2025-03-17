@@ -57,3 +57,13 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes calc-loader {
+  from {
+    left: -100%;
+  }
+  
+  to {
+    left: 100%;
+  }
+}

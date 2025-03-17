@@ -116,8 +116,7 @@
     <div class="consult-popup popup" id="popup-consult">
       <div class="consult-popup__wrapper popup-wrapper">
         <div class="consult-popup__title-wrap">
-          <p class="consult-popup__title"
-            data-default-title="Название <b>tmdex</b> можно зарегистрировать!">
+          <p class="consult-popup__title">
             Название <b>tmdex</b> можно зарегистрировать!
           </p>
 
@@ -233,10 +232,276 @@
             <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
           </label>
         </form>
+      </div>
+    </div>
 
-        <button type="submit" class="consult-popup__btn-ok _btn-ok btn btn--secondary btn--large">
+    <!------------------------------- Popup Consult Done ------------------------------------>
+    <div class="consult-popup popup" id="popup-consult-done">
+      <div class="consult-popup__wrapper popup-wrapper">
+        <div class="consult-popup__title-wrap">
+          <p class="consult-popup__title">
+            Заявка успешно отправлена!
+          </p>
+        </div>
+        <p class="consult-popup__text">
+          Специалист свяжемся с вами в ближайшее время и подробно расскажет об услуге.
+        </p>
+
+        <button type="submit" class="consult-popup__btn-ok _btn-ok btn btn--secondary btn--small">
           <span>ОК</span>
         </button>
+      </div>
+    </div>
+
+    <!------------------------------- Popup Consult Employer ------------------------------------>
+    <div class="consult-popup popup" id="popup-consult-employer">
+      <div class="consult-popup__wrapper popup-wrapper">
+        <div class="consult-popup__title-wrap">
+          <p class="consult-popup__title">
+            Название <b>tmdex</b> можно зарегистрировать!
+          </p>
+
+          <button type="button" aria-label="Закрыть" 
+            class="consult-popup__close-btn _close-btn btn btn--secondary btn--small">
+            <i class="icon-close"></i>
+          </button>
+        </div>
+        <p class="consult-popup__text">
+          Узнайте, как обойти угрозы при регистрации вашего товарного знака, 
+          заполнив форму или написав нам в мессенджер
+        </p>
+
+        <div class="consult-popup__social-btns">
+          <a href="#" class="btn btn--secondary">
+            <span>Telegram</span>
+            <i class="icon-tg"></i>
+          </a>
+          <a href="#" class="btn btn--secondary">
+            <span>WhatsApp</span>
+            <i class="icon-whatsapp"></i>
+          </a>
+        </div>
+
+        <form action="#" class="consult-popup__form">
+          <input type="hidden" name="id" class="consult-popup__men-id">
+          <label class="input">
+            <p class="input__label">Имя</p>
+            <div class="input__wrapper">
+              <input type="text" placeholder="Ваше имя" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+
+          <label class="input">
+            <p class="input__label">Телефон для связи</p>
+            <div class="input__wrapper">
+              <input type="tel" placeholder="Номер телефона" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+
+          <div class="select select--white">
+            <p class="select__label">Label</p>
+            <button type="button" class="select__button" data-empty-label="Select">
+              <span>Select</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+
+            <div class="select-menu">
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG" checked data-start-checked
+                    value="Select 1">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 1</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 2">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 2</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 3">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 3</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG" checked data-start-checked
+                  value="Select 4">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 4</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 5">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 5</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 6">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 6</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="consult-popup__submit-btn btn btn--lime btn--large">
+            <span>Получить консультацию</span>
+          </button>
+
+          <label class="form-main__policy-input checkbox">
+            <div class="checkbox__input">
+              <input type="checkbox" name="policy">
+              <i class="icon-check"></i>
+            </div>
+            <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
+          </label>
+        </form>
+      </div>
+    </div>
+
+    <!------------------------------- Popup Consult Calc ------------------------------------>
+    <div class="consult-popup consult-popup--calc popup" id="popup-consult-calc">
+      <div class="consult-popup__wrapper popup-wrapper">
+        <div class="consult-popup__title-wrap">
+          <p class="consult-popup__title">
+            Для услуги заполните форму ниже или перейдите в мессенджер
+          </p>
+
+          <button type="button" aria-label="Закрыть" 
+            class="consult-popup__close-btn _close-btn btn btn--secondary btn--small">
+            <i class="icon-close"></i>
+          </button>
+        </div>
+
+        <div class="consult-popup__list">
+          <p>Вы выбрали:</p>
+          <ul>
+            <li>4 класса МКТУ</li>
+            <li>Тариф «Регистрация под ключ»</li>
+            <li>Подать заявку в течение 24-х часов</li>
+            <li>Ускоренная регистрайция</li>
+          </ul>
+        </div>
+
+        <div class="consult-popup__social-btns">
+          <a href="#" class="btn btn--secondary">
+            <span>Telegram</span>
+            <i class="icon-tg"></i>
+          </a>
+          <a href="#" class="btn btn--secondary">
+            <span>WhatsApp</span>
+            <i class="icon-whatsapp"></i>
+          </a>
+        </div>
+
+        <form action="#" class="consult-popup__form">
+          <input type="hidden" name="id" class="consult-popup__men-id">
+          <label class="input">
+            <p class="input__label">Имя</p>
+            <div class="input__wrapper">
+              <input type="text" placeholder="Ваше имя" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+
+          <label class="input">
+            <p class="input__label">Телефон для связи</p>
+            <div class="input__wrapper">
+              <input type="tel" placeholder="Номер телефона" required>
+              <button type="button"><i class="icon-close"></i></button>
+            </div>
+            <p class="input__helper">Status</p>
+          </label>
+
+          <!-- <div class="select select--white">
+            <p class="select__label">Label</p>
+            <button type="button" class="select__button" data-empty-label="Select">
+              <span>Select</span>
+              <i class="icon-chevron-right"></i>
+            </button>
+
+            <div class="select-menu">
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG" checked data-start-checked
+                    value="Select 1">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 1</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 2">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 2</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 3">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 3</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG" checked data-start-checked
+                  value="Select 4">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 4</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 5">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 5</span>
+              </label>
+              <label type="button" class="select-item">
+                <div class="select-item__input-wrapper">
+                  <input type="checkbox" name="GG"
+                  value="Select 6">
+                  <i class="icon-check"></i>
+                </div>
+                <span>Select 6</span>
+              </label>
+            </div>
+          </div> -->
+
+          <button type="submit" class="consult-popup__submit-btn btn btn--lime btn--large">
+            <span>Получить консультацию</span>
+          </button>
+
+          <label class="form-main__policy-input checkbox">
+            <div class="checkbox__input">
+              <input type="checkbox" name="policy">
+              <i class="icon-check"></i>
+            </div>
+            <p class="checkbox__label">Даю согласие на обработку персональных данных, согласно условиям.</p>
+          </label>
+        </form>
       </div>
     </div>
 

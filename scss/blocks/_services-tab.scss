@@ -36,6 +36,7 @@
     right: 0;
     opacity: 1;
     transition: .4s ease;
+    overflow: hidden;
 
     @media (max-width: 940px) {
       left: 234px;
