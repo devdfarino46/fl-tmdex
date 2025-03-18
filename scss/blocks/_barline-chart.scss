@@ -169,12 +169,6 @@
         position: absolute;
         writing-mode: sideways-lr;
       }
-
-      @media (any-hover: hover) {
-        &:hover {
-          opacity: .7;
-        }
-      }
     }
   }
 
