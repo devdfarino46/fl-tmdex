@@ -2387,6 +2387,57 @@ const Ui = {
     });
   },
 
+  fishChartInit: function () {
+    document.querySelectorAll('.fish-chart').forEach(chart => {
+      const update = () => {
+        const segmentsGroupes = chart.querySelectorAll('.fish-chart__segments-group');
+  
+        segmentsGroupes.forEach(group => {
+          const lines = group.querySelectorAll('.fish-chart__lines>div');
+          const shape = group.querySelector('.fish-chart__shape');
+  
+          const shapeHeight = shape.getBoundingClientRect().height;
+          shape.style.width = `${(lines.length -1) / lines.length * 100}%`;
+  
+          let shapePoints = [];
+    
+          lines.forEach((line, index) => {
+            const nextLine = line.nextElementSibling;
+            const span = line.querySelector('span');
+    
+            const width = line.getBoundingClientRect().width;
+            const height = line.getBoundingClientRect().height;
+            const heightNextLine = nextLine ? nextLine.getBoundingClientRect().height : line.getBoundingClientRect().height;
+            
+            let rad = Math.atan( 
+              ( (heightNextLine - height) ) / width
+            );
+            let hypScale = 
+              1 / Math.sin( Math.PI / 2 - rad);
+            span.style.transform = `rotate(${-rad}rad) scaleX(${hypScale})`;
+            console.log(hypScale, (heightNextLine - height));
+            
+  
+            shapePoints.push([
+              `${1 / (lines.length-1) * index * 100}%`,
+              `${(1 - height / shapeHeight) * 100}%`
+            ].join(' '));
+          });
+  
+          let shapePointsStr = shapePoints.join(', ');
+          
+          shape.style.clipPath = `polygon(${shapePointsStr}, 100% 100%, 0 100%)`;
+        });
+      }
+
+      update();
+
+      window.addEventListener('resize', ev => {
+        update();
+      });
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2445,6 +2496,7 @@ const Ui = {
     this.pageTabLoad();
     this.articleContentInit();
     this.tariffSingleInit();
+    this.fishChartInit();
   }
 }
 Ui.init();
