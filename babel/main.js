@@ -2332,10 +2332,12 @@ const Ui = {
 
       const updatePos = () => {
         if (window.innerWidth >= 1230) {
+          const startPoint = articleContent.querySelector('.more-articles-start-point')
+            .getBoundingClientRect();
           const rect = articleContent.getBoundingClientRect();
           
           if (moreArticles) moreArticles.style.top = `${
-            Number(-rect.top).clamp(-120, rect.height - moreArticles.clientHeight )
+            Number(-rect.top).clamp(startPoint.top - rect.top - 120, rect.height - moreArticles.clientHeight )
           }px`;
         }
       };
@@ -2438,6 +2440,35 @@ const Ui = {
     });
   },
 
+  serviceInfoInit: function () {
+    document.querySelectorAll('.service-info').forEach(serviceInfo => {
+      const list = serviceInfo.querySelector('.service-info__list');
+      const svcCards = list.querySelectorAll('.svc-info-card');
+      
+      const updateHeights = () => {
+        let heights = Array.from(svcCards).map(card => {
+          const topHeight = card.querySelector('.svc-info-card__top').getBoundingClientRect().height;
+          return topHeight;
+        });
+        let maxHeight = Math.max(...heights);
+
+        svcCards.forEach(card => {
+          const top = card.querySelector('.svc-info-card__top');
+          
+          if (window.innerWidth > 940) {
+            top.style.minHeight = maxHeight + "px";
+          } else {
+            top.style.minHeight = null;
+          }
+        });
+        
+      };
+      updateHeights();
+
+      window.addEventListener('resize', updateHeights);
+    });
+  },
+
   init: function () {
     this.updateMktuFiltersUI();
     this.tariffInit();
@@ -2497,6 +2528,7 @@ const Ui = {
     this.articleContentInit();
     this.tariffSingleInit();
     this.fishChartInit();
+    this.serviceInfoInit();
   }
 }
 Ui.init();

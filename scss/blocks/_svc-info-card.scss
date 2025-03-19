@@ -9,6 +9,7 @@
   &__top {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 30px 40px;
     gap: 10px;
     background: #566B40;
