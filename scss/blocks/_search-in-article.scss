@@ -4,7 +4,27 @@
   &__container {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 30px;
+    gap: 20px 30px;
     align-items: center;
+
+    @media (max-width: 740px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .btn {
+
+    @media (max-width: 940px) and (min-width: 741px) {
+      padding: 20px;
+
+      span {
+        display: none;
+      }
+    }
+
+    @media (max-width: 740px) {
+      padding: 16px 32px;
+      font-size: 14px;
+    }
   }
 }
