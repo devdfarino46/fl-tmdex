@@ -2417,7 +2417,6 @@ const Ui = {
             let hypScale = 
               1 / Math.sin( Math.PI / 2 - rad);
             span.style.transform = `rotate(${-rad}rad) scaleX(${hypScale})`;
-            console.log(hypScale, (heightNextLine - height));
             
   
             shapePoints.push([
@@ -2466,6 +2465,27 @@ const Ui = {
       updateHeights();
 
       window.addEventListener('resize', updateHeights);
+    });
+  },
+
+  articleTableInit: function () {
+    document.querySelectorAll('.article-table').forEach(articleTable => {
+      const wrapper = articleTable.querySelector('.article-table__wrapper');
+
+      const isScrolledToEnd = () => {
+        return wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 10;
+      }
+      
+      const update = () => {
+        if (isScrolledToEnd()) {
+          articleTable.classList.add('--scroll-end');
+        } else {
+          articleTable.classList.remove('--scroll-end');
+        }
+      };
+
+      update();
+      wrapper.addEventListener('scroll', update);
     });
   },
 
@@ -2529,6 +2549,8 @@ const Ui = {
     this.tariffSingleInit();
     this.fishChartInit();
     this.serviceInfoInit();
+    this.serviceInfoInit();
+    this.articleTableInit();
   }
 }
 Ui.init();
