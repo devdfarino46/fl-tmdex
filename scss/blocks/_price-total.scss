@@ -6,9 +6,69 @@
   background: #FFFFFF;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
   border-radius: 20px;
+  position: relative;
 
   @media (max-width: 740px) {
     padding: 30px 20px;
+  }
+
+  &__loader, &__loader-error {
+    position: absolute;
+    border-radius: 20px;
+    inset: 0;
+    background: #FFFFFF;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 30px 40px;
+
+    @media (max-width: 740px) {
+      padding: 30px 20px;
+    }
+
+    &>p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      text-align: center;
+      color: #19191D;
+
+      a {
+        text-decoration: underline;
+        transition: .3s ease;
+  
+        @media (any-hover: hover) {
+          &:hover {
+            text-decoration-color: transparent;
+          }
+        }
+      }
+    }
+
+    &>i {
+      font-size: 40px;
+
+      &.icon-loader {
+        animation: spin 1.5s linear infinite;
+      }
+    }
+  }
+
+  &[data-status="load"] &__loader {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  &[data-status="error"] &__loader-error {
+    pointer-events: all;
+    opacity: 1;
   }
 
   &__price {

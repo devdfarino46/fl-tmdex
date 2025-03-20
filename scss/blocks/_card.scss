@@ -293,6 +293,7 @@
   // Company
   &--company {
     gap: 0;
+    display: flex;
   }
   &--company &__specifs {
     flex-direction: row;

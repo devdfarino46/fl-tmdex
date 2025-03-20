@@ -502,8 +502,18 @@
           </div>
         </form>
 
-        <!-- data-status="success" -->
-        <div class="price-total">
+        <!-- data-status="[success, load, error]" -->
+        <div class="price-total" data-status="load">
+          <div class="price-total__loader">
+            <i class="icon-loader"></i>
+            <p>Рассчитываем стоимость …</p>
+          </div>
+          <div class="price-total__loader-error">
+            <i class="icon-x-circle"></i>
+            <p>
+              Не удалось рассчитать стоимость из-за ошибки на сервере. Попробуйте перезагрузить страницу или вернитесь на <a href="#">главную</a>.
+            </p>
+          </div>
           <p class="price-total__price">
             <span>Стоимость:</span>
             <b>103 000 ₽</b>
