@@ -15,17 +15,6 @@
     padding: 15px;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    border: 2px solid #CCFF99;
-    pointer-events: none;
-    opacity: 0;
-    transition: .3s ease;
-  }
-
   &__top {
     gap: 10px;
     display: flex;
@@ -47,7 +36,7 @@
     a::before {
       content: '';
       position: absolute;
-      inset: 0;
+      inset: -1px;
     }
   }
 
@@ -120,8 +109,9 @@
     transform: translateY(-50%);
   }
 
-  &:has(&__timer)::after {
+  &:has(&__timer) {
     opacity: 1;
+    border-color: #CCFF99;
   }
 
   @media (any-hover: hover) {

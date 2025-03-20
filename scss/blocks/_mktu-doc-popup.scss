@@ -40,6 +40,13 @@
     flex-direction: column;
   }
 
+  &__subaccordeon-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #19191D;
+  }
+
   &__subaccordeon-list {
     display: flex;
     flex-direction: column;
