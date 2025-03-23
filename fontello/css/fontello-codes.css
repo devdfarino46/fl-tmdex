@@ -1,5 +1,5 @@
 
-.icon-eye:before { content: '\e800'; } /* '' */
+.icon-key:before { content: '\e800'; } /* '' */
 .icon-menu:before { content: '\e801'; } /* '' */
 .icon-check-circle-tiny:before { content: '\e802'; } /* '' */
 .icon-search:before { content: '\e803'; } /* '' */
@@ -10,7 +10,7 @@
 .icon-plus:before { content: '\e808'; } /* '' */
 .icon-check:before { content: '\e809'; } /* '' */
 .icon-check-circle:before { content: '\e80a'; } /* '' */
-.icon-eye-off:before { content: '\e80b'; } /* '' */
+.icon-git-pull-request:before { content: '\e80b'; } /* '' */
 .icon-close:before { content: '\e80c'; } /* '' */
 .icon-arrow-up-right:before { content: '\e80d'; } /* '' */
 .icon-star:before { content: '\e80e'; } /* '' */
@@ -36,3 +36,29 @@
 .icon-shopping-cart:before { content: '\e822'; } /* '' */
 .icon-globe:before { content: '\e823'; } /* '' */
 .icon-zap:before { content: '\e824'; } /* '' */
+.icon-shuffle:before { content: '\e825'; } /* '' */
+.icon-database:before { content: '\e826'; } /* '' */
+.icon-message-circle:before { content: '\e827'; } /* '' */
+.icon-copy:before { content: '\e828'; } /* '' */
+.icon-file-plus:before { content: '\e829'; } /* '' */
+.icon-briefcase:before { content: '\e82a'; } /* '' */
+.icon-tag:before { content: '\e82b'; } /* '' */
+.icon-life-buoy:before { content: '\e82c'; } /* '' */
+.icon-users:before { content: '\e82d'; } /* '' */
+.icon-user-check:before { content: '\e82e'; } /* '' */
+.icon-zap-tiny:before { content: '\e82f'; } /* '' */
+.icon-shield-tiny:before { content: '\e830'; } /* '' */
+.icon-check-tiny:before { content: '\e831'; } /* '' */
+.icon-award:before { content: '\e832'; } /* '' */
+.icon-message-square:before { content: '\e833'; } /* '' */
+.icon-minus:before { content: '\e834'; } /* '' */
+.icon-play:before { content: '\e835'; } /* '' */
+.icon-file:before { content: '\e836'; } /* '' */
+.icon-loader:before { content: '\e837'; } /* '' */
+.icon-x-circle:before { content: '\e838'; } /* '' */
+.icon-clock:before { content: '\e839'; } /* '' */
+.icon-eye:before { content: '\e83a'; } /* '' */
+.icon-link:before { content: '\e83b'; } /* '' */
+.icon-vk:before { content: '\e83e'; } /* '' */
+.icon-thumbs-up:before { content: '\e83f'; } /* '' */
+.icon-thumbs-down:before { content: '\e840'; } /* '' */
